@@ -1,0 +1,32 @@
+
+<form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
+    <div class="form-group is-empty">
+        {{ form_label(form.profile.firstname) }}
+        {{ form_widget(form.profile.firstname, { 'attr': {'class': 'form-control' } }) }}
+        {{ form_errors(form.profile.firstname) }}
+    </div>
+    <div class="form-group is-empty">
+        {{ form_label(form.profile.lastname) }}
+        {{ form_widget(form.profile.lastname, { 'attr': {'class': 'form-control' } }) }}
+        {{ form_errors(form.profile.lastname) }}
+    </div>
+    <div class="form-group is-empty">
+        {{ form_label(form.email) }}
+        {{ form_widget(form.email, { 'attr': {'class': 'form-control' } }) }}
+        {{ form_errors(form.email) }}
+    </div>
+    <div class="form-group is-empty">
+        {{ form_label(form.plainPassword.first) }}
+        {{ form_widget(form.plainPassword.first, { 'attr': {'class': 'form-control' } }) }}
+        {{ form_errors(form.plainPassword.first) }}
+    </div>
+    <div class="form-group is-empty">
+        {{ form_label(form.plainPassword.second) }}
+        {{ form_widget(form.plainPassword.second, { 'attr': {'class': 'form-control' } }) }}
+    </div>
+    {{ form_rest(form) }}
+    <div>
+        <input class="btn btn-raised btn-primary btn-block" type="submit" value="{{ 'registration.submit'|trans({}, 'FOSUserBundle') }}" />
+    </div>
+    {#{{ dump(form) }}#}
+</form>

@@ -1,0 +1,9 @@
+{% extends "FOSUserBundle:Security:login.html.twig" %}
+
+{% block fos_user_content %}
+<div class="login-form card card-signup">
+    <div class="form-group">
+        {% include "@FOSUser/Registration/register_content.html.twig" %}
+    </div>
+</div>
+{% endblock fos_user_content %}

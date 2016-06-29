@@ -1,0 +1,15 @@
+<div class="section about">
+    <div class="well well-lg">
+        <p>
+            {{ 'help.app_description'|trans|raw }}
+        </p>
+        <p>
+            {{ 'help.more_information'|trans|raw }}
+        </p>
+
+    </div>
+    <a href="{{ path('post_new') }}" class="btn btn-default btn-block">
+        Create new Post
+    </a>
+</div>
+<!-- Fragment rendered on {{ 'now'|localizeddate('long', 'long') }} -->

@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'post_new' %}
+
+{% block main %}
+    {#<h1>{{ 'title.post_new'|trans }}</h1>#}
+
+
+
+<div class="form-wrapper">
+    <img class="img-responsive" id="imagePreview">
+    {{ form_start(form) }}
+    <div class="text-center">
+        <a class="sf-form-row-add-image">
+            <i class="fa fa-plus"></i>
+            <p>Choose Photo</p>
+            {{ form_widget(form.imageFile) }}
+        </a>
+    </div>
+    {{ form_errors(form.imageFile) }}
+    {#{{ form_row(form.title) }}#}
+    {#{{ form_row(form.summary) }}#}
+    {{ form_row(form.content) }}
+    <div class="hidden">
+    {{ form_row(form.authorEmail, { label_attr: { class: 'hidden' }}) }}
+    {{ form_row(form.publishedAt, { label_attr: { class: 'hidden' }}) }}
+    </div>
+    <input type="submit" value="{{ 'label.create_post'|trans }}" class="btn btn-primary" />
+
+    {{ form_widget(form.saveAndCreateNew, { label: 'label.save_and_create_new', attr: { class: 'btn btn-primary' } }) }}
+
+    {#if user is admin go back to index admin#}
+
+    {#<a href="{{ path('admin_post_index') }}" class="btn btn-link">#}
+        {#{{ 'action.back_to_list'|trans }}#}
+    {#</a>#}
+    {{ form_end(form) }}
+</div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        document.getElementById("post_imageFile_file").onchange = function () {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                // get loaded data and render thumbnail.
+                document.getElementById("imagePreview").src = e.target.result;
+            };
+
+            // read the image file as a data URL.
+            reader.readAsDataURL(this.files[0]);
+        };
+    </script>
+{% endblock %}
+
+{#{% block sidebar %}#}
+    {#{{ parent() }}#}
+
+    {#{{ show_source_code(_self) }}#}
+{#{% endblock %}#}

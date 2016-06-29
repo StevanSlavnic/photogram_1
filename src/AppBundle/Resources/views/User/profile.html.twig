@@ -1,0 +1,203 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'profile_index' %}
+
+{% block main %}
+    {% block header %}
+        <header>
+            <nav class="navbar navbar-transparent navbar-fixed-top navbar-color-on-scroll">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="{{ path('blog_index') }}"><i class="fa fa-chevron-left"></i> Back to Posts</a>
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="navigation-example">
+                        <ul class="nav navbar-nav navbar-right">
+                            {% block header_navigation_links %}
+                                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                                    <li>
+                                        <a href="#">
+                                            {{ app.user.fullName }}
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('post_new') }}">
+                                            New Post
+                                        </a>
+                                    </li>
+                                {% else %}
+                                    <li>
+                                        <a href="{{ path('fos_user_security_login') }}">
+                                            Login
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('fos_user_registration_register') }}">
+                                            Register
+                                        </a>
+                                    </li>
+                                {% endif %}
+                                {#{% if is_granted('ROLE_ADMIN') %}#}
+                                    {#<li>#}
+                                        {#<a href="{{ path('admin_post_index') }}">#}
+                                            {#<i class="fa fa-lock"></i> {{ 'menu.admin'|trans }}#}
+                                        {#</a>#}
+                                    {#</li>#}
+                                {#{% endif %}#}
+                            {% endblock %}
+
+                            {% if app.user %}
+                                <li>
+                                    <a href="{{ path('fos_user_security_logout') }}">
+                                        <i class="fa fa-sign-out"></i> {{ 'menu.logout'|trans }}
+                                    </a>
+                                </li>
+                            {% endif %}
+                            <li>
+                                <a href="https://twitter.com/CreativeTim" target="_blank" class="btn btn-simple">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/CreativeTim" target="_blank" class="btn btn-simple">
+                                    <i class="fa fa-facebook-square"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/CreativeTimOfficial" target="_blank" class="btn btn-simple">
+                                    <i class="fa fa-instagram"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    {% endblock %}
+    {% block body %}
+        <div class="wrapper">
+            <div class="header header-filter" style="background-image: url('../img/examples/city.jpg');"></div>
+
+            <div class="main-raised">
+                <div class="profile-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="profile">
+                                <div class="avatar">
+                                    <img src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAATCAAAAJDk4ZjEyN2MwLTQ5ZmYtNDE0Ni1hY2FjLTJlZDExZTlmMTUxOQ.jpg9" alt="Circle Image" class="img-circle img-responsive img-raised">
+                                </div>
+                                <div class="name">
+                                    <h3 class="title">{{ profile.firstname }} {{ profile.lastname }}</h3>
+                                    <h6>{{ profile.occupation }}</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="description text-center">
+                            <p>{{ profile.about }}</p>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 col-md-offset-3">
+                                <div class="profile-tabs">
+                                    <div class="nav-align-center">
+                                        <ul class="nav nav-pills" role="tablist">
+                                            <li class="active">
+                                                <a href="#studio" role="tab" data-toggle="tab">
+                                                    <i class="material-icons">camera</i>
+                                                    My Posts
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#work" role="tab" data-toggle="tab">
+                                                    <i class="material-icons">palette</i>
+                                                    I Follow
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#shows" role="tab" data-toggle="tab">
+                                                    <i class="material-icons">favorite</i>
+                                                    My Followers
+                                                </a>
+                                            </li>
+                                        </ul>
+
+                                        <div class="tab-content gallery">
+                                            <div class="tab-pane active" id="studio">
+                                                {% for post in posts|batch(999999999) %}
+                                                    <div class="row">
+                                                        {% for post in posts %}
+                                                            <div class="col-md-6">
+                                                                <a href="{{ path('blog_post', { id: post.id }) }}">
+                                                                    <img src="{{ asset('images/posts/') }}{{ post.imageName }}" class="img-rounded img-responsive" />
+                                                                </a>
+                                                            </div>
+                                                        {% endfor %}
+                                                    </div>
+                                                {% endfor %}
+
+                                                {#<div class="row">#}
+                                                    {#&#123;&#35;<div class="col-md-6">&#35;&#125;#}
+
+                                                       {#&#123;&#35;{% for post in posts %}&#35;&#125;#}
+
+                                                           {#&#123;&#35;<img src="{{ asset('images/posts/') }}{{ post.imageName }}" class="img-rounded" />&#35;&#125;#}
+
+
+                                                       {#&#123;&#35;{% endfor %}&#35;&#125;#}
+
+                                                        {#&#123;&#35;&#123;&#35;<img src="../assets/img/examples/chris0.jpg" class="img-rounded" />&#35;&#125;&#35;&#125;#}
+                                                    {#&#123;&#35;</div>&#35;&#125;#}
+                                                    {#<div class="col-md-6">#}
+                                                        {#<img src="../assets/img/examples/chris3.jpg" class="img-rounded" />#}
+                                                        {#<img src="../assets/img/examples/chris4.jpg" class="img-rounded" />#}
+                                                    {#</div>#}
+                                                {#</div>#}
+                                            </div>
+                                            <div class="tab-pane text-center" id="work">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <img src="../assets/img/examples/chris5.jpg" class="img-rounded" />
+                                                        <img src="../assets/img/examples/chris7.jpg" class="img-rounded" />
+                                                        <img src="../assets/img/examples/chris9.jpg" class="img-rounded" />
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <img src="../assets/img/examples/chris6.jpg" class="img-rounded" />
+                                                        <img src="../assets/img/examples/chris8.jpg" class="img-rounded" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane text-center" id="shows">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <img src="../assets/img/examples/chris4.jpg" class="img-rounded" />
+                                                        <img src="../assets/img/examples/chris6.jpg" class="img-rounded" />
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <img src="../assets/img/examples/chris7.jpg" class="img-rounded" />
+                                                        <img src="../assets/img/examples/chris5.jpg" class="img-rounded" />
+                                                        <img src="../assets/img/examples/chris9.jpg" class="img-rounded" />
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Profile Tabs -->
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+
+{% endblock %}

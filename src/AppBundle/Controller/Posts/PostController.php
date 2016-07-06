@@ -37,8 +37,7 @@ class PostController extends Controller
 
         return $this->render('@App/PostsList/index.html.twig', array(
             'posts' => $posts,
-            'form' => $form->createView(),
-
+            'form' => $form->createView()
         ));
     }
 

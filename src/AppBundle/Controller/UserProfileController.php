@@ -52,9 +52,34 @@ class UserProfileController extends Controller
         ));
     }
 
-    public function editAction()
+    /**
+     * @Route("/user/{firstname}-{lastname}/edit", name="profile_index_edit")
+     * @param Profile $profile
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
+     */
+    public function editAction(Profile $profile, Request $request)
     {
+        $entityManager = $this->getDoctrine()->getManager();
 
+        $editForm = $this->createForm('AppBundle\Form\ProfileType', $profile);
+//        $deleteForm = $this->createDeleteForm($post);
+
+        $editForm->handleRequest($request);
+
+        if ($editForm->isSubmitted() && $editForm->isValid()) {
+
+            $entityManager->flush();
+
+            $this->addFlash('success', 'profile.updated_successfully');
+
+            return $this->redirectToRoute('profile_index');
+        }
+
+        return $this->render('@App/User/profile_edit.html.twig', array(
+            'profile'        => $profile,
+            'profile_edit_form'   => $editForm->createView(),
+        ));
     }
 
 

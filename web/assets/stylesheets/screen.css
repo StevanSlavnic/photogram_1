@@ -169,24 +169,38 @@ body {
 .profile-content .profile-tabs {
   margin-top: 60px;
 }
-/* line 178, ../sass/screen.scss */
+/* line 179, ../sass/screen.scss */
 .profile-content .gallery {
   margin-top: 45px;
   padding-bottom: 50px;
 }
-/* line 181, ../sass/screen.scss */
+/* line 182, ../sass/screen.scss */
 .profile-content .gallery img {
   width: 100%;
   margin-bottom: 30px;
 }
 
-/* line 187, ../sass/screen.scss */
+/* line 190, ../sass/screen.scss */
+.list-masonry {
+  -moz-column-width: 18em;
+  -webkit-column-width: 18em;
+  -moz-column-gap: 1em;
+  -webkit-column-gap: 1em;
+}
+/* line 195, ../sass/screen.scss */
+.list-masonry .post-in-list {
+  display: inline-block;
+  padding: .25rem;
+  width: 100%;
+}
+
+/* line 203, ../sass/screen.scss */
 .navbar .navbar-nav > li > a .fa {
   top: 3px;
   position: relative;
 }
 
-/* line 192, ../sass/screen.scss */
+/* line 208, ../sass/screen.scss */
 .login-form {
   width: 100%;
   max-width: 400px;
@@ -196,4 +210,9 @@ body {
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+
+/* line 219, ../sass/screen.scss */
+.header {
+  background-image: url("");
 }

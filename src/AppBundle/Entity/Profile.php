@@ -15,12 +15,15 @@ use Symfony\Component\Validator\Constraints as Assert;
 use AppBundle\Form\UserType;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
-
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Table(name="profile")
  * @ORM\HasLifecycleCallbacks
  * @ORM\Entity(repositoryClass="AppBundle\Repository\ProfileRepository")
+ * @Vich\Uploadable
+ *
  */
 class Profile
 {
@@ -50,12 +53,6 @@ class Profile
      */
     protected $lastname;
 
-//    /**
-//     * @Gedmo\Slug(fields={"firstname-lastname"}, unique=true, updatable=false)
-//     * @ORM\Column(length=128, unique=true)
-//     */
-//    private $slug;
-
     /**
      * @var string
      * @ORM\Column(name="occupation", type="string", nullable=true)
@@ -80,6 +77,22 @@ class Profile
      * @Assert\DateTime()
      */
     private $updatedAt;
+
+    /**
+     * NOTE: This is not a mapped field of entity metadata, just a simple property.
+     *
+     * @Vich\UploadableField(mapping="profile_image", fileNameProperty="imageName")
+     *
+     * @var File
+     */
+    private $imageFile;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     *
+     * @var string
+     */
+    private $imageName;
 
     public function __construct()
     {
@@ -216,22 +229,47 @@ class Profile
         $this->lastname = $lastname;
     }
 
-
     /**
-     * @return mixed
+     * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
+     * of 'UploadedFile' is injected into this setter to trigger the  update. If this
+     * bundle's configuration parameter 'inject_on_load' is set to 'true' this setter
+     * must be able to accept an instance of 'File' as the bundle will inject one here
+     * during Doctrine hydration.
+     *
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $image
+     *
+     * @return Profile
      */
-    public function getSlug()
+    public function setImageFile(File $image = null)
     {
-        return $this->slug;
+        $this->imageFile = $image;
+
+        if ($image) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->updatedAt = new \DateTime('now');
+        }
+
+        return $this;
     }
 
     /**
-     * @param mixed $slug
+     * @return File
      */
-    public function setSlug($slug)
+    public function getImageFile()
     {
-        $this->slug = $slug;
+        return $this->imageFile;
     }
 
+    /**
+     * @param string $imageName
+     *
+     * @return Post
+     */
+    public function setImageName($imageName)
+    {
+        $this->imageName = $imageName;
 
+        return $this;
+    }
 }

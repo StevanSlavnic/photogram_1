@@ -27,6 +27,8 @@ app:
     resource: "@AppBundle/Controller/"
     type:     annotation
 
-
+person:
+    path:      /user/{firstname}-{lastname}
+    defaults:  { _controller: AppBundle:UserProfile:show }
 
 

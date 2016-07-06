@@ -19,7 +19,8 @@ use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\Length;
-use Symfony\Component\Validator\Constraints\NotBlank;;
+use Symfony\Component\Validator\Constraints\NotBlank;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class ProfileType extends AbstractType
 {
@@ -30,23 +31,14 @@ class ProfileType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+
             ->add('firstname', TextType::class, array(
                 'label' => 'First name'
             ))
             ->add('lastname', TextType::class, array(
                 'label' => 'Last name'
             ))
-//            ->add('slug', HiddenType::class, array());
         ;
-//        $builder->addEventListener(FormEvents::PRE_SUBMIT, function(FormEvent $event) {
-//
-//            $data = $event->getData();
-//            $data['slug'] = $data['profile']['firstname'] . '-' . $data['profile']['lastname'];
-//
-//            $event->setData($data);
-//
-//
-//        });
     }
 
     /**

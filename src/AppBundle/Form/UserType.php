@@ -41,17 +41,19 @@ class UserType extends AbstractType
             )
             ->add('username', 'hidden', array(
                 'translation_domain' => 'FOSUserBundle',
-                'label' => 'security.login.username'
+                'label' => 'security.login.email'
             ))
             ->add('fullName', 'hidden', array())
-
+//            ->add('profileName', 'hidden');
         ;
         $builder->addEventListener(FormEvents::PRE_SUBMIT, function(FormEvent $event) {
 
             $data = $event->getData();
+
             $data['username'] = $data['profile']['firstname'] . '-' . $data['profile']['lastname'];
             $data['fullName'] = $data['profile']['firstname'] . ' ' . $data['profile']['lastname'];
-//            $data['slug'] = $data['profile']['firstname'] . '-' . $data['profile']['lastname'];
+//            $data['profileName'] = $data['profile']['firstname'] . '-' . $data['profile']['lastname'];
+
             $event->setData($data);
 
 

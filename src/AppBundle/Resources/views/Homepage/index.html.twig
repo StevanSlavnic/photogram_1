@@ -65,10 +65,10 @@
         </div><!-- /.container -->
     </nav>
     {% endblock %}
-    <div class="main" style="background: url("#{$img-path}home-cover-photo.png") no-repeat center;">
+    <div class="main" style="background:  no-repeat center;">
         <video id="video_background" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
-            <source src="video/time.webm" type="video/webm">
-            <source src="video/time.mp4" type="video/mp4">
+            <source src="{{ absolute_url('video/time.webm') }}" type="video/webm">
+            <source src="{{ absolute_url('video/time.mp4') }}" type="video/mp4">
             Video not supported
         </video>
         <!--    Change the image source '/images/video_bg.jpg')" with your favourite image.     -->
@@ -106,7 +106,7 @@
         </div>
         <div class="footer">
             <div class="container">
-                Made with <i class="fa fa-heart heart"></i> by <a href="http://www.creative-tim.com">Creative Tim</a>. Free download <a href="http://www.creative-tim.com/product/coming-sssoon-page">here.</a>
+                {#Made with <i class="fa fa-heart heart"></i> by <a href="http://www.creative-tim.com">Creative Tim</a>. Free download <a href="http://www.creative-tim.com/product/coming-sssoon-page">here.</a>#}
             </div>
         </div>
     </div>

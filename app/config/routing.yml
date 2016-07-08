@@ -17,6 +17,11 @@ fos_user_change_password:
     resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
     prefix: /profile
 
+_liip_imagine:
+    resource: "@LiipImagineBundle/Resources/config/routing.xml"
+
+
+
 #app_security_registration_register:
 #    defaults:  { _controller: AppBundle:Security/Registration:register }
 #    path: /register
@@ -28,7 +33,7 @@ app:
     type:     annotation
 
 person:
-    path:      /user/{firstname}-{lastname}
+    path:      /user/{profileUsername}
     defaults:  { _controller: AppBundle:UserProfile:show }
 
 

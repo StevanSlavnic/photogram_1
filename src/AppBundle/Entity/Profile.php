@@ -35,12 +35,6 @@ class Profile
     */
     protected $id;
 
-//    /**
-//     * @var string
-//     * @ORM\Column(name="username", type="string")
-//     */
-//    protected $username;
-
     /**
      * @var string
      * @ORM\Column(name="firstname", type="string")
@@ -52,6 +46,12 @@ class Profile
      * @ORM\Column(name="lastname", type="string")
      */
     protected $lastname;
+
+    /**
+     * @var string
+     * @ORM\Column(name="profile_username", type="string")
+     */
+    private $profileUsername;
 
     /**
      * @var string
@@ -85,14 +85,14 @@ class Profile
      *
      * @var File
      */
-    private $imageFile;
+    protected $imageFile;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      *
      * @var string
      */
-    private $imageName;
+    protected $imageName;
 
     public function __construct()
     {
@@ -149,21 +149,21 @@ class Profile
         $this->updatedAt = $updatedAt;
     }
 
-//    /**
-//     * @return string
-//     */
-//    public function getUsername()
-//    {
-//        return $this->username;
-//    }
-//
-//    /**
-//     * @param string $username
-//     */
-//    public function setUsername($username)
-//    {
-//        $this->username = $username;
-//    }
+    /**
+     * @return string
+     */
+    public function getProfileUsername()
+    {
+        return $this->profileUsername;
+    }
+
+    /**
+     * @param string $profileUsername
+     */
+    public function setProfileUsername($profileUsername)
+    {
+        $this->profileUsername = $profileUsername;
+    }
 
     /**
      * @return string
@@ -272,4 +272,14 @@ class Profile
 
         return $this;
     }
+
+    /**
+     * @return string
+     */
+    public function getImageName()
+    {
+        return $this->imageName;
+    }
+
+
 }

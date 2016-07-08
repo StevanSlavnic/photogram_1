@@ -38,7 +38,18 @@ class ProfileType extends AbstractType
             ->add('lastname', TextType::class, array(
                 'label' => 'Last name'
             ))
+            ->add('profileUsername', HiddenType::class,array(
+
+            ))
         ;
+
+        $builder->addEventListener(FormEvents::PRE_SUBMIT, function(FormEvent $event) {
+            $data = $event->getData();
+
+            $data['profileUsername'] = $data['firstname'] . '-' . $data['lastname'];
+
+            $event->setData($data);
+        });
     }
 
     /**

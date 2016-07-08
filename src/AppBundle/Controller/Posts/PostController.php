@@ -17,13 +17,15 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 /**
  * Class PostController
- * @package AppBundle\Controller
- * @Route("/posts")
+ * @package AppBundle\Controllers
  */
+
+//* @Route("/posts")
+
 class PostController extends Controller
 {
     /**
-     * @Route("/", defaults={"page": 1}, name="blog_index")
+     * @Route("/posts/", defaults={"page": 1}, name="blog_index")
      * @Route("/page/{page}", requirements={"page": "[1-9]\d*"}, name="blog_index_paginated")
      * @Method("GET")
      * @Cache(smaxage="10")
@@ -31,12 +33,15 @@ class PostController extends Controller
     public function indexAction(Request $request, $page)
     {
         $posts = $this->getDoctrine()->getRepository('AppBundle:Post')->findLatest($page);
+        $profile = $this->getDoctrine()->getRepository('AppBundle:Profile')->findAll();
         $form = $this->createForm('AppBundle\Form\CommentType');
 
         $form->handleRequest($request);
 
         return $this->render('@App/PostsList/index.html.twig', array(
             'posts' => $posts,
+//            'user' => $user,
+            'profile' => $profile,
             'form' => $form->createView()
         ));
     }
@@ -44,7 +49,7 @@ class PostController extends Controller
     /**
      * Creates a new Post entity.
      *
-     * @Route("/new", name="post_new")
+     * @Route("/post/new", name="post_new")
      * @Method({"GET", "POST"})
      *
      * NOTE: the Method annotation is optional, but it's a recommended practice
@@ -104,7 +109,7 @@ class PostController extends Controller
     /**
      * Displays a form to edit an existing Post entity.
      *
-     * @Route("/{id}/edit", requirements={"id": "\d+"}, name="post_edit")
+     * @Route("/post/{id}/edit", requirements={"id": "\d+"}, name="post_edit")
      * @Method({"GET", "POST"})
      */
     public function editAction(Post $post, Request $request)
@@ -141,7 +146,7 @@ class PostController extends Controller
     /**
      * Deletes a Post entity.
      *
-     * @Route("/{id}", name="post_delete")
+     * @Route("/post/{id}", name="post_delete")
      * @Method("DELETE")
      * @Security("post.isAuthor(user)")
      *
@@ -189,7 +194,7 @@ class PostController extends Controller
     }
 
     /**
-     * @Route("/{id}", name="blog_post")
+     * @Route("/post/{id}", name="blog_post")
      * @Method("GET")
      *
      * NOTE: The $post controller argument is automatically injected by Symfony
@@ -201,8 +206,11 @@ class PostController extends Controller
      */
     public function postShowAction(Post $post)
     {
+
+
         return $this->render('@App/Posts/post_show.html.twig', array(
-            'post' => $post
+            'post' => $post,
+//            'profile' => $profile
         ));
     }
 

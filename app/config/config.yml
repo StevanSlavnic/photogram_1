@@ -113,4 +113,24 @@ vich_uploader:
         inject_on_load:     false
         delete_on_update:   true
         delete_on_remove:   true
+      profile_image:
+        uri_prefix:         /web/images/users
+        upload_destination: %kernel.root_dir%/../web/images/users
+        namer:              vich_uploader.namer_uniqid
+        inject_on_load:     false
+        delete_on_update:   true
+        delete_on_remove:   true
 
+liip_imagine:
+#    cache_mkdir_mode:     0777
+#    cache_prefix:         /media/cache
+    resolvers:
+       default:
+          web_path: ~
+
+    filter_sets:
+        cache: ~
+        my_thumb:
+            quality: 75
+            filters:
+                thumbnail: { size: [200, 200], mode: outbound }

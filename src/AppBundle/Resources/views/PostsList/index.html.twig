@@ -3,15 +3,15 @@
 {% block body_id 'blog_index' %}
 
 {% block main %}
-    {{ dump(profile) }}
     {% for post in posts %}
 
         <article class="post">
             {#{{ dump() }}#}
             <div class="post-header">
                 {#{% if is_granted('IS_AUTHENTICATED_FULLY') %}#}
-                <a href="#">
-                    {{ post.user.fullName }}
+                <a href="{{ path('profile_index', {'username': post.user.profile.profileUsername}) }}">
+                    {#{{ post.user.fullName }}#}
+                    {{ post.user.profile.firstname }} {{ post.user.profile.lastname }}
                 </a>
 
                 {#{% endif %}#}

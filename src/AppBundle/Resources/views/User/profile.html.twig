@@ -92,8 +92,8 @@
                             <div class="profile">
                                 <div class="avatar">
                                     {#<img src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAATCAAAAJDk4ZjEyN2MwLTQ5ZmYtNDE0Ni1hY2FjLTJlZDExZTlmMTUxOQ.jpg9" alt="Circle Image" class="img-circle img-responsive img-raised">#}
-                                    <img src="{{ profile.imageName | imagine_filter('my_thumb')  }}" alt="Circle Image" class="img-circle img-responsive img-raised">
-                                    {#<img src="/images/users/{{ profile.imageName }}" alt="Circle Image" class="img-circle img-responsive img-raised">#}
+                                    {#<img src="{{ profile.imageName | imagine_filter('my_thumb')  }}" alt="Circle Image" class="img-circle img-responsive img-raised">#}
+                                    <img src="/images/users/{{ profile.imageName }}" alt="Circle Image" class="img-circle img-responsive img-raised">
                                 </div>
                                 <div class="name">
                                     <h3 class="title">{{ profile.firstname }} {{ profile.lastname }}</h3>

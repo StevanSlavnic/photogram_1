@@ -15,9 +15,11 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+
 /**
  * Class PostController
- * @package AppBundle\Controllers
+ * @package AppBundle\Controller
+ *
  */
 
 //* @Route("/posts")
@@ -30,10 +32,15 @@ class PostController extends Controller
      * @Method("GET")
      * @Cache(smaxage="10")
      */
+
+    // @Route("/posts") can be used as global route
+
     public function indexAction(Request $request, $page)
     {
+
+
         $posts = $this->getDoctrine()->getRepository('AppBundle:Post')->findLatest($page);
-        $profile = $this->getDoctrine()->getRepository('AppBundle:Profile')->findAll();
+        $profiles = $this->getDoctrine()->getRepository('AppBundle:Profile')->findAll();
         $form = $this->createForm('AppBundle\Form\CommentType');
 
         $form->handleRequest($request);
@@ -41,7 +48,7 @@ class PostController extends Controller
         return $this->render('@App/PostsList/index.html.twig', array(
             'posts' => $posts,
 //            'user' => $user,
-            'profile' => $profile,
+            'profiles' => $profiles,
             'form' => $form->createView()
         ));
     }
@@ -146,7 +153,7 @@ class PostController extends Controller
     /**
      * Deletes a Post entity.
      *
-     * @Route("/post/{id}", name="post_delete")
+     * @Route("/post/{id}/delete", name="post_delete")
      * @Method("DELETE")
      * @Security("post.isAuthor(user)")
      *

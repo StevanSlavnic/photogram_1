@@ -36,6 +36,12 @@ class Profile
     protected $id;
 
     /**
+     * @var User
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\User", mappedBy="profile")
+     */
+    protected $user;
+
+    /**
      * @var string
      * @ORM\Column(name="firstname", type="string")
      */
@@ -281,5 +287,25 @@ class Profile
         return $this->imageName;
     }
 
+    /**
+     * @return \AppBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
 
+    /**
+     * @param \AppBundle\Entity\User $user
+     * 
+     * @return Profile
+     */
+    public function setUser(User $user)
+    {
+        $this->user = $user;
+        
+        return $this;
+    }
+
+    
 }

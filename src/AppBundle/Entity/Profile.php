@@ -35,6 +35,12 @@ class Profile
     */
     protected $id;
 
+//    /**
+//     * @var string
+//     * @ORM\Column(name="username", type="string")
+//     */
+//    protected $username;
+
     /**
      * @var string
      * @ORM\Column(name="firstname", type="string")
@@ -47,17 +53,11 @@ class Profile
      */
     protected $lastname;
 
-//    /**
-//     * @Gedmo\Slug(fields={"profileFullName"}, updatable=false, separator="-")
-//     * @ORM\Column(length=128, unique=true, nullable=false)
-//     */
-//    protected $username;
-
     /**
-    * @Gedmo\Slug(fields={"firstname", "lastname"}, updatable=false, separator="-")
-    * @ORM\Column(length=128, unique=true, nullable=false)
-    */
-    protected $profileFullName;
+     * @var string
+     * @ORM\Column(name="profile_username", type="string")
+     */
+    private $profileUsername;
 
     /**
      * @var string
@@ -91,14 +91,14 @@ class Profile
      *
      * @var File
      */
-    private $imageFile;
+    protected $imageFile;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      *
      * @var string
      */
-    private $imageName;
+    protected $imageName;
 
     public function __construct()
     {
@@ -155,37 +155,21 @@ class Profile
         $this->updatedAt = $updatedAt;
     }
 
-//    /**
-//     * @return mixed
-//     */
-//    public function getUsername()
-//    {
-//        return $this->username;
-//    }
-//
-//    /**
-//     * @param mixed $username
-//     */
-//    public function setUsername($username)
-//    {
-//        $this->username = $username;
-//    }
-//
-//    /**
-//     * @return mixed
-//     */
-//    public function getProfileFullName()
-//    {
-//        return $this->profileFullName;
-//    }
-//
-//    /**
-//     * @param mixed $profileFullName
-//     */
-//    public function setProfileFullName($profileFullName)
-//    {
-//        $this->profileFullName = $profileFullName;
-//    }
+    /**
+     * @return string
+     */
+    public function getProfileUsername()
+    {
+        return $this->profileUsername;
+    }
+
+    /**
+     * @param string $profileUsername
+     */
+    public function setProfileUsername($profileUsername)
+    {
+        $this->profileUsername = $profileUsername;
+    }
 
     /**
      * @return string
@@ -294,4 +278,14 @@ class Profile
 
         return $this;
     }
+
+    /**
+     * @return string
+     */
+    public function getImageName()
+    {
+        return $this->imageName;
+    }
+
+
 }

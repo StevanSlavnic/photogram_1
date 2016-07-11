@@ -20,6 +20,9 @@ use Symfony\Component\HttpFoundation\Response;
  * @package AppBundle\Controller
  *
  */
+
+//* @Route("/posts")
+
 class PostController extends Controller
 {
     /**
@@ -34,12 +37,15 @@ class PostController extends Controller
     public function indexAction(Request $request, $page)
     {
         $posts = $this->getDoctrine()->getRepository('AppBundle:Post')->findLatest($page);
+        $profile = $this->getDoctrine()->getRepository('AppBundle:Profile')->findAll();
         $form = $this->createForm('AppBundle\Form\CommentType');
 
         $form->handleRequest($request);
 
         return $this->render('@App/PostsList/index.html.twig', array(
             'posts' => $posts,
+//            'user' => $user,
+            'profile' => $profile,
             'form' => $form->createView()
         ));
     }
@@ -204,8 +210,11 @@ class PostController extends Controller
      */
     public function postShowAction(Post $post)
     {
+
+
         return $this->render('@App/Posts/post_show.html.twig', array(
-            'post' => $post
+            'post' => $post,
+//            'profile' => $profile
         ));
     }
 

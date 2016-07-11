@@ -3,7 +3,7 @@
 {% block body_id 'blog_index' %}
 
 {% block main %}
-    {#{{ dump(posts) }}#}
+    {{ dump(profile) }}
     {% for post in posts %}
 
         <article class="post">
@@ -13,8 +13,7 @@
                 <a href="#">
                     {{ post.user.fullName }}
                 </a>
-                {#{% else %}#}
-                {#<a href="#"> </a>#}
+
                 {#{% endif %}#}
                 <div class="options pull-right">
                     {% if app.user and post.isAuthor(app.user) %}

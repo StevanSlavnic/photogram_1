@@ -15,6 +15,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+
 /**
  * Class PostController
  * @package AppBundle\Controller
@@ -36,8 +37,10 @@ class PostController extends Controller
 
     public function indexAction(Request $request, $page)
     {
+
+
         $posts = $this->getDoctrine()->getRepository('AppBundle:Post')->findLatest($page);
-        $profile = $this->getDoctrine()->getRepository('AppBundle:Profile')->findAll();
+        $profiles = $this->getDoctrine()->getRepository('AppBundle:Profile')->findAll();
         $form = $this->createForm('AppBundle\Form\CommentType');
 
         $form->handleRequest($request);
@@ -45,7 +48,7 @@ class PostController extends Controller
         return $this->render('@App/PostsList/index.html.twig', array(
             'posts' => $posts,
 //            'user' => $user,
-            'profile' => $profile,
+            'profiles' => $profiles,
             'form' => $form->createView()
         ));
     }

@@ -11,6 +11,9 @@ class SecurityController extends Controller
     {
         $request = $this->container->get('request');
         /* @var $request \Symfony\Component\HttpFoundation\Request */
+
+        $this->container->get("session")->set("loginForm", true);
+
         $session = $request->getSession();
         /* @var $session \Symfony\Component\HttpFoundation\Session\Session */
 

@@ -39,7 +39,22 @@ class ProfileType extends AbstractType
                 'label' => 'Last name'
             ))
         ;
+
+//        $builder->addEventListener(FormEvents::PRE_SUBMIT, function(FormEvent $event) {
+//
+//            $data = $event->getData();
+//
+//            $data['username'] = $data['user']['firstname'] . '-' . $data['user']['lastname'];
+//            $data['fullName'] = $data['profile']['firstname'] . ' ' . $data['profile']['lastname'];
+//            $data['profileName'] = $data['profile']['firstname'] . '-' . $data['profile']['lastname'];
+
+//            $event->setData($data);
+//
+//
+//        });
     }
+
+
 
     /**
      * @param OptionsResolver $resolver

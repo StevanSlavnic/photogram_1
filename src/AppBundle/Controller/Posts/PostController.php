@@ -18,16 +18,19 @@ use Symfony\Component\HttpFoundation\Response;
 /**
  * Class PostController
  * @package AppBundle\Controller
- * @Route("/posts")
+ *
  */
 class PostController extends Controller
 {
     /**
-     * @Route("/", defaults={"page": 1}, name="blog_index")
+     * @Route("/posts/", defaults={"page": 1}, name="blog_index")
      * @Route("/page/{page}", requirements={"page": "[1-9]\d*"}, name="blog_index_paginated")
      * @Method("GET")
      * @Cache(smaxage="10")
      */
+
+    // @Route("/posts") can be used as global route
+
     public function indexAction(Request $request, $page)
     {
         $posts = $this->getDoctrine()->getRepository('AppBundle:Post')->findLatest($page);
@@ -44,7 +47,7 @@ class PostController extends Controller
     /**
      * Creates a new Post entity.
      *
-     * @Route("/new", name="post_new")
+     * @Route("/post/new", name="post_new")
      * @Method({"GET", "POST"})
      *
      * NOTE: the Method annotation is optional, but it's a recommended practice
@@ -104,7 +107,7 @@ class PostController extends Controller
     /**
      * Displays a form to edit an existing Post entity.
      *
-     * @Route("/{id}/edit", requirements={"id": "\d+"}, name="post_edit")
+     * @Route("/post/{id}/edit", requirements={"id": "\d+"}, name="post_edit")
      * @Method({"GET", "POST"})
      */
     public function editAction(Post $post, Request $request)
@@ -141,7 +144,7 @@ class PostController extends Controller
     /**
      * Deletes a Post entity.
      *
-     * @Route("/{id}", name="post_delete")
+     * @Route("/post/{id}/delete", name="post_delete")
      * @Method("DELETE")
      * @Security("post.isAuthor(user)")
      *
@@ -189,7 +192,7 @@ class PostController extends Controller
     }
 
     /**
-     * @Route("/{id}", name="blog_post")
+     * @Route("/post/{id}", name="blog_post")
      * @Method("GET")
      *
      * NOTE: The $post controller argument is automatically injected by Symfony

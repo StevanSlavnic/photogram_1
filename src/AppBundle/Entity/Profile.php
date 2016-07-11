@@ -35,12 +35,6 @@ class Profile
     */
     protected $id;
 
-//    /**
-//     * @var string
-//     * @ORM\Column(name="username", type="string")
-//     */
-//    protected $username;
-
     /**
      * @var string
      * @ORM\Column(name="firstname", type="string")
@@ -52,6 +46,18 @@ class Profile
      * @ORM\Column(name="lastname", type="string")
      */
     protected $lastname;
+
+//    /**
+//     * @Gedmo\Slug(fields={"profileFullName"}, updatable=false, separator="-")
+//     * @ORM\Column(length=128, unique=true, nullable=false)
+//     */
+//    protected $username;
+
+    /**
+    * @Gedmo\Slug(fields={"firstname", "lastname"}, updatable=false, separator="-")
+    * @ORM\Column(length=128, unique=true, nullable=false)
+    */
+    protected $profileFullName;
 
     /**
      * @var string
@@ -88,7 +94,7 @@ class Profile
     private $imageFile;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      *
      * @var string
      */
@@ -150,7 +156,7 @@ class Profile
     }
 
 //    /**
-//     * @return string
+//     * @return mixed
 //     */
 //    public function getUsername()
 //    {
@@ -158,11 +164,27 @@ class Profile
 //    }
 //
 //    /**
-//     * @param string $username
+//     * @param mixed $username
 //     */
 //    public function setUsername($username)
 //    {
 //        $this->username = $username;
+//    }
+//
+//    /**
+//     * @return mixed
+//     */
+//    public function getProfileFullName()
+//    {
+//        return $this->profileFullName;
+//    }
+//
+//    /**
+//     * @param mixed $profileFullName
+//     */
+//    public function setProfileFullName($profileFullName)
+//    {
+//        $this->profileFullName = $profileFullName;
 //    }
 
     /**

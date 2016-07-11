@@ -52,7 +52,8 @@ class UserProfileController extends Controller
     }
 
     /**
-     * @Route("/user/{firstname}-{lastname}/edit", name="profile_index_edit")
+     * @Route("/user/{username}/edit", name="profile_index_edit")
+     * @ParamConverter("profile", class="AppBundle\Entity\Profile", options={"mapping" : {"username" : "profileUsername"} } )
      * @param Profile $profile
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response

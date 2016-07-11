@@ -3,14 +3,12 @@
 
 namespace AppBundle\Entity;
 
+use AppBundle\Entity\Profile;
 use Doctrine\Common\Collections\ArrayCollection;
 use FOS\UserBundle\Entity\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Gedmo\Mapping\Annotation as Gedmo;
-use AppBundle\Entity\Profile;
-use AppBundle\Form\ProfileType;
 
 /**
  * @ORM\Entity
@@ -27,7 +25,7 @@ class User extends BaseUser
     protected $id;
 
     /**
-     * @ORM\OneToOne(targetEntity="AppBundle\Entity\Profile", cascade={"remove", "persist"})
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\Profile", inversedBy="user", cascade={"remove", "persist"})
      * @ORM\JoinColumn(name="profile_id", referencedColumnName="id", onDelete="CASCADE")
      *
      */
@@ -66,7 +64,7 @@ class User extends BaseUser
     }
 
     /**
-     * @return mixed
+     * @return Profile
      */
     public function getProfile()
     {
@@ -74,9 +72,9 @@ class User extends BaseUser
     }
 
     /**
-     * @param mixed $profile
+     * @param Profile $profile
      */
-    public function setProfile($profile)
+    public function setProfile(Profile $profile)
     {
         $this->profile = $profile;
     }
@@ -113,6 +111,6 @@ class User extends BaseUser
     {
         $this->username = $username;
     }
-
-
+    
+    
 }

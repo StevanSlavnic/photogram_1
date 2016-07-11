@@ -29,31 +29,25 @@ class UserProfileController extends Controller
 {
     /**
      *
-     * @Route("/user/{firstname}-{lastname}/", name="profile_index")
+     *
+     * @Route("/user/{username}", name="profile_index")
+     * @ParamConverter("profile", class="AppBundle\Entity\Profile", options={"mapping" : {"username" : "profileUsername"} } )
+     *
      * @Method("GET")
+     *
      * @param Profile $profile
-     * @param User $user
-     * @param Post $post
-     * @param Post $posts
-     * @param $firstname
-     * @param $lastname
+     *
      * @return Response
-     * @internal param Post $posts
-     * @internal param Post $post
      */
-    public function showAction(Profile $profile, User $user, Post $post, Post $posts, $firstname, $lastname)
+    public function showAction(Profile $profile)
     {
         $posts = $this->getDoctrine()->getRepository('AppBundle:Post')->findBy(array(
-            'user' => $user
+            'user' => $profile->getUser()
         ));
 
         return $this->render('AppBundle:User:profile.html.twig', array(
             'profile' => $profile,
-            'user' => $user,
             'posts' => $posts,
-            'post' => $post,
-            'firstname' => $firstname,
-            'lastname' => $lastname
         ));
     }
 
@@ -63,7 +57,7 @@ class UserProfileController extends Controller
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
      */
-    public function editAction(Profile $profile, Request $request, $firstname, $lastname)
+    public function editAction(Profile $profile, Request $request, $username)
     {
         $entityManager = $this->getDoctrine()->getManager();
 
@@ -73,19 +67,15 @@ class UserProfileController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
-//            $post->setSlug($this->get('slugger')->slugify($post->getTitle()));
-            $entityManager = $this->getDoctrine()->getManager();
 
+            $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($profile);
             $entityManager->flush();
 
             $this->addFlash('success', 'profile.updated_successfully');
 
-//            return $this->redirectToRoute('post_edit', array('id' => $post->getId()));
-//            return $this->redirectToRoute('blog_post', array('posts' => $post));
             return $this->redirectToRoute('profile_index', array(
-                'firstname' => $firstname,
-                'lastname' => $lastname
+                'username' => $username,
             ));
         }
 

@@ -9,7 +9,7 @@
             {#{{ dump() }}#}
             <div class="post-header">
                 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                <a href="{{ path("profile_index", {"username": app.user.profile.profileUsername}) }}">
+                <a href="{{ path("profile_index", {"username": post.user.profile.profileUsername}) }}">
                     {#{{ post.user.fullName }}#}
                     {{ post.user.profile.firstname }} {{ post.user.profile.lastname }}
                 </a>

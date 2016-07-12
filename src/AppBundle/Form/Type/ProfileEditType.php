@@ -22,14 +22,20 @@ class ProfileEditType extends AbstractType
     {
         $builder
             ->add('imageFile', VichImageType::class, array(
-                'required'      => true,
+                'required'      => false,
                 'allow_delete'  => false, // not mandatory, default is true
                 'download_link' => false, // not mandatory, default is true
                 'constraints' => array(
-                    new NotBlank(array(
-                        "message" => "Please upload image"
-                    ))
+//                    new NotBlank(array(
+//                        "message" => "Please upload image"
+//                    ))
                 )
+            ))
+            ->add('firstname', TextType::class, array(
+                'label' => 'label.firstname'
+            ))
+            ->add('lastname', TextType::class, array(
+                'label' => 'label.firstname'
             ))
             ->add('occupation', TextType::class, array(
                 'attr' => array('rows' => 1),

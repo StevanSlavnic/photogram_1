@@ -8,13 +8,17 @@
         <article class="post">
             {#{{ dump() }}#}
             <div class="post-header">
-                {#{% if is_granted('IS_AUTHENTICATED_FULLY') %}#}
-                <a href="{{ path('profile_index', {'username': post.user.profile.profileUsername}) }}">
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <a href="{{ path("profile_index", {"username": app.user.profile.profileUsername}) }}">
                     {#{{ post.user.fullName }}#}
                     {{ post.user.profile.firstname }} {{ post.user.profile.lastname }}
                 </a>
-
-                {#{% endif %}#}
+                    {% else %}
+                        <a href="{{ path("profile_index", {"username": post.user.profile.profileUsername}) }}">
+                            {#{{ post.user.fullName }}#}
+                            {{ post.user.profile.firstname }} {{ post.user.profile.lastname }}
+                        </a>
+                {% endif %}
                 <div class="options pull-right">
                     {% if app.user and post.isAuthor(app.user) %}
                     <div class="btn dropdown pull-right">

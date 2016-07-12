@@ -37,7 +37,8 @@
                             {% block header_navigation_links %}
                                 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                                     <li>
-                                        <a href="#">
+                                        <a href="{{ path("profile_index", {"username": app.user.profile.profileUsername}) }}">
+
                                             {{ app.user.fullName }}
                                         </a>
                                     </li>

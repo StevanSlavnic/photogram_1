@@ -2,6 +2,8 @@
 {% block main %}
     {{ form_start(form, { attr: attr|default({}) }) }}
     {{ form_widget(form.imageFile) }}
+    {{ form_row(form.firstname) }}
+    {{ form_row(form.lastname) }}
     {{ form_row(form.occupation) }}
     {{ form_row(form.about) }}
     <input type="submit" value="{{ button_label|default('label.update'|trans) }}"

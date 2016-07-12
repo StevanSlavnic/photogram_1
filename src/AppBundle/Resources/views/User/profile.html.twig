@@ -28,6 +28,11 @@
                                         </a>
                                     </li>
                                     <li>
+                                        <a href="{{ path('profile_index_edit', {"username": app.user.profile.profileUsername}) }}">
+                                            Edit profile
+                                        </a>
+                                    </li>
+                                    <li>
                                         <a href="{{ path('post_new') }}">
                                             New Post
                                         </a>

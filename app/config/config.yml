@@ -120,7 +120,7 @@ vich_uploader:
         inject_on_load:     false
         delete_on_update:   true
         delete_on_remove:   true
-
+# run this command in console app/console liip:imagine:cache:resolve /path/to/your/image.jpeg
 liip_imagine:
 #    cache_mkdir_mode:     0777
 #    cache_prefix:         /media/cache

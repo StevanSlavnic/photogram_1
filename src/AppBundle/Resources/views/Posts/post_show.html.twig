@@ -8,9 +8,17 @@
     {#{{ dump(profile.profileUsername) }}#}
 <article class="post">
     <div class="post-header">
-        <a href="#">
-            {{ post.user.fullName }}
-        </a>
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            <a href="{{ path("profile_index", {"username": app.user.profile.profileUsername}) }}">
+                {#{{ post.user.fullName }}#}
+                {{ post.user.profile.firstname }} {{ post.user.profile.lastname }}
+            </a>
+        {% else %}
+            <a href="{{ path("profile_index", {"username": post.user.profile.profileUsername}) }}">
+                {#{{ post.user.fullName }}#}
+                {{ post.user.profile.firstname }} {{ post.user.profile.lastname }}
+            </a>
+        {% endif %}
     </div>
     <div class="image-post">
         <img class="img-responsive" src="{{ asset('images/posts/')}}{{ post.imageName }}" alt="{{ post.imageName }}">

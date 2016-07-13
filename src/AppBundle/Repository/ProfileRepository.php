@@ -29,5 +29,19 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class ProfileRepository extends EntityRepository
 {
-
+    /**
+     * @return Query
+     */
+    public function queryLatest()
+    {
+        return $this->getEntityManager()
+            ->createQuery('
+                SELECT p
+                FROM AppBundle:Post p
+                WHERE p.publishedAt <= :now
+                ORDER BY p.publishedAt ASC 
+            ')
+            ->setParameter('now', new \DateTime())
+            ;
+    }
 }

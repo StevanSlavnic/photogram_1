@@ -4,7 +4,7 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
 @import "bootstrap";
-@import "material-kit";
+@import "ct-paper";
 @import "font-awesome";
 
 
@@ -22,7 +22,13 @@ body {
   box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
   .post-header {
     margin: 0px 20px;
+    position: relative;
     .options {
+      display: inline;
+      margin: 0;
+      position: absolute;
+      right: 0;
+      top: 12px;
       .btn {
         padding: 0;
         margin: 2px;
@@ -48,6 +54,7 @@ body {
 
   .image-post {
     background-color: dimgrey;
+    display: inline-block;
     img {
       margin: 0 auto;
       width: 100%;

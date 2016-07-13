@@ -27,11 +27,13 @@
                                             {{ app.user.fullName }}
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="{{ path('profile_index_edit', {"username": app.user.profile.profileUsername}) }}">
-                                            Edit profile
-                                        </a>
-                                    </li>
+                                    {#{% if is_granted('IS_AUTHENTICATED_FULLY') %}#}
+                                    {#<li>#}
+                                        {#<a href="{{ path('profile_index_edit', {"username": app.user.profile.profileUsername}) }}">#}
+                                            {#Edit profile#}
+                                        {#</a>#}
+                                    {#</li>#}
+                                    {#{% endif %}#}
                                     <li>
                                         <a href="{{ path('post_new') }}">
                                             New Post
@@ -88,123 +90,110 @@
     {% endblock %}
     {% block body %}
         <div class="wrapper">
-            <div class="header header-filter" style="background-image: url('{{ asset('./bundles/app/images/rick.jpg') }}');"></div>
+            <div class="profile-background" style="background-image: url('{{ asset('./bundles/app/images/rick.jpg') }}');"></div>
+                <div class="filter-black"></div>
+            </div>
+            <div class="profile-content section-nude">
+                <div class="container">
+                    <div class="row owner">
+                        <div class="col-md-2 col-md-offset-5 col-sm-4 col-sm-offset-4 col-xs-6 col-xs-offset-3 text-center">
+                            <div class="avatar">
+                                {% if profile.imageName is defined %}
+                                    <img src="{{ profile.imageName | imagine_filter('my_thumb')  }}" alt="Circle Image" class="img-circle img-responsive img-raised">
+                                {% else %}
+                                    <img src="https://s3.amazonaws.com/creativetim_bucket/new_logo.png" />
+                                {% endif %}
 
-            <div class="main-raised">
-                <div class="profile-content">
-                    <div class="container">
-                        <div class="row">
-                            <div class="profile">
-                                <div class="avatar">
-                                    {% if profile.imageName is defined %}
-                                        <img src="{{ profile.imageName | imagine_filter('my_thumb')  }}" alt="Circle Image" class="img-circle img-responsive img-raised">
-                                    {% else %}
-                                        <img src="https://s3.amazonaws.com/creativetim_bucket/new_logo.png" />
-                                    {% endif %}
-
-                                    {#<img src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAATCAAAAJDk4ZjEyN2MwLTQ5ZmYtNDE0Ni1hY2FjLTJlZDExZTlmMTUxOQ.jpg9" alt="Circle Image" class="img-circle img-responsive img-raised">#}
-                                    {#<img src="{{ profile.imageName | imagine_filter('my_thumb')  }}" alt="Circle Image" class="img-circle img-responsive img-raised">#}
-                                    {#<img src="{{ profile.imageName | imagine_filter('my_thumb')  }}" alt="Circle Image" class="img-circle img-responsive img-raised">#}
-                                    {#<img src="/images/users/{{ profile.imageName }}" alt="Circle Image" class="img-circle img-responsive img-raised">#}
-                                </div>
-                                <div class="name">
-                                    <h3 class="title">{{ profile.firstname }} {{ profile.lastname }}</h3>
-                                    <h6>{{ profile.occupation }}</h6>
-                                </div>
+                                {#<img src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAATCAAAAJDk4ZjEyN2MwLTQ5ZmYtNDE0Ni1hY2FjLTJlZDExZTlmMTUxOQ.jpg9" alt="Circle Image" class="img-circle img-responsive img-raised">#}
+                                {#<img src="{{ profile.imageName | imagine_filter('my_thumb')  }}" alt="Circle Image" class="img-circle img-responsive img-raised">#}
+                                {#<img src="{{ profile.imageName | imagine_filter('my_thumb')  }}" alt="Circle Image" class="img-circle img-responsive img-raised">#}
+                                {#<img src="/images/users/{{ profile.imageName }}" alt="Circle Image" class="img-circle img-responsive img-raised">#}
+                            </div>
+                            <div class="name">
+                                <h4>{{ profile.firstname }} {{ profile.lastname }}<br /><small>{{ profile.occupation }}</small></h4>
                             </div>
                         </div>
-                        <div class="description text-center">
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3 text-center">
                             <p>{{ profile.about }}</p>
+                            <br />
+                        {% if app.user == user or is_granted('IS_AUTHENTICATED_FULLY', app.user) %}
+                            <a href="{{ path('profile_index_edit', {"username": app.user.profile.profileUsername}) }}" class="btn"><i class="fa fa-cog"></i>Settings</a>
+                        {% endif %}
                         </div>
-
-                        <div class="row">
-                            <div class="col-md-6 col-md-offset-3">
-                                <div class="profile-tabs">
-                                    <div class="nav-align-center">
-                                        <ul class="nav nav-pills" role="tablist">
-                                            <li class="active">
-                                                <a href="#studio" role="tab" data-toggle="tab">
-                                                    <i class="material-icons">camera</i>
-                                                    My Posts
+                    </div>
+                    <div class="profile-tabs">
+                        <div class="nav-tabs-navigation">
+                            <div class="nav-tabs-wrapper">
+                                <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
+                                    <li class="active"><a href="#posts" data-toggle="tab">Posts</a></li>
+                                    <li><a href="#follows" data-toggle="tab">Follows</a></li>
+                                    <li><a href="#following" data-toggle="tab">Following</a></li>
+                                    <!--                                 <li><a href="#following" data-toggle="tab">Following</a></li> -->
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="my-tab-content" class="tab-content">
+                            <div class="tab-pane active text-center" id="posts">
+                                {% for post in posts|batch(999999999) %}
+                                    <div class="col-md-6 col-md-offset-3 list-masonry">
+                                        {% for post in posts %}
+                                            <div class="col-md-6 post-in-list">
+                                                <a href="{{ path('blog_post', { id: post.id }) }}">
+                                                    <img src="{{ asset('images/posts/') }}{{ post.imageName }}" class="img-rounded img-responsive" />
                                                 </a>
-                                            </li>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                            <div class="tab-pane" id="follows">
+                                <div class="row">
+                                    <div class="col-md-6 col-md-offset-3">
+                                        <ul class="list-unstyled follows">
                                             <li>
-                                                <a href="#work" role="tab" data-toggle="tab">
-                                                    <i class="material-icons">palette</i>
-                                                    I Follow
-                                                </a>
+                                                <div class="row">
+                                                    <div class="col-md-2 col-md-offset-0 col-xs-3 col-xs-offset-2">
+                                                        <img src="../assets/paper_img/flume.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                                    </div>
+                                                    <div class="col-md-7 col-xs-4">
+                                                        <h6>Flume<br /><small>Musical Producer</small></h6>
+                                                    </div>
+                                                    <div class="col-md-3 col-xs-2">
+                                                        <div class="unfollow" rel="tooltip" title="Unfollow">
+                                                            <label class="checkbox" for="checkbox1" >
+                                                                <input type="checkbox" value="" id="checkbox1" data-toggle="checkbox" checked>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </li>
+                                            <hr />
                                             <li>
-                                                <a href="#shows" role="tab" data-toggle="tab">
-                                                    <i class="material-icons">favorite</i>
-                                                    My Followers
-                                                </a>
+                                                <div class="row">
+                                                    <div class="col-md-2 col-md-offset-0 col-xs-3 col-xs-offset-2">
+                                                        <img src="../assets/paper_img/banks.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                                    </div>
+                                                    <div class="col-md-7 col-xs-4">
+                                                        <h6>Banks<br /><small>Singer</small></h6>
+                                                    </div>
+                                                    <div class="col-md-3 col-xs-2">
+                                                        <div class="unfollow" rel="tooltip" title="Unfollow">
+                                                            <label class="checkbox" for="checkbox1" >
+                                                                <input type="checkbox" value="" id="checkbox1" data-toggle="checkbox" checked>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </li>
                                         </ul>
-
-                                        <div class="tab-content gallery">
-                                            <div class="tab-pane active" id="studio">
-                                                {% for post in posts|batch(999999999) %}
-                                                    <div class="row list-masonry">
-                                                        {% for post in posts %}
-                                                            <div class="col-md-6 post-in-list">
-                                                                <a href="{{ path('blog_post', { id: post.id }) }}">
-                                                                    <img src="{{ asset('images/posts/') }}{{ post.imageName }}" class="img-rounded img-responsive" />
-                                                                </a>
-                                                            </div>
-                                                        {% endfor %}
-                                                    </div>
-                                                {% endfor %}
-
-                                                {#<div class="row">#}
-                                                    {#&#123;&#35;<div class="col-md-6">&#35;&#125;#}
-
-                                                       {#&#123;&#35;{% for post in posts %}&#35;&#125;#}
-
-                                                           {#&#123;&#35;<img src="{{ asset('images/posts/') }}{{ post.imageName }}" class="img-rounded" />&#35;&#125;#}
-
-
-                                                       {#&#123;&#35;{% endfor %}&#35;&#125;#}
-
-                                                        {#&#123;&#35;&#123;&#35;<img src="../assets/img/examples/chris0.jpg" class="img-rounded" />&#35;&#125;&#35;&#125;#}
-                                                    {#&#123;&#35;</div>&#35;&#125;#}
-                                                    {#<div class="col-md-6">#}
-                                                        {#<img src="../assets/img/examples/chris3.jpg" class="img-rounded" />#}
-                                                        {#<img src="../assets/img/examples/chris4.jpg" class="img-rounded" />#}
-                                                    {#</div>#}
-                                                {#</div>#}
-                                            </div>
-                                            <div class="tab-pane text-center" id="work">
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <img src="../assets/img/examples/chris5.jpg" class="img-rounded" />
-                                                        <img src="../assets/img/examples/chris7.jpg" class="img-rounded" />
-                                                        <img src="../assets/img/examples/chris9.jpg" class="img-rounded" />
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <img src="../assets/img/examples/chris6.jpg" class="img-rounded" />
-                                                        <img src="../assets/img/examples/chris8.jpg" class="img-rounded" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="tab-pane text-center" id="shows">
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <img src="../assets/img/examples/chris4.jpg" class="img-rounded" />
-                                                        <img src="../assets/img/examples/chris6.jpg" class="img-rounded" />
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <img src="../assets/img/examples/chris7.jpg" class="img-rounded" />
-                                                        <img src="../assets/img/examples/chris5.jpg" class="img-rounded" />
-                                                        <img src="../assets/img/examples/chris9.jpg" class="img-rounded" />
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
                                     </div>
                                 </div>
-                                <!-- End Profile Tabs -->
+                            </div>
+                            <div class="tab-pane text-center" id="following">
+                                <h3 class="text-muted">Not following anyone yet :(</h3>
+                                <btn class="btn btn-warning btn-fill">Find artists</btn>
                             </div>
                         </div>
 

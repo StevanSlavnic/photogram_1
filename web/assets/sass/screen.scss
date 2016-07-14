@@ -76,11 +76,16 @@ body {
       margin-left: 10px;
     }
   }
-  #post-add-comment {
-    margin: 0 20px;
-    .input {
-      width: 100%;
+  .post-comment-add {
+    margin: 0 20px 20px;
+    padding: 0 0 20px 0;
+    .input { border: 0;
       border: 0;
+      width: 100%;
+      padding: 10px;
+      &:focus {
+        border: 0;
+      }
     }
   }
 }

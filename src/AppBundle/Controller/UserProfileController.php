@@ -41,6 +41,10 @@ class UserProfileController extends Controller
      */
     public function showAction(Profile $profile)
     {
+        if (!empty($posts)) {
+            /** @var Post $posts */
+            $posts = $this->getDoctrine()->getRepository('AppBundle:Post')->getLatestForUserQuery();
+        }
         $posts = $this->getDoctrine()->getRepository('AppBundle:Post')->findBy(array(
             'user' => $profile->getUser()
         ));

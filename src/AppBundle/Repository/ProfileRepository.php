@@ -16,6 +16,7 @@ use AppBundle\Entity\User;
 use AppBundle\Entity\Post;
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Query;
 
 
 /**
@@ -30,18 +31,23 @@ use Doctrine\ORM\Mapping as ORM;
 class ProfileRepository extends EntityRepository
 {
     /**
+     * Get latest post for given user
+     *
+     * @param User $user
+     *
      * @return Query
+     *
+     * @throws \Doctrine\ORM\NoResultException
+     * @throws \Doctrine\ORM\NonUniqueResultException
      */
-    public function queryLatest()
+    public function getLatestForUserQuery(User $user)
     {
-        return $this->getEntityManager()
-            ->createQuery('
-                SELECT p
-                FROM AppBundle:Post p
-                WHERE p.publishedAt <= :now
-                ORDER BY p.publishedAt ASC 
-            ')
-            ->setParameter('now', new \DateTime())
-            ;
+        return $this->getEntityManager()->createQueryBuilder()
+            ->select('posts')
+            ->from('AppBundle:Post', 'post')
+            ->where('post.user = :user')
+            ->orderBy('post.publishedAt', 'DESC')
+            ->setParameter('user', $user)
+            ->getQuery();
     }
 }

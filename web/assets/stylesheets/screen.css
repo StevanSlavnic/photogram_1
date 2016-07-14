@@ -14075,12 +14075,19 @@ body {
   margin-left: 10px;
 }
 /* line 79, ../sass/screen.scss */
-.post #post-add-comment {
-  margin: 0 20px;
+.post .post-comment-add {
+  margin: 0 20px 20px;
+  padding: 0 0 20px 0;
 }
-/* line 81, ../sass/screen.scss */
-.post #post-add-comment .input {
+/* line 82, ../sass/screen.scss */
+.post .post-comment-add .input {
+  border: 0;
+  border: 0;
   width: 100%;
+  padding: 10px;
+}
+/* line 86, ../sass/screen.scss */
+.post .post-comment-add .input:focus {
   border: 0;
 }
 
@@ -14089,7 +14096,7 @@ body {
 *Edit post
 *
 */
-/* line 102, ../sass/screen.scss */
+/* line 107, ../sass/screen.scss */
 .form-wrapper {
   width: 60%;
   margin: 20px auto;
@@ -14099,7 +14106,7 @@ body {
   border-radius: 3px;
   position: relative;
 }
-/* line 110, ../sass/screen.scss */
+/* line 115, ../sass/screen.scss */
 .form-wrapper a.sf-form-row-add-image {
   color: #ababab;
   text-align: center;
@@ -14117,7 +14124,7 @@ body {
   padding: 15px 0;
   position: relative;
 }
-/* line 127, ../sass/screen.scss */
+/* line 132, ../sass/screen.scss */
 .form-wrapper #post_imageFile {
   display: block;
   position: absolute;
@@ -14132,12 +14139,12 @@ body {
   opacity: 0;
   transform: translateX(-50%);
 }
-/* line 141, ../sass/screen.scss */
+/* line 146, ../sass/screen.scss */
 .form-wrapper img {
   margin: 0 auto;
 }
 
-/* line 150, ../sass/screen.scss */
+/* line 155, ../sass/screen.scss */
 .messages .alert-dismissible .close {
   position: relative;
   top: 0px;
@@ -14145,7 +14152,7 @@ body {
   color: inherit;
 }
 
-/* line 158, ../sass/screen.scss */
+/* line 163, ../sass/screen.scss */
 .main-raised {
   margin: -60px 30px 0px;
   border-radius: 6px;
@@ -14155,61 +14162,61 @@ body {
   z-index: 3;
 }
 
-/* line 168, ../sass/screen.scss */
+/* line 173, ../sass/screen.scss */
 .profile-content .header {
   height: 380px;
   background-position: top center;
 }
-/* line 172, ../sass/screen.scss */
+/* line 177, ../sass/screen.scss */
 .profile-content .profile {
   text-align: center;
 }
-/* line 174, ../sass/screen.scss */
+/* line 179, ../sass/screen.scss */
 .profile-content .profile img {
   max-width: 160px;
   margin: -80px auto 0;
 }
-/* line 179, ../sass/screen.scss */
+/* line 184, ../sass/screen.scss */
 .profile-content .description {
   margin: 30px auto 0;
   max-width: 600px;
 }
-/* line 183, ../sass/screen.scss */
+/* line 188, ../sass/screen.scss */
 .profile-content .profile-tabs {
   margin-top: 60px;
 }
-/* line 187, ../sass/screen.scss */
+/* line 192, ../sass/screen.scss */
 .profile-content .gallery {
   margin-top: 45px;
   padding-bottom: 50px;
 }
-/* line 190, ../sass/screen.scss */
+/* line 195, ../sass/screen.scss */
 .profile-content .gallery img {
   width: 100%;
   margin-bottom: 30px;
 }
 
-/* line 198, ../sass/screen.scss */
+/* line 203, ../sass/screen.scss */
 .list-masonry {
   -moz-column-width: 18em;
   -webkit-column-width: 18em;
   -moz-column-gap: 1em;
   -webkit-column-gap: 1em;
 }
-/* line 203, ../sass/screen.scss */
+/* line 208, ../sass/screen.scss */
 .list-masonry .post-in-list {
   display: inline-block;
   padding: .25rem;
   width: 100%;
 }
 
-/* line 211, ../sass/screen.scss */
+/* line 216, ../sass/screen.scss */
 .navbar .navbar-nav > li > a .fa {
   top: 3px;
   position: relative;
 }
 
-/* line 216, ../sass/screen.scss */
+/* line 221, ../sass/screen.scss */
 .login-form {
   width: 100%;
   max-width: 400px;
@@ -14221,7 +14228,7 @@ body {
   transform: translate(-50%, -50%);
 }
 
-/* line 227, ../sass/screen.scss */
+/* line 232, ../sass/screen.scss */
 .header {
   background-image: url("");
 }

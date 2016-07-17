@@ -29,21 +29,32 @@ class ProfileEditType extends AbstractType
 //                    new NotBlank(array(
 //                        "message" => "Please upload image"
 //                    ))
-                )
+                ),
             ))
             ->add('firstname', TextType::class, array(
-                'label' => 'label.firstname'
+
+                'attr' => array(
+                    'class' => 'form-control'
+                )
             ))
             ->add('lastname', TextType::class, array(
-                'label' => 'label.firstname'
+
+                'attr' => array(
+                    'class' => 'form-control'
+                )
             ))
             ->add('occupation', TextType::class, array(
-                'attr' => array('rows' => 1),
-                'label' => 'label.occupation',
+                'attr' => array(
+                    'class' => 'form-control'
+                    ),
+
             ))
             ->add('about', TextareaType::class, array(
-                'label' => 'label.about',
 
+                'attr' => array(
+                    'rows' => 2,
+                    'class' => 'form-control'
+                )
             ))
 
         ;

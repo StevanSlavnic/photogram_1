@@ -5,22 +5,26 @@
 {% block main %}
     {#<h1>{{ 'title.post_new'|trans }}</h1>#}
 
-
+<style></style>
 
 <div class="form-wrapper">
-    <img class="img-responsive" id="imagePreview">
+    <div class="image-wrapper">
+        <img class="img-responsive" id="imagePreview">
+        <a id="cancel" class="fa fa-times cancel" aria-hidden="true"></a>
+    </div>
     {{ form_start(form) }}
-    <div class="text-center">
+    <div class="image-form-wrapper text-center">
         <a class="sf-form-row-add-image">
             <i class="fa fa-plus"></i>
             <p>Choose Photo</p>
             {{ form_widget(form.imageFile) }}
         </a>
     </div>
+
     {{ form_errors(form.imageFile) }}
-    {#{{ form_row(form.title) }}#}
-    {#{{ form_row(form.summary) }}#}
-    {{ form_row(form.content) }}
+    <div class="form-group">
+    {{ form_row(form.content, {attr: { class: 'form-control', placeholder: 'Enter caption'}}) }}
+    </div>
     <div class="hidden">
     {{ form_row(form.authorEmail, { label_attr: { class: 'hidden' }}) }}
     {{ form_row(form.publishedAt, { label_attr: { class: 'hidden' }}) }}
@@ -39,17 +43,33 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script type="text/javascript">
+        $("#cancel").hide();
         document.getElementById("post_imageFile_file").onchange = function () {
             var reader = new FileReader();
 
             reader.onload = function (e) {
                 // get loaded data and render thumbnail.
                 document.getElementById("imagePreview").src = e.target.result;
+                $("#cancel").show();
+                $('.sf-form-row-add-image').hide();
             };
 
             // read the image file as a data URL.
             reader.readAsDataURL(this.files[0]);
+            $('#cancel').click(function(e)
+            {
+                $("#cancel").show();
+                $('#post_imageFile_file').val("");
+                $('#imagePreview').attr("src","");
+                $('.sf-form-row-add-image').show();
+
+            });
+            $("#cancel").click(function(){
+                $(this).hide();
+            });
+
         };
+
     </script>
 {% endblock %}
 

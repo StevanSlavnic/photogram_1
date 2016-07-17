@@ -5,8 +5,12 @@
 {% block main %}
     <div class="form-wrapper">
     {#<h1>{{ 'title.edit_post'|trans({'%id%': post.id}) }}</h1>#}
-    <img class="img-responsive" id="imagePreview" >
 
+    <div class="image-wrapper">
+        <img id="edit-image" class="img-responsive" src="{{ asset('images/posts/')}}{{ post.imageName }}" alt="{{ post.imageName }}" title="#" />
+        <img class="img-responsive" id="imagePreview">
+        <a id="cancel" class="fa fa-times cancel" aria-hidden="true"></a>
+    </div>
     {{ include('@App/Posts/_form.html.twig', {
         form: edit_form,
         button_label: 'action.save'|trans,
@@ -17,19 +21,41 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script type="text/javascript">
+        $("#cancel").click(function(){
+            $("#edit-image").hide();
+            $("#cancel").hide(this);
+            $('.sf-form-row-add-image').show();
+        });
+        $('.sf-form-row-add-image').hide();
         document.getElementById("post_imageFile_file").onchange = function () {
             var reader = new FileReader();
 
             reader.onload = function (e) {
                 // get loaded data and render thumbnail.
                 document.getElementById("imagePreview").src = e.target.result;
+                $("#cancel").show();
+                $('.sf-form-row-add-image').hide();
             };
 
             // read the image file as a data URL.
             reader.readAsDataURL(this.files[0]);
+            $('#cancel').click(function(e)
+            {
+                $("#cancel").hide();
+                $('#post_imageFile_file').val("");
+                $('#imagePreview').attr("src","");
+                $('.sf-form-row-add-image').show();
+
+            });
+            $("#cancel").click(function(){
+                $(this).hide();
+            });
+
         };
+
     </script>
 {% endblock %}
+
 
 {#{% block sidebar %}#}
     {#<div class="section actions">#}

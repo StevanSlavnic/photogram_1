@@ -50,7 +50,7 @@
         </div>
     {% endfor %}
     {#<h3>{{ 'post.num_comments'|transchoice(post.comments|length) }}</h3>#}
-    <div id="post-add-comment" class="">
+    <div id="post-add-comment" class="post-comment-add">
         {# The 'IS_AUTHENTICATED_FULLY' role ensures that the user has entered
         his/her credentials (login + password) during this session. If he/she
         is automatically logged via the 'Remember Me' functionality, he/she won't
@@ -61,7 +61,7 @@
             {{ render(controller('AppBundle:Posts/Post:commentForm', { 'id': post.id })) }}
         {% else %}
             <p>
-                <a class="btn btn-success" href="{{ path('fos_user_security_login') }}">
+                <a class="btn btn-primary btn-fill" href="{{ path('fos_user_security_login') }}">
                     <i class="fa fa-sign-in"></i> {{ 'action.sign_in'|trans }}
                 </a>
                 {{ 'post.to_publish_a_comment'|trans }}

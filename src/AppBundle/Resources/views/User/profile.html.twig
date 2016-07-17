@@ -146,6 +146,11 @@
                                             </div>
                                         {% endfor %}
                                     </div>
+                                {% else %}
+                                    <div class="well">
+                                        <h4>Still no posts...</h4>
+                                        <a href="{{ path('post_new') }}" class="btn">Create your first post</a>
+                                    </div>
                                 {% endfor %}
                             </div>
                             <div class="tab-pane" id="follows">

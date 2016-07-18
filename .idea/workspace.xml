@@ -1,147 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a7396437-68d1-473a-83b2-d5b512ced390" name="Default" comment="Major update 10&#10;&#10;&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/UserConnection.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/stylesheets/croopie.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/js/croppie.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/homepage.html.twig" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/css/app_coming-sssoon_3.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/css/app_coming-sssoon_4.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/css/app_examples_2.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/css/app_font-awesome_2.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/css/app_font-awesome_3.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/css/app_material-kit_1.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/css/app_screen_3.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/css/app_screen_4.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/css/app_screen_5.css" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_alerts.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_alerts.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/562b27fdeefcd09e46aaed049a5c7f405494c891/_alerts.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/562b27fdeefcd09e46aaed049a5c7f405494c891/_alerts.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_alerts.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_alerts.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/7d48570b32453a6c4af5153c0678f793e8e32e6d/_animated.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/7d48570b32453a6c4af5153c0678f793e8e32e6d/_animated.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_background-variant.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_background-variant.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_badges.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_badges.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/89bc479e5edc2b5484ab0105424e12a59a459779/_bootstrap.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/89bc479e5edc2b5484ab0105424e12a59a459779/_bootstrap.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_border-radius.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_border-radius.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/7d48570b32453a6c4af5153c0678f793e8e32e6d/_bordered-pulled.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/7d48570b32453a6c4af5153c0678f793e8e32e6d/_bordered-pulled.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_breadcrumbs.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_breadcrumbs.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_button-groups.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_button-groups.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/233cb94adc01e8580cc866b49ebb9c034fd97a04/_buttons.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/233cb94adc01e8580cc866b49ebb9c034fd97a04/_buttons.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_buttons.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_buttons.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/562b27fdeefcd09e46aaed049a5c7f405494c891/_buttons.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/562b27fdeefcd09e46aaed049a5c7f405494c891/_buttons.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_buttons.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_buttons.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/562b27fdeefcd09e46aaed049a5c7f405494c891/_carousel.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/562b27fdeefcd09e46aaed049a5c7f405494c891/_carousel.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_carousel.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_carousel.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_center-block.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_center-block.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/562b27fdeefcd09e46aaed049a5c7f405494c891/_checkbox-radio.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/562b27fdeefcd09e46aaed049a5c7f405494c891/_checkbox-radio.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_clearfix.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_clearfix.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_close.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_close.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_code.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_code.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/562b27fdeefcd09e46aaed049a5c7f405494c891/_collapse.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/562b27fdeefcd09e46aaed049a5c7f405494c891/_collapse.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_component-animations.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_component-animations.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/7d48570b32453a6c4af5153c0678f793e8e32e6d/_core.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/7d48570b32453a6c4af5153c0678f793e8e32e6d/_core.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/562b27fdeefcd09e46aaed049a5c7f405494c891/_datepicker.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/562b27fdeefcd09e46aaed049a5c7f405494c891/_datepicker.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/562b27fdeefcd09e46aaed049a5c7f405494c891/_dropdown.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/562b27fdeefcd09e46aaed049a5c7f405494c891/_dropdown.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_dropdowns.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_dropdowns.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/7d48570b32453a6c4af5153c0678f793e8e32e6d/_fixed-width.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/7d48570b32453a6c4af5153c0678f793e8e32e6d/_fixed-width.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_forms.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_forms.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_forms.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_forms.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_gradients.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_gradients.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_grid-framework.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_grid-framework.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_grid.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_grid.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_grid.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_grid.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_hide-text.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_hide-text.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/7d48570b32453a6c4af5153c0678f793e8e32e6d/_icons.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/7d48570b32453a6c4af5153c0678f793e8e32e6d/_icons.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_image.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_image.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/562b27fdeefcd09e46aaed049a5c7f405494c891/_images.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/562b27fdeefcd09e46aaed049a5c7f405494c891/_images.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_input-groups.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_input-groups.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/233cb94adc01e8580cc866b49ebb9c034fd97a04/_inputs.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/233cb94adc01e8580cc866b49ebb9c034fd97a04/_inputs.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/562b27fdeefcd09e46aaed049a5c7f405494c891/_inputs.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/562b27fdeefcd09e46aaed049a5c7f405494c891/_inputs.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_jumbotron.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_jumbotron.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/233cb94adc01e8580cc866b49ebb9c034fd97a04/_labels.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/233cb94adc01e8580cc866b49ebb9c034fd97a04/_labels.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_labels.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_labels.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/562b27fdeefcd09e46aaed049a5c7f405494c891/_labels.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/562b27fdeefcd09e46aaed049a5c7f405494c891/_labels.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_labels.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_labels.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/7d48570b32453a6c4af5153c0678f793e8e32e6d/_larger.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/7d48570b32453a6c4af5153c0678f793e8e32e6d/_larger.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_list-group.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_list-group.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_list-group.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_list-group.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/7d48570b32453a6c4af5153c0678f793e8e32e6d/_list.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/7d48570b32453a6c4af5153c0678f793e8e32e6d/_list.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_media.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_media.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/562b27fdeefcd09e46aaed049a5c7f405494c891/_misc.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/562b27fdeefcd09e46aaed049a5c7f405494c891/_misc.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/562b27fdeefcd09e46aaed049a5c7f405494c891/_mixins.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/562b27fdeefcd09e46aaed049a5c7f405494c891/_mixins.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_mixins.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_mixins.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/7d48570b32453a6c4af5153c0678f793e8e32e6d/_mixins.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/7d48570b32453a6c4af5153c0678f793e8e32e6d/_mixins.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/562b27fdeefcd09e46aaed049a5c7f405494c891/_modal.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/562b27fdeefcd09e46aaed049a5c7f405494c891/_modal.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_modals.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_modals.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_nav-divider.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_nav-divider.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_nav-vertical-align.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_nav-vertical-align.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_navbar.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_navbar.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/233cb94adc01e8580cc866b49ebb9c034fd97a04/_navbars.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/233cb94adc01e8580cc866b49ebb9c034fd97a04/_navbars.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/562b27fdeefcd09e46aaed049a5c7f405494c891/_navbars.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/562b27fdeefcd09e46aaed049a5c7f405494c891/_navbars.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_navs.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_navs.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_normalize.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_normalize.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_opacity.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_opacity.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_pager.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_pager.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_pagination.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_pagination.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_pagination.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_pagination.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_panels.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_panels.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_panels.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_panels.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/7d48570b32453a6c4af5153c0678f793e8e32e6d/_path.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/7d48570b32453a6c4af5153c0678f793e8e32e6d/_path.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_popovers.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_popovers.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_print.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_print.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_progress-bar.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_progress-bar.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/562b27fdeefcd09e46aaed049a5c7f405494c891/_progress-bars.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/562b27fdeefcd09e46aaed049a5c7f405494c891/_progress-bars.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_progress-bars.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_progress-bars.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_reset-filter.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_reset-filter.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_resize.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_resize.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_responsive-embed.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_responsive-embed.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_responsive-utilities.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_responsive-utilities.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_responsive-visibility.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_responsive-visibility.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/562b27fdeefcd09e46aaed049a5c7f405494c891/_responsive.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/562b27fdeefcd09e46aaed049a5c7f405494c891/_responsive.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/7d48570b32453a6c4af5153c0678f793e8e32e6d/_rotated-flipped.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/7d48570b32453a6c4af5153c0678f793e8e32e6d/_rotated-flipped.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_scaffolding.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_scaffolding.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/562b27fdeefcd09e46aaed049a5c7f405494c891/_sections.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/562b27fdeefcd09e46aaed049a5c7f405494c891/_sections.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_size.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_size.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/562b27fdeefcd09e46aaed049a5c7f405494c891/_sliders.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/562b27fdeefcd09e46aaed049a5c7f405494c891/_sliders.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/7d48570b32453a6c4af5153c0678f793e8e32e6d/_stacked.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/7d48570b32453a6c4af5153c0678f793e8e32e6d/_stacked.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_tab-focus.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_tab-focus.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_table-row.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_table-row.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_tables.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_tables.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/562b27fdeefcd09e46aaed049a5c7f405494c891/_tabs-navs-pagination.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/562b27fdeefcd09e46aaed049a5c7f405494c891/_tabs-navs-pagination.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/233cb94adc01e8580cc866b49ebb9c034fd97a04/_tabs.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/233cb94adc01e8580cc866b49ebb9c034fd97a04/_tabs.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_text-emphasis.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_text-emphasis.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_text-overflow.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_text-overflow.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_thumbnails.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_thumbnails.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_tooltip.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_tooltip.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/562b27fdeefcd09e46aaed049a5c7f405494c891/_tooltips-and-popovers.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/562b27fdeefcd09e46aaed049a5c7f405494c891/_tooltips-and-popovers.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/233cb94adc01e8580cc866b49ebb9c034fd97a04/_transparency.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/233cb94adc01e8580cc866b49ebb9c034fd97a04/_transparency.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_type.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_type.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/562b27fdeefcd09e46aaed049a5c7f405494c891/_typography.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/562b27fdeefcd09e46aaed049a5c7f405494c891/_typography.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_utilities.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_utilities.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/562b27fdeefcd09e46aaed049a5c7f405494c891/_variables.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/562b27fdeefcd09e46aaed049a5c7f405494c891/_variables.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_variables.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_variables.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/7d48570b32453a6c4af5153c0678f793e8e32e6d/_variables.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/7d48570b32453a6c4af5153c0678f793e8e32e6d/_variables.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/233cb94adc01e8580cc866b49ebb9c034fd97a04/_vendor-prefixes.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/233cb94adc01e8580cc866b49ebb9c034fd97a04/_vendor-prefixes.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_vendor-prefixes.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/2977b03de9272dd3e919dab1eb9ef10529432acd/_vendor-prefixes.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_wells.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/6779f4fb19123f9c9a9046823fea723b41eaa9c0/_wells.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/89bc479e5edc2b5484ab0105424e12a59a459779/ct-paper.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/89bc479e5edc2b5484ab0105424e12a59a459779/ct-paper.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/89bc479e5edc2b5484ab0105424e12a59a459779/font-awesome.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/89bc479e5edc2b5484ab0105424e12a59a459779/font-awesome.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/.sass-cache/89bc479e5edc2b5484ab0105424e12a59a459779/screen.scssc" afterPath="$PROJECT_DIR$/web/assets/.sass-cache/89bc479e5edc2b5484ab0105424e12a59a459779/screen.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Form/CommentType.php" afterPath="$PROJECT_DIR$/src/AppBundle/Form/CommentType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Form/Type/ProfileEditType.php" afterPath="$PROJECT_DIR$/src/AppBundle/Form/Type/ProfileEditType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/Posts/_form.html.twig" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/Posts/_form.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/Posts/edit.html.twig" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/Posts/edit.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/Homepage/index.html.twig" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/Homepage/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/Posts/new.html.twig" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/Posts/new.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/photogram_new.iml" afterPath="$PROJECT_DIR$/.idea/photogram_new.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/Posts/post_show.html.twig" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/Posts/post_show.html.twig" />
+    <list default="true" id="a7396437-68d1-473a-83b2-d5b512ced390" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/BaseController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/User/UserConnection.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Manager/UserConnectionManager.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Event/UserWasFollowedEvent.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/EventListener/UserWasFollowedEventListener.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/js/connections.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/js/echo.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/User/follow_button_large.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/User/follow_button_small.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/User/followers.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/User/following.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/User/user_connection_followers.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/User/user_connection_following.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/AppKernel.php" afterPath="$PROJECT_DIR$/app/AppKernel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Profile.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Profile.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/UserConnection.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/UserConnection.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/UserProfileController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/UserProfileController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/app.js" afterPath="$PROJECT_DIR$/web/js/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/User/profile.html.twig" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/User/profile.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/User/profile_edit.html.twig" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/User/profile_edit.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/stylesheets/screen.css" afterPath="$PROJECT_DIR$/web/assets/stylesheets/screen.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/sass/screen.scss" afterPath="$PROJECT_DIR$/web/assets/sass/screen.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/default/stylesheets.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/default/stylesheets.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/routing.yml" afterPath="$PROJECT_DIR$/app/config/routing.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/services.yml" afterPath="$PROJECT_DIR$/app/config/services.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="photogram_new.iws" />
@@ -184,44 +68,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="profile_edit.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/User/profile_edit.html.twig">
+      <file leaf-file-name="profile.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/User/profile.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="4.6666665">
-              <caret line="17" column="56" selection-start-line="17" selection-start-column="56" selection-end-line="17" selection-end-column="56" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PostController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/Posts/PostController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-23.444445">
-              <caret line="192" column="7" selection-start-line="192" selection-start-column="7" selection-end-line="192" selection-end-column="7" />
+            <state vertical-scroll-proportion="-5.8965516">
+              <caret line="134" column="47" selection-start-line="134" selection-start-column="47" selection-end-line="134" selection-end-column="47" />
               <folding>
-                <element signature="e#7071#7084#0#PHP" expanded="true" />
+                <element signature="e#12#26#0#Twig" expanded="true" />
+                <element signature="e#7099#7117#0#Twig" expanded="true" />
+                <element signature="e#7578#7598#0#Twig" expanded="true" />
+                <element signature="e#8013#8031#0#Twig" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="post_show.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Posts/post_show.html.twig">
+      <file leaf-file-name="connections.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/assets/js/connections.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.444445">
-              <caret line="52" column="54" selection-start-line="52" selection-start-column="54" selection-end-line="52" selection-end-column="54" />
+            <state vertical-scroll-proportion="0.74703556">
+              <caret line="87" column="49" selection-start-line="87" selection-start-column="49" selection-end-line="87" selection-end-column="49" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="screen.scss" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/assets/sass/screen.scss">
+      <file leaf-file-name="UserProfileController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/UserProfileController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4486607">
-              <caret line="315" column="18" selection-start-line="315" selection-start-column="1" selection-end-line="315" selection-end-column="18" />
-              <folding />
+            <state vertical-scroll-proportion="-12.222222">
+              <caret line="95" column="23" selection-start-line="95" selection-start-column="9" selection-end-line="95" selection-end-column="23" />
+              <folding>
+                <element signature="e#271#300#0#PHP" expanded="true" />
+                <element signature="e#1946#1962#1#PHP" expanded="true" />
+                <element signature="e#2063#2097#0#PHP" expanded="true" />
+                <element signature="e#3549#3585#0#PHP" expanded="true" />
+                <element signature="e#5425#5461#0#PHP" expanded="true" />
+                <element signature="e#6926#6978#0#PHP" expanded="true" />
+                <element signature="e#8259#8311#0#PHP" expanded="true" />
+                <element signature="e#12373#12388#0#PHP" expanded="true" />
+                <element signature="e#12494#12528#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -231,8 +118,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -258,39 +145,20 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/web/scss/main.scss" />
-        <option value="$PROJECT_DIR$/web/assets/scss/config.rb" />
-        <option value="$PROJECT_DIR$/app/Resources/assets/scss/main.scss" />
-        <option value="$PROJECT_DIR$/web/css/2c8c367.css" />
-        <option value="$PROJECT_DIR$/web/assets/scss/main.scss" />
-        <option value="$PROJECT_DIR$/web/css/app.css" />
-        <option value="$PROJECT_DIR$/vendor/symfony/assetic-bundle/Tests/Resources/Resources/views/layout.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Registration/register.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Registration/register_content.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Registration/confirmed.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Form/UserType.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/Homepage/HomePageController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Form/ProfileType.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Form/Type/ProfileEdit.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Form/PostType.php" />
-        <option value="$PROJECT_DIR$/app/AppKernel.php" />
         <option value="$PROJECT_DIR$/web/app_dev.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Post.php" />
-        <option value="$PROJECT_DIR$/app/config/routing.yml" />
         <option value="$PROJECT_DIR$/web/assets/css/app.css" />
-        <option value="$PROJECT_DIR$/app/config/services.yml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/Posts/PostController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/User.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Profile.php" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/PostRepository.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/PostsList/index.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/ProfileRepository.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/UserProfileController.php" />
         <option value="$PROJECT_DIR$/app/config/parameters.yml" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/User/profile.html.twig" />
         <option value="$PROJECT_DIR$/web/assets/screen.css" />
         <option value="$PROJECT_DIR$/web/assets/stylesheets/screen.css" />
         <option value="$PROJECT_DIR$/app/Resources/views/homepage.html.twig" />
@@ -304,11 +172,30 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Posts/_form.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Posts/edit.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/default/stylesheets.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Entity/UserConnection.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/User/profile_edit.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Posts/post_show.html.twig" />
         <option value="$PROJECT_DIR$/web/assets/sass/screen.scss" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Profile.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Event/UserWasFollowedEvent.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/EventListener/UserWasFollowedEventListener.php" />
+        <option value="$PROJECT_DIR$/app/config/services.yml" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/BaseController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/User/following.html.twig" />
+        <option value="$PROJECT_DIR$/web/js/app.js" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/User/follow_button_large.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/User/followers.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/User/user_connection_followers.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/User/user_connection_following.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/UserProfileController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/User/follow_button_small.html.twig" />
+        <option value="$PROJECT_DIR$/web/assets/js/echo.js" />
+        <option value="$PROJECT_DIR$/app/AppKernel.php" />
+        <option value="$PROJECT_DIR$/app/config/routing.yml" />
+        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Manager/UserConnectionManager.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/UserConnection.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/User/profile.html.twig" />
+        <option value="$PROJECT_DIR$/web/assets/js/connections.js" />
       </list>
     </option>
   </component>
@@ -326,9 +213,9 @@
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="x" value="65" />
-    <option name="y" value="24" />
+    <option name="y" value="52" />
     <option name="width" value="1535" />
-    <option name="height" value="876" />
+    <option name="height" value="848" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -401,102 +288,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="users" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="photogram_new" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="photogram_1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="media" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cache" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resolve" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="my_thumb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="photogram_new" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="photogram_1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="media" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cache" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resolve" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="photogram_new" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="photogram_1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="media" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cache" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="photogram_new" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="photogram_1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -519,7 +310,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="sass" />
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -610,10 +401,6 @@
               <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PostsList" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -666,10 +453,6 @@
               <option name="myItemId" value="Resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -686,6 +469,60 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="AppBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="photogram_new" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="photogram_1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="photogram_new" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="photogram_1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="photogram_new" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="photogram_1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -703,85 +540,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="AppBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Form" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="photogram_new" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="photogram_1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AppBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Entity" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="photogram_new" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="photogram_1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AppBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="photogram_new" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="photogram_1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AppBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Posts" />
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -790,7 +553,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/FOSMessage-demo" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="dynamic.classpath" value="false" />
@@ -799,19 +562,19 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/web/assets/sass" />
-      <recent name="$PROJECT_DIR$/web" />
-      <recent name="$PROJECT_DIR$/src/AppBundle/Form/Profile" />
-      <recent name="$PROJECT_DIR$/src/AppBundle/Controller" />
-      <recent name="$PROJECT_DIR$/src/AppBundle/Controller/UserProfile" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/AppBundle/Entity/User" />
       <recent name="$PROJECT_DIR$/web/assets/js" />
       <recent name="$PROJECT_DIR$/web/assets/stylesheets" />
       <recent name="$PROJECT_DIR$/web/assets/sass" />
       <recent name="$PROJECT_DIR$/web/assets" />
-      <recent name="$PROJECT_DIR$/src/AppBundle/Resources/public/images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/AppBundle/Entity" />
+      <recent name="$PROJECT_DIR$/src/AppBundle/Entity/User" />
+      <recent name="$PROJECT_DIR$/web/assets/sass" />
+      <recent name="$PROJECT_DIR$/web" />
+      <recent name="$PROJECT_DIR$/src/AppBundle/Form/Profile" />
     </key>
   </component>
   <component name="RunManager">
@@ -916,7 +679,13 @@
       <option name="project" value="LOCAL" />
       <updated>1468410046725</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Major update 10&#10;&#10;&#10;">
+      <created>1468717848964</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1468717848964</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -932,11 +701,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="24" width="1535" height="876" extended-state="6" />
+    <frame x="65" y="52" width="1535" height="848" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25099602" sideWeight="0.49496305" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32934928" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26068965" sideWeight="0.49496305" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32934928" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34035477" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32975152" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24983211" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -952,7 +722,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4302789" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CSS-X-Fire" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1017,171 +786,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/images/blue_picto_less.gif">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/assets/sass/ct-paper/mixins/_tabs.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/assets/stylesheets/ct-paper.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/default/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/assets/stylesheets/examples.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/assets/js/bootstrap-datepicker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/Homepage/HomePageController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/assets/stylesheets/coming-sssoon.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/ProfileRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="24" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47191012">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30337077">
-          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.033707865">
-          <caret line="106" column="26" selection-start-line="106" selection-start-column="26" selection-end-line="106" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/PostRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="40" column="43" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/robots.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/app_dev.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/5784faa96372c.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/assets/sass/ct-paper.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.6666667">
-          <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/assets/sass/font-awesome.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/assets/sass/ie.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/assets/css/app.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="109.146065">
-          <caret line="42" column="22220" selection-start-line="42" selection-start-column="22217" selection-end-line="42" selection-end-column="22220" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/assets/sass/_bootstrap.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.6666667">
-          <caret line="1" column="19" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/assets/sass/bootstrap/_variables.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3333334">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Homepage/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3195266">
@@ -1279,76 +883,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/UserProfileController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.333333">
-          <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
-          <folding>
-            <element signature="e#1416#1432#1#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/User/profile.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24852072">
-          <caret line="101" column="99" selection-start-line="101" selection-start-column="46" selection-end-line="101" selection-end-column="99" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Posts/new.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3510848">
-          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/PostsList/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="38.0">
-          <caret line="0" column="12" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.6666665">
-          <caret line="8" column="54" selection-start-line="8" selection-start-column="54" selection-end-line="8" selection-end-column="54" />
-          <folding>
-            <element signature="e#509#539#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/AppBundle.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07515658">
-          <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.074074075">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#69#98#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/UserConnection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.56367433">
-          <caret line="41" column="7" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/default/stylesheets.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.48851773">
@@ -1398,27 +932,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/Posts/PostController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-23.444445">
-          <caret line="192" column="7" selection-start-line="192" selection-start-column="7" selection-end-line="192" selection-end-column="7" />
-          <folding>
-            <element signature="e#7071#7084#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Posts/post_show.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.444445">
-          <caret line="52" column="54" selection-start-line="52" selection-start-column="54" selection-end-line="52" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/User/profile_edit.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.6666665">
+        <state vertical-scroll-proportion="-0.24852072">
           <caret line="17" column="56" selection-start-line="17" selection-start-column="56" selection-end-line="17" selection-end-column="56" />
           <folding />
         </state>
@@ -1426,8 +942,307 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/assets/sass/screen.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4486607">
+        <state vertical-scroll-proportion="0.3964497">
           <caret line="315" column="18" selection-start-line="315" selection-start-column="1" selection-end-line="315" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Profile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.94280076">
+          <caret line="318" column="67" selection-start-line="318" selection-start-column="67" selection-end-line="318" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/Posts/PostController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5029586">
+          <caret line="123" column="53" selection-start-line="123" selection-start-column="53" selection-end-line="123" selection-end-column="53" />
+          <folding>
+            <element signature="e#7071#7084#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Post.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="5.357002">
+          <caret line="198" column="7" selection-start-line="198" selection-start-column="7" selection-end-line="198" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/PostsList/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14201184">
+          <caret line="22" column="65" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/EventListener/UserWasFollowedEventListener.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.5925927">
+          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+          <folding>
+            <element signature="e#125#156#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Event/UserWasFollowedEvent.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17751479">
+          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/pagerfanta/pagerfanta/src/Pagerfanta/View/ViewFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.666667">
+          <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/services.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/User/UserConnection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.3333335">
+          <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/AppBundle.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.07100592">
+          <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/BaseController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.56213015">
+          <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+          <folding>
+            <element signature="e#40#66#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/User/followers.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.7777777">
+          <caret line="7" column="69" selection-start-line="7" selection-start-column="69" selection-end-line="7" selection-end-column="69" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/_superglobals.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3510848">
+          <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/User/user_connection_following.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.444445">
+          <caret line="47" column="12" selection-start-line="45" selection-start-column="6" selection-end-line="47" selection-end-column="12" />
+          <folding>
+            <element signature="e#355#413#0#Twig" expanded="false" />
+            <element signature="e#618#672#0#Twig" expanded="false" />
+            <element signature="e#1856#1920#0#Twig" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Posts/post_show.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28402367">
+          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Posts/new.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.1617357">
+          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/User/following.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.1715976">
+          <caret line="33" column="16" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/User/follow_button_small.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.0">
+          <caret line="6" column="137" selection-start-line="6" selection-start-column="137" selection-end-line="6" selection-end-column="137" />
+          <folding>
+            <element signature="e#141#161#0#Twig" expanded="true" />
+            <element signature="e#448#466#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/User/follow_button_large.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.0">
+          <caret line="9" column="11" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
+          <folding>
+            <element signature="e#141#161#0#Twig" expanded="true" />
+            <element signature="e#375#393#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/User/user_connection_followers.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.5621302">
+          <caret line="44" column="12" selection-start-line="42" selection-start-column="6" selection-end-line="44" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="76.55056">
+          <caret line="1218" column="4" selection-start-line="1218" selection-start-column="4" selection-end-line="1218" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="72" selection-start-line="23" selection-start-column="72" selection-end-line="23" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/bundles/fosjsrouting/js/router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.444445">
+          <caret line="105" column="30" selection-start-line="105" selection-start-column="30" selection-end-line="105" selection-end-column="30" />
+          <folding>
+            <element signature="e#509#539#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/assets/js/echo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9325843">
+          <caret line="263" column="5" selection-start-line="263" selection-start-column="5" selection-end-line="263" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8165681">
+          <caret line="24" column="57" selection-start-line="24" selection-start-column="57" selection-end-line="24" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.8461539">
+          <caret line="52" column="20" selection-start-line="52" selection-start-column="20" selection-end-line="52" selection-end-column="20" />
+          <folding>
+            <element signature="e#69#98#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/UserConnection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.0">
+          <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+          <folding>
+            <element signature="e#154#180#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Manager/UserConnectionManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.2011833">
+          <caret line="94" column="19" selection-start-line="94" selection-start-column="19" selection-end-line="94" selection-end-column="19" />
+          <folding>
+            <element signature="e#119#150#0#PHP" expanded="true" />
+            <element signature="e#1263#1294#1#PHP" expanded="true" />
+            <element signature="e#2744#2775#1#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/UserProfileController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.222222">
+          <caret line="95" column="23" selection-start-line="95" selection-start-column="9" selection-end-line="95" selection-end-column="23" />
+          <folding>
+            <element signature="e#271#300#0#PHP" expanded="true" />
+            <element signature="e#1946#1962#1#PHP" expanded="true" />
+            <element signature="e#2063#2097#0#PHP" expanded="true" />
+            <element signature="e#3549#3585#0#PHP" expanded="true" />
+            <element signature="e#5425#5461#0#PHP" expanded="true" />
+            <element signature="e#6926#6978#0#PHP" expanded="true" />
+            <element signature="e#8259#8311#0#PHP" expanded="true" />
+            <element signature="e#12373#12388#0#PHP" expanded="true" />
+            <element signature="e#12494#12528#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/User/profile.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.8965516">
+          <caret line="134" column="47" selection-start-line="134" selection-start-column="47" selection-end-line="134" selection-end-column="47" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="true" />
+            <element signature="e#7099#7117#0#Twig" expanded="true" />
+            <element signature="e#7578#7598#0#Twig" expanded="true" />
+            <element signature="e#8013#8031#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/assets/js/connections.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.74703556">
+          <caret line="87" column="49" selection-start-line="87" selection-start-column="49" selection-end-line="87" selection-end-column="49" />
           <folding />
         </state>
       </provider>

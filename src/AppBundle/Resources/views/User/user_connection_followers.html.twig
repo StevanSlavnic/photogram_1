@@ -1,0 +1,46 @@
+{% if connections|length > 0  %}
+    {% for connection in connections %}
+
+        <div class="col-xs-12 col-md-6 itm">
+            <div class="panel panel-white user_connection_panel">
+                <div class="panel-body">
+                    <div class="media">
+                        <div class="media-left">
+                            {% include 'PokaTalkAppBundle:Partials/Profile:profile_photo.html.twig' with {'profile' : connection.follower.profile,'class' : 'media-object img_85'} %}
+                        </div>
+                        <div class="media-body">
+                            {% include 'PokaTalkAppBundle:Partials/Profile:full_name.html.twig' with {
+                            'profile' : connection.follower.profile,
+                            'href_class' : 'text-dark-gray',
+                            'disabled_class' : 'text-dark-gray',
+                            'holder_class': ''
+                            } %}
+
+                            <p class="type-12">
+                                {% set connectionFollower = getConnectionStatsForUser(connection.follower)['followers'] %}
+                                <span class="connection-list-followers-count">{{ connectionFollower }}</span>
+                                <span class="connection-list-followers-text">
+                                    {% if connectionFollower == 1 %}
+                                        follower
+                                    {% else %}
+                                        followers
+                                    {% endif %}
+                                </span>
+                            </p>
+
+                            <div class="follow_button_holder">
+                                {% if connection.follower.profile.user.id != app.user.id %}
+                                    {% include 'PokaTalkAppBundle:Partials/Profile:follow_button_large.html.twig' with { 'is_following' : isFollowing(requester_connections, connection.follower), 'profile' : connection.follower.profile } %}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {% endfor %}
+    {#<div class="pagination_holder_profile_followers">#}
+        {#{{ knp_pagination_render(connections) }}#}
+    {#</div>#}
+{% endif %}

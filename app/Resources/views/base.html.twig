@@ -98,8 +98,12 @@
             'assets/js/ct-paper-checkbox.js'
             'assets/js/ct-paper-radio.js'
             'assets/js/ct-paper.js'
+            'assets/js/echo.js'
+            'assets/js/connections.js'
             %}
             <script src="{{ asset_url }}"></script>
+    <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+    <script src="{{ path('fos_js_routing_js', {'callback': 'fos.Router.setData'}) }}"></script>
             {% endjavascripts %}
 
     </body>

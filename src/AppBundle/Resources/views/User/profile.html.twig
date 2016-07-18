@@ -118,9 +118,26 @@
                         <div class="col-md-6 col-md-offset-3 text-center">
                             <p>{{ profile.about }}</p>
                             <br />
-                        {#{% if app.user == is_granted('IS_AUTHENTICATED_FULLY') %}#}
-                            <a href="{{ path('profile_index_edit', {"username": app.user.profile.profileUsername}) }}" class="btn"><i class="fa fa-cog"></i>Settings</a>
-                        {#{% endif %}#}
+                        {% if app.user and user.profile.isOwner(app.user) %}
+                            <a href="{{ path('profile_index_edit', {"username": user.profile.profileUsername}) }}" class="btn"><i class="fa fa-cog"></i>Settings</a>
+                        {% else %}
+                            {% if app.user.profile and is_granted('IS_AUTHENTICATED_FULLY') %}
+                                {% if is_following %}
+                                <div class="follow_button_holder">
+                                    <button data-user-id = "{{ app.user.id }}" data-unfollow-url = "{{ path('app_profile_unfollow', {"username" : profile.profileUsername}) }}" data-type="large" class="btn btn-gray-outline unfollow_button">
+
+                                    </button>
+
+                                </div>
+                                {% else %}
+                                <div class="follow_button_holder">
+                                    <button data-user-id = "{{ app.user.id }}" data-follow-url = "{{ path('app_profile_follow', {"username" : profile.profileUsername}) }}" data-type="large" class="btn btn-primary-white-hover follow_button">
+                                        Follow1
+                                    </button>
+                                </div>
+                                {% endif %}
+                            {% endif %}
+                        {% endif %}
                         </div>
                     </div>
                     <div class="profile-tabs">

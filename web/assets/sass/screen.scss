@@ -11,6 +11,7 @@
 
 body {
   font-family: 'Questrial', sans-serif;
+
 }
 
 .post {
@@ -40,7 +41,7 @@ body {
     }
     .options {
       display: inline;
-      margin: 14px;
+      margin: 5px;
       ul {
         li {
           a {
@@ -54,7 +55,6 @@ body {
 
   .image-post {
     background-color: dimgrey;
-    display: inline-block;
     img {
       margin: 0 auto;
       width: 100%;
@@ -79,13 +79,31 @@ body {
   .post-comment-add {
     margin: 0 20px 20px;
     padding: 0 0 20px 0;
-    .input { border: 0;
+    input {
+      background: #fff;
       border: 0;
       width: 100%;
       padding: 10px;
       &:focus {
         border: 0;
+
       }
+    }
+    /* do not group these rules */
+    *::-webkit-input-placeholder {
+      color: #403D39;
+    }
+    *:-moz-placeholder {
+      /* FF 4-18 */
+      color: #403D39;
+    }
+    *::-moz-placeholder {
+      /* FF 19+ */
+      color: #403D39;
+    }
+    *:-ms-input-placeholder {
+      /* IE 10+ */
+      color: #403D39;
     }
   }
 }
@@ -104,14 +122,39 @@ body {
 
 }
 
-.form-wrapper {
-  width: 60%;
+
+
+.form-wrapper, .form-wrapper-edit {
+  width: 100%;
+  max-width: 620px;
   margin: 20px auto;
   background-color: #fff;
   padding: 40px;
   border: 1px solid #eeefef;
   border-radius: 3px;
   position: relative;
+  .image-wrapper {
+    background-color: #dddddd;
+    position: relative;
+      .cancel {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        font-weight: 100;
+        border: 1px solid #000;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #ddd;
+        color: #000;
+        &:before {
+          position: absolute;
+          right: 3px;
+          top: 1px;
+        }
+      }
+  }
+
   a.sf-form-row-add-image {
     color: #ababab;
     text-align: center;
@@ -129,7 +172,7 @@ body {
     padding: 15px 0;
     position: relative;
   }
-  #post_imageFile {
+  #post_imageFile, #profile_edit_imageFile {
     display: block;
     position: absolute;
     top: 0px;
@@ -143,10 +186,67 @@ body {
     opacity: 0;
     transform: translateX(-50%);
   }
+
+  #profile_edit_imageFile {
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    width: 100px;
+    height: 80px;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+
   img {
     margin: 0 auto;
   }
+  input[type="file"] {
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    width: 100px;
+    height: 80px;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+  .image-form-wrapper {
+    margin-bottom: 30px;
+  }
+
 }
+
+.image-wrapper-profile {
+  text-align: center;
+  .circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 300px;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+    img {
+      position: absolute;
+      margin: auto;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}
+
+
+
 #blog_index {
 
 }
@@ -210,6 +310,19 @@ body {
     padding: .25rem;
     width: 100%;
 
+  }
+}
+
+.form-wrapper-edit {
+  width: 60%;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 40px;
+  border: 1px solid #eeefef;
+  border-radius: 3px;
+  position: relative;
+  .btn {
+    margin-top: 20px;
   }
 }
 

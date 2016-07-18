@@ -14001,7 +14001,7 @@ body {
   font-family: 'Questrial', sans-serif;
 }
 
-/* line 16, ../sass/screen.scss */
+/* line 17, ../sass/screen.scss */
 .post {
   border-radius: 4px;
   width: 620px;
@@ -14010,12 +14010,12 @@ body {
   background-color: #fff;
   box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
 }
-/* line 23, ../sass/screen.scss */
+/* line 24, ../sass/screen.scss */
 .post .post-header {
   margin: 0px 20px;
   position: relative;
 }
-/* line 26, ../sass/screen.scss */
+/* line 27, ../sass/screen.scss */
 .post .post-header .options {
   display: inline;
   margin: 0;
@@ -14023,30 +14023,29 @@ body {
   right: 0;
   top: 12px;
 }
-/* line 32, ../sass/screen.scss */
+/* line 33, ../sass/screen.scss */
 .post .post-header .options .btn {
   padding: 0;
   margin: 2px;
 }
-/* line 37, ../sass/screen.scss */
+/* line 38, ../sass/screen.scss */
 .post .post-header a {
   display: inline-block;
   line-height: 50px;
 }
-/* line 41, ../sass/screen.scss */
+/* line 42, ../sass/screen.scss */
 .post .post-header .options {
   display: inline;
-  margin: 14px;
+  margin: 5px;
 }
-/* line 46, ../sass/screen.scss */
+/* line 47, ../sass/screen.scss */
 .post .post-header .options ul li a {
   display: block;
   line-height: 0px;
 }
-/* line 55, ../sass/screen.scss */
+/* line 56, ../sass/screen.scss */
 .post .image-post {
   background-color: dimgrey;
-  display: inline-block;
 }
 /* line 58, ../sass/screen.scss */
 .post .image-post img {
@@ -14078,17 +14077,37 @@ body {
 .post .post-comment-add {
   margin: 0 20px 20px;
   padding: 0 0 20px 0;
+  /* do not group these rules */
 }
 /* line 82, ../sass/screen.scss */
-.post .post-comment-add .input {
-  border: 0;
+.post .post-comment-add input {
+  background: #fff;
   border: 0;
   width: 100%;
   padding: 10px;
 }
-/* line 86, ../sass/screen.scss */
-.post .post-comment-add .input:focus {
+/* line 87, ../sass/screen.scss */
+.post .post-comment-add input:focus {
   border: 0;
+}
+/* line 93, ../sass/screen.scss */
+.post .post-comment-add *::-webkit-input-placeholder {
+  color: #403D39;
+}
+/* line 96, ../sass/screen.scss */
+.post .post-comment-add *:-moz-placeholder {
+  /* FF 4-18 */
+  color: #403D39;
+}
+/* line 100, ../sass/screen.scss */
+.post .post-comment-add *::-moz-placeholder {
+  /* FF 19+ */
+  color: #403D39;
+}
+/* line 104, ../sass/screen.scss */
+.post .post-comment-add *:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #403D39;
 }
 
 /*
@@ -14096,9 +14115,10 @@ body {
 *Edit post
 *
 */
-/* line 107, ../sass/screen.scss */
-.form-wrapper {
-  width: 60%;
+/* line 127, ../sass/screen.scss */
+.form-wrapper, .form-wrapper-edit {
+  width: 100%;
+  max-width: 620px;
   margin: 20px auto;
   background-color: #fff;
   padding: 40px;
@@ -14106,8 +14126,32 @@ body {
   border-radius: 3px;
   position: relative;
 }
-/* line 115, ../sass/screen.scss */
-.form-wrapper a.sf-form-row-add-image {
+/* line 136, ../sass/screen.scss */
+.form-wrapper .image-wrapper, .form-wrapper-edit .image-wrapper {
+  background-color: #dddddd;
+  position: relative;
+}
+/* line 139, ../sass/screen.scss */
+.form-wrapper .image-wrapper .cancel, .form-wrapper-edit .image-wrapper .cancel {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-weight: 100;
+  border: 1px solid #000;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ddd;
+  color: #000;
+}
+/* line 150, ../sass/screen.scss */
+.form-wrapper .image-wrapper .cancel:before, .form-wrapper-edit .image-wrapper .cancel:before {
+  position: absolute;
+  right: 3px;
+  top: 1px;
+}
+/* line 158, ../sass/screen.scss */
+.form-wrapper a.sf-form-row-add-image, .form-wrapper-edit a.sf-form-row-add-image {
   color: #ababab;
   text-align: center;
   display: inline-block;
@@ -14124,8 +14168,8 @@ body {
   padding: 15px 0;
   position: relative;
 }
-/* line 132, ../sass/screen.scss */
-.form-wrapper #post_imageFile {
+/* line 175, ../sass/screen.scss */
+.form-wrapper #post_imageFile, .form-wrapper #profile_edit_imageFile, .form-wrapper-edit #post_imageFile, .form-wrapper-edit #profile_edit_imageFile {
   display: block;
   position: absolute;
   top: 0px;
@@ -14139,12 +14183,69 @@ body {
   opacity: 0;
   transform: translateX(-50%);
 }
-/* line 146, ../sass/screen.scss */
-.form-wrapper img {
+/* line 190, ../sass/screen.scss */
+.form-wrapper #profile_edit_imageFile, .form-wrapper-edit #profile_edit_imageFile {
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  width: 100px;
+  height: 80px;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateX(-50%);
+}
+/* line 205, ../sass/screen.scss */
+.form-wrapper img, .form-wrapper-edit img {
   margin: 0 auto;
 }
+/* line 208, ../sass/screen.scss */
+.form-wrapper input[type="file"], .form-wrapper-edit input[type="file"] {
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  width: 100px;
+  height: 80px;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateX(-50%);
+}
+/* line 222, ../sass/screen.scss */
+.form-wrapper .image-form-wrapper, .form-wrapper-edit .image-form-wrapper {
+  margin-bottom: 30px;
+}
 
-/* line 155, ../sass/screen.scss */
+/* line 228, ../sass/screen.scss */
+.image-wrapper-profile {
+  text-align: center;
+}
+/* line 230, ../sass/screen.scss */
+.image-wrapper-profile .circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 300px;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+}
+/* line 237, ../sass/screen.scss */
+.image-wrapper-profile .circle img {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* line 255, ../sass/screen.scss */
 .messages .alert-dismissible .close {
   position: relative;
   top: 0px;
@@ -14152,7 +14253,7 @@ body {
   color: inherit;
 }
 
-/* line 163, ../sass/screen.scss */
+/* line 263, ../sass/screen.scss */
 .main-raised {
   margin: -60px 30px 0px;
   border-radius: 6px;
@@ -14162,61 +14263,76 @@ body {
   z-index: 3;
 }
 
-/* line 173, ../sass/screen.scss */
+/* line 273, ../sass/screen.scss */
 .profile-content .header {
   height: 380px;
   background-position: top center;
 }
-/* line 177, ../sass/screen.scss */
+/* line 277, ../sass/screen.scss */
 .profile-content .profile {
   text-align: center;
 }
-/* line 179, ../sass/screen.scss */
+/* line 279, ../sass/screen.scss */
 .profile-content .profile img {
   max-width: 160px;
   margin: -80px auto 0;
 }
-/* line 184, ../sass/screen.scss */
+/* line 284, ../sass/screen.scss */
 .profile-content .description {
   margin: 30px auto 0;
   max-width: 600px;
 }
-/* line 188, ../sass/screen.scss */
+/* line 288, ../sass/screen.scss */
 .profile-content .profile-tabs {
   margin-top: 60px;
 }
-/* line 192, ../sass/screen.scss */
+/* line 292, ../sass/screen.scss */
 .profile-content .gallery {
   margin-top: 45px;
   padding-bottom: 50px;
 }
-/* line 195, ../sass/screen.scss */
+/* line 295, ../sass/screen.scss */
 .profile-content .gallery img {
   width: 100%;
   margin-bottom: 30px;
 }
 
-/* line 203, ../sass/screen.scss */
+/* line 303, ../sass/screen.scss */
 .list-masonry {
   -moz-column-width: 18em;
   -webkit-column-width: 18em;
   -moz-column-gap: 1em;
   -webkit-column-gap: 1em;
 }
-/* line 208, ../sass/screen.scss */
+/* line 308, ../sass/screen.scss */
 .list-masonry .post-in-list {
   display: inline-block;
   padding: .25rem;
   width: 100%;
 }
 
-/* line 216, ../sass/screen.scss */
+/* line 316, ../sass/screen.scss */
+.form-wrapper-edit {
+  width: 60%;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 40px;
+  border: 1px solid #eeefef;
+  border-radius: 3px;
+  position: relative;
+}
+/* line 324, ../sass/screen.scss */
+.form-wrapper-edit .btn {
+  margin-top: 20px;
+}
+
+/* line 329, ../sass/screen.scss */
 .navbar .navbar-nav > li > a .fa {
   top: 3px;
   position: relative;
 }
 
-/* line 221, ../sass/screen.scss */
+/* line 334, ../sass/screen.scss */
 .login-form {
   width: 100%;
   max-width: 400px;
@@ -14228,7 +14344,7 @@ body {
   transform: translate(-50%, -50%);
 }
 
-/* line 232, ../sass/screen.scss */
+/* line 345, ../sass/screen.scss */
 .header {
   background-image: url("");
 }

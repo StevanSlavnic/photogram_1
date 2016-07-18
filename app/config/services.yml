@@ -28,3 +28,13 @@ services:
 
   app.controller.user_profile_controller:
       class: AppBundle\Controller\UserProfileController
+
+  app.event_listener_user.user_was_followed_event_listener:
+      class: AppBundle\EventListener\UserWasFollowedEventListener
+      arguments: [ @doctrine.orm.entity_manager ]
+      tags:
+          - {name: kernel.event_listener, event: user_was_followed_event, method: handle}
+
+  app.manager.user_connection_manager:
+      class: AppBundle\Manager\UserConnectionManager
+      arguments: [ @doctrine.orm.entity_manager, @event_dispatcher ]

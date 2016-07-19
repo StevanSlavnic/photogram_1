@@ -307,5 +307,15 @@ class Profile
         return $this;
     }
 
-    
+    /**
+     * Is the given User the author of this Post?
+     *
+     * @param User $user
+     *
+     * @return bool
+     */
+    public function isOwner(User $user)
+    {
+        return $user->getUsername() === $this->getProfileUsername();
+    }
 }

@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+    <div class="row">
+        <!-- ABOUT -->
+        {#<div class="col-sm-4 hidden-xs hidden-xs">#}
+            {#<div class="jq-parent-edit profile-about-me-holder about-holder">#}
+                {#{% include 'PokaTalkAppBundle:Partials/Profile:about.html.twig' with {'profile' : profile} %}#}
+            {#</div>#}
+            {#<!-- edit -->#}
+            {#<div class="about-form-holder"></div>#}
+        {#</div>#}
+        <!-- END OF ABOUT -->
+
+        <div class="col-xs-12 col-sm-8" id="profile_following">
+            <div class="row">
+                {#{% if following|length %}#}
+                    {#{% include 'PokaTalkAppBundle:Partials/Profile:user_connection_following.html.twig' with {'profile' : profile} %}#}
+                {#{% else %}#}
+                    <div class="panel panel-white panel-empty-follow text-center text-light-gray">
+                        {% if app.user %}
+                            {% if app.user.profile.id == profile.id %}
+                                You are not following anyone yet.
+                            {% else %}
+                                {{ profile.firstName }} {{ profile.lastName }} is not following anyone yet
+                            {% endif %}
+                        {% endif %}
+                    </div>
+                {#{% endif %}#}
+            </div>
+        </div>
+    </div>
+    <div class="edit_overlay"></div
+{% endblock main %}

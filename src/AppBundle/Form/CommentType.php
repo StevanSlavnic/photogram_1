@@ -41,7 +41,11 @@ class CommentType extends AbstractType
         //     $builder->add('content', null, array('required' => false));
 
         $builder
-            ->add('content', TextType::class)
+            ->add('content', TextType::class, array(
+                'attr' => array(
+                    'class' => 'form-control comment-field'
+                )
+            ))
         ;
     }
 

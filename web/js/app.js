@@ -1131,3 +1131,464 @@ function debounce(func, wait, immediate) {
 		if (immediate && !timeout) func.apply(context, args);
 	};
 };
+
+/**
+ * Created by stevan on 7/18/16.
+ */
+var App = {
+    router: Routing,
+
+    //
+    //FLESH MESSAGES
+    //
+    fleshMessage: function() {
+        var message = $('.jq-flash-message');
+
+        if(message.length) {
+            message.slideDown('fast').delay(3000);
+            message.slideUp('fast');
+        }
+    },
+
+    //
+    //ENABLE AND DISABLE BUTTONS
+    //
+    disableButton: function(button, text, callback) {
+        button.addClass('disabled');
+        button.prop('disabled', true);
+
+        if(typeof text !== 'undefined') {
+            button.text(text);
+        }
+        if(typeof callback !== 'undefined') {
+            callback(button, text);
+        }
+    },
+
+    enableButton: function(button, text, callback) {
+        button.removeClass('disabled');
+        button.prop('disabled', false);
+        button.removeAttr('disabled');
+        if(typeof text !== 'undefined') {
+            button.text(text);
+        }
+        if(typeof callback !== 'undefined') {
+            callback(button, text);
+        }
+    },
+
+    //
+    //START AND STOP SPINNER
+    //
+    startSpinner: function(spinnerHolder) {
+        spinnerHolder.addClass('spinner-holder-active');
+
+        var spinner = $('<i/>', {
+            class : 'icon-spinner'
+        }).appendTo(spinnerHolder);
+    },
+
+    stopSpinner: function(spinnerHolder) {
+        spinnerHolder.removeClass('spinner-holder-active');
+        var spinner =$('.icon-spinner');
+        spinner.remove();
+    },
+
+    //
+    //INCREASE AND DECREASE COUNTER
+    //
+    increaseCounter: function(counter, textHolder, text) {
+        counter.each(function() {
+            var currnet = $(this);
+            var countInt = parseInt(currnet.text());
+
+            ++countInt;
+            currnet.html(countInt);
+
+            if(typeof textHolder !== 'undefined') {
+                if (countInt == 1) {
+                    textHolder.text(text);
+                }
+                else {
+                    textHolder.text(text + 's');
+                }
+            }
+        });
+    },
+
+    decreaseCounter: function(counter, textHolder, text) {
+        counter.each(function() {
+            var currnet = $(this);
+            var countInt = parseInt(currnet.text());
+
+            --countInt;
+            currnet.html(countInt);
+
+            if(typeof textHolder !== 'undefined') {
+                if (countInt == 1) {
+                    textHolder.text(text);
+                }
+                else {
+                    textHolder.text(text + 's');
+                }
+            }
+        });
+    },
+
+    //
+    //SCROLL TO
+    //
+    scrollTo: function() {
+        if(window.location.hash) {
+            var elem = $( window.location.hash);
+            $('html, body').animate({
+                scrollTop: elem.offset().top
+            }, 1000);
+        }
+    },
+
+    //
+    //REDIRECT
+    //
+    redirectToRoute: function(route, args) {
+        this.redirect(this.router.generate(route, args));
+    },
+
+    redirect: function(url) {
+        top.location.href = url;
+    },
+
+    //
+    //LAZY LOADING
+    //
+    lazyLoadingUserConnetions: function() {
+        var profileFollowers = $('#profile_followers');
+        var profileFollowing = $('#profile_following');
+
+        this.initLazyLoad(profileFollowers, '.itm');
+        this.initLazyLoad(profileFollowing, '.itm');
+    },
+
+    lazyLoadingPosts : function() {
+        var postsHolder = $('.posts-holder');
+        this.initLazyLoad(postsHolder, '.itm');
+    },
+
+    initLazyLoad : function(hodlerElem, itemSelector) {
+        if(hodlerElem.length) {
+
+            hodlerElem.infinitescroll('destroy');
+            hodlerElem.data('infinitescroll', null);
+
+            hodlerElem.infinitescroll({
+                debug        : true,
+                navSelector  : ".pagination",
+                nextSelector : ".pagination span.next a",
+                itemSelector : itemSelector,
+                loadingText  : "Loading",
+                loading: {
+                    finished: undefined,
+                    finishedMsg: "<div class='col-lg-12'>That's all, folks!</div>",
+                    img: 'http://www.ocli.lk/wp-content/uploads/2015/07/133297-blankpic1.png', //hack for removing loading image - transparent png
+                    msg: null,
+                    msgText: "<em>Loading...</em>",
+                    selector: null,
+                    speed: 'fast',
+                    start: undefined
+                }
+            });
+        }
+    },
+
+    initLazyLoadJSON : function(hodlerElem, itemSelector) {
+        if(hodlerElem.length) {
+
+            hodlerElem.infinitescroll('destroy');
+            hodlerElem.data('infinitescroll', null);
+
+            hodlerElem.infinitescroll({
+                debug        : true,
+                navSelector  : ".pagination",
+                nextSelector : ".pagination span.next a",
+                itemSelector : itemSelector,
+                loadingText  : "Loading",
+                dataType: 'json',
+                appendCallback: false,
+                loading: {
+                    finished: undefined,
+                    finishedMsg: "<div class='col-lg-12'>That's all, folks!</div>",
+                    img: 'http://www.ocli.lk/wp-content/uploads/2015/07/133297-blankpic1.png',
+                    msg: null,
+                    msgText: "<em>Loading...</em>",
+                    selector: null,
+                    speed: 'fast',
+                    start: undefined
+                }
+            },function(json, opts) {
+
+                console.log(json);
+                var page = opts.state.currPage;
+                $('.pagination_holder_posts').remove();
+                hodlerElem.append(json.html);
+
+                // Do something with JSON data, create DOM elements, etc ..
+            });
+        }
+    },
+
+    //
+    //COMMUNITY
+    //
+    communityFilter : function(){
+        $(document).on('click', '.community_nav > a', function(){
+            var currnetLink = $(this);
+            var otherLink = currnetLink.siblings('a');
+            var myNetwork = currnetLink.attr('data-my-network');
+
+            $.get(App.router.generate('pokatalk_app_community_posts') + '?myNetwork='+myNetwork, function (data) {
+                var postsHolder = $('.posts-holder');
+
+                $('.pagination_holder_posts').remove();
+
+                postsHolder.html(data.html);
+
+                //set css class for active tab
+                otherLink.removeClass('community_filter_active');
+                currnetLink.addClass('community_filter_active');
+
+                App.initLazyLoadJSON(postsHolder, '.itm');
+            })
+        });
+    },
+
+    positionCommunityUserHolder: function() {
+        var userHolder = $('.user_holder.small');
+
+        if(userHolder.length) {
+            $(window).on('scroll', function() {
+                if($(window).scrollTop() > 20) {
+                    userHolder.stop().animate({
+                        top: 20
+                    }, 400);
+                }
+                else {
+                    userHolder.stop().animate({
+                        top: 86
+                    }, 400);
+                }
+            });
+        }
+    },
+
+    //
+    //INIT
+    //
+    init: function() {
+        this.communityFilter();
+        this.fleshMessage();
+        this.lazyLoadingUserConnetions();
+        this.lazyLoadingPosts();
+        this.scrollTo();
+        this.positionCommunityUserHolder();
+    }
+};
+
+(function() {
+    App.init();
+})();
+/**
+ * Created by stevan on 7/17/16.
+ */
+var Connection = function() {
+    var scope = this;
+
+    $(document).on('click', '.follow_button', {scope: scope}, scope.follow);
+    $(document).on('click', '.unfollow_button', {scope: scope}, scope.unfollow);
+
+};
+
+Connection.prototype = {
+    follow: function(e) {
+        var btn = $(this);
+        var btnHolder = btn.parent('.follow_button_holder');
+        App.disableButton(btn);
+
+        $.ajax({
+            type : 'post',
+            url : btn.attr('data-follow-url'),
+            data : {
+                type: btn.attr('data-type')
+            },
+            success: function(returned) {
+                btnHolder.html(returned.response);
+
+                //update counter
+                if (btnHolder.hasClass('in_cover_content')) {
+                    var followersCount = $('.user-followers-count');
+                    var followersText = $('.users-follower-text');
+
+                }
+                else {
+                    var connectionsFollowerCount = btnHolder.parent().find('.connection-list-followers-count');
+                    var connectionsFollowerCountText = btnHolder.parent().find('.connection-list-followers-text');
+                    App.increaseCounter(connectionsFollowerCount, connectionsFollowerCountText, 'follower');
+
+                    var userFollowingCount = $('.user-following-count');
+                    App.increaseCounter(userFollowingCount);
+                }
+
+                //if small button - update large button
+                if (btn.attr('data-type') === 'large') {
+                    var connectionPanel = $('.user_connection_panel');
+                    if (connectionPanel.length) {
+                        var bigButton = connectionPanel.find('button[data-type="large"]');
+                        bigButton.removeClass('btn btn-primary-white-hover follow_button').addClass('btn btn-gray-outline unfollow_button').empty();
+                    }
+                }
+            }
+        });
+
+    },
+
+    unfollow: function(e) {
+        var btn = $(this);
+        var btnHolder = btn.parent('.follow_button_holder');
+        App.disableButton(btn);
+
+        $.ajax({
+            type : 'post',
+            url : btn.attr('data-unfollow-url'),
+            data : {
+                user_id : btn.attr('data-user-id'),
+                type: btn.attr('data-type')
+            },
+            success: function(returned) {
+                btnHolder.html(returned.response);
+
+                //update counter
+                if(btnHolder.hasClass('in_cover_content')) {
+                    var followersCount = $('.user-followers-count');
+                    var followersText = $('.users-follower-text');
+//                     App.decreaseCounter(followersCount);
+                }
+                else {
+                    var connectionsFollowerCount = btnHolder.parent().find('.connection-list-followers-count');
+                    var connectionsFollowerCountText = btnHolder.parent().find('.connection-list-followers-text');
+                    App.decreaseCounter(connectionsFollowerCount, connectionsFollowerCountText, 'follower');
+
+                    var userFollowingCount = $('.user-following-count');
+                    App.decreaseCounter(userFollowingCount);
+                }
+
+                //if small button - update large button
+                if (btn.attr('data-type') === 'small' +
+                    '') {
+                    var connectionPanel = $('.user_connection_panel');
+                    if (connectionPanel.length) {
+                        var bigButton = connectionPanel.find('button[data-type="large"]');
+                        bigButton.removeClass('btn btn-gray-outline unfollow_button').addClass('btn btn-primary-white-hover follow_button');
+                        bigButton.html('<i class="icon-member_add"></i> Follow');
+                    }
+                }
+            }
+        });
+    },
+
+    //
+    //SHOW INVITE FORM
+    //
+    showInviteForm: function(e) {
+        e.preventDefault();
+
+        var slug = $(e.target).data('slug');
+
+        var formHolder = $('<div/>', {
+            class: 'popup_holder'
+        });
+
+        $.ajax({
+            type: 'get',
+            url: App.router.generate('pokatalk_app_invite'),
+            success: function(returned) {
+                formHolder.html(returned.html);
+                $('body').append(formHolder);
+                formHolder.fadeIn('fast');
+
+                //MULTIPLE EMAILS
+                var emailInput = $('.jq-multiple-email');
+                var emailList = [];
+                var emailListInput = $('.jq-invite-list');
+                emailInput.tagsinput({
+                    tagClass: ''
+                });
+
+                //check if it'e an email
+                emailInput.on('itemAdded', function(event) {
+                    var pattern = /^([a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+(\.[a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+)*|"((([ \t]*\r\n)?[ \t]+)?([\x01-\x08\x0b\x0c\x0e-\x1f\x7f\x21\x23-\x5b\x5d-\x7e\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|\\[\x01-\x09\x0b\x0c\x0d-\x7f\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))*(([ \t]*\r\n)?[ \t]+)?")@(([a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.)+([a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.?$/i;
+                    //if is valid - add to list
+                    if(pattern.test(event.item)) {
+                        emailList.push(event.item);
+                        var emailListJson = JSON.stringify(emailList);
+                        emailListInput.val(emailListJson);
+                    }
+                    //if is invalid - don't add to list and make it red
+                    else {
+                        var tag = $('.bootstrap-tagsinput .tag').last();
+                        tag.addClass('invalid');
+                    }
+                });
+
+                //if item is removed - remove it from list
+                emailInput.on('itemRemoved', function(event) {
+                    var index = emailList.indexOf(event.item);
+                    emailList.splice(index, 1);
+                    var emailListJson = JSON.stringify(emailList);
+                    emailListInput.val(emailListJson);
+                });
+
+                var closeLink = formHolder.find('.jq-close-popup');
+                closeLink.on('click', function(e) {
+                    e.preventDefault();
+                    formHolder.fadeOut('fast', function() {
+                        formHolder.remove();
+                    })
+                })
+            }
+        });
+    },
+
+    submitInviteForm: function (e) {
+        e.preventDefault();
+
+        var emails = $('.jq-invite-list');
+        var emailsVal = emails.val();
+
+        if(!emailsVal) {
+            emails.parent('.form-group').addClass('error_field');
+            emails.prev('.error_message').removeClass('hidden');
+
+            return;
+        }
+
+        $.ajax({
+            type: 'post',
+            url : App.router.generate('pokatalk_app_invite_send'),
+            data: {
+                message: $('#form-invite-message').val(),
+                emails: JSON.parse(emailsVal)
+            },
+            success: function() {
+                $(".invite-form-holder").hide();
+                $(".popup_holder").hide();
+            }
+        });
+    },
+
+    init: function() {
+        new Connection();
+    }
+};
+
+(function() {
+    var conn = new Connection();
+})();

@@ -8,6 +8,7 @@
 
 namespace AppBundle\Manager;
 
+
 use Doctrine\ORM\EntityManager;
 use AppBundle\Entity\User;
 use AppBundle\Entity\User\UserConnection;
@@ -81,6 +82,7 @@ class UserConnectionManager
             $this->eventDispatcher->dispatch('user_was_followed_event', new UserWasFollowedEvent($followee, $follower));
 
             return $connection;
+
         }
 
         return false;
@@ -104,7 +106,7 @@ class UserConnectionManager
         ));
 
         if($userConnection) {
-            return true;
+            return false;
         }
 
         return false;
@@ -121,7 +123,7 @@ class UserConnectionManager
     public function unfollow(User $follower, User $followee)
     {
         if($follower->getId() === $followee->getId()) {
-            return false;
+            return true;
         }
 
         $userConnectionRepo = $this->em->getRepository('AppBundle:User\UserConnection');
@@ -134,7 +136,7 @@ class UserConnectionManager
 
         // Return false if follower does not following followee
         if(!$userConnection) {
-            return false;
+            return true;
         }
 
         // Remove connection from follower
@@ -196,4 +198,6 @@ class UserConnectionManager
             'followers' => $following = count($this->getFollowers($user)->getResult()),
         );
     }
+
+
 }

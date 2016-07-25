@@ -44,7 +44,7 @@ class User extends BaseUser
     public function __construct()
     {
         parent::__construct();
-        // your own logic
+        $this->connections = new ArrayCollection();
     }
 
     /**
@@ -111,6 +111,20 @@ class User extends BaseUser
     {
         $this->username = $username;
     }
-    
-    
+
+    /**
+     * @param ArrayCollection $connections
+     */
+    public function setConnections($connections)
+    {
+        $this->connections = $connections;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getConnections()
+    {
+        return $this->connections;
+    }
 }

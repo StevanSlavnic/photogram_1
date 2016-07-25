@@ -16,6 +16,7 @@ use AppBundle\Entity\Post;
 use AppBundle\Entity\Profile;
 use AppBundle\Entity\User;
 use AppBundle\Entity\User\UserConnection;
+use AppBundle\Manager\UserConnectionManager;
 use Doctrine\ORM\Mapping\Id;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -246,7 +247,6 @@ class UserProfileController extends Controller
         if($userConnectionManager->follow($user, $profile->getUser())) {
             return new JsonResponse(array(
                 'success' => true,
-//                'response' => $this->renderView('AppBundle:User:profile.html.twig', array(
                 'response' => $this->renderView('AppBundle:User:follow_button_'.$type.'.html.twig', array(
                     'profile' => $profile,
                     'is_following' => true
@@ -256,7 +256,6 @@ class UserProfileController extends Controller
 
         return new JsonResponse([
             'success' => false,
-//            'response' => $this->renderView('AppBundle:User:profile.html.twig', array(
             'response' => $this->renderView('AppBundle:User:follow_button_'.$type.'.html.twig', array(
                 'profile' => $profile,
                 'is_following' => false

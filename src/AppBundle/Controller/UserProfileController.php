@@ -29,7 +29,7 @@ use Symfony\Component\HttpFoundation\Response;
 use AppBundle\Controller\BaseController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
-class UserProfileController extends Controller
+class UserProfileController extends BaseController
 {
     /**
      *
@@ -71,239 +71,6 @@ class UserProfileController extends Controller
     }
 
     /**
-     * Show followers page
-     *
-     * @param Profile $profile
-     *
-     * @param Request $request
-     *
-     * @return Response
-     * @Route("/user/{username}/followers", name="app_profile_show_followers")
-     * @Method("GET");
-     * @ParamConverter("profile", class="AppBundle\Entity\Profile", options={"mapping" : {"username" : "profileUsername"} } )
-     */
-    public function showFollowers(Profile $profile, Request $request)
-    {
-//        $this->handleInactiveProfiles($profile);
-
-//        $requester = $this->getLoggedUser();
-        $requester = $this->getUser();
-
-        $userConnectionManager = $this->get('app.manager.user_connection_manager');
-
-        $followers = $userConnectionManager->getFollowers($profile->getUser())->getResult();
-        $following = $userConnectionManager->getFollowing($profile->getUser())->getResult();
-
-        $followersQuery = $userConnectionManager->getFollowers($profile->getUser());
-
-//        $paginator  = $this->get('white_october_pagerfanta.view_factory');
-
-        return $this->render('AppBundle:User:followers.html.twig', array(
-            'profile' => $profile,
-            'followers' => $followers,
-            'following' => $following,
-            'are_followers' => true,
-            'requester' => $requester,
-            'requester_connections' => $userConnectionManager->getFollowing($requester)->getResult(),
-//            'connections' => $paginator->paginate($followersQuery, $request->query->getInt('page', 1),self::CONNECTIONS_PAGINATION_PER_PAGE),
-            'is_following' => $userConnectionManager->isFollowing($requester, $profile->getUser()),
-            'is_followed_back' => $userConnectionManager->isFollowing($profile->getUser(), $requester)
-        ));
-    }
-
-    /**
-     * Show following page
-     *
-     * @param Profile $profile
-     *
-     * @param Request $request
-     *
-     * @return Response
-     * @Route("/user/{username}/following", name="app_profile_show_following")
-     * @Method("GET");
-     * @ParamConverter("profile", class="AppBundle\Entity\Profile", options={"mapping" : {"username" : "profileUsername"} } )
-     */
-    public function showFollowing(Profile $profile, Request $request)
-    {
-//        $this->handleInactiveProfiles($profile);
-
-//        $requester = $this->getLoggedUser();
-
-        $requester = $this->getUser();
-
-        $userConnectionManager = $this->get('app.manager.user_connection_manager');
-
-        $followers = $userConnectionManager->getFollowers($profile->getUser())->getResult();
-        $following = $userConnectionManager->getFollowing($profile->getUser())->getResult();
-
-        $followersQuery = $userConnectionManager->getFollowing($profile->getUser());
-
-//        $paginator  = $this->get('knp_paginator');
-
-//        $pagination = $paginator->paginate($followersQuery, $request->query->getInt('page', 1), self::CONNECTIONS_PAGINATION_PER_PAGE);
-
-        return $this->render('AppBundle:User:following.html.twig', array(
-            'profile' => $profile,
-            'followers' => $followers,
-            'following' => $following,
-            'are_followers' => false,
-            'requester' => $requester,
-            'requester_connections' => $userConnectionManager->getFollowing($requester)->getResult(),
-//            'connections' => $pagination,
-            'is_following' => $userConnectionManager->isFollowing($requester, $profile->getUser()),
-            'is_followed_back' => $userConnectionManager->isFollowing($profile->getUser(), $requester)
-        ));
-    }
-
-
-    /**
-     * Get followers - ajax
-     *
-     * @param Profile $profile
-     *
-     * @param Request $request
-     *
-     * @return Response
-     * @Route("/user/{username}/followers_ajax", name="app_profile_show_followers_ajax", condition="request.isXmlHttpRequest()")
-     * @Method("GET");
-     * @ParamConverter("profile", class="AppBundle\Entity\Profile", options={"mapping" : {"username" : "profileUsername"} } )
-     */
-    public function getFollowers(Profile $profile, Request $request)
-    {
-//        $this->handleInactiveProfiles($profile);
-
-//        $requester = $this->getLoggedUser();
-
-        $requester = $this->getUser();
-
-        $userConnectionManager = $this->get('app.manager.user_connection_manager');
-
-        $followersQuery = $userConnectionManager->getFollowers($profile->getUser());
-
-//        $paginator = $this->get('knp_paginator');
-
-        return $this->render('AppBundle:User:user_connection_followers.html.twig', array(
-            'followers' => true,
-            'requester' => $requester,
-//            'connections' => $paginator->paginate($followersQuery, $request->query->getInt('page', 1),self::CONNECTIONS_PAGINATION_PER_PAGE),
-        ));
-    }
-
-    /**
-     * Get following - ajax
-     *
-     * @param Profile $profile
-     *
-     * @param Request $request
-     *
-     * @return Response
-     * @Route("/user/{username}/following_ajax", name="app_profile_show_following_ajax", condition="request.isXmlHttpRequest()")
-     * @Method("GET");
-     * @ParamConverter("profile", class="AppBundle\Entity\Profile", options={"mapping" : {"username" : "profileUsername"} } )
-     */
-    public function getFollowing(Profile $profile, Request $request)
-    {
-//        $this->handleInactiveProfiles($profile);
-
-//        $requester = $this->getLoggedUser();
-
-        $requester = $this->getUser();
-
-        $userConnectionManager = $this->get('app.manager.user_connection_manager');
-
-        $followersQuery = $userConnectionManager->getFollowing($profile->getUser());
-
-//        $paginator  = $this->get('knp_paginator');
-
-//        $pagination = $paginator->paginate($followersQuery, $request->query->getInt('page', 1), self::CONNECTIONS_PAGINATION_PER_PAGE);
-
-        return $this->render('AppBundle:User:user_connection_followers.html.twig', array(
-            'followers' => false,
-            'requester' => $requester,
-//            'connections' => $pagination
-        ));
-    }
-
-    /**
-     * Follow button
-     *
-     * @param Profile $profile
-     * @param Request $request
-     * @return Response
-     * @Route("/user/{username}/follow", name="app_profile_follow", condition="request.isXmlHttpRequest()")
-     * @Method("POST");
-     * @ParamConverter("profile", class="AppBundle\Entity\Profile", options={"mapping" : {"username" : "profileUsername"} } )
-     */
-    public function follow(Profile $profile, Request $request)
-    {
-//        $this->handleInactiveProfiles($profile);
-
-        $user = $this->getUser();
-
-        $userConnectionManager = $this->get('app.manager.user_connection_manager');
-
-        $type = $_POST['type'];
-
-        if($userConnectionManager->follow($user, $profile->getUser())) {
-            return new JsonResponse(array(
-                'success' => true,
-                'response' => $this->renderView('AppBundle:User:follow_button_'.$type.'.html.twig', array(
-                    'profile' => $profile,
-                    'is_following' => true
-                ))
-            ));
-        }
-
-        return new JsonResponse([
-            'success' => false,
-            'response' => $this->renderView('AppBundle:User:follow_button_'.$type.'.html.twig', array(
-                'profile' => $profile,
-                'is_following' => false
-            ))
-        ]);
-    }
-
-    /**
-     * Unfollow button
-     *
-     * @param Profile $profile
-     * @param Request $request
-     * @return Response
-     * @Route("/user/{username}/unfollow", name="app_profile_unfollow", condition="request.isXmlHttpRequest()")
-     * @Method("POST");
-     * @ParamConverter("profile", class="AppBundle\Entity\Profile", options={"mapping" : {"username" : "profileUsername"} } )
-     */
-    public function unfollow(Profile $profile, Request $request)
-    {
-//        $this->handleInactiveProfiles($profile);
-
-//        $user = $this->getLoggedUser();
-        $user = $this->getUser();
-
-        $userConnectionManager = $this->get('app.manager.user_connection_manager');
-
-        $type = $_POST['type'];
-
-        if($userConnectionManager->unfollow($user, $profile->getUser())) {
-            return new JsonResponse(array(
-                'success' => true,
-                'response' => $this->renderView('AppBundle:User:follow_button_'.$type.'.html.twig', array(
-                    'profile' => $profile,
-                    'is_following' => false
-                ))
-            ));
-        }
-
-        return new JsonResponse(array(
-            'success' => false,
-            'response' => $this->renderView('AppBundle:User:follow_button_'.$type.'.html.twig', array(
-                'profile' => $profile,
-                'is_following' => true
-            ))
-        ));
-    }
-
-    /**
      * @Route("/user/{username}/edit", name="profile_index_edit")
      * @ParamConverter("profile", class="AppBundle\Entity\Profile", options={"mapping" : {"username" : "profileUsername"} } )
      * @param Profile $profile
@@ -337,6 +104,82 @@ class UserProfileController extends Controller
             'form'   => $editForm->createView(),
         ));
     }
+
+    /**
+     * Follow button
+     *
+     * @param Profile $profile
+     * @param Request $request
+     * @return Response
+     * @Route("/user/{username}/follow", name="app_profile_follow", condition="request.isXmlHttpRequest()")
+     * @Method("POST");
+     * @ParamConverter("profile", class="AppBundle\Entity\Profile", options={"mapping" : {"username" : "profileUsername"} } )
+     */
+    public function follow(Profile $profile, Request $request)
+    {
+        $user = $this->getLoggedUser();
+
+        $userConnectionManager = $this->get('app.manager.user_connection_manager');
+
+        $type = $_POST['type'];
+
+        if($userConnectionManager->follow($user, $profile->getUser())) {
+            return new JsonResponse(array(
+                'success' => true,
+                'response' => $this->renderView('AppBundle:User:follow_button_large.html.twig', array(
+                    'profile' => $profile,
+                    'is_following' => true
+                ))
+            ));
+        }
+
+        return new JsonResponse([
+            'success' => false,
+            'response' => $this->renderView('AppBundle:User:follow_button_large.html.twig', array(
+                'profile' => $profile,
+                'is_following' => false
+            ))
+        ]);
+    }
+
+    /**
+     * Unfollow button
+     *
+     * @param Profile $profile
+     * @param Request $request
+     * @return Response
+     * @Route("/user/{username}/unfollow", name="app_profile_unfollow", condition="request.isXmlHttpRequest()")
+     * @Method("POST");
+     * @ParamConverter("profile", class="AppBundle\Entity\Profile", options={"mapping" : {"username" : "profileUsername"} } )
+     */
+    public function unfollow(Profile $profile, Request $request)
+    {
+        $user = $this->getLoggedUser();
+
+        $userConnectionManager = $this->get('app.manager.user_connection_manager');
+
+        $type = $_POST['type'];
+
+        if($userConnectionManager->unfollow($user, $profile->getUser())) {
+            return new JsonResponse(array(
+                'success' => true,
+                'response' => $this->renderView('AppBundle:User:follow_button_large.html.twig', array(
+                    'profile' => $profile,
+                    'is_following' => false
+                ))
+            ));
+        }
+
+        return new JsonResponse(array(
+            'success' => false,
+            'response' => $this->renderView('AppBundle:User:follow_button_large.html.twig', array(
+                'profile' => $profile,
+                'is_following' => true
+            ))
+        ));
+    }
+
+
 
 
 }

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0abe638cd66d7c3657953a44b1fa7742",
-    "content-hash": "92188251b1ad4b374a949c544c9dc813",
+    "hash": "66aa8583e72048ff48a288a2ee16abd9",
+    "content-hash": "aa45330b536a3d750a824a5f88a9f860",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -910,6 +910,67 @@
                 "routing"
             ],
             "time": "2015-10-28 15:08:39"
+        },
+        {
+            "name": "friendsofsymfony/message-bundle",
+            "version": "v1.2.2",
+            "target-dir": "FOS/MessageBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfSymfony/FOSMessageBundle.git",
+                "reference": "d5b40ed8a5b59ee8bbecf03934878460fb172c55"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSMessageBundle/zipball/d5b40ed8a5b59ee8bbecf03934878460fb172c55",
+                "reference": "d5b40ed8a5b59ee8bbecf03934878460fb172c55",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "symfony/form": "~2.1",
+                "symfony/framework-bundle": "~2.1",
+                "symfony/security": "~2.1",
+                "symfony/twig-bundle": "~2.1"
+            },
+            "suggest": {
+                "doctrine/doctrine-bundle": "dev-master",
+                "doctrine/mongodb-odm-bundle": "dev-master"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "FOS\\MessageBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Thibault Duplessis",
+                    "email": "thibault.duplessis@gmail.com",
+                    "homepage": "http://ornicar.github.com"
+                },
+                {
+                    "name": "FriendsOfSymfony Community",
+                    "homepage": "https://github.com/friendsofsymfony/FOSMessageBundle/contributors"
+                }
+            ],
+            "description": "Provides user-to-user messaging features for your Symfony2 application.",
+            "homepage": "https://github.com/FriendsOfSymfony/FOSMessageBundle",
+            "keywords": [
+                "message",
+                "messaging",
+                "symfony"
+            ],
+            "time": "2013-10-25 11:05:36"
         },
         {
             "name": "friendsofsymfony/user-bundle",

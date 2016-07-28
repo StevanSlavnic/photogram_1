@@ -125,13 +125,15 @@
                             {{ dump(is_following) }}
 
 
-                               {% if app.user.profile.id != profile.id %}
-                                <div class="follow_button_holder">
+
+                            {% endif %}
+
+                        {% endif %}
+                        {% if app.user.profile.id != profile.id %}
+                                <div class="follow_button_holder in_cover_content">
                                     {% include '@App/User/follow_button_large.html.twig' %}
                                 </div>
                                 {% endif %}
-                            {% endif %}
-                        {% endif %}
                         </div>
                     </div>
                     <div class="profile-tabs">

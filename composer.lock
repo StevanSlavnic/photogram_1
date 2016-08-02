@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "66aa8583e72048ff48a288a2ee16abd9",
-    "content-hash": "aa45330b536a3d750a824a5f88a9f860",
+    "hash": "2d1977f2f5719255cf150fb82316004d",
+    "content-hash": "db1f58213eb9cf9eb86fbe7785618a19",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -2211,6 +2211,66 @@
             "time": "2015-12-28 13:12:39"
         },
         {
+            "name": "symfony/event-dispatcher",
+            "version": "v3.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/event-dispatcher.git",
+                "reference": "c0c00c80b3a69132c4e55c3e7db32b4a387615e5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/c0c00c80b3a69132c4e55c3e7db32b4a387615e5",
+                "reference": "c0c00c80b3a69132c4e55c3e7db32b4a387615e5",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "psr/log": "~1.0",
+                "symfony/config": "~2.8|~3.0",
+                "symfony/dependency-injection": "~2.8|~3.0",
+                "symfony/expression-language": "~2.8|~3.0",
+                "symfony/stopwatch": "~2.8|~3.0"
+            },
+            "suggest": {
+                "symfony/dependency-injection": "",
+                "symfony/http-kernel": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\EventDispatcher\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony EventDispatcher Component",
+            "homepage": "https://symfony.com",
+            "time": "2016-07-19 10:45:57"
+        },
+        {
             "name": "symfony/monolog-bundle",
             "version": "2.11.1",
             "source": {
@@ -2841,16 +2901,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v2.8.7",
+            "version": "v2.8.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "663b2d6202c3149515b39cfe50a174a130acb8e2"
+                "reference": "df02dd5d3f7decb3a05c6d0f31054b4263625dcb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/663b2d6202c3149515b39cfe50a174a130acb8e2",
-                "reference": "663b2d6202c3149515b39cfe50a174a130acb8e2",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/df02dd5d3f7decb3a05c6d0f31054b4263625dcb",
+                "reference": "df02dd5d3f7decb3a05c6d0f31054b4263625dcb",
                 "shasum": ""
             },
             "require": {
@@ -2924,7 +2984,7 @@
                 "doctrine/dbal": "~2.4",
                 "doctrine/doctrine-bundle": "~1.2",
                 "doctrine/orm": "~2.4,>=2.4.5",
-                "egulias/email-validator": "~1.2",
+                "egulias/email-validator": "~1.2,>=1.2.1",
                 "monolog/monolog": "~1.11",
                 "ocramius/proxy-manager": "~0.4|~1.0|~2.0",
                 "phpdocumentor/reflection": "^1.0.7"
@@ -2971,7 +3031,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2016-06-06 16:05:37"
+            "time": "2016-07-30 08:48:52"
         },
         {
             "name": "twig/twig",

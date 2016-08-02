@@ -121,19 +121,19 @@
                         {% if app.user and user.profile.isOwner(app.user) %}
                             <a href="{{ path('profile_index_edit', {"username": user.profile.profileUsername}) }}" class="btn"><i class="fa fa-cog"></i>Settings</a>
                         {% else %}
-                            {% if app.user and is_granted('IS_AUTHENTICATED_FULLY') %}
-                            {{ dump(is_following) }}
-
-
-
-                            {% endif %}
 
                         {% endif %}
-                        {% if app.user.profile.id != profile.id %}
-                                <div class="follow_button_holder in_cover_content">
-                                    {% include '@App/User/follow_button_large.html.twig' %}
-                                </div>
-                                {% endif %}
+                        {{ dump(is_following) }}
+
+                        {{ dump(app.user.profile.id != profile.id) }}
+
+        {% if app.user.profile.id != profile.id %}
+                <div class="follow_button_holder in_cover_content">
+                    {% include 'AppBundle:User:follow_button_large.html.twig' %}
+                </div>
+        {% endif %}
+
+
                         </div>
                     </div>
                     <div class="profile-tabs">

@@ -16,18 +16,16 @@ use AppBundle\Entity\Post;
 use AppBundle\Entity\Profile;
 use AppBundle\Entity\User;
 use AppBundle\Entity\User\UserConnection;
-use AppBundle\Manager\UserConnectionManager;
-use Doctrine\ORM\Mapping\Id;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use AppBundle\Repository\UserConnectionRepository;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use AppBundle\Controller\BaseController;
-use Symfony\Component\HttpFoundation\JsonResponse;
+use AppBundle\Manager\UserConnectionManager;
+
 
 class UserProfileController extends BaseController
 {
@@ -36,20 +34,23 @@ class UserProfileController extends BaseController
      *
      * @Route("/user/{username}", name="profile_index")
      * @ParamConverter("profile", class="AppBundle\Entity\Profile", options={"mapping" : {"username" : "profileUsername"} } )
-     *
      * @Method("GET")
-     *
      * @param Profile $profile
-     *
+     * @param User $user
+     * @param User $followers
+     * @param User $following
      * @return Response
      */
-    public function showAction(Profile $profile, User $user)
+    public function showAction(Profile $profile, User $user, User $followers, User $following)
     {
 
         $userConnectionManager = $this->get('app.manager.user_connection_manager');
 
         $followers = $userConnectionManager->getFollowers($profile->getUser())->getResult();
         $following = $userConnectionManager->getFollowing($profile->getUser())->getResult();
+
+//        dump($userConnectionManager->isFollowing($profile->getUser(), $user));
+//        die;
 
         if (!empty($posts)) {
 //            /** @var Post $posts */
@@ -110,14 +111,17 @@ class UserProfileController extends BaseController
      *
      * @param Profile $profile
      * @param Request $request
+     * @param User $user
      * @return Response
      * @Route("/user/{username}/follow", name="app_profile_follow", condition="request.isXmlHttpRequest()")
      * @Method("POST");
      * @ParamConverter("profile", class="AppBundle\Entity\Profile", options={"mapping" : {"username" : "profileUsername"} } )
      */
-    public function follow(Profile $profile, Request $request)
+    public function followAction(Profile $profile, Request $request, User $user)
     {
-        $user = $this->getLoggedUser();
+//        $this->handleInactiveProfiles($profile);
+
+        $user = $this->getUser();
 
         $userConnectionManager = $this->get('app.manager.user_connection_manager');
 
@@ -126,7 +130,7 @@ class UserProfileController extends BaseController
         if($userConnectionManager->follow($user, $profile->getUser())) {
             return new JsonResponse(array(
                 'success' => true,
-                'response' => $this->renderView('AppBundle:User:follow_button_large.html.twig', array(
+                'response' => $this->renderView('AppBundle:User:follow_button_'.$type.'.html.twig', array(
                     'profile' => $profile,
                     'is_following' => true
                 ))
@@ -135,7 +139,7 @@ class UserProfileController extends BaseController
 
         return new JsonResponse([
             'success' => false,
-            'response' => $this->renderView('AppBundle:User:follow_button_large.html.twig', array(
+            'response' => $this->renderView('AppBundle:User:follow_button_'.$type.'.html.twig', array(
                 'profile' => $profile,
                 'is_following' => false
             ))
@@ -152,9 +156,13 @@ class UserProfileController extends BaseController
      * @Method("POST");
      * @ParamConverter("profile", class="AppBundle\Entity\Profile", options={"mapping" : {"username" : "profileUsername"} } )
      */
-    public function unfollow(Profile $profile, Request $request)
+    public function unfollowAction(Profile $profile, Request $request)
     {
-        $user = $this->getLoggedUser();
+//        $this->handleInactiveProfiles($profile);
+
+//        $user = $this->getLoggedUser();
+
+        $user = $this->getUser();
 
         $userConnectionManager = $this->get('app.manager.user_connection_manager');
 
@@ -163,7 +171,8 @@ class UserProfileController extends BaseController
         if($userConnectionManager->unfollow($user, $profile->getUser())) {
             return new JsonResponse(array(
                 'success' => true,
-                'response' => $this->renderView('AppBundle:User:follow_button_large.html.twig', array(
+                'response' => $this->renderView('AppBundle:User:follow_button_'.$type.'.html.twig', array(
+
                     'profile' => $profile,
                     'is_following' => false
                 ))
@@ -172,14 +181,11 @@ class UserProfileController extends BaseController
 
         return new JsonResponse(array(
             'success' => false,
-            'response' => $this->renderView('AppBundle:User:follow_button_large.html.twig', array(
+            'response' => $this->renderView('AppBundle:User:follow_button_'.$type.'.html.twig', array(
+
                 'profile' => $profile,
                 'is_following' => true
             ))
         ));
     }
-
-
-
-
 }

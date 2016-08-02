@@ -10,6 +10,7 @@ namespace AppBundle\Twig;
 
 use AppBundle\Entity\Post;
 use AppBundle\Entity\User;
+use AppBundle\Entity\User\UserConnection;
 use AppBundle\Manager\UserConnectionManager;
 use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -46,14 +47,14 @@ class AppExtension extends \Twig_Extension
         return 'app_twig_extension';
     }
 
+    /**
+     * @return array
+     */
     public function getFunctions()
     {
         return array_merge(parent::getFunctions(),[
             new \Twig_SimpleFunction('getConnectionStatsForUser', array($this, 'getConnectionStatsForUser')),
             new \Twig_SimpleFunction('isFollowing', array($this, 'isFollowing')),
-            new \Twig_SimpleFunction('getMediaPublicUrl', array($this, 'getMediaPublicUrl')),
-            new \Twig_SimpleFunction('isUserLikedPost', array($this, 'isUserLikedPost')),
-            new \Twig_SimpleFunction('getLikeSentence', array($this, 'getLikeSentence')),
         ]);
     }
 

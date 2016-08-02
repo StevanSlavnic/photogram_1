@@ -37,11 +37,11 @@ services:
 
   app.manager.user_connection_manager:
       class: AppBundle\Manager\UserConnectionManager
-      arguments: [ '@doctrine.orm.entity_manager', '@event_dispatcher' ]
+      arguments: ['@doctrine.orm.entity_manager', '@event_dispatcher']
 
   app.event_listener.user_was_followed_event_listener:
       class: AppBundle\EventListener\UserWasFollowedEventListener
-      arguments: ['@fos_user.entity_manager']
+      arguments: ['@doctrine.orm.entity_manager']
       tags:
           - { name: kernel.event_subscriber }
 

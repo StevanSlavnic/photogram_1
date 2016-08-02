@@ -11,7 +11,6 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use FOS\MessageBundle\Entity\Thread as BaseThread;
-use FOS\MessageBundle\Entity\ThreadMetadata;
 
 /**
  * @ORM\Entity

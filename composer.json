@@ -29,7 +29,9 @@
         "stof/doctrine-extensions-bundle": "^1.2",
         "leafo/scssphp": "^0.6.5",
         "liip/imagine-bundle": "^1.5",
-        "friendsofsymfony/jsrouting-bundle": "^1.6"
+        "friendsofsymfony/jsrouting-bundle": "^1.6",
+        "friendsofsymfony/message-bundle": "^1.2",
+        "symfony/event-dispatcher": "^3.1"
     },
     "require-dev": {
         "sensio/generator-bundle": "~3.0",

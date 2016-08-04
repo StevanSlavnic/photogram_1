@@ -11,6 +11,8 @@
         <script src="https://use.fontawesome.com/75f6caa2f6.js"></script>
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+        <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+        <script src="{{ path('fos_js_routing_js', {'callback': 'fos.Router.setData'}) }}"></script>
     </head>
     <body>
     {% block header %}
@@ -21,7 +23,6 @@
                         <a class="navbar-brand" href="{{ path('blog_index') }}">
                             Photogram
                         </a>
-
                         <button type="button" class="navbar-toggle"
                                 data-toggle="collapse"
                                 data-target=".navbar-collapse">
@@ -98,8 +99,8 @@
             'assets/js/ct-paper-checkbox.js'
             'assets/js/ct-paper-radio.js'
             'assets/js/ct-paper.js'
-            'assets/js/echo.js'
             'assets/js/connections.js'
+            'assets/js/echo.js'
             %}
             <script src="{{ asset_url }}"></script>
     <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>

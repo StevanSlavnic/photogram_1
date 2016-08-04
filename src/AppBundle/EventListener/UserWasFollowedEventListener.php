@@ -8,6 +8,7 @@
 
 namespace AppBundle\EventListener;
 
+use AppBundle\Entity\User;
 use Doctrine\ORM\EntityManager;
 
 use AppBundle\Event\UserWasFollowedEvent;
@@ -35,11 +36,15 @@ class UserWasFollowedEventListener implements EventSubscriberInterface
 
     /**
      * @param UserWasFollowedEvent $event
+     * @internal param User $user
+     * @internal param UserWasFollowedEvent $follower
      */
     public function handle(UserWasFollowedEvent $event)
     {
+        /** @var User $user */
         $user = $event->getUser();
 
+        /** @var User $follower */
         $follower = $event->getFollower();
 
 //        $notification = new Notification();

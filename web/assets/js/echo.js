@@ -1,6 +1,3 @@
-/**
- * Created by stevan on 7/18/16.
- */
 var App = {
     router: Routing,
 

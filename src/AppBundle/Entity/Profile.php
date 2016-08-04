@@ -308,7 +308,7 @@ class Profile
     }
 
     /**
-     * Is the given User the author of this Post?
+     * Is the given User the owner of this Profile?
      *
      * @param User $user
      *

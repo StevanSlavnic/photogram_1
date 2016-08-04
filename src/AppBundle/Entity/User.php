@@ -18,7 +18,7 @@ use AppBundle\Entity\User\UserConnection;
  * @ORM\Table(name="user")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\UserRepository")
  */
-class User extends BaseUser implements ParticipantInterface
+class User extends BaseUser
 {
 //    const TYPE_USER = ;
     /**
@@ -45,6 +45,12 @@ class User extends BaseUser implements ParticipantInterface
      */
     protected $fullName;
 
+
+    private $connections;
+
+    /**
+     * User connection
+     */
     public function __construct()
     {
         parent::__construct();

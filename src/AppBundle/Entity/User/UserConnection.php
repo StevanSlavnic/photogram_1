@@ -17,7 +17,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="user_connections")
  * @ORM\HasLifecycleCallbacks
- * @ORM\Entity(repositoryClass="UserConnectionRepository")
+ * @ORM\Entity
  */
 class UserConnection
 {

@@ -1,10 +1,14 @@
-{% if profile.user.isEnabled %}
-    {% if  is_following  %}
-        <button data-user-id = "{{ app.user.id }}" data-unfollow-url = "{{ path('app_profile_unfollow', {"username" : profile.profileUsername}) }}" data-type="large" class="btn btn-gray-outline unfollow_button"></button>
+{#{% if profile.user.id %}#}
+{#{{ dump() }}#}
+    {% if is_following %}
+        <button data-user-id = "{{ app.user.id }}" data-unfollow-url = "{{ path('app_profile_unfollow', {"username" : profile.profileUsername}) }}" data-type="large" class="btn btn-gray-outline unfollow_button">
+            <i class="icon-member_add"></i>
+            Unfollow
+        </button>
     {% else %}
         <button data-user-id = "{{ app.user.id }}" data-follow-url = "{{ path('app_profile_follow', {"username" : profile.profileUsername}) }}" data-type="large" class="btn btn-primary-white-hover follow_button">
             <i class="icon-member_add"></i>
             Follow
         </button>
     {% endif %}
-{% endif %}
+{#{% endif %}#}

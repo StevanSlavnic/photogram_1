@@ -8,9 +8,8 @@
 
 namespace AppBundle\Entity;
 
-
 namespace AppBundle\Entity\User;
-
+use AppBundle\Entity\User;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -18,7 +17,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="user_connections")
  * @ORM\HasLifecycleCallbacks
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="UserConnectionRepository")
  */
 class UserConnection
 {

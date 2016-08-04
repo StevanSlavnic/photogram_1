@@ -30,7 +30,7 @@
 
                             <div class="follow_button_holder">
                                 {% if connection.follower.profile.user.id != app.user.id %}
-                                    {% include 'PokaTalkAppBundle:Partials/Profile:follow_button_large.html.twig' with { 'is_following' : isFollowing(requester_connections, connection.follower), 'profile' : connection.follower.profile } %}
+                                    {% include 'AppBundle:User:follow_button_large.html.twig' with { 'is_following' : isFollowing(requester_connections, connection.follower), 'profile' : connection.follower.profile } %}
                                 {% endif %}
                             </div>
                         </div>

@@ -39,4 +39,6 @@ person:
     path:      /user/{profileUsername}
     defaults:  { _controller: AppBundle:UserProfile:show }
 
-
+fos_message:
+    resource: "@FOSMessageBundle/Resources/config/routing.xml"
+    prefix: /optional_routing_prefix

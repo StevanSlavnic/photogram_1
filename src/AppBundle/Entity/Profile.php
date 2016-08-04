@@ -318,4 +318,15 @@ class Profile
     {
         return $user->getUsername() === $this->getProfileUsername();
     }
+
+    /**
+     * Return true if profile cannot get user.
+     * This is quick fix for registration.
+     *
+     * @return bool
+     */
+    public function isEnabled()
+    {
+        return $this->getUser() ? $this->getUser()->isEnabled() : false;
+    }
 }

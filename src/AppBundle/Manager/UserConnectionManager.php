@@ -8,8 +8,10 @@
 
 namespace AppBundle\Manager;
 
+
 use Doctrine\ORM\EntityManager;
 use AppBundle\Entity\User;
+use AppBundle\Entity\Profile;
 use AppBundle\Entity\User\UserConnection;
 use AppBundle\Event\UserWasFollowedEvent;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
@@ -110,6 +112,7 @@ class UserConnectionManager
         return false;
     }
 
+
     /**
      * Unfollow user
      *
@@ -153,6 +156,7 @@ class UserConnectionManager
         return true;
     }
 
+
     /**
      * Get followers for given user
      *
@@ -163,8 +167,8 @@ class UserConnectionManager
     public function getFollowers(User $user)
     {
         return $this->em->getRepository('AppBundle:User\UserConnection')
-            ->createQueryBuilder('uc')
-            ->where('uc.followee = :user_id')
+            ->createQueryBuilder('user\userConnection')
+            ->where('user\userConnection.followee = :user_id')
             ->setParameter('user_id', $user->getId())
             ->getQuery();
     }
@@ -179,8 +183,8 @@ class UserConnectionManager
     public function getFollowing(User $user)
     {
         return $this->em->getRepository('AppBundle:User\UserConnection')
-            ->createQueryBuilder('uc')
-            ->where('uc.follower = :user_id')
+            ->createQueryBuilder('user\userConnection')
+            ->where('user\userConnection.follower = :user_id')
             ->setParameter('user_id', $user->getId())
             ->getQuery();
     }
@@ -196,4 +200,6 @@ class UserConnectionManager
             'followers' => $following = count($this->getFollowers($user)->getResult()),
         );
     }
+
+
 }

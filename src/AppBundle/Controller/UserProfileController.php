@@ -34,23 +34,21 @@ class UserProfileController extends BaseController
      *
      * @Route("/user/{username}", name="profile_index")
      * @ParamConverter("profile", class="AppBundle\Entity\Profile", options={"mapping" : {"username" : "profileUsername"} } )
+     *
      * @Method("GET")
+     *
      * @param Profile $profile
-     * @param User $user
-     * @param User $followers
-     * @param User $following
+     *
      * @return Response
      */
-    public function showAction(Profile $profile, User $user, User $followers, User $following)
+    public function showAction(Profile $profile)
     {
-
+        $loggedUser = $this->getLoggedUser();
+        $user = $profile->getUser();
         $userConnectionManager = $this->get('app.manager.user_connection_manager');
 
         $followers = $userConnectionManager->getFollowers($profile->getUser())->getResult();
         $following = $userConnectionManager->getFollowing($profile->getUser())->getResult();
-
-//        dump($userConnectionManager->isFollowing($profile->getUser(), $user));
-//        die;
 
         if (!empty($posts)) {
 //            /** @var Post $posts */
@@ -66,8 +64,88 @@ class UserProfileController extends BaseController
             'posts' => $posts,
             'followers' => $followers,
             'following' => $following,
-            'is_following' => $userConnectionManager->isFollowing($user, $profile->getUser()),
-            'is_followed_back' => $userConnectionManager->isFollowing($profile->getUser(), $user)
+            'is_following' => $userConnectionManager->isFollowing($loggedUser, $user),
+            'is_followed_back' => $userConnectionManager->isFollowing($user, $loggedUser)
+        ));
+    }
+
+    /**
+     * Follow button
+     *
+     * @param Profile $profile
+     * @param Request $request
+     * @return Response
+     * @Route("/user/{username}/follow", name="app_profile_follow", condition="request.isXmlHttpRequest()")
+     * @Method("POST");
+     * @ParamConverter("profile", class="AppBundle\Entity\Profile", options={"mapping" : {"username" : "profileUsername"} } )
+     */
+    public function follow(Profile $profile, Request $request)
+    {
+//        $this->handleInactiveProfiles($profile);
+
+        $user = $this->getLoggedUser();
+
+        $userConnectionManager = $this->get('app.manager.user_connection_manager');
+
+        $type = $_POST['type'];
+
+        if($userConnectionManager->follow($user, $profile->getUser())) {
+            return new JsonResponse(array(
+                'success' => true,
+//                'response' => $this->renderView('AppBundle:User:profile.html.twig', array(
+                'response' => $this->renderView('AppBundle:User:follow_button_'. $type .'.html.twig', array(
+                    'profile' => $profile,
+                    'is_following' => true
+                ))
+            ));
+        }
+
+        return new JsonResponse([
+            'success' => false,
+//            'response' => $this->renderView('AppBundle:User:profile.html.twig', array(
+            'response' => $this->renderView('AppBundle:User:follow_button_'.$type.'.html.twig', array(
+                'profile' => $profile,
+                'is_following' => true
+            ))
+        ]);
+    }
+
+    /**
+     * Unfollow button
+     *
+     * @param Profile $profile
+     * @param Request $request
+     * @return Response
+     * @Route("/user/{username}/unfollow", name="app_profile_unfollow", condition="request.isXmlHttpRequest()")
+     * @Method("POST");
+     * @ParamConverter("profile", class="AppBundle\Entity\Profile", options={"mapping" : {"username" : "profileUsername"} } )
+     */
+    public function unfollow(Profile $profile, Request $request)
+    {
+//        $this->handleInactiveProfiles($profile);
+
+        $user = $this->getLoggedUser();
+
+        $userConnectionManager = $this->get('app.manager.user_connection_manager');
+
+        $type = $_POST['type'];
+
+        if($userConnectionManager->unfollow($user, $profile->getUser())) {
+            return new JsonResponse(array(
+                'success' => true,
+                'response' => $this->renderView('AppBundle:User:follow_button_'. $type .'.html.twig', array(
+                    'profile' => $profile,
+                    'is_following' => false
+                ))
+            ));
+        }
+
+        return new JsonResponse(array(
+            'success' => false,
+            'response' => $this->renderView('AppBundle:User:follow_button_'. $type .'.html.twig', array(
+                'profile' => $profile,
+                'is_following' => true
+            ))
         ));
     }
 
@@ -106,86 +184,5 @@ class UserProfileController extends BaseController
         ));
     }
 
-    /**
-     * Follow button
-     *
-     * @param Profile $profile
-     * @param Request $request
-     * @param User $user
-     * @return Response
-     * @Route("/user/{username}/follow", name="app_profile_follow", condition="request.isXmlHttpRequest()")
-     * @Method("POST");
-     * @ParamConverter("profile", class="AppBundle\Entity\Profile", options={"mapping" : {"username" : "profileUsername"} } )
-     */
-    public function followAction(Profile $profile, Request $request, User $user)
-    {
-//        $this->handleInactiveProfiles($profile);
 
-        $user = $this->getUser();
-
-        $userConnectionManager = $this->get('app.manager.user_connection_manager');
-
-        $type = $_POST['type'];
-
-        if($userConnectionManager->follow($user, $profile->getUser())) {
-            return new JsonResponse(array(
-                'success' => true,
-                'response' => $this->renderView('AppBundle:User:follow_button_'.$type.'.html.twig', array(
-                    'profile' => $profile,
-                    'is_following' => true
-                ))
-            ));
-        }
-
-        return new JsonResponse([
-            'success' => false,
-            'response' => $this->renderView('AppBundle:User:follow_button_'.$type.'.html.twig', array(
-                'profile' => $profile,
-                'is_following' => false
-            ))
-        ]);
-    }
-
-    /**
-     * Unfollow button
-     *
-     * @param Profile $profile
-     * @param Request $request
-     * @return Response
-     * @Route("/user/{username}/unfollow", name="app_profile_unfollow", condition="request.isXmlHttpRequest()")
-     * @Method("POST");
-     * @ParamConverter("profile", class="AppBundle\Entity\Profile", options={"mapping" : {"username" : "profileUsername"} } )
-     */
-    public function unfollowAction(Profile $profile, Request $request)
-    {
-//        $this->handleInactiveProfiles($profile);
-
-//        $user = $this->getLoggedUser();
-
-        $user = $this->getUser();
-
-        $userConnectionManager = $this->get('app.manager.user_connection_manager');
-
-        $type = $_POST['type'];
-
-        if($userConnectionManager->unfollow($user, $profile->getUser())) {
-            return new JsonResponse(array(
-                'success' => true,
-                'response' => $this->renderView('AppBundle:User:follow_button_'.$type.'.html.twig', array(
-
-                    'profile' => $profile,
-                    'is_following' => false
-                ))
-            ));
-        }
-
-        return new JsonResponse(array(
-            'success' => false,
-            'response' => $this->renderView('AppBundle:User:follow_button_'.$type.'.html.twig', array(
-
-                'profile' => $profile,
-                'is_following' => true
-            ))
-        ));
-    }
 }

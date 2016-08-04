@@ -8,8 +8,10 @@
 
 namespace AppBundle\Manager;
 
+
 use Doctrine\ORM\EntityManager;
 use AppBundle\Entity\User;
+use AppBundle\Entity\Profile;
 use AppBundle\Entity\User\UserConnection;
 use AppBundle\Event\UserWasFollowedEvent;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
@@ -48,7 +50,7 @@ class UserConnectionManager
     public function follow(User $follower, User $followee)
     {
         if($follower->getId() === $followee->getId()) {
-            return false;
+            return true;
         }
 
         $userConnectionRepo = $this->em->getRepository('AppBundle:User\UserConnection');
@@ -63,6 +65,7 @@ class UserConnectionManager
             $connection = new UserConnection();
 
             $connection->setFollower($follower);
+            
             $connection->setFollowee($followee);
 
             // Check if this follower is followed by followee, and if so, set isFollowedBack to true
@@ -83,7 +86,7 @@ class UserConnectionManager
             return $connection;
         }
 
-        return false;
+        return true;
     }
 
     /**
@@ -98,17 +101,19 @@ class UserConnectionManager
     {
         $userConnectionRepo = $this->em->getRepository('AppBundle:User\UserConnection');
 
-        $userConnection = $userConnectionRepo->findOneBy(array(
+        $userConnection = $userConnectionRepo->findBy(array(
             'follower' => $follower->getId(),
             'followee' => $followee->getId()
         ));
 
-        if($userConnection) {
+    //        dump($userConnection);die();
+        if(!empty($userConnection)) {
             return true;
         }
 
         return false;
     }
+
 
     /**
      * Unfollow user
@@ -153,6 +158,7 @@ class UserConnectionManager
         return true;
     }
 
+
     /**
      * Get followers for given user
      *
@@ -163,8 +169,8 @@ class UserConnectionManager
     public function getFollowers(User $user)
     {
         return $this->em->getRepository('AppBundle:User\UserConnection')
-            ->createQueryBuilder('uc')
-            ->where('uc.followee = :user_id')
+            ->createQueryBuilder('user\userConnection')
+            ->where('user\userConnection.followee = :user_id')
             ->setParameter('user_id', $user->getId())
             ->getQuery();
     }
@@ -179,8 +185,8 @@ class UserConnectionManager
     public function getFollowing(User $user)
     {
         return $this->em->getRepository('AppBundle:User\UserConnection')
-            ->createQueryBuilder('uc')
-            ->where('uc.follower = :user_id')
+            ->createQueryBuilder('user\userConnection')
+            ->where('user\userConnection.follower = :user_id')
             ->setParameter('user_id', $user->getId())
             ->getQuery();
     }
@@ -190,10 +196,12 @@ class UserConnectionManager
      *
      * @return array
      */
-    public function getStats(user $user)
+    public function getStats(User $user)
     {
         return array(
             'followers' => $following = count($this->getFollowers($user)->getResult()),
         );
     }
+
+
 }

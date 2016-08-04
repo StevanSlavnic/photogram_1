@@ -9,10 +9,14 @@ use FOS\UserBundle\Entity\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Gedmo\Mapping\Annotation as Gedmo;
+use FOS\MessageBundle\Model\ParticipantInterface;
+use AppBundle\Entity\User\UserConnection;
+
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="user")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\UserRepository")
  */
 class User extends BaseUser
 {
@@ -41,10 +45,16 @@ class User extends BaseUser
      */
     protected $fullName;
 
+
+    private $connections;
+
+    /**
+     * User connection
+     */
     public function __construct()
     {
         parent::__construct();
-        // your own logic
+        $this->connections = new ArrayCollection();
     }
 
     /**
@@ -111,6 +121,28 @@ class User extends BaseUser
     {
         $this->username = $username;
     }
-    
-    
+
+    /**
+     * @param ArrayCollection $connections
+     */
+    public function setConnections($connections)
+    {
+        $this->connections = $connections;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getConnections()
+    {
+        return $this->connections;
+    }
+
+    /**
+     * @return int
+     */
+    public function getProfileId()
+    {
+        return $this->getProfile()->getId();
+    }
 }

@@ -11,5 +11,6 @@
 /bin/
 /composer.phar
 /web/images
-/.idea/
+/.idea/*
 /.sass-cache/
+web/assets/.sass-cache/*

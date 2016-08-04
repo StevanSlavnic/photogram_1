@@ -48,7 +48,7 @@ class UserConnectionManager
     public function follow(User $follower, User $followee)
     {
         if($follower->getId() === $followee->getId()) {
-            return false;
+            return true;
         }
 
         $userConnectionRepo = $this->em->getRepository('AppBundle:User\UserConnection');
@@ -63,6 +63,7 @@ class UserConnectionManager
             $connection = new UserConnection();
 
             $connection->setFollower($follower);
+            
             $connection->setFollowee($followee);
 
             // Check if this follower is followed by followee, and if so, set isFollowedBack to true
@@ -83,7 +84,7 @@ class UserConnectionManager
             return $connection;
         }
 
-        return false;
+        return true;
     }
 
     /**
@@ -98,12 +99,13 @@ class UserConnectionManager
     {
         $userConnectionRepo = $this->em->getRepository('AppBundle:User\UserConnection');
 
-        $userConnection = $userConnectionRepo->findOneBy(array(
+        $userConnection = $userConnectionRepo->findBy(array(
             'follower' => $follower->getId(),
             'followee' => $followee->getId()
         ));
 
-        if($userConnection) {
+    //        dump($userConnection);die();
+        if(!empty($userConnection)) {
             return true;
         }
 
@@ -190,7 +192,7 @@ class UserConnectionManager
      *
      * @return array
      */
-    public function getStats(user $user)
+    public function getStats(User $user)
     {
         return array(
             'followers' => $following = count($this->getFollowers($user)->getResult()),

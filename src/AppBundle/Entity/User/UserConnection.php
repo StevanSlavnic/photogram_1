@@ -11,6 +11,7 @@ namespace AppBundle\Entity;
 
 namespace AppBundle\Entity\User;
 
+use AppBundle\Entity\User;
 use Doctrine\ORM\Mapping as ORM;
 
 /**

@@ -41,10 +41,16 @@ class User extends BaseUser
      */
     protected $fullName;
 
+
+    private $connections;
+
+    /**
+     * User connection
+     */
     public function __construct()
     {
         parent::__construct();
-        // your own logic
+        $this->connections = new ArrayCollection();
     }
 
     /**
@@ -110,6 +116,14 @@ class User extends BaseUser
     public function setUsername($username)
     {
         $this->username = $username;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getConnections()
+    {
+        return $this->connections;
     }
     
     

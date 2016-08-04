@@ -308,7 +308,7 @@ class Profile
     }
 
     /**
-     * Is the given User the author of this Post?
+     * Is the given User the owner of this Profile?
      *
      * @param User $user
      *
@@ -317,5 +317,16 @@ class Profile
     public function isOwner(User $user)
     {
         return $user->getUsername() === $this->getProfileUsername();
+    }
+
+    /**
+     * Return true if profile cannot get user.
+     * This is quick fix for registration.
+     *
+     * @return bool
+     */
+    public function isEnabled()
+    {
+        return $this->getUser() ? $this->getUser()->isEnabled() : false;
     }
 }

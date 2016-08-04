@@ -135,3 +135,8 @@ liip_imagine:
             quality: 75
             filters:
                 thumbnail: { size: [200, 200], mode: outbound }
+
+fos_message:
+    db_driver: orm
+    thread_class: AppBundle\Entity\Thread
+    message_class: AppBundle\Entity\Message

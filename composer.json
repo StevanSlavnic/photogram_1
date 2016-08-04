@@ -27,7 +27,9 @@
         "white-october/pagerfanta-bundle": "^1.0",
         "erusev/parsedown": "^1.6",
         "stof/doctrine-extensions-bundle": "^1.2",
-        "leafo/scssphp": "^0.6.5"
+        "leafo/scssphp": "^0.6.5",
+        "liip/imagine-bundle": "^1.5",
+        "friendsofsymfony/jsrouting-bundle": "^1.6"
     },
     "require-dev": {
         "sensio/generator-bundle": "~3.0",

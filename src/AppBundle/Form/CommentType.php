@@ -12,6 +12,7 @@
 namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraint;
@@ -40,7 +41,11 @@ class CommentType extends AbstractType
         //     $builder->add('content', null, array('required' => false));
 
         $builder
-            ->add('content')
+            ->add('content', TextType::class, array(
+                'attr' => array(
+                    'class' => 'form-control comment-field'
+                )
+            ))
         ;
     }
 

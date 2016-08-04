@@ -1,5 +1,87 @@
 {% extends 'base.html.twig' %}
+{% block main %}
 
-{% block body_id 'profile_index' %}
-    {{ form_widget(form.imageFile) }}
+    <div class="edit-profile-container">
+
+        <div class="form-wrapper-edit">
+            <img id="profile-image" class="img-circle img-responsive img-raised" src="{{ profile.imageName | imagine_filter('my_thumb')  }}" title="#" />
+            <div class="image-wrapper-profile">
+                <div class="circle">
+                {#<img id="edit-image" class="img-responsive" src="{{ asset('media/cache/resolve/my_thumb/')}}{{ profile.imageName}}" alt="{{ profile.profileUsername }}" title="#" />#}
+                    <img class="img-responsive" id="imagePreview" >
+
+                </div>
+                <a href="#" id="cancel" aria-hidden="true"><i class="fa fa-times cancel"></i> Remove image</a>
+            </div>
+
+            {{ form_start(form, { attr: attr|default({}) }) }}
+            <div class="image-form-wrapper text-center">
+                <a class="sf-form-row-add-image">
+                    <i class="fa fa-plus"></i>
+                    <p>Choose Photo</p>
+                    {{ form_widget(form.imageFile) }}
+                </a>
+            </div>
+
+            {{ form_label(form.firstname) }}
+            {{ form_widget(form.firstname) }}
+            {{ form_errors(form.firstname) }}
+
+            {{ form_label(form.lastname) }}
+            {{ form_widget(form.lastname) }}
+
+            {{ form_label(form.occupation) }}
+            {{ form_widget(form.occupation) }}
+
+            {{ form_label(form.about) }}
+            {{ form_widget(form.about) }}
+
+            <input type="submit" value="{{ button_label|default('label.update'|trans) }}"
+                   class="{{ button_css|default("btn btn-primary pull-right") }}" />
+            {{ form_end(form) }}
+
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+            <script type="text/javascript">
+                $('.sf-form-row-add-image').hide();
+                $('.circle').hide();
+                document.getElementById("profile_edit_imageFile_file").onchange = function () {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        // get loaded data and render thumbnail.
+                        document.getElementById("imagePreview").src = e.target.result;
+                        $("#cancel").show();
+                        $('.circle').show();
+                        $('.sf-form-row-add-image').hide();
+
+                    };
+
+                    // read the image file as a data URL.
+                    reader.readAsDataURL(this.files[0]);
+                    $('#cancel').click(function(e)
+                    {
+                        $('#profile-image').hide();
+                        $('#profile_imageFile_file').val("");
+                        $('#imagePreview').attr("src","");
+                        $('.sf-form-row-add-image').show();
+                        $("#cancel").hide();
+                        $('.circle').hide();
+
+                    });
+
+                };
+                $('#cancel').click(function(e)
+                {
+                    $('.circle').hide();
+                    $('#profile-image').hide();
+                    $('#profile_imageFile_file').val("");
+                    $('#imagePreview').attr("src","");
+                    $('.sf-form-row-add-image').show();
+                    $("#cancel").hide();
+                });
+
+            </script>
+        </div>
+    </div>
 {% endblock %}

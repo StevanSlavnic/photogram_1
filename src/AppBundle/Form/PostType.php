@@ -52,11 +52,6 @@ class PostType extends AbstractType
                     ))
                 )
             ))
-//            ->add('title', null, array(
-//                'attr' => array('autofocus' => true),
-//                'label' => 'label.title',
-//            ))
-//            ->add('summary', 'Symfony\Component\Form\Extension\Core\Type\TextareaType', array('label' => 'label.summary'))
             ->add('content', null, array(
                 'attr' => array('rows' => 1),
                 'label' => 'label.content',
@@ -68,9 +63,6 @@ class PostType extends AbstractType
             ->add('publishedAt', 'AppBundle\Form\Type\DateTimePickerType', array(
                 'label' => 'label.published_at',
             ))
-//            ->add('updatedAt', 'AppBundle\Form\Type\DateTimePickerType', array(
-//                'label' => 'label.published_at',
-//            ))
         ;
     }
 

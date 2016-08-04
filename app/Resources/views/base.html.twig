@@ -37,8 +37,9 @@
                             {% block header_navigation_links %}
                                 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                                     <li>
-                                        <a href="#">
-                                            {{ app.user.username }}
+                                        <a href="{{ path("profile_index", {"username": app.user.profile.profileUsername}) }}">
+
+                                            {{ app.user.fullName }}
                                         </a>
                                     </li>
                                     <li>
@@ -93,12 +94,16 @@
             {% javascripts output="js/app.js"
             'assets/js/jquery-2.1.4.min.js'
             'assets/js/bootstrap-3.3.4.js'
-            'assets/js/bootstrap-datetimepicker.min.js'
-            'assets/js/material-kit.js'
-            'assets/js/material.min.js'
-            'assets/js/nouislider.min.js'
+            'assets/js/bootstrap-datepicker.js'
+            'assets/js/ct-paper-checkbox.js'
+            'assets/js/ct-paper-radio.js'
+            'assets/js/ct-paper.js'
+            'assets/js/echo.js'
+            'assets/js/connections.js'
             %}
             <script src="{{ asset_url }}"></script>
+    <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+    <script src="{{ path('fos_js_routing_js', {'callback': 'fos.Router.setData'}) }}"></script>
             {% endjavascripts %}
 
     </body>

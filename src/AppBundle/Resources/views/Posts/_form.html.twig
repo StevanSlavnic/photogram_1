@@ -13,16 +13,14 @@
 
 {{ form_start(form, { attr: attr|default({}) }) }}
     {#{{ form_widget(form) }}#}
-    <div class="text-center">
+    <div class="image-form-wrapper text-center">
         <a class="sf-form-row-add-image">
             <i class="fa fa-plus"></i>
             <p>Choose Photo</p>
             {{ form_widget(form.imageFile) }}
         </a>
     </div>
-    {#{{ form_row(form.title) }}#}
-        {#{{ form_row(form.summary) }}#}
-        {{ form_row(form.content) }}
+        {{ form_row(form.content, {attr: { class: 'form-control', placeholder: 'Enter caption'}}) }}
     <div class="hidden">
         {{ form_row(form.authorEmail, { label_attr: { class: 'hidden' }}) }}
         {{ form_row(form.publishedAt, { label_attr: { class: 'hidden' }}) }}

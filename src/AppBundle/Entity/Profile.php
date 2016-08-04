@@ -35,11 +35,11 @@ class Profile
     */
     protected $id;
 
-//    /**
-//     * @var string
-//     * @ORM\Column(name="username", type="string")
-//     */
-//    protected $username;
+    /**
+     * @var User
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\User", mappedBy="profile")
+     */
+    protected $user;
 
     /**
      * @var string
@@ -52,6 +52,12 @@ class Profile
      * @ORM\Column(name="lastname", type="string")
      */
     protected $lastname;
+
+    /**
+     * @var string
+     * @ORM\Column(name="profile_username", type="string")
+     */
+    private $profileUsername;
 
     /**
      * @var string
@@ -85,14 +91,14 @@ class Profile
      *
      * @var File
      */
-    private $imageFile;
+    protected $imageFile;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      *
      * @var string
      */
-    private $imageName;
+    protected $imageName;
 
     public function __construct()
     {
@@ -149,21 +155,21 @@ class Profile
         $this->updatedAt = $updatedAt;
     }
 
-//    /**
-//     * @return string
-//     */
-//    public function getUsername()
-//    {
-//        return $this->username;
-//    }
-//
-//    /**
-//     * @param string $username
-//     */
-//    public function setUsername($username)
-//    {
-//        $this->username = $username;
-//    }
+    /**
+     * @return string
+     */
+    public function getProfileUsername()
+    {
+        return $this->profileUsername;
+    }
+
+    /**
+     * @param string $profileUsername
+     */
+    public function setProfileUsername($profileUsername)
+    {
+        $this->profileUsername = $profileUsername;
+    }
 
     /**
      * @return string
@@ -271,5 +277,56 @@ class Profile
         $this->imageName = $imageName;
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getImageName()
+    {
+        return $this->imageName;
+    }
+
+    /**
+     * @return \AppBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * @param \AppBundle\Entity\User $user
+     * 
+     * @return Profile
+     */
+    public function setUser(User $user)
+    {
+        $this->user = $user;
+        
+        return $this;
+    }
+
+    /**
+     * Is the given User the owner of this Profile?
+     *
+     * @param User $user
+     *
+     * @return bool
+     */
+    public function isOwner(User $user)
+    {
+        return $user->getUsername() === $this->getProfileUsername();
+    }
+
+    /**
+     * Return true if profile cannot get user.
+     * This is quick fix for registration.
+     *
+     * @return bool
+     */
+    public function isEnabled()
+    {
+        return $this->getUser() ? $this->getUser()->isEnabled() : false;
     }
 }

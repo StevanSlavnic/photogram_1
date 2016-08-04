@@ -13,6 +13,11 @@ services:
       arguments: ['@?', '@session']
       tags:
           - { name: form.type, alias: app_user_type }
+  app.form_type.post_type:
+      class: AppBundle\Form\PostType
+      tags:
+          - { name: form.type, alias: app_edit_profile_type }
+
 
 #    service_name:
 #        class: AppBundle\Directory\ClassName
@@ -21,5 +26,15 @@ services:
   markdown:
       class: AppBundle\Utils\Markdown
 
-  app.controller_profile.profile_controller:
-      class: AppBundle\Controller\Profile\ProfileController
+  app.controller.user_profile_controller:
+      class: AppBundle\Controller\UserProfileController
+
+  app.event_listener_user.user_was_followed_event_listener:
+      class: AppBundle\EventListener\UserWasFollowedEventListener
+      arguments: [ @doctrine.orm.entity_manager ]
+      tags:
+          - {name: kernel.event_listener, event: user_was_followed_event, method: handle}
+
+  app.manager.user_connection_manager:
+      class: AppBundle\Manager\UserConnectionManager
+      arguments: [ @doctrine.orm.entity_manager, @event_dispatcher ]

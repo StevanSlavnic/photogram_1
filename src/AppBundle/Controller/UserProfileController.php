@@ -15,6 +15,7 @@ use AppBundle\Entity\Comment;
 use AppBundle\Entity\Post;
 use AppBundle\Entity\Profile;
 use AppBundle\Entity\User;
+use AppBundle\Entity\User\UserConnection;
 use Doctrine\ORM\Mapping\Id;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -24,61 +25,164 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use AppBundle\Controller\BaseController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
-class UserProfileController extends Controller
+class UserProfileController extends BaseController
 {
     /**
      *
-     * @Route("/user/{firstname}-{lastname}", name="profile_index")
+     *
+     * @Route("/user/{username}", name="profile_index")
+     * @ParamConverter("profile", class="AppBundle\Entity\Profile", options={"mapping" : {"username" : "profileUsername"} } )
+     *
      * @Method("GET")
+     *
      * @param Profile $profile
-     * @param User $user
+     *
      * @return Response
-     * @internal param Post $posts
-     * @internal param Post $post
-     * @return array
      */
-    public function showAction(Profile $profile, User $user, Post $post, Post $posts)
+    public function showAction(Profile $profile)
     {
+        $loggedUser = $this->getLoggedUser();
+        $user = $profile->getUser();
+        $userConnectionManager = $this->get('app.manager.user_connection_manager');
+
+        $followers = $userConnectionManager->getFollowers($profile->getUser())->getResult();
+        $following = $userConnectionManager->getFollowing($profile->getUser())->getResult();
+
+        if (!empty($posts)) {
+//            /** @var Post $posts */
+//            $posts = $this->getDoctrine()->getRepository('AppBundle:Post')->getLatestForUserQuery();
+        }
         $posts = $this->getDoctrine()->getRepository('AppBundle:Post')->findBy(array(
-            'user' => $user
+            'user' => $profile->getUser()
         ));
 
         return $this->render('AppBundle:User:profile.html.twig', array(
             'profile' => $profile,
             'user' => $user,
             'posts' => $posts,
-            'post' => $post
+            'followers' => $followers,
+            'following' => $following,
+            'is_following' => $userConnectionManager->isFollowing($loggedUser, $user),
+            'is_followed_back' => $userConnectionManager->isFollowing($user, $loggedUser)
         ));
     }
 
     /**
-     * @Route("/user/{firstname}-{lastname}/edit", name="profile_index_edit")
+     * Follow button
+     *
+     * @param Profile $profile
+     * @param Request $request
+     * @return Response
+     * @Route("/user/{username}/follow", name="app_profile_follow", condition="request.isXmlHttpRequest()")
+     * @Method("POST");
+     * @ParamConverter("profile", class="AppBundle\Entity\Profile", options={"mapping" : {"username" : "profileUsername"} } )
+     */
+    public function follow(Profile $profile, Request $request)
+    {
+//        $this->handleInactiveProfiles($profile);
+
+        $user = $this->getLoggedUser();
+
+        $userConnectionManager = $this->get('app.manager.user_connection_manager');
+
+        $type = $_POST['type'];
+
+        if($userConnectionManager->follow($user, $profile->getUser())) {
+            return new JsonResponse(array(
+                'success' => true,
+//                'response' => $this->renderView('AppBundle:User:profile.html.twig', array(
+                'response' => $this->renderView('AppBundle:User:follow_button_'. $type .'.html.twig', array(
+                    'profile' => $profile,
+                    'is_following' => true
+                ))
+            ));
+        }
+
+        return new JsonResponse([
+            'success' => false,
+//            'response' => $this->renderView('AppBundle:User:profile.html.twig', array(
+            'response' => $this->renderView('AppBundle:User:follow_button_'. $type .'.html.twig', array(
+                'profile' => $profile,
+                'is_following' => true
+            ))
+        ]);
+        
+    }
+
+    /**
+     * Unfollow button
+     *
+     * @param Profile $profile
+     * @param Request $request
+     * @return Response
+     * @Route("/user/{username}/unfollow", name="app_profile_unfollow", condition="request.isXmlHttpRequest()")
+     * @Method("POST");
+     * @ParamConverter("profile", class="AppBundle\Entity\Profile", options={"mapping" : {"username" : "profileUsername"} } )
+     */
+    public function unfollow(Profile $profile, Request $request)
+    {
+//        $this->handleInactiveProfiles($profile);
+
+        $user = $this->getLoggedUser();
+
+        $userConnectionManager = $this->get('app.manager.user_connection_manager');
+
+        $type = $_POST['type'];
+
+        if($userConnectionManager->unfollow($user, $profile->getUser())) {
+            return new JsonResponse(array(
+                'success' => true,
+                'response' => $this->renderView('AppBundle:User:follow_button_'. $type .'.html.twig', array(
+                    'profile' => $profile,
+                    'is_following' => false
+                ))
+            ));
+        }
+
+        return new JsonResponse(array(
+            'success' => false,
+            'response' => $this->renderView('AppBundle:User:follow_button_'. $type .'.html.twig', array(
+                'profile' => $profile,
+                'is_following' => true
+            ))
+        ));
+    }
+
+    /**
+     * @Route("/user/{username}/edit", name="profile_index_edit")
+     * @ParamConverter("profile", class="AppBundle\Entity\Profile", options={"mapping" : {"username" : "profileUsername"} } )
      * @param Profile $profile
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
      */
-    public function editAction(Profile $profile, Request $request)
+    public function editAction(Profile $profile, Request $request, $username)
     {
         $entityManager = $this->getDoctrine()->getManager();
 
-        $editForm = $this->createForm('AppBundle\Form\ProfileType', $profile);
+        $editForm = $this->createForm('AppBundle\Form\Type\ProfileEditType', $profile);
 //        $deleteForm = $this->createDeleteForm($post);
 
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
 
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($profile);
             $entityManager->flush();
 
             $this->addFlash('success', 'profile.updated_successfully');
 
-            return $this->redirectToRoute('profile_index');
+            return $this->redirectToRoute('profile_index', array(
+                'username' => $username,
+            ));
         }
 
         return $this->render('@App/User/profile_edit.html.twig', array(
             'profile'        => $profile,
-            'profile_edit_form'   => $editForm->createView(),
+            'form'   => $editForm->createView(),
         ));
     }
 

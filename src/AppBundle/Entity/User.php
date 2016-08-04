@@ -13,8 +13,9 @@ use Gedmo\Mapping\Annotation as Gedmo;
 /**
  * @ORM\Entity
  * @ORM\Table(name="user")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\UserRepository")
  */
-class User extends BaseUser
+class User extends BaseUser implements ParticipantInterface
 {
 //    const TYPE_USER = ;
     /**
@@ -119,12 +120,26 @@ class User extends BaseUser
     }
 
     /**
+     * @param ArrayCollection $connections
+     */
+    public function setConnections($connections)
+    {
+        $this->connections = $connections;
+    }
+
+    /**
      * @return ArrayCollection
      */
     public function getConnections()
     {
         return $this->connections;
     }
-    
-    
+
+    /**
+     * @return int
+     */
+    public function getProfileId()
+    {
+        return $this->getProfile()->getId();
+    }
 }

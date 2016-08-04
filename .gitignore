@@ -13,3 +13,4 @@
 /web/images
 /.idea/*
 /.sass-cache/
+web/assets/.sass-cache/*

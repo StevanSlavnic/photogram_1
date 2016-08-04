@@ -18,7 +18,6 @@ Connection.prototype = {
         $.ajax({
             type : 'post',
             url : btn.attr('data-follow-url'),
-            dataType: "json",
             data : {
                 type: btn.attr('data-type')
             },
@@ -36,7 +35,6 @@ Connection.prototype = {
 
         $.ajax({
             type : 'post',
-            dataType: "json",
             url : btn.attr('data-unfollow-url'),
             data : {
                 user_id : btn.attr('data-user-id'),

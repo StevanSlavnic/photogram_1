@@ -16,17 +16,16 @@ use AppBundle\Entity\Post;
 use AppBundle\Entity\Profile;
 use AppBundle\Entity\User;
 use AppBundle\Entity\User\UserConnection;
-use Doctrine\ORM\Mapping\Id;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use AppBundle\Repository\UserConnectionRepository;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use AppBundle\Controller\BaseController;
-use Symfony\Component\HttpFoundation\JsonResponse;
+use AppBundle\Manager\UserConnectionManager;
+
 
 class UserProfileController extends BaseController
 {
@@ -104,12 +103,11 @@ class UserProfileController extends BaseController
         return new JsonResponse([
             'success' => false,
 //            'response' => $this->renderView('AppBundle:User:profile.html.twig', array(
-            'response' => $this->renderView('AppBundle:User:follow_button_'. $type .'.html.twig', array(
+            'response' => $this->renderView('AppBundle:User:follow_button_'.$type.'.html.twig', array(
                 'profile' => $profile,
                 'is_following' => true
             ))
         ]);
-        
     }
 
     /**

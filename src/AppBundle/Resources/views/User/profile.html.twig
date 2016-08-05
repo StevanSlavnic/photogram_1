@@ -124,7 +124,7 @@
                             <a href="{{ path('profile_index_edit', {"username": user.profile.profileUsername}) }}" class="btn"><i class="fa fa-cog"></i>Settings</a>
                         {% else %}
                         {% endif %}
-                            {{ dump(is_following) }}
+                            {#{{ dump(is_following) }}#}
                         {% if app.user.profile.id != user.profile.id %}
                             <div class="follow_button_holder in_cover_content">
                                 {% include 'AppBundle:User:follow_button_large.html.twig' %}

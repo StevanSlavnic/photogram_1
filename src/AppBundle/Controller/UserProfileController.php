@@ -17,6 +17,7 @@ use AppBundle\Entity\Profile;
 use AppBundle\Entity\User;
 use AppBundle\Entity\User\UserConnection;
 use AppBundle\Repository\UserConnectionRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -30,9 +31,7 @@ use AppBundle\Manager\UserConnectionManager;
 class UserProfileController extends BaseController
 {
     /**
-     *
-     *
-     * @Route("/user/{username}", name="profile_index")
+     * @Route("/user/{username}/", name="profile_index")
      * @ParamConverter("profile", class="AppBundle\Entity\Profile", options={"mapping" : {"username" : "profileUsername"} } )
      *
      * @Method("GET")
@@ -156,7 +155,7 @@ class UserProfileController extends BaseController
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
      */
-    public function editAction(Profile $profile, Request $request, $username)
+    public function editAction(Profile $profile, User $user, Request $request, $username)
     {
         $entityManager = $this->getDoctrine()->getManager();
 

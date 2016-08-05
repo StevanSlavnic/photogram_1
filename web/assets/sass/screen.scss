@@ -14,6 +14,43 @@ body {
 
 }
 
+nav.navbar-custom {
+  background-color: transparent;
+  border-bottom: none;
+  .navbar-nav {
+    li {
+      a {
+        line-height: 2.42857;
+        &:hover {
+          color: #333;
+        }
+        .fa {
+          top: 3px;
+          position: relative;
+        }
+        img {
+          display: inline;
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+.navbar-profile {
+  li {
+    a {
+      .fa {
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+.navbar-open {
+  background-color: #ffffff;
+}
+
 .post {
   border-radius: 4px;
   width: 620px;
@@ -24,6 +61,10 @@ body {
   .post-header {
     margin: 0px 20px;
     position: relative;
+    img {
+      display: inline;
+      margin: 0;
+    }
     .options {
       display: inline;
       margin: 0;
@@ -38,6 +79,8 @@ body {
     a {
       display: inline-block;
       line-height: 50px;
+      font-weight: 600;
+      color: #333;
     }
     .options {
       display: inline;
@@ -326,10 +369,7 @@ body {
   }
 }
 
-.navbar .navbar-nav > li > a .fa {
-  top: 3px;
-  position: relative;
-}
+
 
 .login-form {
   width: 100%;

@@ -156,10 +156,15 @@ class UserProfileController extends BaseController
      * @param Profile $profile
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
-     * @Security("user.getProfile() == profile")
      */
     public function editAction(Profile $profile, User $user, Request $request, $username)
     {
+        if (!$profile->isOwner($this->getUser())) {
+//            $this->denyAccessUnlessGranted('profile_index_edit', $profile);
+
+            return $this->redirectToRoute('fos_user_security_login');
+        }
+
         $entityManager = $this->getDoctrine()->getManager();
 
         $editForm = $this->createForm('AppBundle\Form\Type\ProfileEditType', $profile);

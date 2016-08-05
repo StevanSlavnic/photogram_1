@@ -38,16 +38,19 @@ class PostController extends Controller
     public function indexAction(Request $request, $page)
     {
 
-
+        $user = $this->getUser();
         $posts = $this->getDoctrine()->getRepository('AppBundle:Post')->findLatest($page);
         $profiles = $this->getDoctrine()->getRepository('AppBundle:Profile')->findAll();
+        $profile = $this->getDoctrine()->getRepository('AppBundle:Profile')->findOneBy(array());
         $form = $this->createForm('AppBundle\Form\CommentType');
+//        $deleteForm = $this->createForm('')
 
         $form->handleRequest($request);
 
         return $this->render('@App/PostsList/index.html.twig', array(
             'posts' => $posts,
-//            'user' => $user,
+            'user' => $user,
+            'profile' => $profile,
             'profiles' => $profiles,
             'form' => $form->createView()
         ));

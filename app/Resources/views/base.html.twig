@@ -17,7 +17,7 @@
     <body>
     {% block header %}
         <header>
-            <div class="navbar navbar-primary" role="navigation">
+            <nav class="navbar navbar-default navbar-custom" role="navigation">
                 <div class="container">
                     <div class="navbar-header">
                         <a class="navbar-brand" href="{{ path('blog_index') }}">
@@ -25,27 +25,33 @@
                         </a>
                         <button type="button" class="navbar-toggle"
                                 data-toggle="collapse"
-                                data-target=".navbar-collapse">
+                                data-target="#navigation-example-2">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
                     </div>
-                    <div class="navbar-collapse collapse">
+                    <div class="navbar-collapse collapse" id="navigation-example-2">
                         <ul class="nav navbar-nav navbar-right">
 
                             {% block header_navigation_links %}
                                 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+
                                     <li>
                                         <a href="{{ path("profile_index", {"username": app.user.profile.profileUsername}) }}">
-
-                                            {{ app.user.fullName }}
+                                            {% if app.user.profile.imageName %}
+                                                <img src="{{ app.user.profile.imageName | imagine_filter('my_small')  }}" alt="Circle Image" class="img-circle img-responsive img-raised">
+                                            {% else %}
+                                                <img src="https://s3.amazonaws.com/creativetim_bucket/new_logo.png" />
+                                            {% endif %}
+                                            {{ app.user.profile.firstName }}
                                         </a>
                                     </li>
                                     <li>
                                         <a href="{{ path('post_new') }}">
-                                            New Post
+                                            <i class="fa fa-plus-square-o" aria-hidden="true"></i>
+                                            <small>New post</small>
                                         </a>
                                     </li>
                                 {% else %}
@@ -81,7 +87,7 @@
                         </ul>
                     </div>
                 </div>
-            </div>
+            </nav>
         </header>
     {% endblock %}
         {% block body %}

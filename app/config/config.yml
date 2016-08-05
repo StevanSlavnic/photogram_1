@@ -135,6 +135,10 @@ liip_imagine:
             quality: 75
             filters:
                 thumbnail: { size: [200, 200], mode: outbound }
+        my_small:
+            quality: 75
+            filters:
+                thumbnail: { size: [30, 30], mode: outbound }
 
 fos_message:
     db_driver: orm

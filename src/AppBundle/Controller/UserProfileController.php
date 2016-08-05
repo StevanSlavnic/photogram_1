@@ -17,6 +17,7 @@ use AppBundle\Entity\Profile;
 use AppBundle\Entity\User;
 use AppBundle\Entity\User\UserConnection;
 use AppBundle\Repository\UserConnectionRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -154,10 +155,8 @@ class UserProfileController extends BaseController
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
      */
-    public function editAction(Profile $profile, Request $request, $username)
+    public function editAction(Profile $profile, User $user, Request $request, $username)
     {
-
-
         $entityManager = $this->getDoctrine()->getManager();
 
         $editForm = $this->createForm('AppBundle\Form\Type\ProfileEditType', $profile);
@@ -178,13 +177,10 @@ class UserProfileController extends BaseController
             ));
         }
 
-        if ($user = $this->getLoggedUser()) {
-            return $this->render('@App/User/profile_edit.html.twig', array(
-                'profile'        => $profile,
-                'form'   => $editForm->createView(),
-            ));
-        }
-
+        return $this->render('@App/User/profile_edit.html.twig', array(
+            'profile'        => $profile,
+            'form'   => $editForm->createView(),
+        ));
     }
 
 

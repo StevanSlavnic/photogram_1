@@ -145,4 +145,14 @@ class User extends BaseUser implements ParticipantInterface
     {
         return $this->getProfile()->getId();
     }
+
+    /**
+     * Is the given User the author of this Post?
+     *
+     * @return bool
+     */
+    public function isProfileOwner(User $user = null)
+    {
+        return $user && $user->getProfile() == $this->getProfileId();
+    }
 }

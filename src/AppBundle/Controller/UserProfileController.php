@@ -30,9 +30,7 @@ use AppBundle\Manager\UserConnectionManager;
 class UserProfileController extends BaseController
 {
     /**
-     *
-     *
-     * @Route("/user/{username}", name="profile_index")
+     * @Route("/user/{username}/", name="profile_index")
      * @ParamConverter("profile", class="AppBundle\Entity\Profile", options={"mapping" : {"username" : "profileUsername"} } )
      *
      * @Method("GET")
@@ -158,6 +156,8 @@ class UserProfileController extends BaseController
      */
     public function editAction(Profile $profile, Request $request, $username)
     {
+
+
         $entityManager = $this->getDoctrine()->getManager();
 
         $editForm = $this->createForm('AppBundle\Form\Type\ProfileEditType', $profile);
@@ -178,10 +178,13 @@ class UserProfileController extends BaseController
             ));
         }
 
-        return $this->render('@App/User/profile_edit.html.twig', array(
-            'profile'        => $profile,
-            'form'   => $editForm->createView(),
-        ));
+        if ($user = $this->getLoggedUser()) {
+            return $this->render('@App/User/profile_edit.html.twig', array(
+                'profile'        => $profile,
+                'form'   => $editForm->createView(),
+            ));
+        }
+
     }
 
 

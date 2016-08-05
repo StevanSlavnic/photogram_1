@@ -17,6 +17,7 @@ use AppBundle\Entity\Profile;
 use AppBundle\Entity\User;
 use AppBundle\Entity\User\UserConnection;
 use AppBundle\Repository\UserConnectionRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -156,8 +157,14 @@ class UserProfileController extends BaseController
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
      */
-    public function editAction(Profile $profile, Request $request, $username)
+    public function editAction(Profile $profile, User $user, Request $request, $username)
     {
+        if (!$profile->isOwner($this->getUser())) {
+//            $this->denyAccessUnlessGranted('profile_index_edit', $profile);
+
+            return $this->redirectToRoute('fos_user_security_login');
+        }
+
         $entityManager = $this->getDoctrine()->getManager();
 
         $editForm = $this->createForm('AppBundle\Form\Type\ProfileEditType', $profile);

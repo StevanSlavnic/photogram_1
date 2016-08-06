@@ -49,6 +49,9 @@
                                         </a>
                                     </li>
                                     <li>
+                                        <a href="{{ path('photo_message_inbox', {"username": app.user.profile.profileUsername}) }}"><i class="fa fa-envelope"></i> {{ fos_message_nb_unread() }}</a>
+                                    </li>
+                                    <li>
                                         <a href="{{ path('post_new') }}">
                                             <i class="fa fa-plus-square-o" aria-hidden="true"></i>
                                             <small>New post</small>

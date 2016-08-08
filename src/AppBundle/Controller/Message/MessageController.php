@@ -24,6 +24,7 @@ class MessageController extends \FOS\MessageBundle\Controller\MessageController
      */
     public function inboxAction()
     {
+
         $threads = $this->getProvider()->getInboxThreads();
 
         return $this->container->get('templating')->renderResponse('AppBundle:Message:inbox.html.twig', array(
@@ -76,7 +77,7 @@ class MessageController extends \FOS\MessageBundle\Controller\MessageController
         $formHandler = $this->container->get('fos_message.reply_form.handler');
 
         if ($message = $formHandler->process($form)) {
-            return new RedirectResponse($this->container->get('router')->generate('fos_message_thread_view', array(
+            return new RedirectResponse($this->container->get('router')->generate('photo_message_thread_id', array(
                 'threadId' => $message->getThread()->getId()
             )));
         }
@@ -99,7 +100,7 @@ class MessageController extends \FOS\MessageBundle\Controller\MessageController
         $formHandler = $this->container->get('fos_message.new_thread_form.handler');
 
         if ($message = $formHandler->process($form)) {
-            return new RedirectResponse($this->container->get('router')->generate('fos_message_thread_view', array(
+            return new RedirectResponse($this->container->get('router')->generate('photo_message_thread_id', array(
                 'threadId' => $message->getThread()->getId()
             )));
         }
@@ -114,8 +115,7 @@ class MessageController extends \FOS\MessageBundle\Controller\MessageController
      * Deletes a thread
      *
      * @param string $threadId the thread id
-     * @Route(name="photo_message_id_delete")
-     * @ParamConverter("profile", class="AppBundle\Entity\Profile", options={"mapping" : {"username" : "profileUsername"} } )
+
      * @return RedirectResponse
      */
     public function deleteAction($threadId)
@@ -131,7 +131,7 @@ class MessageController extends \FOS\MessageBundle\Controller\MessageController
      * Undeletes a thread
      *
      * @param string $threadId
-     * @Route(name="photo_message_id_undelete")
+     * @Route("/user/{username}/inbox/message/{threadId}/undelete", name="photo_message_id_undelete")
      * @ParamConverter("profile", class="AppBundle\Entity\Profile", options={"mapping" : {"username" : "profileUsername"} } )
      * @return RedirectResponse
      */

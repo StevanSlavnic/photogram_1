@@ -14,6 +14,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use FOS\MessageBundle\Model\ThreadInterface;
 use FOS\MessageBundle\ModelManager\ThreadManagerInterface;
 
+
 class MessageController extends \FOS\MessageBundle\Controller\MessageController
 {
     /**
@@ -27,9 +28,14 @@ class MessageController extends \FOS\MessageBundle\Controller\MessageController
 
         $threads = $this->getProvider()->getInboxThreads();
 
+        /** @var Profile $username */
+        $username = $this->getUser()->getProfile()->getProfileUsername();
+
         return $this->container->get('templating')->renderResponse('AppBundle:Message:inbox.html.twig', array(
-            'threads' => $threads
+            'threads' => $threads,
+            'username' => $username
         ));
+
     }
 
     /**
@@ -43,7 +49,8 @@ class MessageController extends \FOS\MessageBundle\Controller\MessageController
         $threads = $this->getProvider()->getSentThreads();
 
         return $this->container->get('templating')->renderResponse('@App/Message/sent.html.twig', array(
-            'threads' => $threads
+            'threads' => $threads,
+            'username' => 'Milenko-Dolovac'
         ));
     }
 
@@ -58,7 +65,8 @@ class MessageController extends \FOS\MessageBundle\Controller\MessageController
         $threads = $this->getProvider()->getDeletedThreads();
 
         return $this->container->get('templating')->renderResponse('@App/Message/deleted.html.twig', array(
-            'threads' => $threads
+            'threads' => $threads,
+            'username' => 'Milenko-Dolovac'
         ));
     }
 
@@ -77,14 +85,15 @@ class MessageController extends \FOS\MessageBundle\Controller\MessageController
         $formHandler = $this->container->get('fos_message.reply_form.handler');
 
         if ($message = $formHandler->process($form)) {
-            return new RedirectResponse($this->container->get('router')->generate('photo_message_thread_id', array(
+            return new RedirectResponse($this->container->get('router')->generate('photo_message_sent', array(
                 'threadId' => $message->getThread()->getId()
             )));
         }
 
         return $this->container->get('templating')->renderResponse('@App/Message/thread.html.twig', array(
             'form' => $form->createView(),
-            'thread' => $thread
+            'thread' => $thread,
+            'username' => 'Milenko-Dolovac'
         ));
     }
 
@@ -100,8 +109,9 @@ class MessageController extends \FOS\MessageBundle\Controller\MessageController
         $formHandler = $this->container->get('fos_message.new_thread_form.handler');
 
         if ($message = $formHandler->process($form)) {
-            return new RedirectResponse($this->container->get('router')->generate('photo_message_thread_id', array(
-                'threadId' => $message->getThread()->getId()
+            return new RedirectResponse($this->container->get('router')->generate('photo_message_sent', array(
+                'threadId' => $message->getThread()->getId(),
+                'username' => 'Slavnić-Stevan'
             )));
         }
 
@@ -115,23 +125,25 @@ class MessageController extends \FOS\MessageBundle\Controller\MessageController
      * Deletes a thread
      *
      * @param string $threadId the thread id
-
+     * @ParamConverter("profile", class="AppBundle\Entity\Profile", options={"mapping" : {"username" : "profileUsername"} } )
      * @return RedirectResponse
      */
     public function deleteAction($threadId)
     {
+
         $thread = $this->getProvider()->getThread($threadId);
         $this->container->get('fos_message.deleter')->markAsDeleted($thread);
         $this->container->get('fos_message.thread_manager')->saveThread($thread);
 
-        return new RedirectResponse($this->container->get('router')->generate('photo_message_inbox'));
+        return new RedirectResponse($this->container->get('router')->generate('photo_message_inbox', array(
+            'username' => 'Milenko-Dolovac'
+        )));
     }
 
     /**
      * Undeletes a thread
      *
      * @param string $threadId
-     * @Route("/user/{username}/inbox/message/{threadId}/undelete", name="photo_message_id_undelete")
      * @ParamConverter("profile", class="AppBundle\Entity\Profile", options={"mapping" : {"username" : "profileUsername"} } )
      * @return RedirectResponse
      */
@@ -141,7 +153,9 @@ class MessageController extends \FOS\MessageBundle\Controller\MessageController
         $this->container->get('fos_message.deleter')->markAsUndeleted($thread);
         $this->container->get('fos_message.thread_manager')->saveThread($thread);
 
-        return new RedirectResponse($this->container->get('router')->generate('photo_message_inbox'));
+        return new RedirectResponse($this->container->get('router')->generate('photo_message_inbox', array(
+            'username' => 'Milenko-Dolovac'
+        )));
     }
 
     /**
@@ -169,6 +183,14 @@ class MessageController extends \FOS\MessageBundle\Controller\MessageController
     protected function getProvider()
     {
         return $this->container->get('fos_message.provider');
+    }
+
+    /**
+     * @return User $user
+     */
+    private function getUser()
+    {
+        return $this;
     }
 
 

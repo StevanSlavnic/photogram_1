@@ -1,7 +1,7 @@
-{% extends 'AppBundle:Message:layout.html.twig' %}
+{% extends '::base.html.twig' %}
 
 {% block fos_message_content %}
-
+<div class="form-wrapper">
 <h2>{% trans from 'FOSMessageBundle' %}search{% endtrans %}</h2>
 
 <p>{% transchoice threads|length with {'%num%': threads|length } from 'FOSMessageBundle' %}
@@ -9,5 +9,5 @@
 {% endtranschoice %}</p>
 
 {% include '@App/Message/threads_list.html.twig' with {'threads': threads} %}
-
+</div>
 {% endblock %}

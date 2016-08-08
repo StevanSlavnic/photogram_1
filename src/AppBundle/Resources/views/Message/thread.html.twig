@@ -1,7 +1,7 @@
-{% extends 'AppBundle:Message:layout.html.twig' %}
+{% extends '::base.html.twig' %}
 
 {% block fos_message_content %}
-
+<div class="form-wrapper">
 <h2>{{ thread.subject }}</h2>
 
 {% for message in thread.messages %}
@@ -23,5 +23,5 @@
 
     <input type="submit" />
 </form>
-
+</div>
 {% endblock %}

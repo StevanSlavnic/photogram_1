@@ -18,7 +18,7 @@
 
 <h3>{% trans from 'FOSMessageBundle' %}reply{% endtrans %}</h3>
 
-<form action="{{ url('fos_message_thread_view', {'threadId': thread.id}) }}" method="post">
+<form action="{{ url('photo_message_thread_id', {'threadId': thread.id, "username": app.user.profile.profileUsername}) }}" method="post">
     {{ form_widget(form) }}
 
     <input type="submit" />

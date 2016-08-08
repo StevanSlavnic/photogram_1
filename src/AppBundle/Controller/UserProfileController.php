@@ -49,13 +49,13 @@ class UserProfileController extends BaseController
         $followers = $userConnectionManager->getFollowers($profile->getUser())->getResult();
         $following = $userConnectionManager->getFollowing($profile->getUser())->getResult();
 
-        if (!empty($posts)) {
-//            /** @var Post $posts */
-//            $posts = $this->getDoctrine()->getRepository('AppBundle:Post')->getLatestForUserQuery();
-        }
         $posts = $this->getDoctrine()->getRepository('AppBundle:Post')->findBy(array(
             'user' => $profile->getUser()
         ));
+
+
+
+
 
         return $this->render('AppBundle:User:profile.html.twig', array(
             'profile' => $profile,
@@ -157,6 +157,12 @@ class UserProfileController extends BaseController
      */
     public function editAction(Profile $profile, User $user, Request $request, $username)
     {
+//         $post = $this->getDoctrine()->getRepository('AppBundle:Profile')->findOneBy(array());
+
+        if (!$profile->isOwner($this->getUser())) {
+            return $this->redirectToRoute('fos_user_security_login');
+        }
+
         $entityManager = $this->getDoctrine()->getManager();
 
         $editForm = $this->createForm('AppBundle\Form\Type\ProfileEditType', $profile);

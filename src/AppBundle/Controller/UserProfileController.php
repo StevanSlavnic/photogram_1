@@ -31,9 +31,7 @@ use AppBundle\Manager\UserConnectionManager;
 class UserProfileController extends BaseController
 {
     /**
-     *
-     *
-     * @Route("/user/{username}", name="profile_index")
+     * @Route("/user/{username}/", name="profile_index")
      * @ParamConverter("profile", class="AppBundle\Entity\Profile", options={"mapping" : {"username" : "profileUsername"} } )
      *
      * @Method("GET")
@@ -159,12 +157,6 @@ class UserProfileController extends BaseController
      */
     public function editAction(Profile $profile, User $user, Request $request, $username)
     {
-        if (!$profile->isOwner($this->getUser())) {
-//            $this->denyAccessUnlessGranted('profile_index_edit', $profile);
-
-            return $this->redirectToRoute('fos_user_security_login');
-        }
-
         $entityManager = $this->getDoctrine()->getManager();
 
         $editForm = $this->createForm('AppBundle\Form\Type\ProfileEditType', $profile);

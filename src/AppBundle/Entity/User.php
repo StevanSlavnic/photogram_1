@@ -18,7 +18,7 @@ use AppBundle\Entity\User\UserConnection;
  * @ORM\Table(name="user")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\UserRepository")
  */
-class User extends BaseUser
+class User extends BaseUser implements ParticipantInterface
 {
 //    const TYPE_USER = ;
     /**

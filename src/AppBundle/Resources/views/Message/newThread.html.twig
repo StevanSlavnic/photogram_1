@@ -1,13 +1,13 @@
-{% extends 'AppBundle:Message:layout.html.twig' %}
+{% extends '::base.html.twig' %}
 
 {% block fos_message_content %}
-
-<h2>{% trans from 'FOSMessageBundle' %}send_new{% endtrans %}</h2>
+<div class="form-wrapper">
+<h4>{% trans from 'FOSMessageBundle' %}send_new{% endtrans %}</h4>
 
 <form action="{{ url('photo_message_new_thread', {"username": app.user.profile.profileUsername}) }}" method="post">
     {{ form_widget(form) }}
 
-    <input type="submit" />
+    <input class="btn btn-default" type="submit" />
 </form>
-
+</div>
 {% endblock %}

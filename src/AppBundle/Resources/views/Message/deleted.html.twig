@@ -1,9 +1,9 @@
-{% extends 'AppBundle:Message:layout.html.twig' %}
+{% extends '::base.html.twig' %}
 
 {% block fos_message_content %}
-
+<div class="form-wrapper">
 <h2>{% trans from 'FOSMessageBundle' %}deleted{% endtrans %}</h2>
 
-{% include '@App/Message/threads_list.html.twig' with {'threads': threads} %}
-
+{% include '@App/Message/threads_list.html.twig' with {'threads': threads, "username": app.user.profile.profileUsername} %}
+</div>
 {% endblock %}

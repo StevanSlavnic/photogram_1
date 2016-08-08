@@ -49,14 +49,14 @@
                 <td>
                     {% if fos_message_can_delete_thread(thread) %}
                         {% if fos_message_deleted_by_participant(thread) %}
-                            {% set formAction %}{{ url('photo_message_id_delete', {'threadId': thread.id, "username": app.user.profile.profileUsername}) }}{% endset %}
+                            {% set formAction %}{{ url('photo_message_id_undelete', {'threadId': thread.id, "username": app.user.profile.profileUsername}) }}{% endset %}
                             {% set submitValue %}{% trans from 'FOSMessageBundle' %}undelete{% endtrans %}{% endset %}
                         {% else %}
                             {% set formAction %}{{ url('photo_message_id_delete', {'threadId': thread.id, "username": app.user.profile.profileUsername}) }}{% endset %}
                             {% set submitValue %}{% trans from 'FOSMessageBundle' %}delete{% endtrans %}{% endset %}
                         {% endif %}
                         <form action="{{ formAction }}" method="post">
-                                <input type="submit" value="{{ submitValue }}" />
+                                <input class="btn btn-danger" type="submit" value="{{ submitValue }}" />
                         </form>
                     {% endif %}
                 </td>

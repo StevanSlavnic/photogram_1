@@ -42,3 +42,7 @@ person:
 fos_message:
     resource: "@FOSMessageBundle/Resources/config/routing.xml"
     prefix: /optional_routing_prefix
+
+post.deleteAction:
+    path:      /post/{id}/delete
+    defaults:  { _controller: AppBundle:Posts/Post:delete }

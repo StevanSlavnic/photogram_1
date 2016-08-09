@@ -86,7 +86,6 @@ class MessageController extends \FOS\MessageBundle\Controller\MessageController
         return $this->container->get('templating')->renderResponse('@App/Message/thread.html.twig', array(
             'form' => $form->createView(),
             'thread' => $thread,
-            'username' => 'Milenko-Dolovac'
         ));
     }
 

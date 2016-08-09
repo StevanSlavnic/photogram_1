@@ -34,12 +34,12 @@
             {{ form_widget(form.occupation) }}
 
             {{ form_label(form.about) }}
-            {{ form_widget(form.about) }}
+            {{ form_widget(form.about, {attr: {placeholder: 'Enter message subject', class: "form-control", rows: "5", id: "comment"}}) }}
 
             <input type="submit" value="{{ button_label|default('label.update'|trans) }}"
                    class="{{ button_css|default("btn btn-primary pull-right") }}" />
             {{ form_end(form) }}
-
+        </div>
             <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
             <script type="text/javascript">
@@ -82,6 +82,6 @@
                 });
 
             </script>
-        </div>
+
     </div>
 {% endblock %}

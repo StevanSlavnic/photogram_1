@@ -10,7 +10,7 @@
         <h1>{% trans from 'FOSMessageBundle' %}messenger{% endtrans %}</h1>
 
         <ul>
-            <li><a href="{{ url('photo_message_inbox', {"username": user.profile.profileUsername}) }}">{% trans from 'FOSMessageBundle' %}inbox{% endtrans %}</a></li>
+            <li><a href="{{ url('photo_message_inbox', {"username": app.user.profile.profileUsername}) }}">{% trans from 'FOSMessageBundle' %}inbox{% endtrans %}</a></li>
             {#<li><a href="{{ url('fos_message_sent') }}">{% trans from 'FOSMessageBundle' %}sent{% endtrans %}</a></li>#}
             {#<li><a href="{{ url('fos_message_deleted') }}">{% trans from 'FOSMessageBundle' %}deleted{% endtrans %}</a></li>#}
         </ul>

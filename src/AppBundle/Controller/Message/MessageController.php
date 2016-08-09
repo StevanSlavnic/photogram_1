@@ -27,7 +27,6 @@ class MessageController extends \FOS\MessageBundle\Controller\MessageController
 
         return $this->container->get('templating')->renderResponse('AppBundle:Message:inbox.html.twig', array(
             'threads' => $threads,
-            'user' => $user,
         ));
     }
 

@@ -153,6 +153,8 @@ class PostController extends Controller
         ));
     }
 
+
+
     /**
      * Deletes a Post entity.
      *
@@ -198,10 +200,12 @@ class PostController extends Controller
     {
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('post_delete', array('id' => $post->getId())))
-            ->setMethod('DELETE')
+            ->setMethod('POST')
             ->getForm()
             ;
     }
+
+
 
     /**
      * @Route("/post/{id}", name="blog_post")

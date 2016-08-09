@@ -2,16 +2,19 @@
 
 {% block fos_message_content %}
 <div class="form-wrapper">
-    {{ dump(app.user.profile.profileUsername) }}
-<h4>{% trans from 'FOSMessageBundle' %}inbox{% endtrans %}</h4>
 
-    <ul>
-        <li><a href="{{ url('photo_message_inbox', {"username": app.user.profile.profileUsername} ) }}">{% trans from 'FOSMessageBundle' %}inbox{% endtrans %}</a></li>
-        <li><a href="{{ url('photo_message_sent', {"username": app.user.profile.profileUsername}) }}">{% trans from 'FOSMessageBundle' %}sent{% endtrans %}</a></li>
-        <li><a href="{{ url('photo_message_delete', {"username": app.user.profile.profileUsername}) }}">{% trans from 'FOSMessageBundle' %}deleted{% endtrans %}</a></li>
-    </ul>
+    <div class="thread-header">
+        <h4>{% trans from 'FOSMessageBundle' %}inbox{% endtrans %}</h4>
 
-<a class="link" href="{{ url('photo_message_new_thread', {"username": app.user.profile.profileUsername} )}}">{% trans from 'FOSMessageBundle' %}send_new{% endtrans %}</a>
+            <ul class="unstyled pull-right">
+                <li><a href="{{ url('photo_message_inbox', {"username": app.user.profile.profileUsername} ) }}">{% trans from 'FOSMessageBundle' %}inbox{% endtrans %}</a></li>
+                <li><a href="{{ url('photo_message_sent', {"username": app.user.profile.profileUsername}) }}">{% trans from 'FOSMessageBundle' %}sent{% endtrans %}</a></li>
+                <li><a href="{{ url('photo_message_delete', {"username": app.user.profile.profileUsername}) }}">{% trans from 'FOSMessageBundle' %}deleted{% endtrans %}</a></li>
+            </ul>
+        <div class="thread-new-btn">
+            <a class="btn btn-success" href="{{ url('photo_message_new_thread', {"username": app.user.profile.profileUsername} )}}">{% trans from 'FOSMessageBundle' %}send_new{% endtrans %}</a>
+        </div>
+    </div>
 
 {% include '@App/Message/threads_list.html.twig' with {'threads': threads, "username": app.user.profile.profileUsername} %}
 </div>

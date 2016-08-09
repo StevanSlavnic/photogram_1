@@ -4,7 +4,7 @@
 <div class="form-wrapper">
 <h4>{% trans from 'FOSMessageBundle' %}send_new{% endtrans %}</h4>
 
-<form action="{{ url('photo_message_new_thread', {"username": app.user.profile.profileUsername}) }}" method="post">
+<form action="{{ url('photo_message_new_thread') }}" method="post">
     {{ form_widget(form) }}
 
     <input class="btn btn-default" type="submit" />

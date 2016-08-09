@@ -1,7 +1,7 @@
-{% extends 'AppBundle:Message:layout.html.twig' %}
+{% extends '::base.html.twig' %}
 
 {% block fos_message_content %}
-
+<div class="form-wrapper">
 <h2>{{ thread.subject }}</h2>
 
 {% for message in thread.messages %}
@@ -18,10 +18,10 @@
 
 <h3>{% trans from 'FOSMessageBundle' %}reply{% endtrans %}</h3>
 
-<form action="{{ url('fos_message_thread_view', {'threadId': thread.id}) }}" method="post">
+<form action="{{ url('photo_message_thread_id', {'threadId': thread.id, "username": app.user.profile.profileUsername}) }}" method="post">
     {{ form_widget(form) }}
 
     <input type="submit" />
 </form>
-
+</div>
 {% endblock %}

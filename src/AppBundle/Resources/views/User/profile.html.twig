@@ -22,6 +22,10 @@
                         <ul class="nav navbar-nav navbar-right">
                             {% block header_navigation_links %}
                                 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                                {# Get the number of new threads for the authenticated participant #}
+                                <li>
+                                   <a href="{{ path('photo_message_inbox', {"username": app.user.profile.profileUsername}) }}"><i class="fa fa-envelope"></i>{{ fos_message_nb_unread() }}</a>
+                                </li>
                                     {#<li>#}
                                         {#<a href="#">#}
                                             {#{{ app.user.fullName }}#}

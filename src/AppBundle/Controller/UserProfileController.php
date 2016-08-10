@@ -53,11 +53,7 @@ class UserProfileController extends BaseController
             'user' => $profile->getUser()
         ));
 
-
-
-
-
-        return $this->render('AppBundle:User:profile.html.twig', array(
+       return $this->render('AppBundle:User:profile.html.twig', array(
             'profile' => $profile,
             'user' => $user,
             'posts' => $posts,

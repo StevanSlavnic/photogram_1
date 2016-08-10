@@ -4,24 +4,55 @@
     <div class="edit-profile-container">
 
         <div class="form-wrapper-edit">
-            <img id="profile-image" class="img-circle img-responsive img-raised" src="{{ profile.imageName | imagine_filter('my_thumb')  }}" title="#" />
+            <h4>Edit your profile</h4>
+            {% if profile.imageName %}
+                <img id="profile-image" class="img-circle img-responsive img-raised" src="{{ profile.imageName | imagine_filter('my_thumb')  }}" title="#" />
+            {% else %}
+                <img id="default-image" class="img-circle img-responsive img-raised default-image" src="https://s3.amazonaws.com/creativetim_bucket/new_logo.png" />
+            {% endif %}
             <div class="image-wrapper-profile">
                 <div class="circle">
-                {#<img id="edit-image" class="img-responsive" src="{{ asset('media/cache/resolve/my_thumb/')}}{{ profile.imageName}}" alt="{{ profile.profileUsername }}" title="#" />#}
+
                     <img class="img-responsive" id="imagePreview" >
 
                 </div>
-                <a href="#" id="cancel" aria-hidden="true"><i class="fa fa-times cancel"></i> Remove image</a>
+                <a href="#" id="cancel" aria-hidden="true"><i class="fa fa-times cancel"></i> Remove profile image</a>
             </div>
 
+
+            {% if profile.imageBackgroundName %}
+                <img id="profile-background" class="img-responsive profile-background" src="{{ asset('images/background/') }}{{ profile.imageBackgroundName }}"/>
+            {% else %}
+                <img id="default-image-background" class="img-responsive profile-background-preview" src="./bundles/app/images/rick.jpg"/>
+            {% endif %}
+            <div class="image-wrapper-profile">
+                <div class="square">
+
+                    <img class="img-responsive" id="imagePreviewBackground" >
+
+                </div>
+                <a href="#" id="cancelBackground" aria-hidden="true"><i class="fa fa-times cancel"></i> Remove background image</a>
+            </div>
+
+
             {{ form_start(form, { attr: attr|default({}) }) }}
+
             <div class="image-form-wrapper text-center">
                 <a class="sf-form-row-add-image">
                     <i class="fa fa-plus"></i>
-                    <p>Choose Photo</p>
+                    <p><small>Choose profile photo</small></p>
                     {{ form_widget(form.imageFile) }}
                 </a>
             </div>
+
+            <div class="image-form-wrapper text-center">
+                <a class="sf-form-row-add-image-background">
+                    <i class="fa fa-plus"></i>
+                    <p><small>Choose background photo</small></p>
+                    {{ form_row(form.imageBackgroundFile) }}
+                </a>
+            </div>
+
 
             {{ form_label(form.firstname) }}
             {{ form_widget(form.firstname) }}
@@ -80,8 +111,42 @@
                     $('#imagePreview').attr("src","");
                     $('.sf-form-row-add-image').show();
                     $("#cancel").hide();
+                    $("#default-image").hide();
                 });
 
+                $('.sf-form-row-add-image-background').hide();
+                document.getElementById("profile_edit_imageBackgroundFile_file").onchange = function () {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        // get loaded data and render thumbnail.
+                        document.getElementById("imagePreviewBackground").src = e.target.result;
+                        $("#cancelBackground").show();
+                        $('.sf-form-row-add-image-background').hide();
+
+                    };
+
+                    // read the image file as a data URL.
+                    reader.readAsDataURL(this.files[0]);
+                    $('#cancelBackground').click(function(e)
+                    {
+                        $('#profile-background').hide();
+                        $('#profile_imageBackgroundFile_file').val("");
+                        $('#imagePreviewBackground').attr("src","");
+                        $('.sf-form-row-add-image-background').show();
+                        $("#cancelBackground").hide();
+
+                    });
+                }
+                $('#cancelBackground').click(function(e)
+                {
+                    $('#profile-background').hide();
+                    $('#profile_edit_imageBackgroundFile_file').val("");
+                    $('#imagePreviewBackground').attr("src","");
+                    $('.sf-form-row-add-image-background').show();
+                    $("#cancelBackground").hide();
+                    $("#default-image-background").hide();
+                });
             </script>
 
     </div>

@@ -75,6 +75,8 @@ class MessageController extends \FOS\MessageBundle\Controller\MessageController
     {
         $thread = $this->getProvider()->getThread($threadId);
         $form = $this->container->get('fos_message.reply_form.factory')->create($thread);
+
+
         $formHandler = $this->container->get('fos_message.reply_form.handler');
 
         if ($message = $formHandler->process($form)) {
@@ -86,7 +88,7 @@ class MessageController extends \FOS\MessageBundle\Controller\MessageController
         return $this->container->get('templating')->renderResponse('@App/Message/thread.html.twig', array(
             'form' => $form->createView(),
             'thread' => $thread,
-            'username' => 'Milenko-Dolovac'
+
         ));
     }
 

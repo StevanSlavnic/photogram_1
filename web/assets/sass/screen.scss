@@ -168,6 +168,25 @@ nav.navbar-custom {
 
 
 .form-wrapper, .form-wrapper-edit {
+  .thread-header {
+      margin-bottom: 25px;
+    h4, .h4 {
+      margin: 0 0 0;
+      display: inline-block;
+    }
+    .unstyled {
+      padding: 0;
+      list-style: none;
+      li {
+        display: inline-block;
+        margin: 0 8px;
+      }
+    }
+    .thread-new-btn {
+      margin: 25px 0;
+      text-align: center;
+    }
+  }
   width: 100%;
   max-width: 620px;
   margin: 20px auto;
@@ -384,4 +403,43 @@ nav.navbar-custom {
 
 .header {
   background-image: url("");
+}
+
+.thread-single {
+  position: relative;
+  background-color: #ddd;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  padding: 12px;
+  .thread-head {
+    text-align: right;
+    margin-top: 15px;
+  }
+  .thread-date {
+    display: inline-block;
+  }
+  .thread-new {
+      color: green;
+      font-weight: 900;
+      display: inline-block;
+    }
+  .thread-sender {
+    display: inline-block;
+    margin-left: 20px;
+  }
+    a {
+      color: #777;
+      font-weight: 900;
+      &:hover {
+        color: #5e5e5e;
+      }
+    }
+  input.btn {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    padding: 0 4px;
+    font-size: 10px;
+    font-weight: 900;
+  }
 }

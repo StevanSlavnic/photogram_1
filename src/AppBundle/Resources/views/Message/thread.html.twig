@@ -2,8 +2,9 @@
 
 {% block fos_message_content %}
 <div class="form-wrapper">
-<h2>{{ thread.subject }}</h2>
-
+    <div class="thread-header">
+        <h4>{{ thread.subject }}</h4>
+    </div>
 {% for message in thread.messages %}
     <div class="messenger_thread_message">
         <div class="messenger_thread_message_info">
@@ -16,12 +17,13 @@
     </div>
 {% endfor %}
 
-<h3>{% trans from 'FOSMessageBundle' %}reply{% endtrans %}</h3>
+<h4>{% trans from 'FOSMessageBundle' %}reply{% endtrans %}</h4>
 
 <form action="{{ url('photo_message_thread_id', {'threadId': thread.id, "username": app.user.profile.profileUsername}) }}" method="post">
+
     {{ form_widget(form) }}
 
-    <input type="submit" />
+    <input class="btn btn-success" type="submit" />
 </form>
 </div>
 {% endblock %}

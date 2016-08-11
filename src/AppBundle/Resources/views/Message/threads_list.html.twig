@@ -17,7 +17,7 @@
         {% for thread in threads %}
             <div class="thread-single">
                     <a href="{{ url('photo_message_thread_id', {'threadId': thread.id, "username": app.user.profile.profileUsername}) }}">
-                        {{ thread.subject }}
+                        {{ thread.subject|length > 20 ? thread.subject|slice(0, 20) ~ '...' : thread.subject  }}
                     </a>
 
                     {% if not fos_message_is_read(thread) %}
@@ -57,7 +57,7 @@
                             {% set submitValue %}{% trans from 'FOSMessageBundle' %}delete{% endtrans %}{% endset %}
                         {% endif %}
                         <form action="{{ formAction }}" method="post">
-                                <input class="btn btn-danger" type="submit" value="X" />
+                                <input class="btn btn-danger" type="submit" value="{{ submitValue }}" />
                         </form>
                     {% endif %}
                 </div>

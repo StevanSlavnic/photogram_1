@@ -151,3 +151,22 @@ fos_message:
     db_driver: orm
     thread_class: AppBundle\Entity\Thread
     message_class: AppBundle\Entity\Message
+
+fos_elastica:
+    clients:
+        default: { host: localhost, port: 9200 }
+    indexes:
+        photogram:
+            types:
+                user:
+                    mappings:
+                        username: {type: string, index: not_analyzed}
+                    persistence:
+                        # the driver can be orm, mongodb, phpcr or propel
+                        # listener and finder are not supported by
+                        # propel and should be removed
+                        driver: orm
+                        model: AppBundle\Entity\User
+                        provider: ~
+                        listener: ~
+                        finder: ~

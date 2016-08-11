@@ -14235,11 +14235,7 @@ nav.navbar-custom .navbar-nav li a img {
   padding: 15px 0;
   position: relative;
 }
-/* line 239, ../sass/screen.scss */
-.form-wrapper label, .form-wrapper-edit label {
-  display: none;
-}
-/* line 245, ../sass/screen.scss */
+/* line 242, ../sass/screen.scss */
 .form-wrapper #post_imageFile, .form-wrapper #profile_edit_imageFile, .form-wrapper #profile_edit_imageBackgroundFile_file, .form-wrapper-edit #post_imageFile, .form-wrapper-edit #profile_edit_imageFile, .form-wrapper-edit #profile_edit_imageBackgroundFile_file {
   display: block;
   position: absolute;
@@ -14254,7 +14250,7 @@ nav.navbar-custom .navbar-nav li a img {
   opacity: 0;
   transform: translateX(-50%);
 }
-/* line 260, ../sass/screen.scss */
+/* line 257, ../sass/screen.scss */
 .form-wrapper #profile_edit_imageFile, .form-wrapper-edit #profile_edit_imageFile {
   display: block;
   position: absolute;
@@ -14269,7 +14265,7 @@ nav.navbar-custom .navbar-nav li a img {
   opacity: 0;
   transform: translateX(-50%);
 }
-/* line 275, ../sass/screen.scss */
+/* line 272, ../sass/screen.scss */
 .form-wrapper #profile_edit_imageBackgroundFile_file, .form-wrapper-edit #profile_edit_imageBackgroundFile_file {
   display: block;
   position: absolute;
@@ -14284,11 +14280,11 @@ nav.navbar-custom .navbar-nav li a img {
   opacity: 0;
   transform: translateX(-50%);
 }
-/* line 290, ../sass/screen.scss */
+/* line 287, ../sass/screen.scss */
 .form-wrapper img, .form-wrapper-edit img {
   margin: 0 auto;
 }
-/* line 293, ../sass/screen.scss */
+/* line 290, ../sass/screen.scss */
 .form-wrapper input[type="file"], .form-wrapper-edit input[type="file"] {
   display: block;
   position: absolute;
@@ -14303,18 +14299,18 @@ nav.navbar-custom .navbar-nav li a img {
   opacity: 0;
   transform: translateX(-50%);
 }
-/* line 307, ../sass/screen.scss */
+/* line 304, ../sass/screen.scss */
 .form-wrapper .image-form-wrapper, .form-wrapper-edit .image-form-wrapper {
   margin-bottom: 30px;
 }
-/* line 311, ../sass/screen.scss */
+/* line 308, ../sass/screen.scss */
 .form-wrapper .messenger_thread_message:nth-child(even), .form-wrapper-edit .messenger_thread_message:nth-child(even) {
   margin-bottom: 20px;
   width: 100%;
   max-width: 320px;
   float: left;
 }
-/* line 316, ../sass/screen.scss */
+/* line 313, ../sass/screen.scss */
 .form-wrapper .messenger_thread_message:nth-child(even) .messenger_thread_message_body, .form-wrapper-edit .messenger_thread_message:nth-child(even) .messenger_thread_message_body {
   background-color: #fff;
   border: 1px solid #ddd;
@@ -14322,7 +14318,7 @@ nav.navbar-custom .navbar-nav li a img {
   padding: 9px;
   word-wrap: break-word;
 }
-/* line 324, ../sass/screen.scss */
+/* line 321, ../sass/screen.scss */
 .form-wrapper .messenger_thread_message:nth-child(odd), .form-wrapper-edit .messenger_thread_message:nth-child(odd) {
   margin-bottom: 20px;
   width: 100%;
@@ -14330,7 +14326,7 @@ nav.navbar-custom .navbar-nav li a img {
   float: right;
   text-align: right;
 }
-/* line 330, ../sass/screen.scss */
+/* line 327, ../sass/screen.scss */
 .form-wrapper .messenger_thread_message:nth-child(odd) .messenger_thread_message_body, .form-wrapper-edit .messenger_thread_message:nth-child(odd) .messenger_thread_message_body {
   border-radius: 3px;
   padding: 9px;
@@ -14338,16 +14334,16 @@ nav.navbar-custom .navbar-nav li a img {
   border: 1px solid #000;
   word-wrap: break-word;
 }
-/* line 338, ../sass/screen.scss */
+/* line 335, ../sass/screen.scss */
 .form-wrapper .thread-reply, .form-wrapper-edit .thread-reply {
   float: none;
 }
 
-/* line 343, ../sass/screen.scss */
+/* line 340, ../sass/screen.scss */
 .image-wrapper-profile {
   text-align: center;
 }
-/* line 345, ../sass/screen.scss */
+/* line 342, ../sass/screen.scss */
 .image-wrapper-profile .circle {
   width: 200px;
   height: 200px;
@@ -14356,7 +14352,7 @@ nav.navbar-custom .navbar-nav li a img {
   position: relative;
   margin: 0 auto;
 }
-/* line 352, ../sass/screen.scss */
+/* line 349, ../sass/screen.scss */
 .image-wrapper-profile .circle img {
   position: absolute;
   margin: auto;
@@ -14366,7 +14362,7 @@ nav.navbar-custom .navbar-nav li a img {
   bottom: 0;
 }
 
-/* line 370, ../sass/screen.scss */
+/* line 367, ../sass/screen.scss */
 .messages .alert-dismissible .close {
   position: relative;
   top: 0px;
@@ -14374,7 +14370,7 @@ nav.navbar-custom .navbar-nav li a img {
   color: inherit;
 }
 
-/* line 378, ../sass/screen.scss */
+/* line 375, ../sass/screen.scss */
 .main-raised {
   margin: -60px 30px 0px;
   border-radius: 6px;
@@ -14384,61 +14380,61 @@ nav.navbar-custom .navbar-nav li a img {
   z-index: 3;
 }
 
-/* line 388, ../sass/screen.scss */
+/* line 385, ../sass/screen.scss */
 .profile-content .header {
   height: 380px;
   background-position: top center;
 }
-/* line 393, ../sass/screen.scss */
+/* line 390, ../sass/screen.scss */
 .profile-content .profile {
   text-align: center;
 }
-/* line 395, ../sass/screen.scss */
+/* line 392, ../sass/screen.scss */
 .profile-content .profile img {
   max-width: 160px;
   margin: -80px auto 0;
 }
-/* line 400, ../sass/screen.scss */
+/* line 397, ../sass/screen.scss */
 .profile-content .description {
   margin: 30px auto 0;
   max-width: 600px;
 }
-/* line 404, ../sass/screen.scss */
+/* line 401, ../sass/screen.scss */
 .profile-content .profile-tabs {
   margin-top: 60px;
 }
-/* line 408, ../sass/screen.scss */
+/* line 405, ../sass/screen.scss */
 .profile-content .gallery {
   margin-top: 45px;
   padding-bottom: 50px;
 }
-/* line 411, ../sass/screen.scss */
+/* line 408, ../sass/screen.scss */
 .profile-content .gallery img {
   width: 100%;
   margin-bottom: 30px;
 }
 
-/* line 420, ../sass/screen.scss */
+/* line 417, ../sass/screen.scss */
 .avatar img {
   display: inline-block;
   margin: 0;
 }
 
-/* line 427, ../sass/screen.scss */
+/* line 424, ../sass/screen.scss */
 .list-masonry {
   -moz-column-width: 18em;
   -webkit-column-width: 18em;
   -moz-column-gap: 1em;
   -webkit-column-gap: 1em;
 }
-/* line 432, ../sass/screen.scss */
+/* line 429, ../sass/screen.scss */
 .list-masonry .post-in-list {
   display: inline-block;
   padding: .25rem;
   width: 100%;
 }
 
-/* line 440, ../sass/screen.scss */
+/* line 437, ../sass/screen.scss */
 .form-wrapper-edit {
   width: 100%;
   max-width: 620px;
@@ -14449,21 +14445,21 @@ nav.navbar-custom .navbar-nav li a img {
   border-radius: 3px;
   position: relative;
 }
-/* line 449, ../sass/screen.scss */
+/* line 446, ../sass/screen.scss */
 .form-wrapper-edit h4, .form-wrapper-edit .h4 {
   margin: 0 0 20px;
   text-align: center;
 }
-/* line 453, ../sass/screen.scss */
+/* line 450, ../sass/screen.scss */
 .form-wrapper-edit .btn {
   margin-top: 20px;
 }
-/* line 456, ../sass/screen.scss */
+/* line 453, ../sass/screen.scss */
 .form-wrapper-edit #profile-image {
   margin-bottom: 20px;
 }
 
-/* line 463, ../sass/screen.scss */
+/* line 460, ../sass/screen.scss */
 .login-form {
   width: 100%;
   max-width: 400px;
@@ -14475,12 +14471,12 @@ nav.navbar-custom .navbar-nav li a img {
   transform: translate(-50%, -50%);
 }
 
-/* line 474, ../sass/screen.scss */
+/* line 471, ../sass/screen.scss */
 .header {
   background-image: url("");
 }
 
-/* line 478, ../sass/screen.scss */
+/* line 475, ../sass/screen.scss */
 .thread-single {
   position: relative;
   margin-bottom: 10px;
@@ -14488,36 +14484,36 @@ nav.navbar-custom .navbar-nav li a img {
   padding: 12px;
   border: 1px solid #ddd;
 }
-/* line 485, ../sass/screen.scss */
+/* line 482, ../sass/screen.scss */
 .thread-single .thread-head {
   text-align: right;
   margin-top: 15px;
 }
-/* line 489, ../sass/screen.scss */
+/* line 486, ../sass/screen.scss */
 .thread-single .thread-date {
   display: inline-block;
 }
-/* line 492, ../sass/screen.scss */
+/* line 489, ../sass/screen.scss */
 .thread-single .thread-new {
   color: green;
   font-weight: 900;
   display: inline-block;
 }
-/* line 497, ../sass/screen.scss */
+/* line 494, ../sass/screen.scss */
 .thread-single .thread-sender {
   display: inline-block;
   margin-left: 20px;
 }
-/* line 501, ../sass/screen.scss */
+/* line 498, ../sass/screen.scss */
 .thread-single a {
   color: #777;
   font-weight: 900;
 }
-/* line 504, ../sass/screen.scss */
+/* line 501, ../sass/screen.scss */
 .thread-single a:hover {
   color: #5e5e5e;
 }
-/* line 508, ../sass/screen.scss */
+/* line 505, ../sass/screen.scss */
 .thread-single input.btn {
   position: absolute;
   right: 12px;

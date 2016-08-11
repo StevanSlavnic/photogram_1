@@ -5,6 +5,7 @@
 
         <div class="form-wrapper-edit">
             <h4>Edit your profile</h4>
+            {{ form_start(form, { attr: attr|default({}) }) }}
             {% if profile.imageName %}
                 <img id="profile-image" class="img-circle img-responsive img-raised" src="{{ profile.imageName | imagine_filter('my_thumb')  }}" title="#" />
             {% else %}
@@ -18,8 +19,13 @@
                 </div>
                 <a href="#" id="cancel" aria-hidden="true"><i class="fa fa-times cancel"></i> Remove profile image</a>
             </div>
-
-
+            <div class="image-form-wrapper text-center">
+                <a class="sf-form-row-add-image">
+                    <i class="fa fa-plus"></i>
+                    <p>Choose profile photo</p>
+                    {{ form_widget(form.imageFile) }}
+                </a>
+            </div>
             {% if profile.imageBackgroundName %}
                 <img id="profile-background" class="img-responsive profile-background" src="{{ asset('images/background/') }}{{ profile.imageBackgroundName }}"/>
             {% else %}
@@ -34,21 +40,10 @@
                 <a href="#" id="cancelBackground" aria-hidden="true"><i class="fa fa-times cancel"></i> Remove background image</a>
             </div>
 
-
-            {{ form_start(form, { attr: attr|default({}) }) }}
-
-            <div class="image-form-wrapper text-center">
-                <a class="sf-form-row-add-image">
-                    <i class="fa fa-plus"></i>
-                    <p><small>Choose profile photo</small></p>
-                    {{ form_widget(form.imageFile) }}
-                </a>
-            </div>
-
             <div class="image-form-wrapper text-center">
                 <a class="sf-form-row-add-image-background">
                     <i class="fa fa-plus"></i>
-                    <p><small>Choose background photo</small></p>
+                    <p>Choose background photo</p>
                     {{ form_row(form.imageBackgroundFile) }}
                 </a>
             </div>

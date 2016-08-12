@@ -11,7 +11,7 @@
     {{ include('blog/_delete_post_confirmation.html.twig') }}
 {% endif %}
 
-{{ form_start(form, { attr: attr|default({}) }) }}
+{{ form_start(form, { attr: attr|default({}), novalidate: 'novalidate' }) }}
     {#{{ form_widget(form) }}#}
     <div class="image-form-wrapper text-center">
         <a class="sf-form-row-add-image">
@@ -20,7 +20,7 @@
             {{ form_widget(form.imageFile) }}
         </a>
     </div>
-        {{ form_row(form.content, {attr: { class: 'form-control', placeholder: 'Enter caption'}}) }}
+        {{ form_row(form.content, {attr: { class: 'form-control', placeholder: 'Enter caption', novalidate: 'novalidate'}}) }}
     <div class="hidden">
         {{ form_row(form.authorEmail, { label_attr: { class: 'hidden' }}) }}
         {{ form_row(form.publishedAt, { label_attr: { class: 'hidden' }}) }}

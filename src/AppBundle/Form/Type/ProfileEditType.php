@@ -31,6 +31,16 @@ class ProfileEditType extends AbstractType
 //                    ))
                 ),
             ))
+            ->add('imageBackgroundFile', VichImageType::class, array(
+                'required'      => false,
+                'allow_delete'  => false, // not mandatory, default is true
+                'download_link' => false, // not mandatory, default is true
+                'constraints' => array(
+//                    new NotBlank(array(
+//                        "message" => "Please upload image"
+//                    ))
+                ),
+            ))
             ->add('firstname', TextType::class, array(
 
                 'attr' => array(

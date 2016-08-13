@@ -32,7 +32,10 @@
         "friendsofsymfony/jsrouting-bundle": "^1.6",
         "friendsofsymfony/message-bundle": "^1.2",
         "symfony/event-dispatcher": "^3.1",
-        "friendsofsymfony/elastica-bundle": "^3.2"
+        "friendsofsymfony/elastica-bundle": "^3.2",
+        "mawi12345/ajax-autocomplete-bundle": "dev-master",
+        "antqa/ajax-autocomplete-bundle": "^0.3.1",
+        "pugx/autocompleter-bundle": "^1.2"
     },
     "require-dev": {
         "sensio/generator-bundle": "~3.0",

@@ -38,3 +38,6 @@ services:
   app.manager.user_connection_manager:
       class: AppBundle\Manager\UserConnectionManager
       arguments: [ @doctrine.orm.entity_manager, @event_dispatcher ]
+
+  app.controller.search_user:
+      class: AppBundle\Controller\searchUserController

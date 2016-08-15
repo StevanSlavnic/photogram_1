@@ -4,9 +4,65 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d87aba2b98f033af007855076340b486",
-    "content-hash": "5c4ed51300b807ec1fd7a41b016da13c",
+    "hash": "e938f1c3ce76bb0fd697b591a2c37709",
+    "content-hash": "fac6adb9dce60e161ba9138c4e45fdb9",
     "packages": [
+        {
+            "name": "antqa/ajax-autocomplete-bundle",
+            "version": "v0.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/antqa/AjaxAutoCompleteBundle.git",
+                "reference": "2726ac86b160d0938f206f89064f80f5b6309dcc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/antqa/AjaxAutoCompleteBundle/zipball/2726ac86b160d0938f206f89064f80f5b6309dcc",
+                "reference": "2726ac86b160d0938f206f89064f80f5b6309dcc",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/orm": "~2.2,>=2.2.3",
+                "php": ">=5.4.0",
+                "symfony/form": "~2.3|~3.0",
+                "symfony/framework-bundle": "~2.3|~3.0"
+            },
+            "require-dev": {
+                "symfony/yaml": "~2.3|~3.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "AntQa\\AjaxAutoCompleteBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Piotr Antosik",
+                    "email": "piotr@ant.qa",
+                    "homepage": "https://www.ant.qa",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Ajax AutoComplete Bundle",
+            "homepage": "https://www.ant.qa",
+            "keywords": [
+                "ajax",
+                "autocomplete",
+                "form",
+                "json"
+            ],
+            "time": "2015-12-14 22:02:38"
+        },
         {
             "name": "behat/transliterator",
             "version": "v1.1.0",
@@ -1659,6 +1715,52 @@
             "time": "2016-05-06 06:27:38"
         },
         {
+            "name": "mawi12345/ajax-autocomplete-bundle",
+            "version": "dev-master",
+            "target-dir": "Mawi/AjaxAutocompleteBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mawi12345/ajax-autocomplete-bundle.git",
+                "reference": "1fe29abca987ab04531820a27133b864f444d42a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mawi12345/ajax-autocomplete-bundle/zipball/1fe29abca987ab04531820a27133b864f444d42a",
+                "reference": "1fe29abca987ab04531820a27133b864f444d42a",
+                "shasum": ""
+            },
+            "require": {
+                "friendsofsymfony/jsrouting-bundle": "@stable",
+                "php": ">=5.3.2",
+                "symfony/framework-bundle": ">=2.1.0"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-0": {
+                    "Mawi\\AjaxAutocompleteBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Martin Wind",
+                    "email": "mawi1988@gmail.com"
+                },
+                {
+                    "name": "Pascal Querner",
+                    "email": "pascal.querner@mscg.de"
+                }
+            ],
+            "description": "Symfony AjaxAutocompleteBundle",
+            "keywords": [
+                "Ajax Autocomplete form type"
+            ],
+            "time": "2014-05-17 09:13:07"
+        },
+        {
             "name": "monolog/monolog",
             "version": "1.19.0",
             "source": {
@@ -1951,6 +2053,61 @@
                 "psr-3"
             ],
             "time": "2012-12-21 11:40:51"
+        },
+        {
+            "name": "pugx/autocompleter-bundle",
+            "version": "v1.2.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PUGX/PUGXAutoCompleterBundle.git",
+                "reference": "c4eb82096c6a38dbfecf1c1d8baee21f45774963"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PUGX/PUGXAutoCompleterBundle/zipball/c4eb82096c6a38dbfecf1c1d8baee21f45774963",
+                "reference": "c4eb82096c6a38dbfecf1c1d8baee21f45774963",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/orm": "~2.2",
+                "symfony/form": "~2.3|~3.0",
+                "symfony/framework-bundle": "~2.3|~3.0"
+            },
+            "require-dev": {
+                "lexik/form-filter-bundle": ">=3.0",
+                "phpunit/phpunit": "4.*|5.*"
+            },
+            "suggest": {
+                "lexik/form-filter-bundle": "To use autocomplete on a filter."
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PUGX\\AutocompleterBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Massimiliano Arione",
+                    "email": "garakkio@gmail.com"
+                }
+            ],
+            "description": "Add an autocomplete type to forms",
+            "keywords": [
+                "field",
+                "form",
+                "symfony"
+            ],
+            "time": "2016-05-09 13:47:05"
         },
         {
             "name": "ruflin/elastica",
@@ -3626,7 +3783,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "mawi12345/ajax-autocomplete-bundle": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

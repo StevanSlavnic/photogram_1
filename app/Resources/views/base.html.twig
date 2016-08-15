@@ -13,6 +13,9 @@
         <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
         <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
         <script src="{{ path('fos_js_routing_js', {'callback': 'fos.Router.setData'}) }}"></script>
+        <script type="text/javascript">
+            var ROOT_URL = "{{ url('homepage')}}"; //set the root URL for js - _homepage is the name of the base route in my app.
+        </script>
     </head>
     <body>
     {% block header %}
@@ -105,6 +108,8 @@
 
             {% javascripts output="js/app.js"
             'assets/js/jquery-2.1.4.min.js'
+            'assets/js/jquery-ui.min.js'
+            'assets/js/autocompleter-jqueryui.js'
             'assets/js/bootstrap-3.3.4.js'
             'assets/js/bootstrap-datepicker.js'
             'assets/js/ct-paper-checkbox.js'
@@ -112,10 +117,12 @@
             'assets/js/ct-paper.js'
             'assets/js/connections.js'
             'assets/js/echo.js'
+                'assets/js/autocomplete-search.js'
             %}
             <script src="{{ asset_url }}"></script>
-    <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
-    <script src="{{ path('fos_js_routing_js', {'callback': 'fos.Router.setData'}) }}"></script>
+            <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+            <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+            <script src="{{ path('fos_js_routing_js', {'callback': 'fos.Router.setData'}) }}"></script>
             {% endjavascripts %}
 
     </body>

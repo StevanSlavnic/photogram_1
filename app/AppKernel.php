@@ -25,6 +25,8 @@ class AppKernel extends Kernel
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             new FOS\MessageBundle\FOSMessageBundle(),
             new FOS\ElasticaBundle\FOSElasticaBundle(),
+            new PUGX\AutocompleterBundle\PUGXAutocompleterBundle(),
+
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

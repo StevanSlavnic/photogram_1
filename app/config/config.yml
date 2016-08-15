@@ -120,6 +120,13 @@ vich_uploader:
         inject_on_load:     false
         delete_on_update:   true
         delete_on_remove:   true
+      profile_background_image:
+        uri_prefix:         /web/images/background
+        upload_destination: %kernel.root_dir%/../web/images/background/
+        namer:              vich_uploader.namer_uniqid
+        inject_on_load:     false
+        delete_on_update:   true
+        delete_on_remove:   true
 # run this command in console app/console liip:imagine:cache:resolve /path/to/your/image.jpeg
 liip_imagine:
 #    cache_mkdir_mode:     0777
@@ -144,3 +151,22 @@ fos_message:
     db_driver: orm
     thread_class: AppBundle\Entity\Thread
     message_class: AppBundle\Entity\Message
+
+fos_elastica:
+    clients:
+        default: { host: localhost, port: 9200 }
+    indexes:
+        photogram:
+            types:
+                user:
+                    mappings:
+                        username: {type: string, index: not_analyzed}
+                    persistence:
+                        # the driver can be orm, mongodb, phpcr or propel
+                        # listener and finder are not supported by
+                        # propel and should be removed
+                        driver: orm
+                        model: AppBundle\Entity\User
+                        provider: ~
+                        listener: ~
+                        finder: ~

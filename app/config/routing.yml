@@ -55,3 +55,10 @@ photo_message_id_undelete:
     defaults: { _controller: AppBundle:Message/Message:undelete }
     methods: POST
 
+user_autocomplete:
+    path:     /user/inbox/new-message/autocomplete
+    defaults: { _controller: AppBundle:Autocomplete:index }
+
+ajax_autocomplete_users:
+  path:  /user/inbox/new-message/ajax/autocomplete/update/data
+  defaults: { _controller: AppBundle:searchUser:updateData }

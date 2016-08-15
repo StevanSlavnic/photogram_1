@@ -1,3 +1,6 @@
+/**
+ * Created by stevan on 7/17/16.
+ */
 var Connection = function() {
     var scope = this;
 
@@ -20,30 +23,6 @@ Connection.prototype = {
             },
             success: function(returned) {
                 btnHolder.html(returned.response);
-
-                //update counter
-                if (btnHolder.hasClass('in_cover_content')) {
-                    var followersCount = $('.user-followers-count');
-                    var followersText = $('.users-follower-text');
-                    App.increaseCounter(followersCount, followersText, 'Follower');
-                }
-                else {
-                    var connectionsFollowerCount = btnHolder.parent().find('.connection-list-followers-count');
-                    var connectionsFollowerCountText = btnHolder.parent().find('.connection-list-followers-text');
-                    App.increaseCounter(connectionsFollowerCount, connectionsFollowerCountText, 'follower');
-
-                    var userFollowingCount = $('.user-following-count');
-                    App.increaseCounter(userFollowingCount);
-                }
-
-                //if small button - update large button
-                if (btn.attr('data-type') === 'large') {
-                    var connectionPanel = $('.user_connection_panel');
-                    if (connectionPanel.length) {
-                        var bigButton = connectionPanel.find('button[data-type="large"]');
-                        bigButton.removeClass('follow_button btn-primary-white-hover').addClass('unfollow_button btn-gray-outline').empty();
-                    }
-                }
             }
         });
 
@@ -63,31 +42,6 @@ Connection.prototype = {
             },
             success: function(returned) {
                 btnHolder.html(returned.response);
-
-                //update counter
-                if(btnHolder.hasClass('in_cover_content')) {
-                    var followersCount = $('.user-followers-count');
-                    var followersText = $('.users-follower-text');
-                    App.decreaseCounter(followersCount);
-                }
-                else {
-                    var connectionsFollowerCount = btnHolder.parent().find('.connection-list-followers-count');
-                    var connectionsFollowerCountText = btnHolder.parent().find('.connection-list-followers-text');
-                    App.decreaseCounter(connectionsFollowerCount, connectionsFollowerCountText, 'follower');
-
-                    var userFollowingCount = $('.user-following-count');
-                    App.decreaseCounter(userFollowingCount);
-                }
-
-                //if small button - update large button
-                if (btn.attr('data-type') === 'large') {
-                    var connectionPanel = $('.user_connection_panel');
-                    if (connectionPanel.length) {
-                        var bigButton = connectionPanel.find('button[data-type="large"]');
-                        bigButton.removeClass('unfollow_button btn-gray-outline').addClass('follow_button btn-primary-white-hover');
-                        bigButton.html('<i class="icon-member_add"></i> Follow');
-                    }
-                }
             }
         });
     },

@@ -4,7 +4,9 @@ namespace AppBundle\Controller\Message;
 
 use AppBundle\Entity\Profile;
 use AppBundle\Entity\User;
+use Elastica\Query\QueryString;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\DependencyInjection\ContainerAware;
@@ -13,6 +15,10 @@ use FOS\MessageBundle\Provider\ProviderInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use FOS\MessageBundle\Model\ThreadInterface;
 use FOS\MessageBundle\ModelManager\ThreadManagerInterface;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Doctrine\ORM\Query\Expr;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+
 
 
 class MessageController extends \FOS\MessageBundle\Controller\MessageController
@@ -101,6 +107,8 @@ class MessageController extends \FOS\MessageBundle\Controller\MessageController
         $form = $this->container->get('fos_message.new_thread_form.factory')->create();
         $formHandler = $this->container->get('fos_message.new_thread_form.handler');
 
+
+
         if ($message = $formHandler->process($form)) {
             return new RedirectResponse($this->container->get('router')->generate('photo_message_sent', array(
                 'threadId' => $message->getThread()->getId(),
@@ -108,9 +116,12 @@ class MessageController extends \FOS\MessageBundle\Controller\MessageController
             )));
         }
 
+
+
         return $this->container->get('templating')->renderResponse('@App/Message/newThread.html.twig', array(
             'form' => $form->createView(),
-            'data' => $form->getData()
+            'data' => $form->getData(),
+
         ));
     }
 
@@ -169,6 +180,8 @@ class MessageController extends \FOS\MessageBundle\Controller\MessageController
         ));
     }
 
+
+
     /**
      * Gets the provider service
      *
@@ -179,6 +192,8 @@ class MessageController extends \FOS\MessageBundle\Controller\MessageController
         return $this->container->get('fos_message.provider');
     }
 
+
+
     /**
      * @return User $user
      */
@@ -186,6 +201,8 @@ class MessageController extends \FOS\MessageBundle\Controller\MessageController
     {
         return $this;
     }
+
+
 
 
 }

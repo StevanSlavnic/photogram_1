@@ -185,5 +185,45 @@ class UserProfileController extends BaseController
         ));
     }
 
+    /**
+     * Like button
+     *
+     * @param Post $post
+     * @param Request $request
+     * @return Response
+     * @Route("/user/{username}/like", name="app_post_like", condition="request.isXmlHttpRequest()")
+     * @Method("POST");
+     */
+    public function like(Post $post, Request $request)
+    {
+//        $this->handleInactiveProfiles($profile);
+
+        $user = $this->getLoggedUser();
+
+        $userConnectionManager = $this->get('app.manager.user_connection_manager');
+
+        $type = $_POST['type'];
+
+        if($userConnectionManager->like($user, $post->getId())) {
+            return new JsonResponse(array(
+                'success' => true,
+//                'response' => $this->renderView('AppBundle:User:profile.html.twig', array(
+                'response' => $this->renderView('AppBundle:User:follow_button_'. $type .'.html.twig', array(
+                    'post' => $post,
+                    'is_liked' => true
+                ))
+            ));
+        }
+
+        return new JsonResponse([
+            'success' => false,
+//            'response' => $this->renderView('AppBundle:User:profile.html.twig', array(
+            'response' => $this->renderView('AppBundle:User:follow_button_'.$type.'.html.twig', array(
+                'post' => $post,
+                'is_liked' => true
+            ))
+        ]);
+    }
+
 
 }

@@ -6,9 +6,19 @@
         <h4>{% trans from 'FOSMessageBundle' %}send_new{% endtrans %}</h4>
     </div>
 <form action="{{ url('photo_message_new_thread') }}" method="post">
-    {{ form_row(form.recipient, {attr: { class: 'form-control', placeholder: 'Start typing recipent name'}}) }}
-    {{ form_row(form.subject, {attr: { class: 'form-control', placeholder: 'Enter message subject'}}) }}
-    {{ form_row(form.body, {attr: {placeholder: 'Enter message subject', class: "form-control", rows: "5", id: "comment"}}) }}
+
+    {{ form_label(form.recipient) }}
+    {{ form_widget(form.recipient, {attr: { class: 'form-control', placeholder: 'Start typing recipent name'}}) }}
+    {{ form_errors(form.recipient) }}
+
+    {{ form_label(form.subject) }}
+    {{ form_widget(form.subject, {attr: { class: 'form-control', placeholder: 'Enter message subject'}}) }}
+    {{ form_errors(form.subject) }}
+
+    {{ form_label(form.body) }}
+    {{ form_widget(form.body, {attr: {placeholder: 'Enter message subject', class: "form-control", rows: "5", id: "comment"}}) }}
+    {{ form_errors(form.body) }}
+
     <input class="btn btn-default" type="submit" />
     {{ form_rest(form) }}
 </form>

@@ -35,6 +35,7 @@ class ProfileEditType extends AbstractType
                 'required'      => false,
                 'allow_delete'  => false, // not mandatory, default is true
                 'download_link' => false, // not mandatory, default is true
+                'label'         => false,
                 'constraints' => array(
 //                    new NotBlank(array(
 //                        "message" => "Please upload image"

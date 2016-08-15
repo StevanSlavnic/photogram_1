@@ -145,6 +145,86 @@ class UserProfileController extends BaseController
     }
 
     /**
+     * Like button
+     *
+     * @param Profile $profile
+     * @param Request $request
+     * @return Response
+     * @Route("/user/{username}/like", name="app_profile_post_like", condition="request.isXmlHttpRequest()")
+     * @Method("POST");
+     * @ParamConverter("profile", class="AppBundle\Entity\Profile", options={"mapping" : {"username" : "profileUsername"} } )
+     */
+    public function like(Profile $profile, Request $request)
+    {
+//        $this->handleInactiveProfiles($profile);
+
+        $user = $this->getLoggedUser();
+
+        $userConnectionManager = $this->get('app.manager.user_connection_manager');
+
+        $type = $_POST['type'];
+
+        if($userConnectionManager->follow($user, $profile->getUser())) {
+            return new JsonResponse(array(
+                'success' => true,
+//                'response' => $this->renderView('AppBundle:User:profile.html.twig', array(
+                'response' => $this->renderView('AppBundle:User:follow_button_'. $type .'.html.twig', array(
+                    'profile' => $profile,
+                    'is_following' => true
+                ))
+            ));
+        }
+
+        return new JsonResponse([
+            'success' => false,
+//            'response' => $this->renderView('AppBundle:User:profile.html.twig', array(
+            'response' => $this->renderView('AppBundle:User:follow_button_'.$type.'.html.twig', array(
+                'profile' => $profile,
+                'is_following' => true
+            ))
+        ]);
+    }
+
+    /**
+     * Unlike button
+     *
+     * @param Profile $profile
+     * @param Request $request
+     * @return Response
+     * @Route("/user/{username}/unlike", name="app_profile_post_unlike", condition="request.isXmlHttpRequest()")
+     * @Method("POST");
+     * @ParamConverter("profile", class="AppBundle\Entity\Profile", options={"mapping" : {"username" : "profileUsername"} } )
+     */
+    public function unlike(Profile $profile, Request $request)
+    {
+//        $this->handleInactiveProfiles($profile);
+
+        $user = $this->getLoggedUser();
+
+        $userConnectionManager = $this->get('app.manager.user_connection_manager');
+
+        $type = $_POST['type'];
+
+        if($userConnectionManager->unfollow($user, $profile->getUser())) {
+            return new JsonResponse(array(
+                'success' => true,
+                'response' => $this->renderView('AppBundle:User:follow_button_'. $type .'.html.twig', array(
+                    'profile' => $profile,
+                    'is_following' => false
+                ))
+            ));
+        }
+
+        return new JsonResponse(array(
+            'success' => false,
+            'response' => $this->renderView('AppBundle:User:follow_button_'. $type .'.html.twig', array(
+                'profile' => $profile,
+                'is_following' => true
+            ))
+        ));
+    }
+
+    /**
      * @Route("/user/{username}/edit", name="profile_index_edit")
      * @ParamConverter("profile", class="AppBundle\Entity\Profile", options={"mapping" : {"username" : "profileUsername"} } )
      * @param Profile $profile

@@ -24,6 +24,7 @@ class AppKernel extends Kernel
             new Liip\ImagineBundle\LiipImagineBundle(),
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             new FOS\MessageBundle\FOSMessageBundle(),
+            new FOS\ElasticaBundle\FOSElasticaBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

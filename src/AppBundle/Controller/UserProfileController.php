@@ -46,6 +46,8 @@ class UserProfileController extends BaseController
         $user = $profile->getUser();
         $userConnectionManager = $this->get('app.manager.user_connection_manager');
 
+//        $likePostManager = $this->get('app.manager.like_post_manager');
+
         $followers = $userConnectionManager->getFollowers($profile->getUser())->getResult();
         $following = $userConnectionManager->getFollowing($profile->getUser())->getResult();
 
@@ -60,7 +62,8 @@ class UserProfileController extends BaseController
             'followers' => $followers,
             'following' => $following,
             'is_following' => $userConnectionManager->isFollowing($loggedUser, $user),
-            'is_followed_back' => $userConnectionManager->isFollowing($user, $loggedUser)
+            'is_followed_back' => $userConnectionManager->isFollowing($user, $loggedUser),
+//            'is_liked' => $likePostManager->isLiked($user, $likedPost)
         ));
     }
 
@@ -200,11 +203,11 @@ class UserProfileController extends BaseController
 
         $user = $this->getLoggedUser();
 
-        $userConnectionManager = $this->get('app.manager.user_connection_manager');
+        $likePostManager = $this->get('app.manager.user_connection_manager');
 
         $type = $_POST['type'];
 
-        if($userConnectionManager->like($user, $post->getId())) {
+        if($likePostManager->like($user, $post->getId())) {
             return new JsonResponse(array(
                 'success' => true,
 //                'response' => $this->renderView('AppBundle:User:profile.html.twig', array(
@@ -224,6 +227,47 @@ class UserProfileController extends BaseController
             ))
         ]);
     }
+
+    /**
+     * Unlike button
+     *
+     * @param Post $post
+     * @param Request $request
+     * @return Response
+     * @Route("/user/{username}/unlike", name="app_post_unlike", condition="request.isXmlHttpRequest()")
+     * @Method("POST");
+     */
+    public function unlike(Post $post, Request $request)
+    {
+//        $this->handleInactiveProfiles($profile);
+
+        $user = $this->getLoggedUser();
+
+        $likePostManager = $this->get('app.manager.user_connection_manager');
+
+        $type = $_POST['type'];
+
+        if($likePostManager->unlike($user, $post->getId())) {
+            return new JsonResponse(array(
+                'success' => true,
+                'response' => $this->renderView('AppBundle:User:follow_button_'. $type .'.html.twig', array(
+                    'post' => $post,
+                    'is_liked' => false
+                ))
+            ));
+        }
+
+        return new JsonResponse(array(
+            'success' => false,
+            'response' => $this->renderView('AppBundle:User:follow_button_'. $type .'.html.twig', array(
+                'post' => $post,
+                'is_liked' => true
+            ))
+        ));
+    }
+
+
+
 
 
 }

@@ -39,5 +39,9 @@ services:
       class: AppBundle\Manager\UserConnectionManager
       arguments: [ @doctrine.orm.entity_manager, @event_dispatcher ]
 
+  app.manager.like_post_manager:
+        class: AppBundle\Manager\LikePostManager
+        arguments: [ @doctrine.orm.entity_manager, @event_dispatcher ]
+
   app.controller.search_user:
       class: AppBundle\Controller\searchUserController

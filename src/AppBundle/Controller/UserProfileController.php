@@ -42,6 +42,7 @@ class UserProfileController extends BaseController
      */
     public function showAction(Profile $profile)
     {
+
         $loggedUser = $this->getLoggedUser();
         $user = $profile->getUser();
         $userConnectionManager = $this->get('app.manager.user_connection_manager');

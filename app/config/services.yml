@@ -31,7 +31,7 @@ services:
 
   app.event_listener_user.user_was_followed_event_listener:
       class: AppBundle\EventListener\UserWasFollowedEventListener
-      arguments: [ @doctrine.orm.entity_manager ]
+      arguments: [ '@doctrine.orm.entity_manager' ]
       tags:
           - {name: kernel.event_listener, event: user_was_followed_event, method: handle}
 

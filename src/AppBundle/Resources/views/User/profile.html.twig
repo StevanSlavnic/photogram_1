@@ -129,7 +129,7 @@
                         {% if app.user and user.profile.isOwner(app.user) %}
                             <a href="{{ path('profile_index_edit', {"username": user.profile.profileUsername}) }}" class="btn"><i class="fa fa-cog"></i>Settings</a>
                         {% else %}
-ffff
+
                         {% endif %}
                             {#{{ dump(is_following) }}#}
                         {% if app.user.profile.id != user.profile.id %}
@@ -176,6 +176,9 @@ ffff
                                         <ul class="list-unstyled follows">
                                             <li>
                                                 <div class="row">
+
+
+
 
                                                     <div class="col-md-2 col-md-offset-0 col-xs-3 col-xs-offset-2">
                                                         <img src="../assets/paper_img/flume.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">

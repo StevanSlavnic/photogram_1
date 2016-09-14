@@ -3,6 +3,7 @@
 {% block body_id 'blog_index' %}
 
 {% block main %}
+
     {% for post in posts %}
 
         <article class="post">
@@ -13,7 +14,7 @@
                     {% if post.user.profile.imageName %}
                         <img src="{{ post.user.profile.imageName | imagine_filter('my_small')  }}" alt="Circle Image" class="img-circle img-responsive img-raised">
                     {% else %}
-                        <img src="https://s3.amazonaws.com/creativetim_bucket/new_logo.png" />
+                        <img src="{{ asset('media/profile_default/thumb_small.png') }}" class="img-circle img-responsive img-raised" />
                     {% endif %}
                     {{ post.user.profile.firstname }} {{ post.user.profile.lastname }}
                 </a>
@@ -22,7 +23,7 @@
                         {% if post.user.profile.imageName %}
                             <img src="{{ post.user.profile.imageName | imagine_filter('my_small')  }}" alt="Circle Image" class="img-circle img-responsive img-raised">
                         {% else %}
-                            <img src="https://s3.amazonaws.com/creativetim_bucket/new_logo.png" />
+                            <img src="{{ asset('media/profile_default/thumb_small.png') }}" class="img-circle img-responsive img-raised" />
                         {% endif %}
                         {#{{ post.user.fullName }}#}
                         {{ post.user.profile.firstname }} {{ post.user.profile.lastname }}
@@ -50,11 +51,6 @@
                     {% endif %}
                 </div>
             </div>
-            {#<h2>#}
-                {#<a href="{{ path('blog_post', { slug: post.slug }) }}">#}
-                    {#{{ post.title }}#}
-                {#</a>#}
-            {#</h2>#}
             <div class="image-post">
                 <a href="{{ path('blog_post', { id: post.id }) }}">
                     <img class="img-responsive" src="{{ asset('images/posts/')}}{{ post.imageName }}" alt="{{ post.imageName }}">
@@ -66,17 +62,18 @@
                 {#{{ post.content|md2html }}#}
                 {{ post.content }}
             </div>
-
+        {#{% if is_liked %}#}
+            {#sdsdsd#}
+        {#{% else %}#}
+                {#sdsds#}
+            {#{% endif %}#}
 
         {% for comment in post.comments %}
             <div class="post-comment">
                 <span class="">
                     <strong>{{ comment.username }}</strong>
-                    {#{{ 'post.commented_on'|trans }}#}
-                    {#<strong>{{ comment.publishedAt|localizeddate('medium', 'short') }}</strong>#}
                 </span>
                 <div class="post-single-comment">
-                    {#{{ comment.content|md2html }}#}
                     {{ comment.content }}
                 </div>
             </div>
@@ -86,7 +83,6 @@
                 <p>{{ 'post.no_comments'|trans }}</p>
             </div>
         {% endfor %}
-        {#<h3>{{ 'post.num_comments'|transchoice(post.comments|length) }}</h3>#}
         <div id="post-add-comment" class="post-comment-add">
             {# The 'IS_AUTHENTICATED_FULLY' role ensures that the user has entered
             his/her credentials (login + password) during this session. If he/she
@@ -114,11 +110,5 @@
     <div class="navigation text-center">
         {{ pagerfanta(posts, 'twitter_bootstrap3', { routeName: 'blog_index_paginated' }) }}
     </div>
+
 {% endblock %}
-
-
-{#{% block sidebar %}#}
-    {#{{ parent() }}#}
-
-    {#{{ show_source_code(_self) }}#}
-{#{% endblock %}#}

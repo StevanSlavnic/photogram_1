@@ -6,12 +6,7 @@
         <h4>{% trans from 'FOSMessageBundle' %}send_new{% endtrans %}</h4>
     </div>
 <form action="{{ url('photo_message_new_thread') }}" method="post">
-    <p>Please search for a country and select the one you want on the returning list (type at least 2 characters).</p>
-    {#<p>#}
-        {#<input type="text" id="myTextField" />#}
-    {#<div id="match"></div>#}
-    {#</p>#}
-    {{ form_label(form.recipient) }}
+    {{ form_label(form.recipient) }} <small>(type at least 2 characters)</small>
     {{ form_widget(form.recipient, {attr: { class: 'form-control', placeholder: 'Start typing recipent name' }}) }}
     <div id="match"></div>
     {{ form_row(form.subject, {attr: { class: 'form-control', placeholder: 'Enter message subject'}}) }}

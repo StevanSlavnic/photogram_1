@@ -166,6 +166,7 @@ class UserConnectionManager
      *
      * @return \Doctrine\ORM\Query
      */
+//SELECT followee_id, follower_id, user.username FROM photogram_new.user_connections INNER JOIN photogram_new.user ON user_connections.followee_id=user.id;
     public function getFollowers(User $user)
     {
         return $this->em->getRepository('AppBundle:User\UserConnection')

@@ -305,33 +305,33 @@ nav.navbar-custom {
     margin-bottom: 30px;
   }
 
-  .messenger_thread_message:nth-child(even) {
-    margin-bottom: 20px;
-    width: 100%;
-    max-width: 320px;
-    float: left;
-    .messenger_thread_message_body {
-      background-color: #fff;
-      border: 1px solid #ddd;
-      border-radius: 3px;
-      padding: 9px;
-      word-wrap: break-word;
-    }
-  }
-  .messenger_thread_message:nth-child(odd) {
-    margin-bottom: 20px;
-    width: 100%;
-    max-width: 320px;
-    float: right;
-    text-align: right;
-    .messenger_thread_message_body {
-      border-radius: 3px;
-      padding: 9px;
-      background-color: #ddd;
-      border: 1px solid #000;
-      word-wrap: break-word;
-    }
-  }
+  //.messenger_thread_message:nth-child(even) {
+  //  margin-bottom: 20px;
+  //  width: 100%;
+  //  max-width: 320px;
+  //  float: left;
+  //  .messenger_thread_message_body {
+  //    background-color: #fff;
+  //    border: 1px solid #ddd;
+  //    border-radius: 3px;
+  //    padding: 9px;
+  //    word-wrap: break-word;
+  //  }
+  //}
+  //.messenger_thread_message:nth-child(odd) {
+  //  margin-bottom: 20px;
+  //  width: 100%;
+  //  max-width: 320px;
+  //  float: right;
+  //  text-align: right;
+  //  .messenger_thread_message_body {
+  //    border-radius: 3px;
+  //    padding: 9px;
+  //    background-color: #ddd;
+  //    border: 1px solid #000;
+  //    word-wrap: break-word;
+  //  }
+  //}
   .thread-reply {
     float: none;
   }

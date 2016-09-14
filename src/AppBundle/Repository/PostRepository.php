@@ -66,6 +66,24 @@ class PostRepository extends EntityRepository
     }
 
     /**
+     * @param User $user
+     * @param Post $post
+     * @return mixed
+     */
+    public function getUserPosts(User $user, Post $post)
+    {
+        return $this->getEntityManager()->createQueryBuilder()
+            ->select('posts')
+            ->from('AppBundle:Post', 'post')
+            ->where('post.user = :user')
+            ->orderBy('post.id', 'DESC')
+            ->setParameter('user', $user)
+            ->getQuery()
+            ->execute()
+            ;
+    }
+
+    /**
      * @param int $page
      *
      * @return Pagerfanta

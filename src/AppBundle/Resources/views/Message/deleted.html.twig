@@ -1,0 +1,15 @@
+{% extends '::base.html.twig' %}
+
+{% block fos_message_content %}
+<div class="form-wrapper">
+    <div class="thread-header">
+        <h4>{% trans from 'FOSMessageBundle' %}deleted{% endtrans %}</h4>
+        <ul class="unstyled pull-right">
+            <li><a href="{{ url('photo_message_inbox', {"username": app.user.profile.profileUsername} ) }}">{% trans from 'FOSMessageBundle' %}inbox{% endtrans %}</a></li>
+            <li><a href="{{ url('photo_message_sent', {"username": app.user.profile.profileUsername}) }}">{% trans from 'FOSMessageBundle' %}sent{% endtrans %}</a></li>
+            <li><a href="{{ url('photo_message_delete', {"username": app.user.profile.profileUsername}) }}">{% trans from 'FOSMessageBundle' %}deleted{% endtrans %}</a></li>
+        </ul>
+    </div>
+{% include '@App/Message/threads_list.html.twig' with {'threads': threads, "username": app.user.profile.profileUsername} %}
+</div>
+{% endblock %}

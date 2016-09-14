@@ -21,7 +21,11 @@
                     <div class="collapse navbar-collapse" id="navigation-example">
                         <ul class="nav navbar-nav navbar-right">
                             {% block header_navigation_links %}
-                                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                                {% if app.user and is_granted('IS_AUTHENTICATED_FULLY') %}
+                                {# Get the number of new threads for the authenticated participant #}
+                                <li>
+                                   <a href="{{ path('photo_message_inbox', {"username": app.user.profile.profileUsername}) }}"><i class="fa fa-envelope"></i> {{ fos_message_nb_unread() }}</a>
+                                </li>
                                     {#<li>#}
                                         {#<a href="#">#}
                                             {#{{ app.user.fullName }}#}
@@ -92,7 +96,8 @@
     {% endblock %}
     {% block body %}
         <div class="wrapper">
-            <div class="profile-background" style="background-image: url('{{ asset('./bundles/app/images/rick.jpg') }}');"></div>
+        <div class="profile-background" style="background-image: url('{{ asset('images/background/') }}{{ profile.imageBackgroundName }}');"></div>
+            {#<div class="profile-background" style="background-image: url('{{ asset('./bundles/app/images/rick.jpg') }}');"></div>#}
                 <div class="filter-black"></div>
             </div>
             <div class="profile-content section-nude">
@@ -103,7 +108,8 @@
                                 {% if profile.imageName %}
                                     <img src="{{ profile.imageName | imagine_filter('my_thumb')  }}" alt="Circle Image" class="img-circle img-responsive img-raised">
                                 {% else %}
-                                    <img src="https://s3.amazonaws.com/creativetim_bucket/new_logo.png" />
+                                    <img src="{{ asset('media/profile_default/thumb.png') }}" />
+
                                 {% endif %}
 
                                 {#<img src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAATCAAAAJDk4ZjEyN2MwLTQ5ZmYtNDE0Ni1hY2FjLTJlZDExZTlmMTUxOQ.jpg9" alt="Circle Image" class="img-circle img-responsive img-raised">#}
@@ -123,6 +129,7 @@
                         {% if app.user and user.profile.isOwner(app.user) %}
                             <a href="{{ path('profile_index_edit', {"username": user.profile.profileUsername}) }}" class="btn"><i class="fa fa-cog"></i>Settings</a>
                         {% else %}
+
                         {% endif %}
                             {#{{ dump(is_following) }}#}
                         {% if app.user.profile.id != user.profile.id %}
@@ -169,6 +176,10 @@
                                         <ul class="list-unstyled follows">
                                             <li>
                                                 <div class="row">
+
+
+
+
                                                     <div class="col-md-2 col-md-offset-0 col-xs-3 col-xs-offset-2">
                                                         <img src="../assets/paper_img/flume.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
                                                     </div>

@@ -4,9 +4,65 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2d1977f2f5719255cf150fb82316004d",
-    "content-hash": "db1f58213eb9cf9eb86fbe7785618a19",
+    "hash": "e938f1c3ce76bb0fd697b591a2c37709",
+    "content-hash": "fac6adb9dce60e161ba9138c4e45fdb9",
     "packages": [
+        {
+            "name": "antqa/ajax-autocomplete-bundle",
+            "version": "v0.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/antqa/AjaxAutoCompleteBundle.git",
+                "reference": "2726ac86b160d0938f206f89064f80f5b6309dcc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/antqa/AjaxAutoCompleteBundle/zipball/2726ac86b160d0938f206f89064f80f5b6309dcc",
+                "reference": "2726ac86b160d0938f206f89064f80f5b6309dcc",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/orm": "~2.2,>=2.2.3",
+                "php": ">=5.4.0",
+                "symfony/form": "~2.3|~3.0",
+                "symfony/framework-bundle": "~2.3|~3.0"
+            },
+            "require-dev": {
+                "symfony/yaml": "~2.3|~3.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "AntQa\\AjaxAutoCompleteBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Piotr Antosik",
+                    "email": "piotr@ant.qa",
+                    "homepage": "https://www.ant.qa",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Ajax AutoComplete Bundle",
+            "homepage": "https://www.ant.qa",
+            "keywords": [
+                "ajax",
+                "autocomplete",
+                "form",
+                "json"
+            ],
+            "time": "2015-12-14 22:02:38"
+        },
         {
             "name": "behat/transliterator",
             "version": "v1.1.0",
@@ -854,6 +910,90 @@
             "time": "2015-10-04 16:44:32"
         },
         {
+            "name": "friendsofsymfony/elastica-bundle",
+            "version": "3.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfSymfony/FOSElasticaBundle.git",
+                "reference": "40cb2852fb3c0a4cf9de60eb6f1c5245ec84a1c9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSElasticaBundle/zipball/40cb2852fb3c0a4cf9de60eb6f1c5245ec84a1c9",
+                "reference": "40cb2852fb3c0a4cf9de60eb6f1c5245ec84a1c9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "psr/log": "~1.0",
+                "ruflin/elastica": "~2.1",
+                "symfony/console": "~2.1|~3.0",
+                "symfony/form": "~2.1|~3.0",
+                "symfony/framework-bundle": "~2.3|~3.0",
+                "symfony/property-access": "~2.3|~3.0"
+            },
+            "require-dev": {
+                "doctrine/doctrine-bundle": "~1.2",
+                "doctrine/orm": "~2.4",
+                "doctrine/phpcr-bundle": "~1.2",
+                "jackalope/jackalope-doctrine-dbal": "~1.1",
+                "jms/serializer-bundle": "@stable",
+                "knplabs/knp-components": "~1.2",
+                "knplabs/knp-paginator-bundle": "~2.4",
+                "pagerfanta/pagerfanta": "~1.0",
+                "phpunit/phpunit": "~4.1",
+                "propel/propel1": "1.6.*",
+                "symfony/browser-kit": "~2.3|~3.0",
+                "symfony/expression-language": "~2.4|~3.0",
+                "symfony/serializer": "~2.7|~3.0",
+                "symfony/twig-bundle": "~2.3|~3.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "FOS\\ElasticaBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tim Nagel",
+                    "email": "tim@nagel.com.au"
+                },
+                {
+                    "name": "Richard Miller",
+                    "email": "richard.miller@limethinking.co.uk"
+                },
+                {
+                    "name": "FriendsOfSymfony Community",
+                    "homepage": "https://github.com/FriendsOfSymfony/FOSElasticaBundle/contributors"
+                },
+                {
+                    "name": "Jeremy Mikola",
+                    "email": "jmikola@gmail.com"
+                }
+            ],
+            "description": "Elasticsearch PHP integration for your Symfony2 project using Elastica",
+            "homepage": "https://github.com/FriendsOfSymfony/FOSElasticaBundle",
+            "keywords": [
+                "doctrine2",
+                "elastica",
+                "elasticsearch",
+                "mongodb",
+                "propel",
+                "search"
+            ],
+            "time": "2016-08-04 14:52:25"
+        },
+        {
             "name": "friendsofsymfony/jsrouting-bundle",
             "version": "1.6.0",
             "source": {
@@ -1575,6 +1715,52 @@
             "time": "2016-05-06 06:27:38"
         },
         {
+            "name": "mawi12345/ajax-autocomplete-bundle",
+            "version": "dev-master",
+            "target-dir": "Mawi/AjaxAutocompleteBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mawi12345/ajax-autocomplete-bundle.git",
+                "reference": "1fe29abca987ab04531820a27133b864f444d42a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mawi12345/ajax-autocomplete-bundle/zipball/1fe29abca987ab04531820a27133b864f444d42a",
+                "reference": "1fe29abca987ab04531820a27133b864f444d42a",
+                "shasum": ""
+            },
+            "require": {
+                "friendsofsymfony/jsrouting-bundle": "@stable",
+                "php": ">=5.3.2",
+                "symfony/framework-bundle": ">=2.1.0"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-0": {
+                    "Mawi\\AjaxAutocompleteBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Martin Wind",
+                    "email": "mawi1988@gmail.com"
+                },
+                {
+                    "name": "Pascal Querner",
+                    "email": "pascal.querner@mscg.de"
+                }
+            ],
+            "description": "Symfony AjaxAutocompleteBundle",
+            "keywords": [
+                "Ajax Autocomplete form type"
+            ],
+            "time": "2014-05-17 09:13:07"
+        },
+        {
             "name": "monolog/monolog",
             "version": "1.19.0",
             "source": {
@@ -1867,6 +2053,118 @@
                 "psr-3"
             ],
             "time": "2012-12-21 11:40:51"
+        },
+        {
+            "name": "pugx/autocompleter-bundle",
+            "version": "v1.2.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PUGX/PUGXAutoCompleterBundle.git",
+                "reference": "c4eb82096c6a38dbfecf1c1d8baee21f45774963"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PUGX/PUGXAutoCompleterBundle/zipball/c4eb82096c6a38dbfecf1c1d8baee21f45774963",
+                "reference": "c4eb82096c6a38dbfecf1c1d8baee21f45774963",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/orm": "~2.2",
+                "symfony/form": "~2.3|~3.0",
+                "symfony/framework-bundle": "~2.3|~3.0"
+            },
+            "require-dev": {
+                "lexik/form-filter-bundle": ">=3.0",
+                "phpunit/phpunit": "4.*|5.*"
+            },
+            "suggest": {
+                "lexik/form-filter-bundle": "To use autocomplete on a filter."
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PUGX\\AutocompleterBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Massimiliano Arione",
+                    "email": "garakkio@gmail.com"
+                }
+            ],
+            "description": "Add an autocomplete type to forms",
+            "keywords": [
+                "field",
+                "form",
+                "symfony"
+            ],
+            "time": "2016-05-09 13:47:05"
+        },
+        {
+            "name": "ruflin/elastica",
+            "version": "2.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ruflin/Elastica.git",
+                "reference": "0df1d7b513960ba11d3075652dcd71fcab8dd37a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ruflin/Elastica/zipball/0df1d7b513960ba11d3075652dcd71fcab8dd37a",
+                "reference": "0df1d7b513960ba11d3075652dcd71fcab8dd37a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "psr/log": "~1.0"
+            },
+            "require-dev": {
+                "guzzlehttp/guzzle": "5.3.*",
+                "munkie/elasticsearch-thrift-php": "1.4.*"
+            },
+            "suggest": {
+                "egeloen/http-adapter": "Allow using httpadapter transport",
+                "guzzlehttp/guzzle": "Allow using guzzle 5.3.x as the http transport (Requires php 5.4)",
+                "monolog/monolog": "Logging request",
+                "munkie/elasticsearch-thrift-php": "Allow using thrift transport"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Elastica\\": "lib/Elastica/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Ruflin",
+                    "homepage": "http://ruflin.com/"
+                }
+            ],
+            "description": "Elasticsearch Client",
+            "homepage": "http://elastica.io/",
+            "keywords": [
+                "client",
+                "search"
+            ],
+            "time": "2015-10-19 07:09:10"
         },
         {
             "name": "sensio/distribution-bundle",
@@ -3485,7 +3783,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "mawi12345/ajax-autocomplete-bundle": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

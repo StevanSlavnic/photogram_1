@@ -94,11 +94,28 @@ class Profile
     protected $imageFile;
 
     /**
+     * NOTE: This is not a mapped field of entity metadata, just a simple property.
+     *
+     * @Vich\UploadableField(mapping="profile_background_image", fileNameProperty="imageBackgroundName")
+     *
+     * @var File
+     */
+    protected $imageBackgroundFile;
+
+    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      *
      * @var string
      */
     protected $imageName;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     *
+     * @var string
+     */
+    protected $imageBackgroundName;
+
 
     public function __construct()
     {
@@ -285,6 +302,48 @@ class Profile
     public function getImageName()
     {
         return $this->imageName;
+    }
+
+    /**
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $image
+     *
+     * @return Profile
+     */
+    public function setImageBackgroundFile(File $image = null)
+    {
+        $this->imageBackgroundFile = $image;
+
+        if ($image) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->updatedAt = new \DateTime('now');
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getImageBackgroundFile()
+    {
+        return $this->imageBackgroundFile;
+    }
+
+    /**
+     * @return string
+     */
+    public function getImageBackgroundName()
+    {
+        return $this->imageBackgroundName;
+    }
+
+    /**
+     * @param string $imageBackgroundName
+     */
+    public function setImageBackgroundName($imageBackgroundName)
+    {
+        $this->imageBackgroundName = $imageBackgroundName;
     }
 
     /**

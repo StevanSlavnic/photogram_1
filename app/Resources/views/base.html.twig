@@ -13,6 +13,9 @@
         <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
         <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
         <script src="{{ path('fos_js_routing_js', {'callback': 'fos.Router.setData'}) }}"></script>
+        <script type="text/javascript">
+            var ROOT_URL = "{{ url('homepage')}}"; //set the root URL for js - _homepage is the name of the base route in my app.
+        </script>
     </head>
     <body>
     {% block header %}
@@ -43,10 +46,13 @@
                                             {% if app.user.profile.imageName %}
                                                 <img src="{{ app.user.profile.imageName | imagine_filter('my_small')  }}" alt="Circle Image" class="img-circle img-responsive img-raised">
                                             {% else %}
-                                                <img src="https://s3.amazonaws.com/creativetim_bucket/new_logo.png" />
+                                                <img src="{{ asset('media/profile_default/thumb_small.png') }}" class="img-circle img-responsive img-raised" />
                                             {% endif %}
                                             {{ app.user.profile.firstName }}
                                         </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('photo_message_inbox', {"username": app.user.profile.profileUsername}) }}"><i class="fa fa-envelope"></i> <span class="number">{{ fos_message_nb_unread() }}</span></a>
                                     </li>
                                     <li>
                                         <a href="{{ path('post_new') }}">
@@ -94,12 +100,16 @@
 
         {% block fos_user_content %}
         {% endblock fos_user_content %}
+        {% block fos_message_content %}
+        {% endblock fos_message_content %}
         {% block main %}
         {% endblock %}
         {% endblock %}
 
             {% javascripts output="js/app.js"
             'assets/js/jquery-2.1.4.min.js'
+            'assets/js/jquery-ui.min.js'
+            'assets/js/autocompleter-jqueryui.js'
             'assets/js/bootstrap-3.3.4.js'
             'assets/js/bootstrap-datepicker.js'
             'assets/js/ct-paper-checkbox.js'
@@ -107,10 +117,12 @@
             'assets/js/ct-paper.js'
             'assets/js/connections.js'
             'assets/js/echo.js'
+                'assets/js/autocomplete-search.js'
             %}
             <script src="{{ asset_url }}"></script>
-    <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
-    <script src="{{ path('fos_js_routing_js', {'callback': 'fos.Router.setData'}) }}"></script>
+            <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+            <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+            <script src="{{ path('fos_js_routing_js', {'callback': 'fos.Router.setData'}) }}"></script>
             {% endjavascripts %}
 
     </body>

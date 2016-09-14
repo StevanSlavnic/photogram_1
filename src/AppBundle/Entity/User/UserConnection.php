@@ -33,7 +33,7 @@ class UserConnection
     /**
      * @var User
      *
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", fetch="EAGER")
      * @ORM\JoinColumn(name="follower_id", referencedColumnName="id")
      */
     private $follower;
@@ -41,7 +41,7 @@ class UserConnection
     /**
      * @var User
      *
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", fetch="EAGER")
      * @ORM\JoinColumn(name="followee_id", referencedColumnName="id")
      */
     private $followee;

@@ -176,6 +176,27 @@ nav.navbar-custom {
   border: 1px solid #eeefef;
   border-radius: 3px;
   position: relative;
+  .thread-header {
+    background-color: #fff;
+    position: relative;
+    margin-bottom: 25px;
+    h4, .h4 {
+      margin: 0 0 0;
+      display: inline-block;
+    }
+    .unstyled {
+      padding: 0;
+      list-style: none;
+      li {
+        display: inline-block;
+        margin: 0 8px;
+      }
+    }
+    .thread-new-btn {
+      margin: 25px 0;
+      text-align: center;
+    }
+  }
   .image-wrapper {
     background-color: #dddddd;
     position: relative;
@@ -198,12 +219,12 @@ nav.navbar-custom {
       }
   }
 
-  a.sf-form-row-add-image {
+  .sf-form-row-add-image, .sf-form-row-add-image-background {
     color: #ababab;
     text-align: center;
     display: inline-block;
-    width: 100px;
-    height: 81px;
+    width: 140px;
+    height: 94px;
     line-height: 20px;
     font-size: 18px;
     border: 1px dashed #ababab;
@@ -215,13 +236,16 @@ nav.navbar-custom {
     padding: 15px 0;
     position: relative;
   }
-  #post_imageFile, #profile_edit_imageFile {
+  small {
+
+  }
+  #post_imageFile, #profile_edit_imageFile, #profile_edit_imageBackgroundFile_file  {
     display: block;
     position: absolute;
     top: 0px;
     left: 50%;
-    width: 100px;
-    height: 80px;
+    width: 140px;
+    height: 94px;
     margin: 0;
     padding: 0;
     font-size: 20px;
@@ -235,8 +259,23 @@ nav.navbar-custom {
     position: absolute;
     top: 0px;
     left: 50%;
-    width: 100px;
-    height: 80px;
+    width: 140px;
+    height: 94px;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+
+  #profile_edit_imageBackgroundFile_file {
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    width: 140px;
+    height: 94px;
     margin: 0;
     padding: 0;
     font-size: 20px;
@@ -253,8 +292,8 @@ nav.navbar-custom {
     position: absolute;
     top: 0px;
     left: 50%;
-    width: 100px;
-    height: 80px;
+    width: 140px;
+    height: 94px;
     margin: 0;
     padding: 0;
     font-size: 20px;
@@ -266,6 +305,36 @@ nav.navbar-custom {
     margin-bottom: 30px;
   }
 
+  //.messenger_thread_message:nth-child(even) {
+  //  margin-bottom: 20px;
+  //  width: 100%;
+  //  max-width: 320px;
+  //  float: left;
+  //  .messenger_thread_message_body {
+  //    background-color: #fff;
+  //    border: 1px solid #ddd;
+  //    border-radius: 3px;
+  //    padding: 9px;
+  //    word-wrap: break-word;
+  //  }
+  //}
+  //.messenger_thread_message:nth-child(odd) {
+  //  margin-bottom: 20px;
+  //  width: 100%;
+  //  max-width: 320px;
+  //  float: right;
+  //  text-align: right;
+  //  .messenger_thread_message_body {
+  //    border-radius: 3px;
+  //    padding: 9px;
+  //    background-color: #ddd;
+  //    border: 1px solid #000;
+  //    word-wrap: break-word;
+  //  }
+  //}
+  .thread-reply {
+    float: none;
+  }
 }
 
 .image-wrapper-profile {
@@ -317,6 +386,7 @@ nav.navbar-custom {
       height: 380px;
       background-position: top center;
     }
+
     .profile {
       text-align: center;
       img {
@@ -343,6 +413,14 @@ nav.navbar-custom {
 
 }
 
+.avatar {
+  img {
+    display: inline-block;
+    margin: 0;
+  }
+
+}
+
 .list-masonry {
   -moz-column-width: 18em;
   -webkit-column-width: 18em;
@@ -357,15 +435,23 @@ nav.navbar-custom {
 }
 
 .form-wrapper-edit {
-  width: 60%;
+  width: 100%;
+  max-width: 620px;
   margin: 20px auto;
   background-color: #fff;
   padding: 40px;
   border: 1px solid #eeefef;
   border-radius: 3px;
   position: relative;
+  h4, .h4  {
+    margin: 0 0 20px;
+    text-align: center;
+  }
   .btn {
     margin-top: 20px;
+  }
+  #profile-image {
+    margin-bottom: 20px;
   }
 }
 
@@ -384,4 +470,44 @@ nav.navbar-custom {
 
 .header {
   background-image: url("");
+}
+
+.thread-single {
+  position: relative;
+  //background-color: #ddd;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  .thread-head {
+    text-align: right;
+    margin-top: 15px;
+  }
+  .thread-date {
+    display: inline-block;
+  }
+  .thread-new {
+      color: green;
+      font-weight: 900;
+      display: inline-block;
+    }
+  .thread-sender {
+    display: inline-block;
+    margin-left: 20px;
+  }
+    a {
+      color: #777;
+      font-weight: 900;
+      &:hover {
+        color: #5e5e5e;
+      }
+    }
+  input.btn {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    padding: 0 4px;
+    font-size: 10px;
+    font-weight: 900;
+  }
 }

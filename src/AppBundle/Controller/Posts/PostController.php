@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller\Posts;
 
+use FOS\UserBundle\Model\UserInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use AppBundle\Entity\Comment;
 use AppBundle\Entity\Post;
@@ -16,6 +17,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use AppBundle\Controller\BaseController;
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 /**
  * Class PostController
@@ -38,7 +41,7 @@ class PostController extends Controller
 
     public function indexAction(Request $request, $page)
     {
-
+        $loggedUser = $this->getLoggedUser();
         $user = $this->getUser();
         $posts = $this->getDoctrine()->getRepository('AppBundle:Post')->findLatest($page);
         $profiles = $this->getDoctrine()->getRepository('AppBundle:Profile')->findAll();
@@ -46,14 +49,17 @@ class PostController extends Controller
         $form = $this->createForm('AppBundle\Form\CommentType');
 //        $deleteForm = $this->createForm('')
 
+
         $form->handleRequest($request);
+        $userConnectionManager = $this->get('app.manager.user_connection_manager');
 
         return $this->render('@App/PostsList/index.html.twig', array(
             'posts' => $posts,
             'user' => $user,
             'profile' => $profile,
             'profiles' => $profiles,
-            'form' => $form->createView()
+            'form' => $form->createView(),
+//            'is_following' => $userConnectionManager->isFollowing($loggedUser, $user),
         ));
     }
 
@@ -154,8 +160,6 @@ class PostController extends Controller
         ));
     }
 
-
-
     /**
      * Deletes a Post entity.
      *
@@ -206,8 +210,6 @@ class PostController extends Controller
             ;
     }
 
-
-
     /**
      * @Route("/post/{id}", name="blog_post")
      * @Method("GET")
@@ -221,8 +223,6 @@ class PostController extends Controller
      */
     public function postShowAction(Post $post)
     {
-
-
         return $this->render('@App/Posts/post_show.html.twig', array(
             'post' => $post,
 //            'profile' => $profile
@@ -286,5 +286,16 @@ class PostController extends Controller
             'post' => $post,
             'form' => $form->createView(),
         ));
+    }
+
+    private function getLoggedUser()
+    {
+        $loggedUser = $this->container->get('security.token_storage')->getToken()->getUser();
+
+        if (!is_object($loggedUser) || !$loggedUser instanceof UserInterface) {
+            throw new AccessDeniedException('Please login first.');
+        }
+
+        return $loggedUser;
     }
 }

@@ -14303,37 +14303,6 @@ nav.navbar-custom .navbar-nav li a img {
 .form-wrapper .image-form-wrapper, .form-wrapper-edit .image-form-wrapper {
   margin-bottom: 30px;
 }
-/* line 308, ../sass/screen.scss */
-.form-wrapper .messenger_thread_message:nth-child(even), .form-wrapper-edit .messenger_thread_message:nth-child(even) {
-  margin-bottom: 20px;
-  width: 100%;
-  max-width: 320px;
-  float: left;
-}
-/* line 313, ../sass/screen.scss */
-.form-wrapper .messenger_thread_message:nth-child(even) .messenger_thread_message_body, .form-wrapper-edit .messenger_thread_message:nth-child(even) .messenger_thread_message_body {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 3px;
-  padding: 9px;
-  word-wrap: break-word;
-}
-/* line 321, ../sass/screen.scss */
-.form-wrapper .messenger_thread_message:nth-child(odd), .form-wrapper-edit .messenger_thread_message:nth-child(odd) {
-  margin-bottom: 20px;
-  width: 100%;
-  max-width: 320px;
-  float: right;
-  text-align: right;
-}
-/* line 327, ../sass/screen.scss */
-.form-wrapper .messenger_thread_message:nth-child(odd) .messenger_thread_message_body, .form-wrapper-edit .messenger_thread_message:nth-child(odd) .messenger_thread_message_body {
-  border-radius: 3px;
-  padding: 9px;
-  background-color: #ddd;
-  border: 1px solid #000;
-  word-wrap: break-word;
-}
 /* line 335, ../sass/screen.scss */
 .form-wrapper .thread-reply, .form-wrapper-edit .thread-reply {
   float: none;

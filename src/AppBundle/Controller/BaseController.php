@@ -3,12 +3,15 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\User;
+use AppBundle\Entity\Profile;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use FOS\UserBundle\Model\UserInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 /**
@@ -34,21 +37,6 @@ abstract class BaseController extends Controller
         return $loggedUser;
     }
 
-//    /**
-//     * Get logged in user
-//     *
-//     * @return User
-//     */
-//    protected function getOwnerProfile()
-//    {
-//        $ownerProfile = $this->container->get('security.token_storage')->getToken()->getUser()->getId();
-//
-//        if (!is_object($ownerProfile) || !$ownerProfile instanceof UserInterface) {
-//            throw new AccessDeniedException('Please login first.');
-//        }
-//
-//        if (is_object($ownerProfile) || $ownerProfile instanceof UserInterface) {
-//            return $ownerProfile;
-//        }
-//    }
+
+
 }

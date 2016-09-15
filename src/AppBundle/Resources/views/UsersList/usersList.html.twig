@@ -1,0 +1,106 @@
+{% extends "base.html.twig" %}
+
+{% block main %}
+    {% block header %}
+        <header>
+            <nav class="navbar navbar-default navbar-custom" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="{{ path('blog_index') }}">
+                            Photogram
+                        </a>
+                        <button type="button" class="navbar-toggle"
+                                data-toggle="collapse"
+                                data-target="#navigation-example-2">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="navbar-collapse collapse" id="navigation-example-2">
+                        <ul class="nav navbar-nav navbar-right">
+
+                            {% block header_navigation_links %}
+                                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+
+                                    <li>
+                                        <a href="{{ path("profile_index", {"username": app.user.profile.profileUsername}) }}">
+                                            {% if app.user.profile.imageName %}
+                                                <img src="{{ app.user.profile.imageName | imagine_filter('my_small')  }}" alt="Circle Image" class="img-circle img-responsive img-raised">
+                                            {% else %}
+                                                <img src="{{ asset('media/profile_default/thumb_small.png') }}" class="img-circle img-responsive img-raised" />
+                                            {% endif %}
+                                            {{ app.user.profile.firstName }}
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('photo_message_inbox', {"username": app.user.profile.profileUsername}) }}"><i class="fa fa-envelope"></i> <span class="number">{{ fos_message_nb_unread() }}</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('post_new') }}">
+                                            <i class="fa fa-plus-square-o" aria-hidden="true"></i>
+                                            <small>New post</small>
+                                        </a>
+                                    </li>
+                                {% else %}
+                                    <li>
+                                        <a href="{{ path('fos_user_security_login') }}">
+                                            Login
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('fos_user_registration_register') }}">
+                                            Register
+                                        </a>
+                                    </li>
+                                {% endif %}
+                            {% endblock %}
+
+                            {% if app.user %}
+                                <li>
+                                    <a href="{{ path('fos_user_security_logout') }}">
+                                        <i class="fa fa-sign-out"></i> {{ 'menu.logout'|trans }}
+                                    </a>
+                                </li>
+                            {% endif %}
+
+                            {#<li class="dropdown">#}
+                            {#<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-globe"></i> <span class="caret"></span></a>#}
+                            {#<ul class="dropdown-menu locales" role="menu">#}
+                            {#{% for locale in locales() %}#}
+                            {#<li {% if app.request.locale == locale.code %}class="active"{% endif %}><a href="{{ path(app.request.get('_route', 'blog_index'), app.request.get('_route_params', [])|merge({ _locale: locale.code })) }}">{{ locale.name|capitalize }}</a></li>#}
+                            {#{% endfor %}#}
+                            {#</ul>#}
+                            {#</li>#}
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    {% endblock %}
+    {% block body %}
+    <div class="container">
+        {% for profile in profiles %}
+        <div class="col-md-6">
+            <div class="well">
+                {{ profile.user.fullName }}
+
+                {% if profile.imageName %}
+                    <img src="{{ profile.imageName | imagine_filter('my_thumb')  }}" alt="Circle Image" class="img-circle img-responsive img-raised">
+                {% else %}
+                    <img src="{{ asset('media/profile_default/thumb.png') }}" />
+                {% endif %}
+
+                {{ profile.occupation }}
+
+                {{ profile.about }}
+
+
+
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endblock %}
+{% endblock %}

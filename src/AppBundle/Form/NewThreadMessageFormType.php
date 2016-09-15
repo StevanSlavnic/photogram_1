@@ -17,7 +17,9 @@ class NewThreadMessageFormType extends AbstractType
     {
         $builder
             ->add('recipient', 'search', array('class' => 'AppBundle:User'))
-            ->add('subject', 'text')
+            ->add('subject', 'text', array(
+                'label' => ' '
+            ))
             ->add('body', 'textarea');
     }
 

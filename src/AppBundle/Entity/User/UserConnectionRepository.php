@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity\User;
 
+use AppBundle\Entity\User;
 use Doctrine\ORM\EntityRepository;
 
 /**
@@ -12,5 +13,18 @@ use Doctrine\ORM\EntityRepository;
  */
 class UserConnectionRepository extends EntityRepository
 {
-    
+    public function getFollowee(User $followee)
+    {
+        $sql = "SELECT followee_id, user.username
+                FROM photogram_new.user_connections
+                INNER JOIN photogram_new.user
+                ON user_connections.followee_id = user.id;";
+
+        $types = $this->getEntityManager()
+            ->createQuery($sql)
+            ->setParameter("followee", $followee)
+            ->getResult();
+
+        return count($types) ? $types[0] : null;
+    }
 }

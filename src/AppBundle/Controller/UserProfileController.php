@@ -47,6 +47,8 @@ class UserProfileController extends BaseController
         $user = $profile->getUser();
         $userConnectionManager = $this->get('app.manager.user_connection_manager');
 
+//        $likePostManager = $this->get('app.manager.like_post_manager');
+
         $followers = $userConnectionManager->getFollowers($profile->getUser())->getResult();
         $following = $userConnectionManager->getFollowing($profile->getUser())->getResult();
 
@@ -61,7 +63,8 @@ class UserProfileController extends BaseController
             'followers' => $followers,
             'following' => $following,
             'is_following' => $userConnectionManager->isFollowing($loggedUser, $user),
-            'is_followed_back' => $userConnectionManager->isFollowing($user, $loggedUser)
+            'is_followed_back' => $userConnectionManager->isFollowing($user, $loggedUser),
+//            'is_liked' => $likePostManager->isLiked($user, $likedPost)
         ));
     }
 
@@ -161,7 +164,7 @@ class UserProfileController extends BaseController
 
         $user = $this->getLoggedUser();
 
-        $userConnectionManager = $this->get('app.manager.user_connection_manager');
+        $userConnectionManager = $this->get('app.manager.like_post_manager');
 
         $type = $_POST['type'];
 
@@ -171,7 +174,7 @@ class UserProfileController extends BaseController
 //                'response' => $this->renderView('AppBundle:User:profile.html.twig', array(
                 'response' => $this->renderView('AppBundle:User:follow_button_'. $type .'.html.twig', array(
                     'profile' => $profile,
-                    'is_following' => true
+                    'is_liking' => true
                 ))
             ));
         }
@@ -181,7 +184,7 @@ class UserProfileController extends BaseController
 //            'response' => $this->renderView('AppBundle:User:profile.html.twig', array(
             'response' => $this->renderView('AppBundle:User:follow_button_'.$type.'.html.twig', array(
                 'profile' => $profile,
-                'is_following' => true
+                'is_liking' => true
             ))
         ]);
     }
@@ -211,7 +214,7 @@ class UserProfileController extends BaseController
                 'success' => true,
                 'response' => $this->renderView('AppBundle:User:follow_button_'. $type .'.html.twig', array(
                     'profile' => $profile,
-                    'is_following' => false
+                    'is_liking' => false
                 ))
             ));
         }
@@ -220,7 +223,7 @@ class UserProfileController extends BaseController
             'success' => false,
             'response' => $this->renderView('AppBundle:User:follow_button_'. $type .'.html.twig', array(
                 'profile' => $profile,
-                'is_following' => true
+                'is_liking' => true
             ))
         ));
     }
@@ -265,6 +268,4 @@ class UserProfileController extends BaseController
             'form'   => $editForm->createView(),
         ));
     }
-
-
 }

@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\User;
+use AppBundle\Entity\Profile;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -28,14 +29,14 @@ class searchUserController extends Controller
             . 'FROM AppBundle:User u '
             . 'WHERE u.username LIKE :data '
             . 'ORDER BY u.username ASC'
-        )
-            ->setParameter('data', '%' . $data . '%');
+        )->setParameter('data', '%' . $data . '%');
+
         $results = $query->getResult();
 
-        $usernameList = '<ul id="matchList">';
+        $usernameList = '<ul id="matchList" class="list-unstyled">';
         foreach ($results as $result) {
             $matchStringBold = preg_replace('/('.$data.')/i', '<strong>$1</strong>', $result['username']); // Replace text field input by bold one
-            $usernameList .= '<li id="'.$result['username'].'">'.$matchStringBold.'</li>'; // Create the matching list - we put maching name in the ID too
+            $usernameList .= '<li id="'.$result['username'].'" class="recipient">'.$matchStringBold.'</li>'; // Create the matching list - we put maching name in the ID too
         }
         $usernameList .= '</ul>';
 
@@ -43,21 +44,4 @@ class searchUserController extends Controller
         $response->setData(array('usernameList' => $usernameList));
         return $response;
     }
-//    public function searchUserAction(Request $request, User $username, Response $response)
-//    {
-//        $q = $request->query->get('q');
-//        $results = $this->getDoctrine()->getRepository('AppBundle:User')->findAll($q);
-//
-//
-//        return $this->render('AppBundle:Message:newThread.html.twig', array(
-//            'results' => $results
-//        ));
-//    }
-//
-//    public function getUserAction($id = null)
-//    {
-//        $user = $this->getDoctrine()->getRepository('AppBundle:User')->find($id);
-//
-//        return new Response($user->getUsername());
-//    }
 }

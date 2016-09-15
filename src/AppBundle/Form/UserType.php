@@ -50,7 +50,7 @@ class UserType extends AbstractType
 
             $data = $event->getData();
 
-            $data['username'] = $data['profile']['firstname'] . ' ' . $data['profile']['lastname'];
+            $data['username'] = $data['profile']['firstname'] . '-' . $data['profile']['lastname'];
             $data['fullName'] = $data['profile']['firstname'] . ' ' . $data['profile']['lastname'];
 //            $data['profileName'] = $data['profile']['firstname'] . '-' . $data['profile']['lastname'];
 

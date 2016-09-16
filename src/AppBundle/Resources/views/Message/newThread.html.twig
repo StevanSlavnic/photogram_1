@@ -11,7 +11,7 @@
     {#<div id="match"></div>#}
     {#</p>#}
     {{ form_label(form.recipient) }} <small>(type at least 2 characters)</small>
-    {{ form_widget(form.recipient, {attr: { class: 'form-control', placeholder: 'Start typing recipent name' }}) }}
+    {{ form_widget(form.recipient, {attr: { class: 'form-control', placeholder: 'Start typing recipent name', autocomplete: 'off' }}) }}
     {{ form_errors(form.recipient) }}
     <div id="match"></div>
 

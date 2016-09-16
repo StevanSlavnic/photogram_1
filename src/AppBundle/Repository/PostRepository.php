@@ -12,6 +12,7 @@
 namespace AppBundle\Repository;
 
 use AppBundle\Entity\Post;
+use AppBundle\Entity\Profile;
 use AppBundle\Entity\User;
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\Query;
@@ -68,19 +69,20 @@ class PostRepository extends EntityRepository
     /**
      * @param User $user
      * @param Post $post
-     * @return mixed
+     * @param Profile $profile
+     * @return Query
+     * @internal param Profile $profile
      */
-    public function getUserPosts(User $user, Post $post)
+    public function getUserPosts(User $user, Post $post, Profile $profile)
     {
-        return $this->getEntityManager()->createQueryBuilder()
-            ->select('posts')
-            ->from('AppBundle:Post', 'post')
-            ->where('post.user = :user')
-            ->orderBy('post.id', 'DESC')
-            ->setParameter('user', $user)
-            ->getQuery()
-            ->execute()
-            ;
+        return $this->getEntityManager()->createQuery(
+            'SELECT * FROM photogram_new.post as p
+            INNER JOIN photogram_new.profile as prof ON prof.id = p.user_id
+            INNER JOIN photogram_new.user as us ON us.profile_id = prof.id 
+            ORDER BY prof.id DESC
+            ;'
+        )
+            ->setParameter('now', new \DateTime());
     }
 
     /**

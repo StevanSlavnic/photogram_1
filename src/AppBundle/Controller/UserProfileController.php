@@ -19,6 +19,7 @@ use AppBundle\Entity\User\UserConnection;
 use AppBundle\Repository\UserConnectionRepository;
 use Doctrine\ORM\Mapping\Cache;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Sluggable\Fixture\Issue1058\Page;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -27,6 +28,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use AppBundle\Controller\BaseController;
 use AppBundle\Manager\UserConnectionManager;
+use AppBundle\Repository\PostRepository;
 
 
 class UserProfileController extends BaseController
@@ -75,7 +77,7 @@ class UserProfileController extends BaseController
      * @Route("/users-list/{page}", defaults={"page": 1}, name="photo_users_list")
      *
      * @param Request $request
-     * @param $page
+     * @param Page $page
      *
      * @return Response
      * @internal param Post $post
@@ -83,18 +85,47 @@ class UserProfileController extends BaseController
      */
     public function showUsersAction(Request $request, $page)
     {
-        /** @var User $loggedUser */
-        $loggedUser = $this->getLoggedUser();
+        $user = $this->getDoctrine()->getRepository('AppBundle:User')->findBy(array());
         $users = $this->getDoctrine()->getRepository('AppBundle:User')->findAll();
         $profiles = $this->getDoctrine()->getRepository('AppBundle:Profile')->findAll();
-        $profile = $this->getDoctrine()->getRepository('AppBundle:Profile')->findOneBy(array());
+        $profile = $this->getDoctrine()->getRepository('AppBundle:Profile')->findOneBy(array(
+            'id' => $user
+        ));
+        $post = $this->getDoctrine()->getRepository('AppBundle:Post')->findBy(array(
+            'id' => $user
+        ));
+        $posts = $this->getDoctrine()->getRepository('AppBundle:Post')->findBy(array(
+            'user' => $profile->getUser()
+            ));
 
         return $this->render("@App/UsersList/usersList.html.twig", array(
-            'user' => $users,
+            'user' => $user,
+            'users' => $users,
             'profile' => $profile,
             'profiles' => $profiles,
+            'post' => $post,
+            'posts' => $posts
 //            'is_following' => $userConnectionManager->isFollowing($loggedUser, $user),
         ));
+    }
+
+    /**
+     * @Route("/users-list-one/", name="photo_users_list_one")
+     *
+     * @return Response
+     */
+    public function listUserPostsAction($userId)
+    {
+        $user = $this->getDoctrine()->getRepository('AppBundle:User')->find($userId);
+
+        $posts = $this->getDoctrine()->getRepository('AppBundle:Post')->findBy(array(
+            'user' => $user
+        ));
+
+        return $this->render('@App/UsersList/single-post-list.html.twig', array(
+            'posts' => $posts
+        ));
+
     }
 
     /**

@@ -83,16 +83,33 @@ class UserProfileController extends BaseController
      */
     public function showUsersAction(Request $request, $page)
     {
-        /** @var User $loggedUser */
-        $loggedUser = $this->getLoggedUser();
-        $users = $this->getDoctrine()->getRepository('AppBundle:User')->findAll();
+
+
+        $user = $this->getDoctrine()->getRepository('AppBundle:User')->findOneBy(array(
+
+        ));
+        $users = $this->getDoctrine()->getRepository('AppBundle:User')->findAll(array());
+
+        $profile = $this->getDoctrine()->getRepository('AppBundle:Profile')->findOneBy(array(
+            'id' => $user->getProfileId()
+        ));
         $profiles = $this->getDoctrine()->getRepository('AppBundle:Profile')->findAll();
-        $profile = $this->getDoctrine()->getRepository('AppBundle:Profile')->findOneBy(array());
+
+//        $post = $this->getDoctrine()->getRepository('AppBundle:Post')->findOneBy(array(
+//            'post' => $user->getId()
+//        ));
+
+        $posts = $this->getDoctrine()->getRepository('AppBundle:Post')->findBy(array(
+            'user' => $user->getProfile()
+        ));
 
         return $this->render("@App/UsersList/usersList.html.twig", array(
-            'user' => $users,
+            'user' => $user,
+            'users' => $users,
             'profile' => $profile,
             'profiles' => $profiles,
+            'posts' => $posts,
+//            'post' => $post
 //            'is_following' => $userConnectionManager->isFollowing($loggedUser, $user),
         ));
     }

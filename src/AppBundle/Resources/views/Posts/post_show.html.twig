@@ -21,7 +21,7 @@
         {% endif %}
     </div>
     <div class="image-post">
-        <img class="img-responsive" src="{{ asset('images/posts/')}}{{ post.imageName }}" alt="{{ post.imageName }}">
+        <img class="img-responsive" src="{{ post.imageName | imagine_filter('post_thumb')  }}" alt="{{ post.imageName }}">
 
     </div>
     <div class="post-description">

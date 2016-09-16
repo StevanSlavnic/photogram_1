@@ -10,6 +10,7 @@ namespace AppBundle\Entity;
 
 use AppBundle\Entity\User;
 use DateTime;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use AppBundle\Form\UserType;
@@ -121,6 +122,7 @@ class Profile
     {
         $this->createdAt = new \DateTime();
         $this->updatedAt = new \DateTime();
+        $this->comments = new ArrayCollection();
     }
 
 

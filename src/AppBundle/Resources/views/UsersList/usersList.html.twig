@@ -95,8 +95,9 @@
                 {{ profile.occupation }}
 
                 {{ profile.about }}
-
-
+<div class="row">
+                    {{ render(controller('AppBundle:UserProfile:listUserPosts', { 'userId': profile.user.id })) }}
+</div>
 
             </div>
         </div>

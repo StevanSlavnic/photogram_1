@@ -66,11 +66,6 @@ class Post
      */
     private $authorEmail;
 
-//    /**
-//     * @ORM\Column(type="string")
-//     */
-//    private $authorUsername;
-
     /**
      * @ORM\Column(type="datetime")
      * @Assert\DateTime()

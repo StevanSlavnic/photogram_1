@@ -82,10 +82,8 @@
     {% block body %}
     <div class="container">
         {% for profile in profiles %}
-
         <div class="col-md-6">
             <div class="well">
-
                 {{ profile.user.fullName }}
 
                 {% if profile.imageName %}
@@ -97,20 +95,13 @@
                 {{ profile.occupation }}
 
                 {{ profile.about }}
-
-                {% if posts %}
-                    <ul>
-                        {% for post in posts %}
-                            <li>{{ loop.index }} {{ post.user|e }}</li>
-                        {% endfor %}
-                    </ul>
-                {% endif %}
+<div class="row">
+                    {{ render(controller('AppBundle:UserProfile:listUserPosts', { 'userId': profile.user.id })) }}
+</div>
 
             </div>
         </div>
         {% endfor %}
-
-
     </div>
     {% endblock %}
 {% endblock %}

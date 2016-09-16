@@ -11,10 +11,13 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Gedmo\Mapping\Annotation as Gedmo;
 use FOS\MessageBundle\Model\ParticipantInterface;
 use AppBundle\Entity\User\UserConnection;
+use FOS\ElasticaBundle\Configuration\Search;
+use AppBundle\Repository\PostRepository;
 
 
 /**
  * @ORM\Entity
+ * @Search(repositoryClass="AppBundle\Repository\UserRepository")
  * @ORM\Table(name="user")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\UserRepository")
  */
@@ -155,4 +158,7 @@ class User extends BaseUser implements ParticipantInterface
     {
         return $user && $user->getProfile() == $this->getProfileId();
     }
+
+
+
 }

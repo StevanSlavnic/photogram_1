@@ -115,7 +115,7 @@ vich_uploader:
         delete_on_remove:   true
       profile_image:
         uri_prefix:         /web/images/users
-        upload_destination: %kernel.root_dir%/../web/
+        upload_destination: %kernel.root_dir%/../web/images/users
         namer:              vich_uploader.namer_uniqid
         inject_on_load:     false
         delete_on_update:   true
@@ -146,6 +146,10 @@ liip_imagine:
             quality: 75
             filters:
                 thumbnail: { size: [30, 30], mode: outbound }
+        post_thumb:
+            quality: 75
+            filters:
+                thumbnail: { size: [200, 160], mode: outbound }
 
 fos_message:
     db_driver: orm

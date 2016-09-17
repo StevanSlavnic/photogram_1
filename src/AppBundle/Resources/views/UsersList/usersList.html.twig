@@ -87,7 +87,9 @@
                 {{ profile.user.fullName }}
 
                 {% if profile.imageName %}
-                    <img src="{{ profile.imageName | imagine_filter('my_thumb')  }}" alt="Circle Image" class="img-circle img-responsive img-raised">
+                    <div class="image-content">
+                        <img src="{{ profile.imageName | imagine_filter('my_thumb')  }}" alt="Circle Image" class="img-circle img-responsive img-raised">
+                    </div>
                 {% else %}
                     <img src="{{ asset('media/profile_default/thumb.png') }}" />
                 {% endif %}
@@ -95,9 +97,9 @@
                 {{ profile.occupation }}
 
                 {{ profile.about }}
-<div class="row">
+                <div class="row">
                     {{ render(controller('AppBundle:UserProfile:listUserPosts', { 'userId': profile.user.id })) }}
-</div>
+                </div>
 
             </div>
         </div>

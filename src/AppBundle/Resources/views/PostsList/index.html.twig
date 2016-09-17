@@ -53,7 +53,7 @@
             </div>
             <div class="image-post">
                 <a href="{{ path('blog_post', { id: post.id }) }}">
-                    <img class="img-responsive" src="{{ post.imageName | imagine_filter('post_thumb')  }}" alt="{{ post.imageName }}">
+                    <img class="img-responsive" src="{{ post.imageName | imagine_filter('post_image')  }}" alt="{{ post.imageName }}">
                 </a>
             </div>
             {#{{ post.summary|md2html }}#}

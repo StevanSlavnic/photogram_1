@@ -1,5 +1,13 @@
-{% for post in posts %}
-    <div class="col-sm-4">
-        <img src="{{ post.imageName | imagine_filter('post_thumb')  }}" class="img-rounded img-responsive" />
+{% for post in posts|slice(0, 3) %}
+
+    <div class="col-sm-4 col-xs-4 post-list-single">
+        <a href="{{ path('blog_post', { id: post.id }) }}">
+        <img src="{{ post.imageName | imagine_filter('post_thumb')  }}" class="img-responsive" />
+        </a>
+    </div>
+
+{% else %}
+    <div class="post-header">
+        This user has no posts
     </div>
 {% endfor %}

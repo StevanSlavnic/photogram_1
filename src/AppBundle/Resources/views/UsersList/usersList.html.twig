@@ -80,28 +80,60 @@
         </header>
     {% endblock %}
     {% block body %}
-    <div class="container">
-        {% for profile in profiles %}
-        <div class="col-md-6">
-            <div class="well">
-                {{ profile.user.fullName }}
 
-                {% if profile.imageName %}
-                    <div class="image-content">
-                        <img src="{{ profile.imageName | imagine_filter('my_thumb')  }}" alt="Circle Image" class="img-circle img-responsive img-raised">
-                    </div>
+        {#{{ render(controller('AppBundle:UserSearch:userSearch')) }}#}
+
+
+    <div class="post">
+        <div class="discover-users post-header">
+            Discover new users
+        </div>
+        <hr>
+        {% for profile in profiles %}
+        <div class="single-user-list">
+            <div class="post-header">
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    <a href="{{ path("profile_index", {"username": profile.profileUsername}) }}">
+                        {% if profile.imageName %}
+                            <img src="{{ profile.imageName | imagine_filter('my_small')  }}" alt="Circle Image" class="img-circle img-responsive img-raised">
+                        {% else %}
+                            <img src="{{ asset('media/profile_default/thumb_small.png') }}" class="img-circle img-responsive img-raised" />
+                        {% endif %}
+                        {{ profile.firstname }} {{ profile.lastname }}
+                    </a>
+                    {#<div class="follow_button_holder in_cover_content">#}
+                    {#{% include '@App/UsersList/follow_button_small.html.twig' %}#}
+                    {#</div>#}
                 {% else %}
-                    <img src="{{ asset('media/profile_default/thumb.png') }}" />
+                    <a href="{{ path("profile_index", {"username": profile.profileUsername}) }}">
+                        {% if profile.imageName %}
+                            <img src="{{ profile.imageName | imagine_filter('my_small')  }}" alt="Circle Image" class="img-circle img-responsive img-raised">
+                        {% else %}
+                            <img src="{{ asset('media/profile_default/thumb_small.png') }}" class="img-circle img-responsive img-raised" />
+                        {% endif %}
+                        {#{{ post.user.fullName }}#}
+                        {{ profile.firstname }} {{ profile.lastname }}
+                    </a>
                 {% endif %}
 
-                {{ profile.occupation }}
-
-                {{ profile.about }}
-                <div class="row">
-                    {{ render(controller('AppBundle:UserProfile:listUserPosts', { 'userId': profile.user.id })) }}
-                </div>
-
+                {#{% if app.user != user %}#}
+                    {#<div class="follow_button_holder in_cover_content">#}
+                        {#{% include '@App/UsersList/follow_button_small.html.twig' %}#}
+                    {#</div>#}
+                {#{% endif %}#}
             </div>
+
+                <div class="user-list-posts">
+
+                        <div class="container-fluid">
+                            {{ render(controller('AppBundle:UserProfile:listUserPosts', { 'userId': profile.user.id })) }}
+                        </div>
+
+                        <div class="user-list-single-profile">
+                            <a href="{{ path("profile_index", {"username": profile.profileUsername}) }}">See more</a>
+                        </div>
+
+                </div>
         </div>
         {% endfor %}
     </div>

@@ -96,7 +96,11 @@
     {% endblock %}
     {% block body %}
         <div class="wrapper">
-        <div class="profile-background" style="background-image: url('{{ asset('uploads/') }}{{ profile.imageBackgroundName }}');"></div>
+        {% if profile.imageBackgroundName %}
+        <div class="profile-background" style="background-image: url('{{ profile.imageBackgroundName | imagine_filter('background_image')}}');"></div>
+        {% else %}
+            <div class="profile-background" style="background-image: url('{{ asset('./images/background/57af3ac5dd27d.jpg') }}');"></div>
+        {% endif %}
             {#<div class="profile-background" style="background-image: url('{{ asset('./bundles/app/images/rick.jpg') }}');"></div>#}
                 <div class="filter-black"></div>
             </div>
@@ -152,7 +156,7 @@
                                         {% for post in posts %}
                                             <div class="col-md-6 post-in-list">
                                                 <a href="{{ path('blog_post', { id: post.id }) }}">
-                                                    <img src="{{ post.imageName | imagine_filter('post_thumb')  }}" class="img-rounded img-responsive" />
+                                                    <img src="{{ post.imageName | imagine_filter('post_image')  }}" class="img-rounded img-responsive" />
                                                 </a>
                                             </div>
                                         {% endfor %}

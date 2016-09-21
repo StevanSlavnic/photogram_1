@@ -4,6 +4,7 @@ namespace AppBundle\Controller\Message;
 
 use AppBundle\Entity\Profile;
 use AppBundle\Entity\User;
+use AppBundle\MessageBundle\Form\NewThreadMessageFormType;
 use Elastica\Query\QueryString;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Component\HttpFoundation\Request;
@@ -104,6 +105,7 @@ class MessageController extends \FOS\MessageBundle\Controller\MessageController
      */
     public function newThreadAction()
     {
+//        $form = $this->createForm(NewThreadMessageFormType::class);
         $form = $this->container->get('fos_message.new_thread_form.factory')->create();
         $formHandler = $this->container->get('fos_message.new_thread_form.handler');
 

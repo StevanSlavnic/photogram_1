@@ -17,7 +17,8 @@ use AppBundle\Entity\Profile;
 use AppBundle\Entity\User;
 use AppBundle\Entity\User\UserConnection;
 use AppBundle\Repository\UserConnectionRepository;
-use Doctrine\ORM\Mapping\Cache;
+//use Doctrine\ORM\Mapping\Cache;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Sluggable\Fixture\Issue1058\Page;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -74,20 +75,43 @@ class UserProfileController extends BaseController
     }
 
     /**
-     * @Route("/users-list/{page}", defaults={"page": 1}, name="photo_users_list")
-     *
+     * @Route("/users-list/", defaults={"page": 1}, name="photo_users_list")
+     * @Route("/page/{page}", requirements={"page": "[1-9]\d*"}, name="photo_users_paginated")
      * @param Request $request
      * @param Page $page
-     *
+     * @Method("GET")
+     * @Cache(smaxage="10")
      * @return Response
      * @internal param Post $post
      *
      */
     public function showUsersAction(Request $request, $page)
     {
+        function shuffle_assoc($array)
+        {
+            // Initialize
+            $shuffled_array = array();
+
+            // Get array's keys and shuffle them.
+            $shuffled_keys = array_keys($array);
+            shuffle($shuffled_keys);
+
+            // Create same array, but in shuffled order.
+            foreach ( $shuffled_keys AS $shuffled_key )
+            {
+                $shuffled_array[  $shuffled_key  ] = $array[  $shuffled_key  ];
+            }
+            // Return
+            return $shuffled_array;
+        }
+//        $loggedUser = $this->getLoggedUser();
         $user = $this->getDoctrine()->getRepository('AppBundle:User')->findBy(array());
+
         $users = $this->getDoctrine()->getRepository('AppBundle:User')->findAll();
+
+
         $profiles = $this->getDoctrine()->getRepository('AppBundle:Profile')->findAll();
+        $sprofiles = shuffle_assoc($profiles); //randomize
         $profile = $this->getDoctrine()->getRepository('AppBundle:Profile')->findOneBy(array(
             'id' => $user
         ));
@@ -97,15 +121,18 @@ class UserProfileController extends BaseController
         $posts = $this->getDoctrine()->getRepository('AppBundle:Post')->findBy(array(
             'user' => $profile->getUser()
             ));
+//        $userConnectionManager = $this->get('app.manager.user_connection_manager');
+
+
 
         return $this->render("@App/UsersList/usersList.html.twig", array(
             'user' => $user,
             'users' => $users,
             'profile' => $profile,
-            'profiles' => $profiles,
+            'profiles' => $sprofiles,
             'post' => $post,
-            'posts' => $posts
-//            'is_following' => $userConnectionManager->isFollowing($loggedUser, $user),
+            'posts' => $posts,
+//            'is_following' => $userConnectionManager->isFollowing($loggedUser, $users)
         ));
     }
 
@@ -121,9 +148,13 @@ class UserProfileController extends BaseController
         $posts = $this->getDoctrine()->getRepository('AppBundle:Post')->findBy(array(
             'user' => $user
         ));
+        $profile = $this->getDoctrine()->getRepository('AppBundle:Profile')->findOneBy(array(
+            'id' => $user
+        ));
 
         return $this->render('@App/UsersList/single-post-list.html.twig', array(
-            'posts' => $posts
+            'posts' => $posts,
+            'profile' => $profile
         ));
 
     }

@@ -4,8 +4,6 @@
     <data-source name="MySQL - photogram_new@localhost" uuid="968fd563-689f-4664-8afd-6921f9d9c39b">
       <secret-storage>master_key</secret-storage>
       <user-name>root</user-name>
-      <introspection-scope>photogram_new:*</introspection-scope>
-      <resolve-scope>photogram_new:*</resolve-scope>
     </data-source>
   </component>
 </project>

@@ -1,0 +1,7 @@
+{% for post in posts %}
+    <div class="col-sm-4">
+        <a href="{{ path('blog_post', { id: post.id }) }}">
+            <img src="{{ post.imageName | imagine_filter('post_thumb')  }}" class="img-rounded img-responsive" />
+        </a>
+    </div>
+{% endfor %}

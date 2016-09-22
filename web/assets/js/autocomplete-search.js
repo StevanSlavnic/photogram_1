@@ -5,7 +5,7 @@ $(document).ready(function(){
     $("#message_recipient").on('keyup', function() { // everytime keyup event
         var input = $(this).val(); // We take the input value
         if ( input.length >= 2 ) { // Minimum characters = 2 (you can change)
-            $('#match').html('<img src="' + window.loader + '" />'); // Loader icon apprears in the <div id="match"></div>
+            $('#match').html('<img src="./../../uploads/57dbfa8dc8fc3.jpg" />'); // Loader icon apprears in the <div id="match"></div>
             var data = {input: input}; // We pass input argument in Ajax
             $.ajax({
                 type: "POST",

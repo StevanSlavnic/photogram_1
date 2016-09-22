@@ -108,21 +108,21 @@ vich_uploader:
     mappings:
       post_image:
         uri_prefix:         /web/images/posts
-        upload_destination: %kernel.root_dir%/../web/images/posts
+        upload_destination: %kernel.root_dir%/../web/uploads
         namer:              vich_uploader.namer_uniqid
         inject_on_load:     false
         delete_on_update:   true
         delete_on_remove:   true
       profile_image:
         uri_prefix:         /web/images/users
-        upload_destination: %kernel.root_dir%/../web/
+        upload_destination: %kernel.root_dir%/../web/uploads
         namer:              vich_uploader.namer_uniqid
         inject_on_load:     false
         delete_on_update:   true
         delete_on_remove:   true
       profile_background_image:
         uri_prefix:         /web/images/background
-        upload_destination: %kernel.root_dir%/../web/images/background/
+        upload_destination: %kernel.root_dir%/../web/uploads
         namer:              vich_uploader.namer_uniqid
         inject_on_load:     false
         delete_on_update:   true
@@ -134,7 +134,12 @@ liip_imagine:
     resolvers:
        default:
           web_path:
-            cache_prefix:         /media/cache/resolve
+            cache_prefix: /media/cache/resolve
+
+    loaders:
+        default:
+            filesystem:
+                data_root: %kernel.root_dir%/../web/uploads
 
     filter_sets:
         cache: ~
@@ -146,6 +151,14 @@ liip_imagine:
             quality: 75
             filters:
                 thumbnail: { size: [30, 30], mode: outbound }
+        post_thumb:
+            quality: 75
+            filters:
+                thumbnail: { size: [200, 160], mode: outbound }
+        post_image:
+            quality: 90
+            filters:
+                relative_resize: { widen: 620 }
 
 fos_message:
     db_driver: orm

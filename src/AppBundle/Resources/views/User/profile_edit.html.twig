@@ -27,7 +27,7 @@
                 </a>
             </div>
             {% if profile.imageBackgroundName %}
-                <img id="profile-background" class="img-responsive profile-background" src="{{ asset('images/background/') }}{{ profile.imageBackgroundName }}"/>
+                <img id="profile-background" class="img-responsive profile-background" src="{{ asset('uploads/') }}{{ profile.imageBackgroundName }}"/>
             {% else %}
                 <img id="default-image-background" class="img-responsive profile-background-preview" src="./bundles/app/images/rick.jpg"/>
             {% endif %}

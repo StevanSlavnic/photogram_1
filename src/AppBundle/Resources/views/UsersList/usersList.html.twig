@@ -100,7 +100,11 @@
                 <div class="row">
                     {{ render(controller('AppBundle:UserProfile:listUserPosts', { 'userId': profile.user.id })) }}
                 </div>
-
+                {#{% if app.user != profile.user.id %}#}
+                    {#<div class="follow_button_holder in_cover_content">#}
+                        {#{% include 'AppBundle:User:follow_button_large.html.twig' %}#}
+                    {#</div>#}
+                {#{% endif %}#}
             </div>
         </div>
         {% endfor %}

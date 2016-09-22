@@ -2,23 +2,119 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7396437-68d1-473a-83b2-d5b512ced390" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/media/profile_default/thumb.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/media/profile_default/thumb_small.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/LikePost.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Event/UserLikedEvent.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Manager/LikePostManager.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/LikePostRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/cache/images/users/5783a5a49897b.jpg" afterPath="$PROJECT_DIR$/web/media/cache/cache/images/users/5783a5a49897b.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/my_thumb/images/users/5783a5a49897b.jpg" afterPath="$PROJECT_DIR$/web/media/cache/my_thumb/images/users/5783a5a49897b.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/cache/images/users/5783a5a49897b.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/cache/images/users/5783a5a49897b.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_small/578e04fd9da24.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_small/578e04fd9da24.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_small/57911a90d7fe1.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_small/57911a90d7fe1.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_small/5797acbfed42e.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_small/5797acbfed42e.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_small/57a33ea2f3075.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_small/57a33ea2f3075.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_small/57a386cc2b0c1.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_small/57a386cc2b0c1.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_small/57a3a333cda13.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_small/57a3a333cda13.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_small/57a4960e137c7.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_small/57a4960e137c7.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_small/57a9b6daa363f.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_small/57a9b6daa363f.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_small/57a9b6f91d6fd.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_small/57a9b6f91d6fd.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_small/57a9b86905f28.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_small/57a9b86905f28.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_small/57aa014a994aa.png" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_small/57aa014a994aa.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_small/57aa3450bd2ac.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_small/57aa3450bd2ac.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_small/57ab5b19aaa35.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_small/57ab5b19aaa35.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_small/57ab5b79b7aed.png" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_small/57ab5b79b7aed.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_small/57ab5fff0571d.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_small/57ab5fff0571d.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_small/57ab601befc56.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_small/57ab601befc56.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_small/57ab76c5c44bb.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_small/57ab76c5c44bb.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_small/57ab7b1db8382.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_small/57ab7b1db8382.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_small/57ab81d3bbfc9.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_small/57ab81d3bbfc9.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_small/57ac5e5f31fa7.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_small/57ac5e5f31fa7.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_small/57adbe8e7134b.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_small/57adbe8e7134b.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_small/57b16cdd19b06.png" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_small/57b16cdd19b06.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_small/57b19b800fed1.png" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_small/57b19b800fed1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_small/57b2b6211be0a.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_small/57b2b6211be0a.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_small/57b2b7888d952.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_small/57b2b7888d952.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/5784a89603f0b.png" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/5784a89603f0b.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/5784ba9674b8c.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/5784ba9674b8c.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/5784bafb45ff5.jpeg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/5784bafb45ff5.jpeg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/5784bb53429cd.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/5784bb53429cd.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/5784c4f9d8cf1.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/5784c4f9d8cf1.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/5784c51b5ca6e.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/5784c51b5ca6e.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/5784d3dc3a8ec.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/5784d3dc3a8ec.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/5784e7cfc7979.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/5784e7cfc7979.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/5784f1b854893.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/5784f1b854893.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/5784faa96372c.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/5784faa96372c.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/5786337ec3289.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/5786337ec3289.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/5786339724a7d.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/5786339724a7d.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/5786355878e93.jpeg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/5786355878e93.jpeg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578784341882e.jp" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578784341882e.jp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/5787da19e4d60.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/5787da19e4d60.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57890f50db696.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57890f50db696.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57891d670d72f.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57891d670d72f.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57893bbfc1695.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57893bbfc1695.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578a64171d956.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578a64171d956.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578ac963ec30f.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578ac963ec30f.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578acb75564fb.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578acb75564fb.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578acd8837875.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578acd8837875.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578ad1834071e.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578ad1834071e.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578ad291e7327.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578ad291e7327.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578ad2ab21613.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578ad2ab21613.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578ad68c1c96e.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578ad68c1c96e.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578adbaa4bcd3.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578adbaa4bcd3.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578b72c076ca5.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578b72c076ca5.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578b8bd64ebeb.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578b8bd64ebeb.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578bdd5f07071.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578bdd5f07071.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578c85a28cf5a.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578c85a28cf5a.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578c882f74471.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578c882f74471.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578c88424a115.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578c88424a115.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578c88624d3c6.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578c88624d3c6.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578c888b358f6.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578c888b358f6.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578c88e44864a.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578c88e44864a.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578c8cd7b6e19.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578c8cd7b6e19.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578cfb7bec87a.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578cfb7bec87a.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578e04ce22190.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578e04ce22190.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578e04fd9da24.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578e04fd9da24.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578e6717878fa.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578e6717878fa.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578e673bf1d1e.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578e673bf1d1e.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578e6761ac40c.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578e6761ac40c.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578e677c92084.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578e677c92084.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/5790f06b477cb.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/5790f06b477cb.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57911a90d7fe1.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57911a90d7fe1.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/579223e89cb1b.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/579223e89cb1b.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/579256899596b.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/579256899596b.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/5792569e2e354.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/5792569e2e354.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/5797acbfed42e.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/5797acbfed42e.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57a32403e0254.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57a32403e0254.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57a33ea2f3075.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57a33ea2f3075.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57a386cc2b0c1.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57a386cc2b0c1.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57a3a333cda13.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57a3a333cda13.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57a4960e137c7.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57a4960e137c7.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57a9b6daa363f.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57a9b6daa363f.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57a9b6f91d6fd.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57a9b6f91d6fd.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57a9b86905f28.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57a9b86905f28.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57aa014a994aa.png" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57aa014a994aa.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57aa3450bd2ac.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57aa3450bd2ac.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57ab5b19aaa35.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57ab5b19aaa35.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57ab5b79b7aed.png" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57ab5b79b7aed.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57ab5fff0571d.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57ab5fff0571d.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57ab601befc56.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57ab601befc56.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57ab76c5c44bb.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57ab76c5c44bb.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57ab7b1db8382.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57ab7b1db8382.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57ab81d3bbfc9.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57ab81d3bbfc9.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57ac5e5f31fa7.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57ac5e5f31fa7.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57adbe8e7134b.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57adbe8e7134b.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57b16cdd19b06.png" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57b16cdd19b06.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57b19b800fed1.png" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57b19b800fed1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57b2b6211be0a.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57b2b6211be0a.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57b2b7888d952.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57b2b7888d952.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/images/users/5783a5a49897b.jpg" afterPath="$PROJECT_DIR$/web/media/cache/resolve/my_thumb/images/users/5783a5a49897b.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/profile_default/thumb.png" afterPath="$PROJECT_DIR$/web/media/profile_default/thumb.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/profile_default/thumb_small.png" afterPath="$PROJECT_DIR$/web/media/profile_default/thumb_small.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/users/5784a8ea397e0.jpg" afterPath="$PROJECT_DIR$/web/users/5784a8ea397e0.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/services.yml" afterPath="$PROJECT_DIR$/app/config/services.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/UserProfileController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/UserProfileController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/searchUserController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/searchUserController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/User/UserConnectionRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/User/UserConnectionRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Form/UserType.php" afterPath="$PROJECT_DIR$/src/AppBundle/Form/UserType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Manager/UserConnectionManager.php" afterPath="$PROJECT_DIR$/src/AppBundle/Manager/UserConnectionManager.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/PostsList/index.html.twig" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/PostsList/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/User/profile.html.twig" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/User/profile.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/UsersList/single-post-list.html.twig" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/UsersList/single-post-list.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/UsersList/usersList.html.twig" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/UsersList/usersList.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/js/autocomplete-search.js" afterPath="$PROJECT_DIR$/web/assets/js/autocomplete-search.js" />
     </list>
     <ignored path="photogram_new.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -58,49 +154,13 @@
     <favorites_list name="photogram_new" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="searchUserController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/searchUserController.php">
+    <leaf>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="38" column="79" selection-start-line="38" selection-start-column="79" selection-end-line="38" selection-end-column="79" />
-              <folding>
-                <element signature="e#40#66#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="services.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/config/services.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="738">
-              <caret line="41" column="31" selection-start-line="41" selection-start-column="2" selection-end-line="41" selection-end-column="31" />
+            <state relative-caret-position="194">
+              <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserLikedEvent.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Event/UserLikedEvent.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-              <folding>
-                <element signature="e#118#148#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserProfileController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/UserProfileController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="210" column="0" selection-start-line="210" selection-start-column="0" selection-end-line="210" selection-end-column="0" />
-              <folding>
-                <element signature="e#271#300#0#PHP" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -133,21 +193,16 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--follow-tags" />
+        <option name="title" value="Current Branch" />
+      </GitPushTagMode>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Resources/views/homepage.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/User/follow_button_large.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/Posts/PostController.php" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Posts/_comment_form.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/Message/MessageControler.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Entity/User.php" />
-        <option value="$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Resources/views/Message/sent.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Thread.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Message/search.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Message/layout.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Message/inbox.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Message/sent.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Message/deleted.html.twig" />
@@ -156,14 +211,12 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Posts/_form.html.twig" />
         <option value="$PROJECT_DIR$/web/assets/sass/screen.scss" />
         <option value="$PROJECT_DIR$/src/AppBundle/Form/Type/ProfileEditType.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/User/profile_edit.html.twig" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/app/config/parameters.yml.dist" />
         <option value="$PROJECT_DIR$/src/AppBundle/Model/UserSearch.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Form/Type/UserSearchType.php" />
         <option value="$PROJECT_DIR$/web/assets/js/main.js" />
         <option value="$PROJECT_DIR$/web/assets/js/search.js" />
-        <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$PROJECT_DIR$/app/AppKernel.php" />
         <option value="$PROJECT_DIR$/web/assets/js/jquery-ui.min.js" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/BaseController.php" />
@@ -173,12 +226,8 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/AutocompleteController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Form/NewThreadMessageFormType.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Form/UserType.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Profile.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/User/profile.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/User/UserConnection.php" />
-        <option value="$PROJECT_DIR$/web/assets/js/autocomplete-search.js" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Message/newThread.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/User/UserConnectionRepository.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Manager/UserConnectionManager.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/searchUserController.php" />
@@ -186,8 +235,25 @@
         <option value="$PROJECT_DIR$/app/config/services.yml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Event/UserLikedEvent.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Manager/LikePostManager.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Message/newThread.html.twig" />
+        <option value="$PROJECT_DIR$/web/info.php" />
+        <option value="/etc/php5/cli/conf.d/20-xdebug.ini" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Post.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Profile.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/User.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Repository/PostRepository.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Posts/post_show.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Posts/edit.html.twig" />
+        <option value="$PROJECT_DIR$/cc" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/PostsList/index.html.twig" />
+        <option value="$PROJECT_DIR$/app/config/config.yml" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/User/profile.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/User/profile_edit.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/UsersList/usersList.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/UserProfileController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/UsersList/single-post-list.html.twig" />
+        <option value="$PROJECT_DIR$/web/assets/js/autocomplete-search.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -198,14 +264,49 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpServers">
-    <servers />
+    <servers>
+      <server host="procurious.loc" id="e7c83ad5-c77b-489f-8ab2-a138109df7bf" name="procurious.loc" use_path_mappings="true">
+        <path_mappings>
+          <mapping local-root="$PROJECT_DIR$/web" remote-root="/home/stevan/sites/procurious/web" />
+        </path_mappings>
+      </server>
+      <server host="photogram.loc" id="e98a1ee3-9300-4d04-a02d-c65e6768d093" name="photogram.loc" />
+    </servers>
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP 5.5" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="65" />
+    <option name="x" value="1745" />
     <option name="y" value="24" />
     <option name="width" value="1615" />
     <option name="height" value="1026" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Data flow issuesJavaScript</id>
+          </State>
+          <State>
+            <id>Error handlingJavaScript</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+          <State>
+            <id>JavaScript validity issuesJavaScript</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>AngularJS</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -232,8 +333,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -262,7 +361,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="web" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -276,33 +375,11 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="web" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="AppBundle" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="photogram_new" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="photogram_1" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AppBundle" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controller" />
+              <option name="myItemId" value="media" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -316,34 +393,26 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="photogram_new" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="photogram_1" />
+              <option name="myItemId" value="web" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
+              <option name="myItemId" value="media" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
+              <option name="myItemId" value="cache" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../procurious" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="dynamic.classpath" value="false" />
@@ -351,7 +420,7 @@
     <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="prop_add_unversioned_files" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="57af3ac5dcd25&#9;FILE&#9;file:///home/stevan/sites/photogram_1/web/media/cache/resolve/my_small/57af3ac5dcd25.png" />
+    <property name="SearchEverywhereHistoryKey" value="57dbe35bc7b09&#9;FILE&#9;file:///home/stevan/sites/photogram_1/web/images/users/57dbe35bc7b09.jpg&#10;57dbb2e05fca9&#9;FILE&#9;file:///home/stevan/sites/photogram_1/web/images/posts/57dbb2e05fca9.jpg&#10;577e01fab14b9&#9;FILE&#9;file:///home/stevan/sites/photogram_1/web/images/posts/577e01fab14b9.jpg&#10;57af3ac5dcd25&#9;FILE&#9;file:///home/stevan/sites/photogram_1/web/media/cache/resolve/my_small/57af3ac5dcd25.png" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -400,6 +469,26 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -444,6 +533,15 @@
       <workItem from="1471444418594" duration="630000" />
       <workItem from="1471506154678" duration="244000" />
       <workItem from="1471506424847" duration="14000" />
+      <workItem from="1473927866565" duration="2526000" />
+      <workItem from="1473930433856" duration="3181000" />
+      <workItem from="1473934605336" duration="12545000" />
+      <workItem from="1474009379255" duration="1770000" />
+      <workItem from="1474014207690" duration="17316000" />
+      <workItem from="1474268257601" duration="306000" />
+      <workItem from="1474268573060" duration="187000" />
+      <workItem from="1474268771875" duration="2779000" />
+      <workItem from="1474542152092" duration="94000" />
     </task>
     <task id="LOCAL-00001" summary="Major update">
       <created>1467839814934</created>
@@ -571,11 +669,32 @@
       <option name="project" value="LOCAL" />
       <updated>1471293299468</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="user list">
+      <created>1473947528945</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1473947528945</updated>
+    </task>
+    <task id="LOCAL-00020" summary="user list">
+      <created>1474027611083</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1474027611083</updated>
+    </task>
+    <task id="LOCAL-00021" summary="user list">
+      <created>1474034628480</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1474034628480</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114047000" />
+    <option name="totallyTimeSpent" value="154751000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -587,17 +706,18 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="24" width="1615" height="1026" extended-state="0" />
-    <editor active="false" />
+    <frame x="1745" y="24" width="1615" height="1026" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34484926" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3906947" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32802126" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17928287" sideWeight="0.50503695" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30504587" sideWeight="0.5124283" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975152" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24983211" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31606907" sideWeight="0.49496305" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24920331" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30504587" sideWeight="0.48757172" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Framework" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32950923" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -609,11 +729,10 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33864543" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33830276" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="CSS-X-Fire" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4302789" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Framework" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975152" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -674,191 +793,274 @@
     <MESSAGE value="m" />
     <MESSAGE value="autocomplete new message" />
     <MESSAGE value="t" />
-    <option name="LAST_COMMIT_MESSAGE" value="t" />
+    <MESSAGE value="user list" />
+    <option name="LAST_COMMIT_MESSAGE" value="user list" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="14" />
+      <option name="time" value="25" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Controller/MessageController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="137" column="20" selection-start-line="137" selection-start-column="20" selection-end-line="137" selection-end-column="20" />
-        </state>
+    <entry file="file://$PROJECT_DIR$/web/images/posts/57a877deeec75.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/UserRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="25" column="6" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
-        </state>
+    <entry file="file://$PROJECT_DIR$/web/images/posts/57dbb2e05fca9.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Controller/ProfilerController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="321" column="20" selection-start-line="321" selection-start-column="20" selection-end-line="321" selection-end-column="20" />
-        </state>
+    <entry file="file://$PROJECT_DIR$/web/images/posts/577e01fab14b9.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/assets/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/pugx/autocompleter-bundle/Form/Type/AutocompleteType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/BaseController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="34" column="5" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="62" column="32" selection-start-line="62" selection-start-column="32" selection-end-line="62" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/assets/js/connections.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="39" column="21" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Message/searchUser.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Posts/new.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Message/deleted.html.twig">
+    <entry file="file://$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57ab5fff0571d.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578a64171d956.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578ad68c1c96e.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57ab601befc56.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57aa3450bd2ac.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57a33ea2f3075.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57a9b86905f28.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/User/profile_edit.html.twig">
+    <entry file="file://$PROJECT_DIR$/web/media/cache/resolve/my_small/57a3a333cda13.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57a9b6f91d6fd.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/media/cache/resolve/post_thumb/57dbb8e221cb8.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/media/cache/resolve/post_thumb/57dbb92419485.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/media/cache/resolve/post_thumb/57dbb97780779.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/media/cache/resolve/post_thumb/57dbbf0609abd.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57ac5e5f31fa7.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/media/cache/resolve/my_thumb/578c88424a115.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/logs/dev.log">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/services.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="45" column="46" selection-start-line="45" selection-start-column="46" selection-end-line="45" selection-end-column="46" />
+        <state relative-caret-position="738">
+          <caret line="41" column="31" selection-start-line="41" selection-start-column="2" selection-end-line="41" selection-end-column="31" />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Posts/post_show.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Posts/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="46" selection-start-line="13" selection-start-column="46" selection-end-line="13" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/images/users/57dbe35bc7b09.jpg" />
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/images/users/5783a5a49897b.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/images/users/57dbe808869fe.jpg" />
+    <entry file="file://$PROJECT_DIR$/web/media/cache/resolve/my_thumb/579256899596b.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57a3a333cda13.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/ProfileType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="40" column="19" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
+        <state relative-caret-position="-305">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/UserType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="52" column="66" selection-start-line="52" selection-start-column="66" selection-end-line="52" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/57af3ac5dcd25.png" />
-    <entry file="file://$PROJECT_DIR$/web/users/5784a8ea397e0.jpg">
+    <entry file="file://$PROJECT_DIR$/web/images/users/57839cc9d706d.jpeg">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/background/57ab6d3463fc9.jpg">
+    <entry file="file://$PROJECT_DIR$/web/images/users/57dbe92b128ac.jpg" />
+    <entry file="file://$PROJECT_DIR$/web/uploads/57dbf1100c1e5.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/media/cache/resolve/my_small/57acc14f246ad.jpg" />
-    <entry file="file://$PROJECT_DIR$/web/media/cache/resolve/my_thumb/57af3ac5dcd25.png" />
-    <entry file="file://$PROJECT_DIR$/web/media/cache/resolve/my_small/57af3ac5dcd25.png" />
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Profile.php">
+    <entry file="file://$PROJECT_DIR$/cc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="379" column="0" selection-start-line="379" selection-start-column="0" selection-end-line="379" selection-end-column="0" />
+        <state relative-caret-position="180">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/Security/RegistrationController.php">
+    <entry file="file://$PROJECT_DIR$/web/57b2b7888d952.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/57a4960e137c7.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/57a386cc2b0c1.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/User/profile_edit.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="54" column="33" selection-start-line="54" selection-start-column="33" selection-end-line="54" selection-end-column="33" />
+        <state relative-caret-position="-18">
+          <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/User/profile.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+        <state relative-caret-position="252">
+          <caret line="128" column="47" selection-start-line="128" selection-start-column="39" selection-end-line="128" selection-end-column="47" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/UserProfileController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="48" column="156" selection-start-line="48" selection-start-column="156" selection-end-line="48" selection-end-column="156" />
+        <state relative-caret-position="182">
+          <caret line="121" column="20" selection-start-line="121" selection-start-column="20" selection-end-line="121" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/FormFactory/NewThreadMessageFormFactory.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Manager/UserConnectionManager.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+        <state relative-caret-position="-1080">
+          <caret line="103" column="60" selection-start-line="103" selection-start-column="60" selection-end-line="103" selection-end-column="60" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/FormHandler/NewThreadMessageFormHandler.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/UsersList/usersList.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        <state relative-caret-position="307">
+          <caret line="100" column="58" selection-start-line="100" selection-start-column="58" selection-end-line="100" selection-end-column="58" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/Message/MessageController.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/UsersList/single-post-list.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="107" column="59" selection-start-line="107" selection-start-column="59" selection-end-line="107" selection-end-column="59" />
+        <state relative-caret-position="36">
+          <caret line="2" column="57" selection-start-line="2" selection-start-column="57" selection-end-line="2" selection-end-column="57" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/NewThreadMessageFormType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/AutocompleteController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="27" column="16" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/UserRepository.php">
+    <entry file="file://$PROJECT_DIR$/app/bootstrap.php.cache">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/Posts/PostController.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/PostsList/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="54" column="65" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Message/newThread.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/assets/js/autocompleter-jqueryui.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -867,158 +1069,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/assets/js/autocomplete-search.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="26" column="9" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
+        <state relative-caret-position="288">
+          <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="37">
+          <caret line="143" column="16" selection-start-line="143" selection-start-column="16" selection-end-line="143" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/User/UserConnectionRepository.php">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="28" column="5" selection-start-line="16" selection-start-column="4" selection-end-line="28" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Message/newThread.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/EventListener/UserWasFollowedEventListener.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/LikePostRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/User/UserConnection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/UserConnectionRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Event/UserWasFollowedEvent.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="48" column="27" selection-start-line="48" selection-start-column="27" selection-end-line="48" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Manager/UserConnectionManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="113" column="21" selection-start-line="113" selection-start-column="21" selection-end-line="113" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/User/profile.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="136" column="44" selection-start-line="136" selection-start-column="44" selection-end-line="136" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/User/follow_button_large.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Manager/LikePostManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="71" column="63" selection-start-line="71" selection-start-column="63" selection-end-line="71" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/PostsList/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="111" column="14" selection-start-line="111" selection-start-column="14" selection-end-line="111" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/LikePost.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/services.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="41" column="31" selection-start-line="41" selection-start-column="2" selection-end-line="41" selection-end-column="31" />
+        <state relative-caret-position="194">
+          <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/searchUserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="38" column="79" selection-start-line="38" selection-start-column="79" selection-end-line="38" selection-end-column="79" />
-          <folding>
-            <element signature="e#40#66#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Event/UserLikedEvent.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding>
-            <element signature="e#118#148#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/UserProfileController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="210" column="0" selection-start-line="210" selection-start-column="0" selection-end-line="210" selection-end-column="0" />
-          <folding>
-            <element signature="e#271#300#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

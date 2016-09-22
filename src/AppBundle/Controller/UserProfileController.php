@@ -78,13 +78,15 @@ class UserProfileController extends BaseController
      *
      * @param Request $request
      * @param Page $page
-     *
+     * @param Profile $profile
      * @return Response
      * @internal param Post $post
      *
      */
     public function showUsersAction(Request $request, $page)
     {
+
+//        $loggedUser = $this->getLoggedUser();
         $user = $this->getDoctrine()->getRepository('AppBundle:User')->findBy(array());
         $users = $this->getDoctrine()->getRepository('AppBundle:User')->findAll();
         $profiles = $this->getDoctrine()->getRepository('AppBundle:Profile')->findAll();
@@ -98,14 +100,17 @@ class UserProfileController extends BaseController
             'user' => $profile->getUser()
             ));
 
+
+//        $userConnectionManager = $this->get('app.manager.user_connection_manager');
+
         return $this->render("@App/UsersList/usersList.html.twig", array(
             'user' => $user,
             'users' => $users,
             'profile' => $profile,
             'profiles' => $profiles,
             'post' => $post,
-            'posts' => $posts
-//            'is_following' => $userConnectionManager->isFollowing($loggedUser, $user),
+            'posts' => $posts,
+//            'is_following' => $userConnectionManager->isFollowing($loggedUser, $user)
         ));
     }
 

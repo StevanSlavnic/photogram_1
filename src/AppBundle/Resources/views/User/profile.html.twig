@@ -5,7 +5,7 @@
 {% block main %}
     {% block header %}
         <header>
-            <nav class="navbar navbar-transparent navbar-fixed-top navbar-color-on-scroll">
+            <nav class="navbar navbar-transparent navbar-profile navbar-fixed-top navbar-color-on-scroll">
                 <div class="container">
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
@@ -21,12 +21,16 @@
                     <div class="collapse navbar-collapse" id="navigation-example">
                         <ul class="nav navbar-nav navbar-right">
                             {% block header_navigation_links %}
-                                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                                    <li>
-                                        <a href="#">
-                                            {{ app.user.fullName }}
-                                        </a>
-                                    </li>
+                                {% if app.user and is_granted('IS_AUTHENTICATED_FULLY') %}
+                                {# Get the number of new threads for the authenticated participant #}
+                                <li>
+                                   <a href="{{ path('photo_message_inbox', {"username": app.user.profile.profileUsername}) }}"><i class="fa fa-envelope"></i> {{ fos_message_nb_unread() }}</a>
+                                </li>
+                                    {#<li>#}
+                                        {#<a href="#">#}
+                                            {#{{ app.user.fullName }}#}
+                                        {#</a>#}
+                                    {#</li>#}
                                     {#{% if is_granted('IS_AUTHENTICATED_FULLY') %}#}
                                     {#<li>#}
                                         {#<a href="{{ path('profile_index_edit', {"username": app.user.profile.profileUsername}) }}">#}
@@ -34,11 +38,11 @@
                                         {#</a>#}
                                     {#</li>#}
                                     {#{% endif %}#}
-                                    <li>
-                                        <a href="{{ path('post_new') }}">
-                                            New Post
-                                        </a>
-                                    </li>
+                                    {#<li>#}
+                                        {#<a href="{{ path('post_new') }}">#}
+                                            {#New Post#}
+                                        {#</a>#}
+                                    {#</li>#}
                                 {% else %}
                                     <li>
                                         <a href="{{ path('fos_user_security_login') }}">
@@ -60,13 +64,15 @@
                                 {#{% endif %}#}
                             {% endblock %}
 
-                            {% if app.user %}
-                                <li>
-                                    <a href="{{ path('fos_user_security_logout') }}">
-                                        <i class="fa fa-sign-out"></i> {{ 'menu.logout'|trans }}
-                                    </a>
-                                </li>
-                            {% endif %}
+                            {#{% if app.user.profile %}#}
+                                {#<li>#}
+                                    {#<a href="{{ path('fos_user_security_logout') }}">#}
+                                        {#<i class="fa fa-sign-out"></i> {{ 'menu.logout'|trans }}#}
+                                    {#</a>#}
+                                {#</li>#}
+                            {#{% else %}#}
+
+                            {#{% endif %}#}
                             <li>
                                 <a href="https://twitter.com/CreativeTim" target="_blank" class="btn btn-simple">
                                     <i class="fa fa-twitter"></i>
@@ -90,7 +96,12 @@
     {% endblock %}
     {% block body %}
         <div class="wrapper">
-            <div class="profile-background" style="background-image: url('{{ asset('./bundles/app/images/rick.jpg') }}');"></div>
+        {% if profile.imageBackgroundName %}
+        <div class="profile-background" style="background-image: url('{{ profile.imageBackgroundName | imagine_filter('background_image')}}');"></div>
+        {% else %}
+            <div class="profile-background" style="background-image: url('{{ asset('./images/background/57af3ac5dd27d.jpg') }}');"></div>
+        {% endif %}
+            {#<div class="profile-background" style="background-image: url('{{ asset('./bundles/app/images/rick.jpg') }}');"></div>#}
                 <div class="filter-black"></div>
             </div>
             <div class="profile-content section-nude">
@@ -98,16 +109,11 @@
                     <div class="row owner">
                         <div class="col-md-2 col-md-offset-5 col-sm-4 col-sm-offset-4 col-xs-6 col-xs-offset-3 text-center">
                             <div class="avatar">
-                                {% if profile.imageName is defined %}
-                                    <img src="{{ profile.imageName | imagine_filter('my_thumb')  }}" alt="Circle Image" class="img-circle img-responsive img-raised">
+                                {% if profile.imageName %}
+                                    <img src="{{ profile.imageName | imagine_filter('my_thumb') }} " alt="Circle Image" class="img-circle img-responsive img-raised">
                                 {% else %}
-                                    <img src="https://s3.amazonaws.com/creativetim_bucket/new_logo.png" />
+                                    <img src="{{ asset('media/profile_default/thumb.png') }}" />
                                 {% endif %}
-
-                                {#<img src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAATCAAAAJDk4ZjEyN2MwLTQ5ZmYtNDE0Ni1hY2FjLTJlZDExZTlmMTUxOQ.jpg9" alt="Circle Image" class="img-circle img-responsive img-raised">#}
-                                {#<img src="{{ profile.imageName | imagine_filter('my_thumb')  }}" alt="Circle Image" class="img-circle img-responsive img-raised">#}
-                                {#<img src="{{ profile.imageName | imagine_filter('my_thumb')  }}" alt="Circle Image" class="img-circle img-responsive img-raised">#}
-                                {#<img src="/images/users/{{ profile.imageName }}" alt="Circle Image" class="img-circle img-responsive img-raised">#}
                             </div>
                             <div class="name">
                                 <h4>{{ profile.firstname }} {{ profile.lastname }}<br /><small>{{ profile.occupation }}</small></h4>
@@ -121,8 +127,9 @@
                         {% if app.user and user.profile.isOwner(app.user) %}
                             <a href="{{ path('profile_index_edit', {"username": user.profile.profileUsername}) }}" class="btn"><i class="fa fa-cog"></i>Settings</a>
                         {% else %}
+
                         {% endif %}
-                            {{ dump(is_following) }}
+                            {#{{ dump(is_following) }}#}
                         {% if app.user.profile.id != user.profile.id %}
                             <div class="follow_button_holder in_cover_content">
                                 {% include 'AppBundle:User:follow_button_large.html.twig' %}
@@ -149,7 +156,7 @@
                                         {% for post in posts %}
                                             <div class="col-md-6 post-in-list">
                                                 <a href="{{ path('blog_post', { id: post.id }) }}">
-                                                    <img src="{{ asset('images/posts/') }}{{ post.imageName }}" class="img-rounded img-responsive" />
+                                                    <img src="{{ post.imageName | imagine_filter('post_image')  }}" class="img-rounded img-responsive" />
                                                 </a>
                                             </div>
                                         {% endfor %}
@@ -167,6 +174,10 @@
                                         <ul class="list-unstyled follows">
                                             <li>
                                                 <div class="row">
+
+
+
+
                                                     <div class="col-md-2 col-md-offset-0 col-xs-3 col-xs-offset-2">
                                                         <img src="../assets/paper_img/flume.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
                                                     </div>

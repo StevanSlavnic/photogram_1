@@ -42,3 +42,27 @@ person:
 fos_message:
     resource: "@FOSMessageBundle/Resources/config/routing.xml"
     prefix: /optional_routing_prefix
+
+photo_message_id_delete:
+    path: /user/{username}/inbox/{threadId}/delete
+#    resource: "@AppBundle/Controller/Message/MessageController.php"
+    defaults: { _controller: AppBundle:Message/Message:delete }
+    methods: POST|DELETE
+
+photo_message_id_undelete:
+    path: /user/{username}/inbox/{threadId}/undelete
+#    resource: "@AppBundle/Controller/Message/MessageController.php"
+    defaults: { _controller: AppBundle:Message/Message:undelete }
+    methods: POST
+
+user_autocomplete:
+    path:     /user/inbox/new-message/autocomplete
+    defaults: { _controller: AppBundle:Autocomplete:index }
+
+ajax_autocomplete_users:
+  path:  /user/inbox/new-message/ajax/autocomplete/update/data
+  defaults: { _controller: AppBundle:searchUser:updateData }
+
+user-search:
+    path:  /users-list/user-search
+    defaults: { _controller: AppBundle:UserSearch:userSearch }

@@ -66,11 +66,6 @@ class Post
      */
     private $authorEmail;
 
-//    /**
-//     * @ORM\Column(type="string")
-//     */
-//    private $authorUsername;
-
     /**
      * @ORM\Column(type="datetime")
      * @Assert\DateTime()
@@ -145,28 +140,6 @@ class Post
     {
         $this->user = $user;
     }
-
-
-
-//    public function getTitle()
-//    {
-//        return $this->title;
-//    }
-//
-//    public function setTitle($title)
-//    {
-//        $this->title = $title;
-//    }
-
-//    public function getSlug()
-//    {
-//        return $this->slug;
-//    }
-//
-//    public function setSlug($slug)
-//    {
-//        $this->slug = $slug;
-//    }
 
     public function getContent()
     {
@@ -313,6 +286,4 @@ class Post
     {
         $this->updatedAt = $updatedAt;
     }
-
-
 }

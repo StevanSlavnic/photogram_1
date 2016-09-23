@@ -38,3 +38,22 @@ services:
   app.manager.user_connection_manager:
       class: AppBundle\Manager\UserConnectionManager
       arguments: [ @doctrine.orm.entity_manager, @event_dispatcher ]
+
+  app.manager.like_post_manager:
+        class: AppBundle\Manager\LikePostManager
+        arguments: [ @doctrine.orm.entity_manager, @event_dispatcher ]
+
+  app.controller.search_user:
+      class: AppBundle\Controller\searchUserController
+
+  app.form.friend_message:
+      class: AppBundle\MessageBundle\Form\NewThreadMessageFormType
+      arguments: ['@security.token_storage']
+      tags:
+          - { name: form.type }
+
+  app.form.user_search_type:
+      class: AppBundle\Form\UserSearchType
+      arguments: ['@security.token_storage']
+      tags:
+          - { name: form.type }

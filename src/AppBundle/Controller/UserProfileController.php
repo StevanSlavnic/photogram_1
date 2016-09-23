@@ -17,6 +17,10 @@ use AppBundle\Entity\Profile;
 use AppBundle\Entity\User;
 use AppBundle\Entity\User\UserConnection;
 use AppBundle\Repository\UserConnectionRepository;
+//use Doctrine\ORM\Mapping\Cache;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Sluggable\Fixture\Issue1058\Page;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -25,20 +29,21 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use AppBundle\Controller\BaseController;
 use AppBundle\Manager\UserConnectionManager;
+use AppBundle\Repository\PostRepository;
 
 
 class UserProfileController extends BaseController
 {
     /**
+     * @Route("/user/{username}/", name="profile_index")
      *
-     *
-     * @Route("/user/{username}", name="profile_index")
      * @ParamConverter("profile", class="AppBundle\Entity\Profile", options={"mapping" : {"username" : "profileUsername"} } )
      *
      * @Method("GET")
      *
      * @param Profile $profile
      *
+     * @param User $followers
      * @return Response
      */
     public function showAction(Profile $profile)
@@ -47,26 +52,111 @@ class UserProfileController extends BaseController
         $user = $profile->getUser();
         $userConnectionManager = $this->get('app.manager.user_connection_manager');
 
+//        $likePostManager = $this->get('app.manager.like_post_manager');
+
         $followers = $userConnectionManager->getFollowers($profile->getUser())->getResult();
         $following = $userConnectionManager->getFollowing($profile->getUser())->getResult();
 
-        if (!empty($posts)) {
-//            /** @var Post $posts */
-//            $posts = $this->getDoctrine()->getRepository('AppBundle:Post')->getLatestForUserQuery();
-        }
+
         $posts = $this->getDoctrine()->getRepository('AppBundle:Post')->findBy(array(
             'user' => $profile->getUser()
         ));
 
-        return $this->render('AppBundle:User:profile.html.twig', array(
+       return $this->render('AppBundle:User:profile.html.twig', array(
             'profile' => $profile,
             'user' => $user,
             'posts' => $posts,
             'followers' => $followers,
             'following' => $following,
             'is_following' => $userConnectionManager->isFollowing($loggedUser, $user),
-            'is_followed_back' => $userConnectionManager->isFollowing($user, $loggedUser)
+            'is_followed_back' => $userConnectionManager->isFollowing($user, $loggedUser),
+//            'is_liked' => $likePostManager->isLiked($user, $likedPost)
         ));
+    }
+
+    /**
+     * @Route("/users-list/", defaults={"page": 1}, name="photo_users_list")
+     * @Route("/page/{page}", requirements={"page": "[1-9]\d*"}, name="photo_users_paginated")
+     * @param Request $request
+     * @param Page $page
+     * @Method("GET")
+     * @Cache(smaxage="10")
+     * @return Response
+     * @internal param Post $post
+     *
+     */
+    public function showUsersAction(Request $request, $page)
+    {
+        function shuffle_assoc($array)
+        {
+            // Initialize
+            $shuffled_array = array();
+
+            // Get array's keys and shuffle them.
+            $shuffled_keys = array_keys($array);
+            shuffle($shuffled_keys);
+
+            // Create same array, but in shuffled order.
+            foreach ( $shuffled_keys AS $shuffled_key )
+            {
+                $shuffled_array[  $shuffled_key  ] = $array[  $shuffled_key  ];
+            }
+            // Return
+            return $shuffled_array;
+        }
+//        $loggedUser = $this->getLoggedUser();
+        $user = $this->getDoctrine()->getRepository('AppBundle:User')->findBy(array());
+
+        $users = $this->getDoctrine()->getRepository('AppBundle:User')->findAll();
+
+
+        $profiles = $this->getDoctrine()->getRepository('AppBundle:Profile')->findAll();
+        $sprofiles = shuffle_assoc($profiles); //randomize
+        $profile = $this->getDoctrine()->getRepository('AppBundle:Profile')->findOneBy(array(
+            'id' => $user
+        ));
+        $post = $this->getDoctrine()->getRepository('AppBundle:Post')->findBy(array(
+            'id' => $user
+        ));
+        $posts = $this->getDoctrine()->getRepository('AppBundle:Post')->findBy(array(
+            'user' => $profile->getUser()
+            ));
+//        $userConnectionManager = $this->get('app.manager.user_connection_manager');
+
+
+
+        return $this->render("@App/UsersList/usersList.html.twig", array(
+            'user' => $user,
+            'users' => $users,
+            'profile' => $profile,
+            'profiles' => $sprofiles,
+            'post' => $post,
+            'posts' => $posts,
+//            'is_following' => $userConnectionManager->isFollowing($loggedUser, $users)
+        ));
+    }
+
+    /**
+     * @Route("/users-list-one/", name="photo_users_list_one")
+     *
+     * @return Response
+     */
+    public function listUserPostsAction($userId)
+    {
+        $user = $this->getDoctrine()->getRepository('AppBundle:User')->find($userId);
+
+        $posts = $this->getDoctrine()->getRepository('AppBundle:Post')->findBy(array(
+            'user' => $user
+        ));
+        $profile = $this->getDoctrine()->getRepository('AppBundle:Profile')->findOneBy(array(
+            'id' => $user
+        ));
+
+        return $this->render('@App/UsersList/single-post-list.html.twig', array(
+            'posts' => $posts,
+            'profile' => $profile
+        ));
+
     }
 
     /**
@@ -156,8 +246,14 @@ class UserProfileController extends BaseController
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
      */
-    public function editAction(Profile $profile, Request $request, $username)
+    public function editAction(Profile $profile, User $user, Request $request, $username)
     {
+//         $post = $this->getDoctrine()->getRepository('AppBundle:Profile')->findOneBy(array());
+
+        if (!$profile->isOwner($this->getUser())) {
+            return $this->redirectToRoute('fos_user_security_login');
+        }
+
         $entityManager = $this->getDoctrine()->getManager();
 
         $editForm = $this->createForm('AppBundle\Form\Type\ProfileEditType', $profile);
@@ -183,6 +279,87 @@ class UserProfileController extends BaseController
             'form'   => $editForm->createView(),
         ));
     }
+
+    /**
+     * Like button
+     *
+     * @param Post $post
+     * @param Request $request
+     * @return Response
+     * @Route("/user/{username}/like", name="app_post_like", condition="request.isXmlHttpRequest()")
+     * @Method("POST");
+     */
+    public function like(Post $post, Request $request)
+    {
+//        $this->handleInactiveProfiles($profile);
+
+        $user = $this->getLoggedUser();
+
+        $likePostManager = $this->get('app.manager.user_connection_manager');
+
+        $type = $_POST['type'];
+
+        if($likePostManager->like($user, $post->getId())) {
+            return new JsonResponse(array(
+                'success' => true,
+//                'response' => $this->renderView('AppBundle:User:profile.html.twig', array(
+                'response' => $this->renderView('AppBundle:User:like_button_'. $type .'.html.twig', array(
+                    'post' => $post,
+                    'is_liked' => true
+                ))
+            ));
+        }
+
+        return new JsonResponse([
+            'success' => false,
+//            'response' => $this->renderView('AppBundle:User:profile.html.twig', array(
+            'response' => $this->renderView('AppBundle:User:like_button_'.$type.'.html.twig', array(
+                'post' => $post,
+                'is_liked' => true
+            ))
+        ]);
+    }
+
+    /**
+     * Unlike button
+     *
+     * @param Post $post
+     * @param Request $request
+     * @return Response
+     * @Route("/user/{username}/unlike", name="app_post_unlike", condition="request.isXmlHttpRequest()")
+     * @Method("POST");
+     */
+    public function unlike(Post $post, Request $request)
+    {
+//        $this->handleInactiveProfiles($profile);
+
+        $user = $this->getLoggedUser();
+
+        $likePostManager = $this->get('app.manager.user_connection_manager');
+
+        $type = $_POST['type'];
+
+        if($likePostManager->unlike($user, $post->getId())) {
+            return new JsonResponse(array(
+                'success' => true,
+                'response' => $this->renderView('AppBundle:User:follow_button_'. $type .'.html.twig', array(
+                    'post' => $post,
+                    'is_liked' => false
+                ))
+            ));
+        }
+
+        return new JsonResponse(array(
+            'success' => false,
+            'response' => $this->renderView('AppBundle:User:follow_button_'. $type .'.html.twig', array(
+                'post' => $post,
+                'is_liked' => true
+            ))
+        ));
+    }
+
+
+
 
 
 }

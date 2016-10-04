@@ -4,6 +4,8 @@ namespace AppBundle\Controller\Message;
 
 use AppBundle\Entity\Profile;
 use AppBundle\Entity\User;
+use AppBundle\Entity\UserRepository;
+use AppBundle\MessageBundle\Form\NewThreadMessageFormType;
 use Elastica\Query\QueryString;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Component\HttpFoundation\Request;
@@ -83,15 +85,21 @@ class MessageController extends \FOS\MessageBundle\Controller\MessageController
         $form = $this->container->get('fos_message.reply_form.factory')->create($thread);
         $formHandler = $this->container->get('fos_message.reply_form.handler');
 
+        $profile = $this->getUser();
+
         if ($message = $formHandler->process($form)) {
-            return new RedirectResponse($this->container->get('router')->generate('photo_message_sent', array(
+            return new RedirectResponse($this->container->get('router')->generate('photo_message_thread_id', array(
                 'threadId' => $message->getThread()->getId()
             )));
         }
 
+        /** @var User $user */
+        /** @var Profile $profile */
         return $this->container->get('templating')->renderResponse('@App/Message/thread.html.twig', array(
             'form' => $form->createView(),
             'thread' => $thread,
+//            'user' => $user,
+            'profile' => $profile
         ));
     }
 
@@ -104,13 +112,14 @@ class MessageController extends \FOS\MessageBundle\Controller\MessageController
      */
     public function newThreadAction()
     {
+//        $form = $this->createForm(NewThreadMessageFormType::class);
         $form = $this->container->get('fos_message.new_thread_form.factory')->create();
         $formHandler = $this->container->get('fos_message.new_thread_form.handler');
 
 
 
         if ($message = $formHandler->process($form)) {
-            return new RedirectResponse($this->container->get('router')->generate('photo_message_sent', array(
+            return new RedirectResponse($this->container->get('router')->generate('photo_message_thread_id', array(
                 'threadId' => $message->getThread()->getId(),
 //                'username' => 'Slavnić-Stevan'
             )));
@@ -201,7 +210,6 @@ class MessageController extends \FOS\MessageBundle\Controller\MessageController
     {
         return $this;
     }
-
 
 
 

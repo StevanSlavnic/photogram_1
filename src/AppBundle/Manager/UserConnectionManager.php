@@ -166,14 +166,19 @@ class UserConnectionManager
      *
      * @return \Doctrine\ORM\Query
      */
-//SELECT followee_id, follower_id, user.username FROM photogram_new.user_connections INNER JOIN photogram_new.user ON user_connections.followee_id=user.id;
+//SELECT followee_id, follower_id, user.full_name
+//FROM
+//photogram_new.user_connections, photogram_new.user
+//where
+//user_connections.follower_id=user.id
+//;
     public function getFollowers(User $user)
     {
-        return $this->em->getRepository('AppBundle:User\UserConnection')
-            ->createQueryBuilder('user\userConnection')
-            ->where('user\userConnection.followee = :user_id')
-            ->setParameter('user_id', $user->getId())
-            ->getQuery();
+//        return $this->em->getRepository('AppBundle:User\UserConnection')
+//            ->createQueryBuilder('user\userConnection')
+//            ->where('user\userConnection.followee = :user_id')
+//            ->setParameter('user_id', $user->getId())
+//            ->getQuery();
     }
 
     /**
@@ -183,6 +188,13 @@ class UserConnectionManager
      *
      * @return \Doctrine\ORM\Query
      */
+//
+//SELECT followee_id, follower_id, user.full_name
+//FROM
+//photogram_new.user_connections, photogram_new.user
+//where
+//user_connections.followee_id=user.id
+//;
     public function getFollowing(User $user)
     {
         return $this->em->getRepository('AppBundle:User\UserConnection')

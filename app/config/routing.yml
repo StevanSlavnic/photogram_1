@@ -62,3 +62,7 @@ user_autocomplete:
 ajax_autocomplete_users:
   path:  /user/inbox/new-message/ajax/autocomplete/update/data
   defaults: { _controller: AppBundle:searchUser:updateData }
+
+user-search:
+    path:  /users-list/user-search
+    defaults: { _controller: AppBundle:UserSearch:userSearch }

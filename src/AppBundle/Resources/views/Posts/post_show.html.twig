@@ -10,18 +10,26 @@
     <div class="post-header">
         {% if is_granted('IS_AUTHENTICATED_FULLY') %}
             <a href="{{ path("profile_index", {"username": app.user.profile.profileUsername}) }}">
-                {#{{ post.user.fullName }}#}
+                {% if post.user.profile.imageName %}
+                    <img src="{{ post.user.profile.imageName | imagine_filter('my_small')  }}" alt="Circle Image" class="img-circle img-responsive img-raised">
+                {% else %}
+                    <img src="{{ asset('media/profile_default/thumb_small.png') }}" class="img-circle img-responsive img-raised" />
+                {% endif %}
                 {{ post.user.profile.firstname }} {{ post.user.profile.lastname }}
             </a>
         {% else %}
             <a href="{{ path("profile_index", {"username": post.user.profile.profileUsername}) }}">
-                {#{{ post.user.fullName }}#}
+                {% if post.user.profile.imageName %}
+                    <img src="{{ post.user.profile.imageName | imagine_filter('my_small')  }}" alt="Circle Image" class="img-circle img-responsive img-raised">
+                {% else %}
+                    <img src="{{ asset('media/profile_default/thumb_small.png') }}" class="img-circle img-responsive img-raised" />
+                {% endif %}
                 {{ post.user.profile.firstname }} {{ post.user.profile.lastname }}
             </a>
         {% endif %}
     </div>
     <div class="image-post">
-        <img class="img-responsive" src="{{ asset('images/posts/')}}{{ post.imageName }}" alt="{{ post.imageName }}">
+        <img class="img-responsive" src="{{ post.imageName | imagine_filter('post_image')  }}" alt="{{ post.imageName }}">
 
     </div>
     <div class="post-description">

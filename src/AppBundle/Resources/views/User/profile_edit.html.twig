@@ -27,9 +27,9 @@
                 </a>
             </div>
             {% if profile.imageBackgroundName %}
-                <img id="profile-background" class="img-responsive profile-background" src="{{ asset('images/background/') }}{{ profile.imageBackgroundName }}"/>
+                <img id="profile-background" class="img-responsive profile-background" src="{{ profile.imageBackgroundName | imagine_filter('background_image')}}"/>
             {% else %}
-                <img id="default-image-background" class="img-responsive profile-background-preview" src="./bundles/app/images/rick.jpg"/>
+                <img id="default-image-background" class="img-responsive profile-background-preview" src="{{ asset('images/background/57af3ac5dd27d.jpg') }}"/>
             {% endif %}
             <div class="image-wrapper-profile">
                 <div class="square">

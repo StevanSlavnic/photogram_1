@@ -7,7 +7,7 @@
     {#<h1>{{ 'title.edit_post'|trans({'%id%': post.id}) }}</h1>#}
 
     <div class="image-wrapper">
-        <img id="edit-image" class="img-responsive" src="{{ asset('images/posts/')}}{{ post.imageName }}" alt="{{ post.imageName }}" title="#" />
+        <img id="edit-image" class="img-responsive" src="{{ post.imageName | imagine_filter('post_image') }}" alt="{{ post.imageName }}" title="#" />
         <img class="img-responsive" id="imagePreview">
         <a id="cancel" class="fa fa-times cancel" aria-hidden="true"></a>
     </div>

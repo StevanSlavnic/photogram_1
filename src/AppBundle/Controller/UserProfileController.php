@@ -17,8 +17,10 @@ use AppBundle\Entity\Profile;
 use AppBundle\Entity\User;
 use AppBundle\Entity\User\UserConnection;
 use AppBundle\Repository\UserConnectionRepository;
-use Doctrine\ORM\Mapping\Cache;
+//use Doctrine\ORM\Mapping\Cache;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Sluggable\Fixture\Issue1058\Page;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -27,6 +29,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use AppBundle\Controller\BaseController;
 use AppBundle\Manager\UserConnectionManager;
+use AppBundle\Repository\PostRepository;
 
 
 class UserProfileController extends BaseController
@@ -51,8 +54,8 @@ class UserProfileController extends BaseController
 
 //        $likePostManager = $this->get('app.manager.like_post_manager');
 
-        $followers = $userConnectionManager->getFollowers($profile->getUser())->getResult();
-        $following = $userConnectionManager->getFollowing($profile->getUser())->getResult();
+//        $followers = $userConnectionManager->getFollowers($profile->getUser())->getResult();
+//        $following = $userConnectionManager->getFollowing($profile->getUser())->getResult();
 
 
         $posts = $this->getDoctrine()->getRepository('AppBundle:Post')->findBy(array(
@@ -63,8 +66,8 @@ class UserProfileController extends BaseController
             'profile' => $profile,
             'user' => $user,
             'posts' => $posts,
-            'followers' => $followers,
-            'following' => $following,
+//            'followers' => $followers,
+//            'following' => $following,
             'is_following' => $userConnectionManager->isFollowing($loggedUser, $user),
             'is_followed_back' => $userConnectionManager->isFollowing($user, $loggedUser),
 //            'is_liked' => $likePostManager->isLiked($user, $likedPost)
@@ -72,29 +75,88 @@ class UserProfileController extends BaseController
     }
 
     /**
-     * @Route("/users-list/{page}", defaults={"page": 1}, name="photo_users_list")
-     *
+     * @Route("/users-list/", defaults={"page": 1}, name="photo_users_list")
+     * @Route("/page/{page}", requirements={"page": "[1-9]\d*"}, name="photo_users_paginated")
      * @param Request $request
-     * @param $page
-     *
+     * @param Page $page
+     * @Method("GET")
+     * @Cache(smaxage="10")
      * @return Response
      * @internal param Post $post
      *
      */
     public function showUsersAction(Request $request, $page)
     {
-        /** @var User $loggedUser */
-        $loggedUser = $this->getLoggedUser();
+        function shuffle_assoc($array)
+        {
+            // Initialize
+            $shuffled_array = array();
+
+            // Get array's keys and shuffle them.
+            $shuffled_keys = array_keys($array);
+            shuffle($shuffled_keys);
+
+            // Create same array, but in shuffled order.
+            foreach ( $shuffled_keys AS $shuffled_key )
+            {
+                $shuffled_array[  $shuffled_key  ] = $array[  $shuffled_key  ];
+            }
+            // Return
+            return $shuffled_array;
+        }
+//        $loggedUser = $this->getLoggedUser();
+        $user = $this->getDoctrine()->getRepository('AppBundle:User')->findBy(array());
+
         $users = $this->getDoctrine()->getRepository('AppBundle:User')->findAll();
+
+
         $profiles = $this->getDoctrine()->getRepository('AppBundle:Profile')->findAll();
-        $profile = $this->getDoctrine()->getRepository('AppBundle:Profile')->findOneBy(array());
+        $sprofiles = shuffle_assoc($profiles); //randomize
+        $profile = $this->getDoctrine()->getRepository('AppBundle:Profile')->findOneBy(array(
+            'id' => $user
+        ));
+        $post = $this->getDoctrine()->getRepository('AppBundle:Post')->findBy(array(
+            'id' => $user
+        ));
+        $posts = $this->getDoctrine()->getRepository('AppBundle:Post')->findBy(array(
+            'user' => $profile->getUser()
+            ));
+//        $userConnectionManager = $this->get('app.manager.user_connection_manager');
+
+
 
         return $this->render("@App/UsersList/usersList.html.twig", array(
-            'user' => $users,
+            'user' => $user,
+            'users' => $users,
             'profile' => $profile,
-            'profiles' => $profiles,
-//            'is_following' => $userConnectionManager->isFollowing($loggedUser, $user),
+            'profiles' => $sprofiles,
+            'post' => $post,
+            'posts' => $posts,
+//            'is_following' => $userConnectionManager->isFollowing($loggedUser, $users)
         ));
+    }
+
+    /**
+     * @Route("/users-list-one/", name="photo_users_list_one")
+     *
+     * @return Response
+     */
+    public function listUserPostsAction($userId)
+    {
+        $user = $this->getDoctrine()->getRepository('AppBundle:User')->find($userId);
+
+        $posts = $this->getDoctrine()->getRepository('AppBundle:Post')->findBy(array(
+            'user' => $user
+        ));
+        $profile = $this->getDoctrine()->getRepository('AppBundle:Profile')->findOneBy(array(
+            'id' => $user
+        ));
+
+        return $this->render('@App/UsersList/single-post-list.html.twig', array(
+            'posts' => $posts,
+            'profile' => $profile
+        ));
+
     }
 
     /**

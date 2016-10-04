@@ -54,8 +54,8 @@ class UserProfileController extends BaseController
 
 //        $likePostManager = $this->get('app.manager.like_post_manager');
 
-        $followers = $userConnectionManager->getFollowers($profile->getUser())->getResult();
-        $following = $userConnectionManager->getFollowing($profile->getUser())->getResult();
+//        $followers = $userConnectionManager->getFollowers($profile->getUser())->getResult();
+//        $following = $userConnectionManager->getFollowing($profile->getUser())->getResult();
 
 
         $posts = $this->getDoctrine()->getRepository('AppBundle:Post')->findBy(array(
@@ -66,8 +66,8 @@ class UserProfileController extends BaseController
             'profile' => $profile,
             'user' => $user,
             'posts' => $posts,
-            'followers' => $followers,
-            'following' => $following,
+//            'followers' => $followers,
+//            'following' => $following,
             'is_following' => $userConnectionManager->isFollowing($loggedUser, $user),
             'is_followed_back' => $userConnectionManager->isFollowing($user, $loggedUser),
 //            'is_liked' => $likePostManager->isLiked($user, $likedPost)

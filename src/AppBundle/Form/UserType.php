@@ -26,7 +26,7 @@ class UserType extends AbstractType
     {
         $builder
             ->add("profile", ProfileType::class, array(
-                'label' => ''
+                'label' => false
             ))
 
             ->add('email', EmailType::class, array(

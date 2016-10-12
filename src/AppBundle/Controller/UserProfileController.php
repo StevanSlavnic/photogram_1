@@ -30,6 +30,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use AppBundle\Controller\BaseController;
 use AppBundle\Manager\UserConnectionManager;
 use AppBundle\Repository\PostRepository;
+use AppBundle\Entity\UserRepository;
 
 
 class UserProfileController extends BaseController
@@ -51,6 +52,7 @@ class UserProfileController extends BaseController
         $loggedUser = $this->getLoggedUser();
         $user = $profile->getUser();
         $userConnectionManager = $this->get('app.manager.user_connection_manager');
+
 
 //        $likePostManager = $this->get('app.manager.like_post_manager');
 
@@ -87,6 +89,8 @@ class UserProfileController extends BaseController
      */
     public function showUsersAction(Request $request, $page)
     {
+
+        $loggedUser = $this->getLoggedUser();
         function shuffle_assoc($array)
         {
             // Initialize
@@ -104,12 +108,9 @@ class UserProfileController extends BaseController
             // Return
             return $shuffled_array;
         }
-//        $loggedUser = $this->getLoggedUser();
+
         $user = $this->getDoctrine()->getRepository('AppBundle:User')->findBy(array());
-
         $users = $this->getDoctrine()->getRepository('AppBundle:User')->findAll();
-
-
         $profiles = $this->getDoctrine()->getRepository('AppBundle:Profile')->findAll();
         $sprofiles = shuffle_assoc($profiles); //randomize
         $profile = $this->getDoctrine()->getRepository('AppBundle:Profile')->findOneBy(array(
@@ -154,6 +155,112 @@ class UserProfileController extends BaseController
 
         return $this->render('@App/UsersList/single-post-list.html.twig', array(
             'posts' => $posts,
+            'profile' => $profile
+        ));
+
+    }
+
+    /**
+     * @Route("/followee/", name="photo_followee_list")
+     *
+     * @return Response
+     */
+
+    public function showFolloweeAction()
+    {
+        /** @var User $loggedUser */
+        $loggedUser = $this->getUser();
+
+        /** @var User $id */
+
+        $user = $this->getDoctrine()->getRepository('AppBundle:User')->findBy(array(
+            'id' => $loggedUser,
+
+        ));
+        $userFollowers = $this->getDoctrine()->getRepository('AppBundle:User\UserConnection')->findBy(array(
+//            'followee' => $user,
+            'follower' => $user,
+
+        ));
+
+        return $this->render('@App/User/follows.html.twig', array(
+            'user' => $user,
+            'userFollowers' => $userFollowers,
+        ));
+
+    }
+
+    /**
+     * @Route("/follower/", name="photo_followee_list")
+     *
+     * @return Response
+     */
+
+    public function showFollowerAction()
+    {
+        /** @var User $loggedUser */
+        $loggedUser = $this->getUser();
+
+        /** @var User $id */
+
+        $user = $this->getDoctrine()->getRepository('AppBundle:User')->findBy(array(
+            'id' => $loggedUser
+
+        ));
+        $userFollowers = $this->getDoctrine()->getRepository('AppBundle:User\UserConnection')->findBy(array(
+            'followee' => $user,
+//            'follower' => $user,
+
+        ));
+
+        return $this->render('@App/User/following.html.twig', array(
+            'user' => $user,
+            'userFollowers' => $userFollowers,
+        ));
+
+    }
+
+    /**
+     * @Route("/followee-one/", name="photo_followee_one")
+     *
+     * @return Response
+     */
+    public function listUserFolloweeAction($userId)
+    {
+        $user = $this->getDoctrine()->getRepository('AppBundle:User')->find($userId);
+
+        $userFollowers = $this->getDoctrine()->getRepository('AppBundle:User\UserConnection')->findBy(array(
+            'user' => $user
+        ));
+        $profile = $this->getDoctrine()->getRepository('AppBundle:Profile')->findOneBy(array(
+            'id' => $user
+        ));
+
+        return $this->render('AppBundle::dql-single.html.twig', array(
+            'userFollowers' => $userFollowers,
+            'profile' => $profile
+        ));
+
+    }
+
+    /**
+     * @Route("/follower-one/", name="photo_follower_one")
+     *
+     * @return Response
+     */
+    public function listUserFollowerAction($userId)
+    {
+        $user = $this->getDoctrine()->getRepository('AppBundle:User')->find($userId);
+
+        $userFollowers = $this->getDoctrine()->getRepository('AppBundle:User\UserConnection')->findBy(array(
+            'user' => $user
+        ));
+        $profile = $this->getDoctrine()->getRepository('AppBundle:Profile')->findOneBy(array(
+            'id' => $user
+        ));
+
+        return $this->render('AppBundle::dql-single.html.twig', array(
+            'userFollowers' => $userFollowers,
             'profile' => $profile
         ));
 

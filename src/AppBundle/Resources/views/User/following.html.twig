@@ -1,34 +1,24 @@
-{% extends 'base.html.twig' %}
-
-{% block main %}
+{% for followee in userFollowers %}
     <div class="row">
-        <!-- ABOUT -->
-        {#<div class="col-sm-4 hidden-xs hidden-xs">#}
-            {#<div class="jq-parent-edit profile-about-me-holder about-holder">#}
-                {#{% include 'PokaTalkAppBundle:Partials/Profile:about.html.twig' with {'profile' : profile} %}#}
-            {#</div>#}
-            {#<!-- edit -->#}
-            {#<div class="about-form-holder"></div>#}
-        {#</div>#}
-        <!-- END OF ABOUT -->
-
-        <div class="col-xs-12 col-sm-8" id="profile_following">
-            <div class="row">
-                {#{% if following|length %}#}
-                    {#{% include 'PokaTalkAppBundle:Partials/Profile:user_connection_following.html.twig' with {'profile' : profile} %}#}
-                {#{% else %}#}
-                    <div class="panel panel-white panel-empty-follow text-center text-light-gray">
-                        {% if app.user %}
-                            {% if app.user.profile.id == profile.id %}
-                                You are not following anyone yet.
-                            {% else %}
-                                {{ profile.firstName }} {{ profile.lastName }} is not following anyone yet
-                            {% endif %}
-                        {% endif %}
-                    </div>
-                {#{% endif %}#}
+        <a href="{{ path("profile_index", {"username": followee.follower.profile.profileUsername}) }}">
+            <div class="col-md-2 col-md-offset-0 col-xs-3 col-xs-offset-2">
+                {% if followee.follower.profile.imageName %}
+                    <img src="{{ followee.follower.profile.imageName | imagine_filter('my_small')  }}" alt="Circle Image" class="img-circle img-responsive img-raised">
+                {% else %}
+                    <img src="{{ asset('media/profile_default/thumb_small.png') }}" class="img-circle img-responsive img-raised" />
+                {% endif %}
+            </div>
+            <div class="col-md-7 col-xs-4">
+                <h6>{{ followee.follower.profile.user.fullName }}<br /><small>{{ followee.follower.profile.occupation }}</small></h6>
+            </div>
+        </a>
+        <div class="col-md-3 col-xs-2">
+            <div class="unfollow" rel="tooltip" title="Unfollow">
+                <label class="checkbox" for="checkbox1" >
+                    <input type="checkbox" value="" id="checkbox1" data-toggle="checkbox" checked>
+                </label>
             </div>
         </div>
     </div>
-    <div class="edit_overlay"></div
-{% endblock main %}
+    <hr />
+{% endfor %}

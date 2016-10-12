@@ -59,7 +59,7 @@ class PostController extends Controller
             'profile' => $profile,
             'profiles' => $profiles,
             'form' => $form->createView(),
-//            'is_following' => $userConnectionManager->isFollowing($loggedUser, $user),
+            'is_following' => $userConnectionManager->isFollowing($loggedUser, $user),
         ));
     }
 

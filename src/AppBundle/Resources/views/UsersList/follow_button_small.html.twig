@@ -1,4 +1,4 @@
-{#{% if profile.user.isEnabled %}#}
+{% if user.isEnabled %}
     {% if is_following  %}
         <button data-user-id = "{{ app.user.id }}" data-unfollow-url = "{{ path('app_profile_unfollow', {"username" : profile.profileUsername}) }}" data-type="small" class="btn btn-primary-white-hover unfollow_button pull-right">
             <i class="icon-member_check"></i>
@@ -8,4 +8,4 @@
             <i class="icon-member_add"></i>
         </button>
     {% endif %}
-{#{% endif %}#}
+{% endif %}

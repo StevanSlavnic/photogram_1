@@ -82,7 +82,20 @@ class PostRepository extends EntityRepository
             ORDER BY prof.id DESC
             ;'
         )
-            ->setParameter('now', new \DateTime());
+            ->setParameter('now', new \DateTime())
+        ->getResult();
+    }
+
+
+    public function findOneByUsernameOrEmail($username)
+    {
+        return $this->createQueryBuilder('u')
+            ->andWhere('u.username = :username OR u.email = :email')
+            ->setParameter('username', $username)
+            ->setParameter('email', $username)
+            ->getQuery()
+            ->getOneOrNullResult()
+            ;
     }
 
     /**

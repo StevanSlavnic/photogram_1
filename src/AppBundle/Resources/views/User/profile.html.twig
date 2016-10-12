@@ -127,14 +127,18 @@
                         {% if app.user and user.profile.isOwner(app.user) %}
                             <a href="{{ path('profile_index_edit', {"username": user.profile.profileUsername}) }}" class="btn"><i class="fa fa-cog"></i>Settings</a>
                         {% else %}
-
+                            {% if app.user.profile.id != user.profile.id %}
+                                <div class="follow_button_holder in_cover_content">
+                                    {% include 'AppBundle:User:follow_button_large.html.twig' %}
+                                </div>
+                            {% endif %}
                         {% endif %}
                             {#{{ dump(is_following) }}#}
-                        {% if app.user.profile.id != user.profile.id %}
-                            <div class="follow_button_holder in_cover_content">
-                                {% include 'AppBundle:User:follow_button_large.html.twig' %}
-                            </div>
-                        {% endif %}
+                        {#{% if app.user.profile.id != user.profile.id %}#}
+                            {#<div class="follow_button_holder in_cover_content">#}
+                                {#{% include 'AppBundle:User:follow_button_large.html.twig' %}#}
+                            {#</div>#}
+                        {#{% endif %}#}
                         </div>
 
                     </div>
@@ -173,51 +177,27 @@
                                     <div class="col-md-6 col-md-offset-3">
                                         <ul class="list-unstyled follows">
                                             <li>
-                                                <div class="row">
-
-
-
-
-                                                    <div class="col-md-2 col-md-offset-0 col-xs-3 col-xs-offset-2">
-                                                        <img src="../assets/paper_img/flume.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                                                    </div>
-                                                    <div class="col-md-7 col-xs-4">
-                                                        <h6>Flume<br /><small>Musical Producer</small></h6>
-                                                    </div>
-                                                    <div class="col-md-3 col-xs-2">
-                                                        <div class="unfollow" rel="tooltip" title="Unfollow">
-                                                            <label class="checkbox" for="checkbox1" >
-                                                                <input type="checkbox" value="" id="checkbox1" data-toggle="checkbox" checked>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                {{ render(controller('AppBundle:UserProfile:showFollowee', { 'userId': profile.user.id })) }}
                                             </li>
-                                            <hr />
-                                            <li>
-                                                <div class="row">
-                                                    <div class="col-md-2 col-md-offset-0 col-xs-3 col-xs-offset-2">
-                                                        <img src="../assets/paper_img/banks.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                                                    </div>
-                                                    <div class="col-md-7 col-xs-4">
-                                                        <h6>Banks<br /><small>Singer</small></h6>
-                                                    </div>
-                                                    <div class="col-md-3 col-xs-2">
-                                                        <div class="unfollow" rel="tooltip" title="Unfollow">
-                                                            <label class="checkbox" for="checkbox1" >
-                                                                <input type="checkbox" value="" id="checkbox1" data-toggle="checkbox" checked>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
+
                                         </ul>
                                     </div>
                                 </div>
                             </div>
+
                             <div class="tab-pane text-center" id="following">
-                                <h3 class="text-muted">Not following anyone yet :(</h3>
-                                <btn class="btn btn-warning btn-fill">Find artists</btn>
+                                <div class="row">
+                                    <div class="col-md-6 col-md-offset-3">
+                                        <ul class="list-unstyled follows">
+                                            <li>
+                                                {{ render(controller('AppBundle:UserProfile:showFollower', { 'userId': profile.user.id })) }}
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                                {#<h3 class="text-muted">Not following anyone yet :(</h3>#}
+                                {#<btn class="btn btn-warning btn-fill">Find artists</btn>#}
                             </div>
                         </div>
 

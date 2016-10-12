@@ -101,6 +101,11 @@
                         {% endif %}
                         {{ profile.firstname }} {{ profile.lastname }}
                     </a>
+                    {#{% if app.user.id != user.id %}#}
+                        {#<div class="follow_button_holder in_cover_content">#}
+                            {#{% include 'AppBundle:User:follow_button_large.html.twig' %}#}
+                        {#</div>#}
+                    {#{% endif %}#}
                     {#<div class="follow_button_holder in_cover_content">#}
                     {#{% include '@App/UsersList/follow_button_small.html.twig' %}#}
                     {#</div>#}

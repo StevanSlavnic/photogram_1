@@ -174,11 +174,11 @@ class UserConnectionManager
 //;
     public function getFollowers(User $user)
     {
-//        return $this->em->getRepository('AppBundle:User\UserConnection')
-//            ->createQueryBuilder('user\userConnection')
-//            ->where('user\userConnection.followee = :user_id')
-//            ->setParameter('user_id', $user->getId())
-//            ->getQuery();
+        return $this->em->getRepository('AppBundle:User\UserConnection')
+            ->createQueryBuilder('user\userConnection')
+            ->where('user\userConnection.followee = :user_id')
+            ->setParameter('user_id', $user->getId())
+            ->getQuery();
     }
 
     /**

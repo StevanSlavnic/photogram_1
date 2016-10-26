@@ -64,6 +64,7 @@ fabric.properties
 .idea/modules.xml
 .idea/photogram_1.iml
 app/cache/
+web/media/
 web/media/cache/resolve/post_image/
 web/media/cache/resolve/post_thumb/
 web/uploads/

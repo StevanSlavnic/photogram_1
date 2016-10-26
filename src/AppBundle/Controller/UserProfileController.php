@@ -50,26 +50,24 @@ class UserProfileController extends BaseController
     public function showAction(Profile $profile)
     {
         $loggedUser = $this->getLoggedUser();
+
         $user = $profile->getUser();
+
         $userConnectionManager = $this->get('app.manager.user_connection_manager');
 
+        $posts = $this->getDoctrine()->getRepository('AppBundle:Post')->findBy(
+            array(
+                'user' => $profile->getUser(),
 
-//        $likePostManager = $this->get('app.manager.like_post_manager');
-
-//        $followers = $userConnectionManager->getFollowers($profile->getUser())->getResult();
-//        $following = $userConnectionManager->getFollowing($profile->getUser())->getResult();
-
-
-        $posts = $this->getDoctrine()->getRepository('AppBundle:Post')->findBy(array(
-            'user' => $profile->getUser()
-        ));
+            ),
+            array(
+                'publishedAt' => 'DESC'
+            ));
 
        return $this->render('AppBundle:User:profile.html.twig', array(
             'profile' => $profile,
             'user' => $user,
             'posts' => $posts,
-//            'followers' => $followers,
-//            'following' => $following,
             'is_following' => $userConnectionManager->isFollowing($loggedUser, $user),
             'is_followed_back' => $userConnectionManager->isFollowing($user, $loggedUser),
 //            'is_liked' => $likePostManager->isLiked($user, $likedPost)
@@ -169,18 +167,16 @@ class UserProfileController extends BaseController
     public function showFolloweeAction()
     {
         /** @var User $loggedUser */
-        $loggedUser = $this->getUser();
+        $id = $this->getUser();
 
         /** @var User $id */
 
         $user = $this->getDoctrine()->getRepository('AppBundle:User')->findBy(array(
-            'id' => $loggedUser,
+            'id' => $id,
 
         ));
         $userFollowers = $this->getDoctrine()->getRepository('AppBundle:User\UserConnection')->findBy(array(
-//            'followee' => $user,
             'follower' => $user,
-
         ));
 
         return $this->render('@App/User/follows.html.twig', array(
@@ -198,19 +194,16 @@ class UserProfileController extends BaseController
 
     public function showFollowerAction()
     {
-        /** @var User $loggedUser */
-        $loggedUser = $this->getUser();
+        /** @var User $id */
+        $id = $this->getUser();
 
         /** @var User $id */
 
         $user = $this->getDoctrine()->getRepository('AppBundle:User')->findBy(array(
-            'id' => $loggedUser
-
+            'id' => $id
         ));
         $userFollowers = $this->getDoctrine()->getRepository('AppBundle:User\UserConnection')->findBy(array(
             'followee' => $user,
-//            'follower' => $user,
-
         ));
 
         return $this->render('@App/User/following.html.twig', array(

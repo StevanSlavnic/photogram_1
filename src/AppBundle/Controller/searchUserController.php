@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\User;
 use AppBundle\Entity\Profile;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,6 +17,7 @@ class searchUserController extends Controller
      * @param Request $request
      * @return JsonResponse
      * @throws \Exception
+     *
      * @Route("/user/inbox/new-message/ajax/autocomplete/update/data", condition="request.isXmlHttpRequest()")
      */
     public function updateDataAction(Request $request)

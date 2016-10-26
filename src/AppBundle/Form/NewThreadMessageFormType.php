@@ -28,7 +28,7 @@ class NewThreadMessageFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('recipient', 'search', array('class' => 'AppBundle\Entity\User\UserConnection'))
+            ->add('recipient', 'search')
             ->add('subject', 'text', array(
                 'label' => ' '
             ))

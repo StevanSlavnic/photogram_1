@@ -1,0 +1,24 @@
+{% for follower in userFollowers %}
+<div class="row">
+    <a href="{{ path("profile_index", {"username": follower.followee.profile.profileUsername}) }}">
+    <div class="col-md-2 col-md-offset-0 col-xs-3 col-xs-offset-2">
+        {% if follower.followee.profile.imageName %}
+            <img src="{{ follower.followee.profile.imageName | imagine_filter('my_small')  }}" alt="Circle Image" class="img-circle img-responsive img-raised">
+        {% else %}
+            <img src="{{ asset('media/profile_default/thumb_small.png') }}" class="img-circle img-responsive img-raised" />
+        {% endif %}
+    </div>
+    <div class="col-md-7 col-xs-4">
+        <h6>{{ follower.followee.profile.user.fullName }}<br /><small>{{ follower.followee.profile.occupation }}</small></h6>
+    </div>
+    </a>
+    <div class="col-md-3 col-xs-2">
+        <div class="unfollow" rel="tooltip" title="Unfollow">
+            <label class="checkbox" for="checkbox1" >
+                <input type="checkbox" value="" id="checkbox1" data-toggle="checkbox" checked>
+            </label>
+        </div>
+    </div>
+</div>
+    <hr />
+{% endfor %}

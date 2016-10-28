@@ -55,10 +55,12 @@ class UserProfileController extends BaseController
 
         $userConnectionManager = $this->get('app.manager.user_connection_manager');
 
+
+//var_dump($followers);die();
+
         $posts = $this->getDoctrine()->getRepository('AppBundle:Post')->findBy(
             array(
                 'user' => $profile->getUser(),
-
             ),
             array(
                 'publishedAt' => 'DESC'
@@ -172,16 +174,18 @@ class UserProfileController extends BaseController
         /** @var User $id */
 
         $user = $this->getDoctrine()->getRepository('AppBundle:User')->findBy(array(
-            'id' => $id,
+            'profile' => $id,
 
         ));
+
         $userFollowers = $this->getDoctrine()->getRepository('AppBundle:User\UserConnection')->findBy(array(
             'follower' => $user,
         ));
 
         return $this->render('@App/User/follows.html.twig', array(
-            'user' => $user,
-            'userFollowers' => $userFollowers,
+            'user' => $id,
+            'userFollowers' => $userFollowers
+
         ));
 
     }

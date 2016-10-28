@@ -43,7 +43,7 @@ class PostController extends Controller
     {
         $loggedUser = $this->getLoggedUser();
         $user = $this->getUser();
-        $posts = $this->getDoctrine()->getRepository('AppBundle:Post')->findLatest($page);
+        $posts = $this->getDoctrine()->getRepository('AppBundle:Post')->findAll($page);
         $profiles = $this->getDoctrine()->getRepository('AppBundle:Profile')->findAll();
         $profile = $this->getDoctrine()->getRepository('AppBundle:Profile')->findOneBy(array());
         $form = $this->createForm('AppBundle\Form\CommentType');

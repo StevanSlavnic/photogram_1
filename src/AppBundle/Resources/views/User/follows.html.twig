@@ -1,6 +1,7 @@
+{% if app.user is defined %}
 {% for follower in userFollowers %}
 <div class="row">
-    <a href="{{ path("profile_index", {"username": follower.followee.profile.profileUsername}) }}">
+    <a href="{{ path("profile_index", {"username": follower.follower.profile.profileUsername }) }}">
     <div class="col-md-2 col-md-offset-0 col-xs-3 col-xs-offset-2">
         {% if follower.followee.profile.imageName %}
             <img src="{{ follower.followee.profile.imageName | imagine_filter('my_small')  }}" alt="Circle Image" class="img-circle img-responsive img-raised">
@@ -21,4 +22,6 @@
     </div>
 </div>
     <hr />
+
 {% endfor %}
+{% endif %}

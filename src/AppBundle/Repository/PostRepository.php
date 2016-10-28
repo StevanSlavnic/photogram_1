@@ -13,6 +13,7 @@ namespace AppBundle\Repository;
 
 use AppBundle\Entity\Post;
 use AppBundle\Entity\Profile;
+use AppBundle\Entity\User\UserConnection;
 use AppBundle\Entity\User;
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\Query;
@@ -96,6 +97,20 @@ class PostRepository extends EntityRepository
             ->getQuery()
             ->getOneOrNullResult()
             ;
+    }
+
+    public function findAllOrdered() {
+
+        $qb = $this->createQueryBuilder('post')
+            ->innerJoin('post.user', 'user')
+            ->innerJoin('user.profile', 'profile')
+
+            ->addOrderBy('post.publishedAt', 'ASC');
+        $query = $qb->getQuery();
+//        var_dump($query->getDQL());die;
+
+        return $query->execute();
+
     }
 
     /**

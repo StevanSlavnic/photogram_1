@@ -4,7 +4,10 @@
 
 {% block main %}
 
+
+
     {% for post in posts %}
+        {#{% if app.user != is_following %}#}
         <article class="post">
             {#{{ dump() }}#}
             <div class="post-header">
@@ -50,10 +53,14 @@
                     {% endif %}
                 </div>
             </div>
+
+
             <div class="image-post">
+
                 <a href="{{ path('blog_post', { id: post.id }) }}">
                     <img class="img-responsive" src="{{ post.imageName | imagine_filter('post_image')  }}" alt="{{ post.imageName }}">
                 </a>
+
             </div>
             {#{{ post.summary|md2html }}#}
 
@@ -64,7 +71,7 @@
         {#{% if is_liked %}#}
             {#sdsdsd#}
         {#{% else %}#}
-                {#sdsds#}
+                {#sssss#}
             {#{% endif %}#}
 
         {% for comment in post.comments %}
@@ -101,13 +108,18 @@
             {% endif %}
         </div>
         </article>
+        {#{% else %}#}
+
+        {#{% endif %}#}
     {% else %}
         <div class="well">{{ 'post.no_posts_found'|trans }}</div>
+
     {% endfor %}
 
 
-    <div class="navigation text-center">
-        {{ pagerfanta(posts, 'twitter_bootstrap3', { routeName: 'blog_index_paginated' }) }}
-    </div>
+    {#<div class="navigation text-center">#}
+        {#{{ pagerfanta(posts, 'twitter_bootstrap3', { routeName: 'blog_index_paginated' }) }}#}
+    {#</div>#}
+
 
 {% endblock %}

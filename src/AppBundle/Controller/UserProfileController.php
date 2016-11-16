@@ -206,12 +206,16 @@ class UserProfileController extends BaseController
         $user = $this->getDoctrine()->getRepository('AppBundle:User')->findBy(array(
             'id' => $id
         ));
+
         $userFollowers = $this->getDoctrine()->getRepository('AppBundle:User\UserConnection')->findBy(array(
             'followee' => $user,
         ));
 
+        $profile = $this->getDoctrine()->getRepository('AppBundle:Profile')->findAll();
+
         return $this->render('@App/User/following.html.twig', array(
             'user' => $user,
+            'profile' => $profile,
             'userFollowers' => $userFollowers,
         ));
 
@@ -229,6 +233,8 @@ class UserProfileController extends BaseController
         $userFollowers = $this->getDoctrine()->getRepository('AppBundle:User\UserConnection')->findBy(array(
             'user' => $user
         ));
+
+
         $profile = $this->getDoctrine()->getRepository('AppBundle:Profile')->findOneBy(array(
             'id' => $user
         ));

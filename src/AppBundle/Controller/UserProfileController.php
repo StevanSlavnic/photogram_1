@@ -199,7 +199,7 @@ class UserProfileController extends BaseController
     public function showFollowerAction()
     {
         /** @var User $id */
-        $id = $this->getUser();
+        $id = $this->getUser() ;
 
         /** @var User $id */
 
